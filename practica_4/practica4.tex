@@ -106,28 +106,28 @@
 	\begin{multicols}{2}
 	\begin{enumerate} [label=(\alph*)]
 
-		\item \begin{amatrix}{2} 1 & 0 & -5 \\ 0 & 1 & 2 \end{amatrix}
+		\item $\begin{amatrix}{2} 1 & 0 & -5 \\ 0 & 1 & 2 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=n=2$. Sistema compatible determinado. \\ $(x,y)=(-5,2)$. \\ $S=\left\{(x,y)\in \mathbb{R}^2 ~|~ x=-5 ~\land~ y=2 \right\}$. 
 
-		\item \begin{amatrix}{2} 1 & 0 & 0 \\ 0 & 0 & 3 \end{amatrix}
+		\item $\begin{amatrix}{2} 1 & 0 & 0 \\ 0 & 0 & 3 \end{amatrix}$
 		\answer $rg(A)=1 \neq rg(A*)=2$. Sistema incompatible. $S=\emptyset$.
 
-		\item \begin{amatrix}{2} 1 & 0 & 4 \\ 0 & 0 & 0 \end{amatrix}
+		\item $\begin{amatrix}{2} 1 & 0 & 4 \\ 0 & 0 & 0 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=1 < n=2$. Sistema compatible indeterminado cuya solución depende de 1 parámetro. \\ $(x,y)=(4,y)$. \\ $S=\left\{(x,y)\in \mathbb{R}^2 ~|~ x=4 \right\}$. \\ Con $y=1 \to (4,1)$. Con $y=4 \to (4,4)$. Con $y=-5 \to (4,-5)$. 
 
-		\item \begin{amatrix}{3} 1 & -2 & 0 & 7 \\ 0 & 3 & 1 & -5 \\ 0 & 0 & 0 & 0 \end{amatrix}
+		\item $\begin{amatrix}{3} 1 & -2 & 0 & 7 \\ 0 & 3 & 1 & -5 \\ 0 & 0 & 0 & 0 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=2<n=3$. Sistema compatible indeterminado cuya solución depende de 1 parámetro. \\ $(x,y,z)=(7+2y,y,-5-3y)$. \\ $S=\left\{(x,y,z)\in \mathbb{R}^3 ~|~ x=7+2y ~\land~ z=-5-3y \right\}$. \\ Con $y=0 \to (7,0,-5)$. Con $y=2 \to (11,2,-11)$. Con $y=1 \to (9,1,-8)$.   
 		
-		\item \begin{amatrix}{3} 1 & 0 & -1 & 7 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{amatrix}
+		\item $\begin{amatrix}{3} 1 & 0 & -1 & 7 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=2<n=3$. Sistema compatible indeterminado cuya solución depende de 1 parámetro. \\ $(x,y,z)=(7+z,-2z,z)$. \\ $S=\left\{(x,y,z)\in \mathbb{R}^3 ~|~ x=7+z ~\land~ y=-2z \right\}$. \\ Con $z=0 \to (7,0,0)$. Con $z=1 \to (8,-2,1)$. Con $z=2 \to (9,-4,2)$. 
 
-		\item \begin{amatrix}{4} 1 & -2 & 0 & 0 & -6 \\ 0 & 0 & 1 & 0 & 2 \\ 0 & 0 & 0 & 1 & 0 \end{amatrix}
+		\item $\begin{amatrix}{4} 1 & -2 & 0 & 0 & -6 \\ 0 & 0 & 1 & 0 & 2 \\ 0 & 0 & 0 & 1 & 0 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=3<n=4$. Sistema compatible indeterminado cuya solución depende de 1 parámetro. \\ $(x,y,z,w)=(-6+2y,y,2,0)$. \\ $S=\left\{(x,y,z,w)\in \mathbb{R}^4 ~|~ x=-6+2y ~\land~ z=2 ~\land~ w=0 \right\}$. \\ Con $y=5 \to (4,5,2,0)$. Con $y=4 \to (2,4,2,0)$. Con $y=3 \to (0,3,2,0)$.
 
-		\item \begin{amatrix}{4} 1 & -1 & 2 & 3 & -2 \\ 0 & 0 & 0 & 0 & 3 \\ 0 & 0 & 0 & 0 & 0 \end{amatrix}
+		\item $\begin{amatrix}{4} 1 & -1 & 2 & 3 & -2 \\ 0 & 0 & 0 & 0 & 3 \\ 0 & 0 & 0 & 0 & 0 \end{amatrix}$
 		\answer $rg(A)=1 \neq rg(A^*)=2$. Sistema incompatible. $S=\emptyset$.
 
-		\item \begin{amatrix}{4} 1 & 0 & 0 & -1 & \frac{1}{2} \\ 0 & 0 & 1 & \frac{3}{4} & 2 \\ 0 & 0 & 0 & 0 & 0 \end{amatrix}
+		\item $\begin{amatrix}{4} 1 & 0 & 0 & -1 & \frac{1}{2} \\ 0 & 0 & 1 & \frac{3}{4} & 2 \\ 0 & 0 & 0 & 0 & 0 \end{amatrix}$
 		\answer $rg(A)=rg(A^*)=2<n=4$. Sistema compatible indeterminado cuya solución depende de 2 parámetros. \\ $(x,y,z,w)=(\frac{1}{2}+w,y,2-\frac{3}{4}w,w)$. \\ $S=\left\{(x,y,z,w)\in \mathbb{R}^4 ~|~ x=\frac{1}{2}+w ~\land~ z=\frac{3}{4}w ~\land~ w=0 \right\}$. \\ Con $y=1$ y $w=1$ $\to (\frac{3}{2},1,\frac{5}{4},1)$. Con $y=1$ y $w=2$ $\to (\frac{5}{2},1,\frac{1}{2},2)$. Con $y=2$ y $w=0$ $\to (\frac{1}{2},2,2,0)$.
 
 	\end{enumerate}
@@ -147,6 +147,9 @@
 
 		\item Un sistema de viandas ofrece 3 tipos de viandas: vianda vegetariana a \$900, vianda con carne a \$1200 y vianda con pollo a \$1100.  Las viandas se empacan en un contenedor de 42~L que soporta hasta 20~kg. El empaque de las viandas de carne y pollo es de 0,8~L mientras que el de la vianda vegetariana es de 1,1~L. Las viandas de pollo y vegetariana pesan 400g mientras que la de carne pesa 600g. Una empresa solicitó 45 viandas para sus empleados/as que ocuparon la capacidad máxima (en volumen y peso) del contenedor del envío. ¿Cuántas viandas de cada tipo se pidieron y cuanto costó el total?
 		\answer Llamamos $x$, $y$ y $z$ a las viandas vegetarianas, con carne y con pollo, respectivamente. Consideramos la cantidad de viandas, su volumen y peso (de momento, ignoramos los precios). Se obtiene el sistema: \\ \vspace{2mm} $\left\{\begin{matrix} x+y+z=45 \\ x+0,8y+0,8z=42 \\ 0,4x+0,6y+0,4z=20 \end{matrix}\right.$ \\ La solución es $(x,y,z)=(30,10,5)$, es decir, se pidieron 30 viandas vegetarianas, 10 con carne y 5 con pollo. Con las viandas calculamos el precio total: $900x+1200y+1100z=900(30)+1200(10)+1100(5)=44500$ pesos.
+
+		\item La combustión del metano (CH$_4$) consume oxígeno (O$_2$) y produce dióxido de carbono (CO$_2$) y agua (H$_2$O) según la reacción: \\ \phantom{-------------------------------------------------}$ aCH_4 + bO_2 \to cCO_2 + d H_{2}O$ \\ donde $a$, $b$, $c$ y $d$ de denominan coeficientes estequiométricos. Si se queman $a$~moles de metano se consumen $b$ moles de oxigeno obtienen $c$ moles de CO$_2$ y $d$ moles de agua. Considerando la ley de conservación de masa, hallar coeficientes válidos para la reacción. ¿Cuántos moles de CO$_2$ y de H$_2$O se producen si se queman 5~moles de metano? 
+		\answer En la reacción tenemos tres átomos que se conservan (C,O,H), por que lo obtenemos una ecuación para cada uno: \\ \vspace{2mm} $\left\{\begin{matrix} a-c = 0 \\ 2b -2c -d = 0 \\ 4a - 2d = 0 \end{matrix}\right.$ \\ La solución del sistema es $(a,b,c,d) = (a,2a,a,2a)$, por lo que elegimos $a=1$, y la reacción queda $ CH_4 + 2O_2 \to CO_2 + 2 H_{2}O$. Si se consumen 5 moles de metano, $a=5$ y la solución será $(5,10,5,10)$, es decir, se formaran 5 moles de CO$_2$ y 10 moles de H$_2$O.
 
 
 	\end{enumerate}
