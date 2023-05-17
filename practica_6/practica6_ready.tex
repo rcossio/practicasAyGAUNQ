@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+%Enumeracion
+\usepackage{enumitem}
+%Páginas sin numeración
+\pagestyle{empty}
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\begin{document}
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 6: Determinantes } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+\begin{enumerate}
+	\exercise Calcular los siguientes determinantes $\Delta$. Se puede utilizar cualquier método, tales como el de Sarrus y Laplace.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item \begin{vmatrix} 5 & -3 \\ 6 & 4\end{vmatrix}
+		\item \begin{vmatrix} \frac{1}{2} & -2 \\ \frac{3}{4} & 4\end{vmatrix}
+		\item \begin{vmatrix} -2 & 4 & 5 \\ 6 & 7 & -3 \\ 3 & 0 & 2 \end{vmatrix}
+		\item \begin{vmatrix} 2 & -1 & 3 \\ 4 & -2 & 0 \\ 1 & 3 & -4 \end{vmatrix}
+		\item \begin{vmatrix} 2 & -1 & 0 & 3 \\ 0 & 2 & 3 & 2 \\ 1 & -1 & 3 & 0 \\ -2 & 3 & 0 & -1 \end{vmatrix}
+		\item \begin{vmatrix} 2 & 4 & 0 & 2 & 0 \\ 3 & 0 & 5 & 1 & 0 \\ 0 & 6 & 2 & 0 & 3 \\ 4 & 0 & 2 & 0 & 4 \\ 0 & 6 & 1 & 0 & 2 \end{vmatrix}
+	\end{enumerate}
+	\end{multicols}
+\end{enumerate}
+\vspace{20pt} 
+ \textbf{Respuestas}\begin{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $\Delta=38$. Resolución por \href{https://youtu.be/bsUUVmeqsdY?t=104}{Matemáticas profe Alex}
+		\item $\Delta=\frac{7}{2}$. Resolución por \href{https://youtu.be/bsUUVmeqsdY?t=237}{Matemáticas profe Alex}
+		\item $\Delta=-217$. Resolución por \href{https://youtu.be/8OnOZvc5rFQ}{Matemáticas profe Alex}
+		\item $\Delta=-217$. Resolución por \href{https://youtu.be/0iXeaZwPkzo}{Álgebra para Todos}
+		\item $\Delta=-12$. Resolución por \href{https://youtu.be/qDyeSvFMbTg}{Álgebra para Todos}
+		\item $\Delta=-272$. Resolución por \href{https://youtu.be/fPIaDQ8TOs0}{Ktipio}
+\end{enumerate}\end{enumerate}\end{document}
