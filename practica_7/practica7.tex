@@ -1,0 +1,169 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 7: Rectas y Planos } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Hallar una recta del plano que cumpla con las siguientes condiciones. Dar una ecuación implícita o general, explícita, paramétrica vectorial, paramétrica cartesiana y simétrica. Indicar si la recta hallada es única.
+	%\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Pasa por el punto $P(-3,1)$ y es paralela al vector $\vec{d}=(2,-1)$
+
+		\item Pasa por el punto $P(1,2)$ y es paralela al vector $\overrightarrow{AB}$ con $A(2,-5)$ y $B(4,-5)$
+
+		\item es coincidente con la recta $L: 2x-y+8=0$
+
+		\item Pasa por los puntos $P(-3,0)$ y $Q(-3,3)$
+
+		\item Pasa por el punto $P(1,4)$ y pendiente $\displaystyle{-\frac{1}{2}}$
+
+		\item Pasa por el origen y es perpendicular al vector $\vec{n}=(2,3)$
+
+		\item Pasa por el punto $P(1,2)$ y es perpendicular al eje de abscisas (eje $x$)
+
+		\item Tiene a -4 como absisa al origen y 3 como ordenada al origen
+
+		\item Pasa por los puntos $P(-3,1)$, $Q(1,3)$, $R(3,-3)$
+
+		\item Corta al eje de ordenadas en el punto $M(0,2)$
+
+		\item Forma un ángulo de $30^{\circ}$ con el eje de abscisas (eje $x$).
+
+		\item Pasa por el punto $P(3,-2)$ y es normal a $\vec{n}$, donde $\vec{n}$ es un vector con ángulo $\displaystyle\frac{\pi}{4}$ con respecto al eje de ordenadas.
+
+	\end{enumerate}
+	%\end{multicols}
+
+	\exercise Analizar las posiciones relativas de las rectas del plano. Es decir, analizar si son paralelas, coincidentes, perpendiculares o incidentes. Calcular la intersección entre las rectas.
+	%\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $s: 2x+y-1=0$ ~~y~~ $r:\left\{\begin{matrix}x=1+2t \\ y=3-t\end{matrix}\right.$
+		\answer $s \parallel r$. $s \cap r=\emptyset$.  Resolución por \href{https://youtu.be/cHsXMw3V4mQ}{Elena Virseda}
+
+		\item $r:\left\{\begin{matrix}x=-3+2t \\ 4-t\end{matrix}\right.$ ~~y~~ $s:\displaystyle{\frac{x+6}{-4}}=\displaystyle{\frac{y-1}{2}}$.
+		\answer $r \parallel s$. $r \cap s=\emptyset$. Resolución por \href{https://youtu.be/MPUh70MKVUY}{Matemáticas y Física con Pablo}
+
+		\item $r_1: 2x-4y=2$ ~~y~~ $r_2: x+y=0$.
+		\answer $r_1$ y $r_2$ son incidentes no-perpendiculares ya que se intersectan en un punto y sus normales no son perpendiculares: $(2,-4) \not\perp (1,1)$. La intersección es $r_1 \cap r_2=\left\{ \left(\frac{1}{3},-\frac{1}{3}\right)\right\}$. \href{https://youtu.be/LgIU8pd8DeM?t=97}{Matemáticas con Huais}
+
+		\item $r_1: x+3y=7$ ~~y~~ $r_2: (x,y)=(4,1)+\alpha (-6,2)$ con $\alpha \in\mathbb{R}$.
+		\answer $r_1$ y $r_2$ son coincidentes. La intersección es $r_1 \cap r_2=r_1=r_2$. \href{https://youtu.be/LgIU8pd8DeM?t=884}{Matemáticas con Huais}
+
+		\item $r: 2x-y-3=0$ ~~y~~ $s: (x,y)=(-1,0)+ k (-6,3)$ con $k\in\mathbb{R}$.
+
+		\item $r: y=-\frac{1}{2}x+\frac{3}{2}$ ~~y~~ $s: \frac{1}{4}x+\frac{3}{4}y-3=0$.
+
+		\item $r: (x,y)=(4,2-3k)$ ~~y~~ $s: (x,y)=(2-4h,-3)$ con $k,h\in\mathbb{R}$.
+
+		\item $r: (x,y)=k(3,-2)+(10,5)$ con $k\in\mathbb{R}$ ~~y~~ $s: 2x+3y-35=0$.
+
+	\end{enumerate}
+	%\end{multicols}
+	
+	\exercise Graficar los siguientes lugares geométricos relacionados a rectas.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $4x+3y > 4$
+
+		\item $4x+3y \neq 4$
+
+		\item $2x-y \leq 6$
+
+		\item $2x-y < 6$
+
+		\item $(x,y)=k(1,2)+(-2,3)$ con $k\in[0,+\infty)$
+
+		\item $(x,y)=\lambda(1,2)+(0,3)$ con $\lambda\in\mathbb{Z}$
+
+		\item $(x,y)=k(1,2)+(-1,3)$ con $k\in[-1,1]$
+
+		\item $y=mx+2$ con $m\in[0,1)$
+
+		\item $y=2x+b$ con $b\in[-2,1]$
+
+		\item $R=\{(x,y) \in \mathbb{R}^2 ~|~ -x+y-5=0 ~\land~ 2x+y-17=0 \}$
+
+		\item $S=\{(x,y) \in \mathbb{R}^2 ~|~ -x+y-5=0 ~\lor~ 2x+y-17=0 \}$
+
+		\item $\left\{\begin{matrix}-x+y-5=0 \\ 2x+y-17=0 \\ x+2y-10=0 \end{matrix}\right.$
+
+		\item $\left\{\begin{matrix}-x+y-5=0 \\ 2x+y-17=0 \\ x+2y-17=0 \\ 3x+3y-34=0 \end{matrix}\right.$
+	
+		
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Resolver los siguientes problemas integradores
+	%\begin{multicols}{1}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Calcular la distancia entre el origen de coordenadas y la recta $r: 3x+4y -24=0$.
+
+		\item Calcular la distancia entre el punto $(-1,7)$ y la recta $r: x-3y -10=0$.
+
+		\item Encontrar un punto que equidiste de las rectas $r: x+2y-3=0$ y $s: -x-2y+4=0$ y otro que equidiste de las rectas $r$ y $t: 2x-y+1=0$.
+
+		\item Calcular la distancia entre la recta que pasa por (1,-4) de pendiente -2 y la recta $r: 2x+y-6=0$.
+
+		\item Calcular la distancia entre las rectas $r: (x,y)=t(4,4)+(2,-5)$ y $s: (x,y)=k(1,1)+(0,-9)$
+
+		\item Calcular la proyección ortogonal del punto $P(3,-1)$ sobre la recta $r: -x-y-12=0$.
+
+		\item Calcular la proyección ortogonal del punto $P(-2,2)$ sobre la recta $r: -5x+y-1=0$ y el punto simétrico $P'$.
+
+		\item Hallar el valor de $a\in\mathbb{R}$ para que el ángulo entre $r_1: ax+3y=0$ ~y~ $r_2:\left\{\begin{matrix} x=4+\lambda \\ 1-2\lambda \end{matrix}\right.$ sea de $30^{\circ}$. 
+
+	\end{enumerate}
+	%\end{multicols}
+
+\end{enumerate}
+
+\end{document}
