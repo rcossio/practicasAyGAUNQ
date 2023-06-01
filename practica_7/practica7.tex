@@ -34,6 +34,8 @@
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
 \newcommand{\answer}{\item[**]}
 \newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+
 
 \begin{document}
 
@@ -54,28 +56,40 @@
 	\begin{enumerate} [label=(\alph*)]
 		
 		\item Pasa por el punto $P(-3,1)$ y es paralela al vector $\vec{d}=(2,-1)$
+		\answer La recta es única. \\ Algunas ecuaciones: $(x,y)=(-3,1)+k(2,-1)$. \\ $\SEL{ x=-3+2k \\ y=1-k \hfill }$ \\ $\displaystyle{\frac{x+3}{2}=\frac{y-1}{-1}}$.
 
 		\item Pasa por el punto $P(1,2)$ y es paralela al vector $\overrightarrow{AB}$ con $A(2,-5)$ y $B(4,-5)$
+		\answer La recta es única. Se utiliza $\overrightarrow{AB}=(2,0)$ como director. \\ $(x,y)=(1,2)+k(2,0)$. \\ $\SEL{ x=1+2k \\ y=2 \hfill }$ \\ $y=2$.\\ $y-2=0$. \\ No existe simétrica.
 
-		\item es coincidente con la recta $L: 2x-y+8=0$
+		\item Es coincidente con la recta $L: 2x-y+8=0$
+		\answer La recta es única. $4x-2y+16=0$. $y=2x+8$. $(x,y)=(0,8)+k(1,2)$. \\ $\SEL{ x=k \hfill \\ y=8+2k }$ \\ $\displaystyle{x=\frac{y-8}{2}}$.
 
 		\item Pasa por los puntos $P(-3,0)$ y $Q(-3,3)$
+		\answer La recta es única. Se utiliza $\overrightarrow{PQ}=(0,3)$ como director. \\ $(x,y)=(-3,0)+k(0,3)$  \\ $\SEL{ x=-3 \\ y=3k }$ \\ $x=-3$. \\ $x+3=0$. \\ No existe simétrica.
 
 		\item Pasa por el punto $P(1,4)$ y pendiente $\displaystyle{-\frac{1}{2}}$
+		\answer La recta es única. $y=-\frac{1}{2}x+\frac{9}{2}$. $(x,y)=(1,4)+k(2,-1)$. \\ $\SEL{ x=1+2k \\ y=4-k }$ \\ $\displaystyle{\frac{x-1}{2}=\frac{y-4}{-1}}$.
 
 		\item Pasa por el origen y es perpendicular al vector $\vec{n}=(2,3)$
+		\answer La recta es única. Se utiliza $\vec{d}=(-3,2)$ como director ya que $\vec{n} \perp \vec{d}$. \\ $(x,y)=k(-3,2)$. \\ $\SEL{ x=-3k \\ y=2k }$ \\ $\displaystyle{\frac{x}{-3}=\frac{y}{2}}$.
 
 		\item Pasa por el punto $P(1,2)$ y es perpendicular al eje de abscisas (eje $x$)
+		\answer La recta es única. Se utiliza $\hat{\jmath}$ como director ya que $\hat{\jmath} \perp \hat{\imath}$. \\ $(x,y)=(1,2)+k(0,1)$. \\ $\SEL{ x=1 \hfill\\ y=2+k }$ \\ $x=1$. \\ $x-1=0$. \\ No existe simétrica.
 
 		\item Tiene a -4 como absisa al origen y 3 como ordenada al origen
+		\answer La recta es única. De los puntos $A(-4,0)$ y $B(0,3)$ se obtiene el vector director $\overrightarrow{AB}=(4,3)$. \\ $(x,y)=(0,3)+k(4,3)$. \\ $\SEL{ x=4k \hfill \\ y=3+3k }$ \\ $\displaystyle{\frac{x}{4}=\frac{y-3}{3}}$.
 
 		\item Pasa por los puntos $P(-3,1)$, $Q(1,3)$, $R(3,-3)$
+		\answer No existe una recta que cumpla con las condiciones ya que los puntos no están alineados. Se puede ver porque $\overrightarrow{PQ} \nparallel\overrightarrow{QR}$
 
 		\item Corta al eje de ordenadas en el punto $M(0,2)$
+		\answer La recta NO es única, la misma responde a la ecuación $y=mx+2$ o $(x,y)=(0,2)+k(a,b)$. Por ejemplo, se elije $m=1$ y se obtiene la recta $y=x+2$.
 
 		\item Forma un ángulo de $30^{\circ}$ con el eje de abscisas (eje $x$).
+		\answer La recta NO es única. Se obtiene el vector unitario $\hat{d}=(\cos 30^{\circ}, \sin 30^{\circ})=\left(\frac{\sqrt{3}}{2},\frac{1}{2}\right)$ como director. Se puede elegir cualquier punto para definir la recta. Por ejemplo, con $P(1,3)$ y se obtiene la recta $(x,y)=(1,3)+k\left(\frac{\sqrt{3}}{2},\frac{1}{2}\right)$.
 
 		\item Pasa por el punto $P(3,-2)$ y es normal a $\vec{n}$, donde $\vec{n}$ es un vector con ángulo $\displaystyle\frac{\pi}{4}$ con respecto al eje de ordenadas.
+		\answer $\vec{n}$ puede ser $\overrightarrow{n_1}=(\cos 45^{\circ}, \sin 45^{\circ})=\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$ o $\overrightarrow{n_2}=(\cos 135^{\circ}, \sin 135^{\circ})=\left(-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$. Por lo que la recta no es única. Las opciones son: $(x,y)=(3,-2)+k\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$ o $(x,y)=(3,-2)+t\left(-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$.
 
 	\end{enumerate}
 	%\end{multicols}
@@ -97,6 +111,7 @@
 		\answer $r_1$ y $r_2$ son coincidentes. La intersección es $r_1 \cap r_2=r_1=r_2$. \href{https://youtu.be/LgIU8pd8DeM?t=884}{Matemáticas con Huais}
 
 		\item $r: 2x-y-3=0$ ~~y~~ $s: (x,y)=(-1,0)+ k (-6,3)$ con $k\in\mathbb{R}$.
+		\answer Reemplazamos $\SEL{x=-1-6k \\ y=3k \hfill}$ en $2x-y-3=0$ y obtenemos $k=-\frac{1}{3}$. Por lo tanto, $r \cap s=\left\{ \left(1,-1\right)\right\}$. Además $\overrightarrow{n_r}=(2,-1)$ es paralela a $\overrightarrow{d_s}=(-6,3)$, por lo que $r \perp s$.
 
 		\item $r: y=-\frac{1}{2}x+\frac{3}{2}$ ~~y~~ $s: \frac{1}{4}x+\frac{3}{4}y-3=0$.
 
@@ -120,6 +135,7 @@
 		\item $2x-y < 6$
 
 		\item $(x,y)=k(1,2)+(-2,3)$ con $k\in[0,+\infty)$
+		\answer ~\\[-10pt] \includegraphics[width=55mm]{plots/plot1.png}
 
 		\item $(x,y)=\lambda(1,2)+(0,3)$ con $\lambda\in\mathbb{Z}$
 
