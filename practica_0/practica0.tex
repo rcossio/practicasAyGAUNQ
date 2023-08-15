@@ -1,0 +1,76 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 7: Rectas y Planos } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Factorizar completamente las siguientes expresiones
+	%\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $x^4+2x^3-3x^2$
+		\item $9x^4-144$
+		\item $\df{1}{5}t^3+\df{1}{5}t^2-\df{6}{5}t$
+		\item $y^4+y^5$
+
+	\end{enumerate}
+	%\end{multicols}
+
+	\exercise Simplificar completamente las siguientes expresiones
+	%\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $\left(\df{18-x}{x^2-4}+\df{5}{x+2}\right)\cdot \df{3x+3}{x^2+2x+1}$
+		\item $\left(\df{2+x}{2-x}-\df{2-x}{2+x}\right)\cdot \left(1\%\df{2-x}{2+x}\right)^{-1}$
+	\end{enumerate}
+	%\end{multicols}
+
+\end{enumerate}
+
+\end{document}
