@@ -34,6 +34,8 @@
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
 \newcommand{\answer}{\item[**]}
 \newcommand{\exercise}{\item}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+
 
 %Macro Gauss Jordan
 \newenvironment{amatrix}[1]{%
@@ -133,6 +135,19 @@
 	\end{enumerate}
 	\end{multicols}
 
+	\exercise Resolver los siguientes acetijos
+	\begin{multicols}{2}
+		\begin{enumerate}[label=(\alph*)]
+		
+			\item \img{1.05\textwidth}{img/table_puzzle.png}
+			\item \img{\textwidth}{img/fruit_puzzle.png}
+			\item \img{0.6\textwidth}{img/square_puzzle.png}
+			\item \img{\textwidth}{img/fruit_puzzle2.png}
+		
+		\end{enumerate}
+		\end{multicols}
+
+
 	\exercise Plantear ecuaciones o sistemas de ecuaciones que modelen las situaciones. Resolverlas/los y responder a lo pedido. \\ \textit{Nota: Los problemas usan datos reales o verosímiles pero tienen cierto grado de simplificación para no complicar los problemas}
 	\begin{enumerate} [label=(\alph*)]
 
@@ -150,7 +165,6 @@
 
 		\item La combustión del metano (CH$_4$) consume oxígeno (O$_2$) y produce dióxido de carbono (CO$_2$) y agua (H$_2$O) según la reacción: \\ \phantom{-------------------------------------------------}$ aCH_4 + bO_2 \to cCO_2 + d H_{2}O$ \\ donde $a$, $b$, $c$ y $d$ de denominan coeficientes estequiométricos. Si se queman $a$~moles de metano se consumen $b$ moles de oxigeno obtienen $c$ moles de CO$_2$ y $d$ moles de agua. Considerando la ley de conservación de masa, hallar coeficientes válidos para la reacción. ¿Cuántos moles de CO$_2$ y de H$_2$O se producen si se queman 5~moles de metano? 
 		\answer En la reacción tenemos tres átomos que se conservan (C,O,H), por que lo obtenemos una ecuación para cada uno: \\ \vspace{2mm} $\left\{\begin{matrix} a-c = 0 \\ 2b -2c -d = 0 \\ 4a - 2d = 0 \end{matrix}\right.$ \\ La solución del sistema es $(a,b,c,d) = (a,2a,a,2a)$, por lo que elegimos $a=1$, y la reacción queda $ CH_4 + 2O_2 \to CO_2 + 2 H_{2}O$. Si se consumen 5 moles de metano, $a=5$ y la solución será $(5,10,5,10)$, es decir, se formaran 5 moles de CO$_2$ y 10 moles de H$_2$O.
-
 
 	\end{enumerate}
 

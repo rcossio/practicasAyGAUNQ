@@ -25,6 +25,7 @@
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
 \newcommand{\answer}{\item[**]}
 \newcommand{\exercise}{\item}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
 %Macro Gauss Jordan
 \newenvironment{amatrix}[1]{%
   \left(\begin{array}{@{}*{#1}{c}|c@{}}
@@ -72,6 +73,15 @@
 		\item $\begin{amatrix}{4} 1 & 0 & 0 & -1 & \frac{1}{2} \\ 0 & 0 & 1 & \frac{3}{4} & 2 \\ 0 & 0 & 0 & 0 & 0 \end{amatrix}$
 	\end{enumerate}
 	\end{multicols}
+	\exercise Resolver los siguientes acetijos
+	\begin{multicols}{2}
+		\begin{enumerate}[label=(\alph*)]
+			\item \img{1.05\textwidth}{img/table_puzzle.png}
+			\item \img{\textwidth}{img/fruit_puzzle.png}
+			\item \img{0.6\textwidth}{img/square_puzzle.png}
+			\item \img{\textwidth}{img/fruit_puzzle2.png}
+		\end{enumerate}
+		\end{multicols}
 	\exercise Plantear ecuaciones o sistemas de ecuaciones que modelen las situaciones. Resolverlas/los y responder a lo pedido. \\ \textit{Nota: Los problemas usan datos reales o verosímiles pero tienen cierto grado de simplificación para no complicar los problemas}
 	\begin{enumerate} [label=(\alph*)]
 		\item En promedio, por año, una hectárea de manzanos produce 24,6 toneladas de manzana mientras que una hectárea de perales produce 27,1 toneladas de pera. ¿Cuántas toneladas de fruta se obtienen si se siembran 3 hectareas de manzanos y 5 hectareas de perales? ¿Cuántas hectáreas hay que plantar de cada árbol para obtener 400 toneladas de fruta al año? \\ \textit{Fuente: Cadena de valor Manzana y Pera. Ministerio de Hacienda. Secretaría de Política Económica. Diciembre 2017. ISSN 2525-0221.}
@@ -103,7 +113,7 @@
 		\item $rg(A)=rg(A^*)=3<n=4$. Sistema compatible indeterminado cuya solución depende de 1 parámetro. \\ $(x,y,z,w)=(-6+2y,y,2,0)$. \\ $S=\left\{(x,y,z,w)\in \mathbb{R}^4 ~|~ x=-6+2y ~\land~ z=2 ~\land~ w=0 \right\}$. \\ Con $y=5 \to (4,5,2,0)$. Con $y=4 \to (2,4,2,0)$. Con $y=3 \to (0,3,2,0)$.
 		\item $rg(A)=1 \neq rg(A^*)=2$. Sistema incompatible. $S=\emptyset$.
 		\item $rg(A)=rg(A^*)=2<n=4$. Sistema compatible indeterminado cuya solución depende de 2 parámetros. \\ $(x,y,z,w)=(\frac{1}{2}+w,y,2-\frac{3}{4}w,w)$. \\ $S=\left\{(x,y,z,w)\in \mathbb{R}^4 ~|~ x=\frac{1}{2}+w ~\land~ z=\frac{3}{4}w ~\land~ w=0 \right\}$. \\ Con $y=1$ y $w=1$ $\to (\frac{3}{2},1,\frac{5}{4},1)$. Con $y=1$ y $w=2$ $\to (\frac{5}{2},1,\frac{1}{2},2)$. Con $y=2$ y $w=0$ $\to (\frac{1}{2},2,2,0)$.
-\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item Si llamamos $m$ a las hectáreas de manzana, $p$ a las hectáreas de peras y $f$ a las toneladas de fruta obtenidas obtenemos la ecuación $24,6 m + 27,1 p = f$. Con $m=3$ y $p=5$, tendremos $f=24,6 (3)+27,1(5)=209,3$ toneladas de fruta. Con $f=400$ tenemos la ecuación $24,6 m + 27,1 p = 400$, de donde se puede despejar $p=-\frac{246}{271}m+\frac{4000}{271}$. La solución es $(m,p)=\left(m,-\frac{246}{271}m+\frac{4000}{271}\right)$, es decir, para obtener 400 toneladas de fruta hay infinitas soluciones, la cantidad de perales dependerá de la de manzanos. Por ejemplo, si se plantan 10 hectáreas de manzanos, se necesitarán $\sim5,683$ hectáreas de perales.
+\end{enumerate}\exercise---\exercise\begin{enumerate} [label=(\alph*)]		\item Si llamamos $m$ a las hectáreas de manzana, $p$ a las hectáreas de peras y $f$ a las toneladas de fruta obtenidas obtenemos la ecuación $24,6 m + 27,1 p = f$. Con $m=3$ y $p=5$, tendremos $f=24,6 (3)+27,1(5)=209,3$ toneladas de fruta. Con $f=400$ tenemos la ecuación $24,6 m + 27,1 p = 400$, de donde se puede despejar $p=-\frac{246}{271}m+\frac{4000}{271}$. La solución es $(m,p)=\left(m,-\frac{246}{271}m+\frac{4000}{271}\right)$, es decir, para obtener 400 toneladas de fruta hay infinitas soluciones, la cantidad de perales dependerá de la de manzanos. Por ejemplo, si se plantan 10 hectáreas de manzanos, se necesitarán $\sim5,683$ hectáreas de perales.
 		\item Llamamos $p$ a la cantidad de bolsitas pequeñas y $g$ a la cantidad de bolsitas grandes. Tenemos el sistema de ecuaciones \\ \vspace{2mm} $\left\{\begin{matrix} p+g=120 \\ 800p+1000g=102000 \end{matrix}\right.$ \\ Resolviendo el sistema obtenemos que se vendieron 90 bolsitas pequeñas y 30 bolsas grandes.
 		\item Llamamos $x$ a la cantidad de viajes de camiones de larga distancia e $y$ a la cantidad de viajes de camiones urbanos. Considerando un viaje de 1050~km y las toneladas que puede llevar cada camión sabemos que se producen $0,057~.~1050~.~33=1975,05$ kg de CO$_2$ por viaje en camión de larga distancia y $0,307~.~1050~.~18=5802,3$ kg de CO$_2$ por viaje en camiones urbanos. Podemos armar una ecuación para considerar las toneladas de carga ($t$)y una para considerar el CO$_2$ ($c$). Obtenemos el siguiente sistema de ecuaciones: \\ \vspace{2mm} $\left\{\begin{matrix} 33x+18y=t \\ 1975,05x+5802,3y=c \end{matrix}\right.$ \\ Por lo que, con $x=10$ e $y=8$ tenemos 474 toneladas y 66168,9~kg de CO$_2$. Por otra parte, si consideramos $t=678$ y $c=97278,3$ tenemos el sistema \\ \vspace{2mm} $\left\{\begin{matrix} 33x+18y=678 \\ 1975,05x+5802,3y=97278,3 \end{matrix}\right.$ \\ La solución es $(x,y)=(14,12)$, es decir, se realizaron 14 viajes de camiones de larga distancia y 12 viajes de camiones urbanos.
 		\item Llamamos $x$, $y$ y $z$ a las viandas vegetarianas, con carne y con pollo, respectivamente. Consideramos la cantidad de viandas, su volumen y peso (de momento, ignoramos los precios). Se obtiene el sistema: \\ \vspace{2mm} $\left\{\begin{matrix} x+y+z=45 \\ x+0,8y+0,8z=42 \\ 0,4x+0,6y+0,4z=20 \end{matrix}\right.$ \\ La solución es $(x,y,z)=(30,10,5)$, es decir, se pidieron 30 viandas vegetarianas, 10 con carne y 5 con pollo. Con las viandas calculamos el precio total: $900x+1200y+1100z=900(30)+1200(10)+1100(5)=44500$ pesos.
