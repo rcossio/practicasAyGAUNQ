@@ -1,0 +1,279 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+%Enumeracion
+\usepackage{enumitem}
+%Páginas sin numeración
+\pagestyle{empty}
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\begin{document}
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 1: Números complejos } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+\begin{enumerate}
+	\exercise Resolver las ecuaciones cuadráticas y comprobar el resultado.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $x^2+3x=-3$
+		\item $2y^2+4y=-5$
+		\item $t^2+3t=-8$
+		\item $x(x-10)=-34$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Efectuar las siguientes operaciones y obtener el número complejo en forma binómica.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(-2+3i)+(1+3i)$
+		\item $(1-3i)-(4-2i)$
+		\item $i^2+3i+2-5i^3$
+		\item $(3+2i)(i-5)$
+		\item $(i-2)(3+2i)(1-3i)i$
+		\item $(3+4i)^{-1}$
+		\item $\df{5-2i}{5i-2}$
+		\item $\df{3+2i}{-3-4i}$
+		\item $\df{-3i+1}{4i-2}$
+		\item $(1-2i)^2$
+		\item $\df{i}{i+1}+\left(\df{1+i}{i}\right)^2$
+		\item $(1+2i)^3$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Representar en el plano complejo los siguientes números e indicar su módulo y argumento.
+	\begin{multicols}{3}
+	\begin{enumerate} [label=(\alph*)]
+		\item $1+i$
+		\item $2-3i$
+		\item $-1+3i$
+		\item $-2i-4$
+		\item $3$
+		\item $2i$
+		\item $-1$
+		\item $-5i$
+		\item $-\sqrt{2}$
+		\item $4i+2$
+		\item $1+\sqrt{2}$
+		\item $-\df{1}{2}+\df{3}{4}i$
+		\item $i-4$
+		\item $1+\sqrt{2}-\sqrt{3}i$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Transformar los números complejos a sus formas restantes (binómica, trigonométrica o exponencial).
+	\begin{multicols}{3}
+	\begin{enumerate} [label=(\alph*)]
+		\item $1+\sqrt{3}i$
+		\item $2 \cis{\df{\pi}{6}}$
+		\item $2e^{\frac{5\pi}{6}i}$
+		\item $\sqrt{2}-\sqrt{2}i$
+		\item $5 \cis{-\df{\pi}{3}}$
+		\item $7e^{\pi i}$
+		\item $-7$
+		\item $\sqrt{6}\cis{\pi}$
+		\item $3e^{\frac{\pi}{4}i}$
+		\item $4i$
+		\item $2\cis{\df{\pi}{4}}$
+		\item $e^{\frac{\pi}{2}i}$
+		\item $-2\sqrt{3}+2i$
+		\item $4\cis{0}$
+		\item $2e^{-\frac{\pi}{3}i}$
+		\item $-1-i$
+		\item $1\cis{\df{\pi}{12}}$
+		\item $4e^{\frac{3\pi}{2}i}$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Utilizando complejos genéricos $z=a+bi$ y $w=c+di$, demostrar que se cumplen las siguientes propiedades para todos los números complejos.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $Re(z+3w)=Re(z)+Re(3w)$
+		\item $\conj{\conj{z}+w}=z+\conj{w}$
+		\item $Im(z.\conj{z})=0$
+		\item $\df{z}{i}=-i.z$
+		\item $\conj{i.z}=-i.\conj{z}$
+		\item $z.\conj{z}=|z|^2$
+		\item $\conj{z-w}=\conj{z}-\conj{w}$
+		%\item $Re(z.w)\neq Re(z).Re(w)$
+		%\item $|z+w|\neq|z|+|w|$
+		\item $|z.(1+2i)|^2=(|z|.|3+4i|)^2$
+		\item $z+\conj{z} \in \mathbb{R}$
+		\item $z-\conj{z} \not\in \mathbb{R}$
+	\end{enumerate}
+	\end{multicols}
+	\exercise En cada inciso, hallar el número real ($x$, $y$, $m$, etc...) que cumpla la condición.
+	%\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(3+2i)(x+6i)$ es un número imaginario puro
+		\item $\df{y+3i}{2-5i}$ es un número real puro
+		\item $(5x+2m)+m^3i = 9-27i$
+	\end{enumerate}
+	%\end{multicols}
+	\exercise Utilizando la forma exponencial, calcular los siguientes números complejos.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(-1-\sqrt{3}i)^9$
+		\item $\df{1}{(2+2i)^7}$
+		\item $\df{(\sqrt{3}+i)^4}{(-1+\sqrt{3}i)^6}$
+		\item $\df{(1+i)^4}{(-1-i)^6}$
+		\item $\sqrt[3]{2\sqrt{3}+2i}$ (las raíces cúbicas de $2\sqrt{3}+2i$)
+		\item $\sqrt[5]{-\sqrt{3}i-1}$ (las raíces quintas de $-\sqrt{3}i-1$)
+		\item $\sqrt[4]{-\df{\sqrt{3}}{2}i+\df{1}{2}}$ (las raíces cuartas de $-\df{\sqrt{3}}{2}i+\df{1}{2}$)
+		\item $\sqrt[3]{-1-i\sqrt{3}}$ (las raíces cúbicas de $-1-i\sqrt{3}$)
+		\item $\sqrt[5]{-1+\sqrt{3}i}$ (las raíces quintas de $-1+\sqrt{3}i$)
+	\end{enumerate}
+	\end{multicols}
+	\exercise Hallar todos los valores de $z \in \mathbb{C}$ que solucionan la ecuación.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $iz^{-1}=2-i$
+		\item $z(1+2i)=2z+\conj{z}$
+		\item $\conj{z}=\df{3+i}{Re(z)}$
+		\item $\df{z+1}{Im(z)}=\conj{z}$
+		\item $z+|z|^2=7+i$
+		\item $z^5-\sqrt{3}=i$
+		\item $z^5-1=0$
+		\item $\df{-3i+1}{4i-2}=z^2i$
+		\item $z^4-8=0$
+		\item $z^4+i=0$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Indicar si las siguientes afirmaciones son verdaderas o falsas. Jusificar.
+	\begin{enumerate} [label=(\alph*)]
+		\item El módulo de $z=3+i$ es mayor que el de $w=2-2i$
+		\item Si el argumento de $(z)$ es $\alpha$, entonces el argumento de $2z$ será $2\alpha$ 
+		\item Dado $z=2e^{\beta i}$ y $w=1+i$, el argumento de $z.w$ será $\beta+\df{\pi}{4}$
+		\item Si $z$ es un número real puro, entonces $z^2$ es un número real puro
+	\end{enumerate}
+	\exercise Representar en el plano complejo los números $z=x+yi$ tales que cumplan las siguientes condiciones.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $|z|=3$
+		\item $|z|\leq 2$
+		\item $|z-3| = 4$
+		\item $|z+1+i| \leq 4$
+		\item $|z-2-2i|=2 ~~\land~~ \df{\pi}{4} \leq Arg(z) \leq \df{pi}{2}$
+		\item $|z+i|<1 ~~\land~~ \df{7}{4}\pi < Arg(z) < \df{\pi}{2}$
+		\item $Im(z)> -\df{1}{3}Re(z) ~~\land~~ 2 \leq |z-3+i| \leq 4$
+		\item $3Im(z)<0 ~~\lor~~ |z+1| \leq 4$
+		\item $4Im(z)=4 ~~\lor~~ 2<|z-3+i|$
+	\end{enumerate}
+	\end{multicols}
+	\exercise En el plano complejo, el número $w=z.e^{\phi i}$ está rotado $\phi$ grados con respecto a $z$ y el número $u=k.z$ presenta una expansión de factor $k\in \mathbb{R}$ con respecto al origen. Utilizar estas propiedades de los complejos y realizar las siguientes actividades.
+	\begin{enumerate} [label=(\alph*)]
+		\item Rotar el complejo $z=3+i$ para que pertenezca a la región $A=\{ z \in \mathbb{C} ~/~ |z+3| \leq 1 \}$. Graficar.
+		\item Escalar el complejo $z=1+4i$ para que pertenezca a la región $B=\{ z \in \mathbb{C} ~/~ Im(z) \leq 2 - Re(z) \}$. Graficar.
+		\item Al conectar los puntos de los complejos $a=2i$, $b=0$ y $c=1$ se forma la letra L. Rotar la letra $90^{\circ}$ en sentido antihorario. Independientemente, obtener una L cuyas dimensiones sean el triple de grandes. Graficar.
+		\item Al conectar los puntos de los complejos $a=0$, $b=2i$, $c=1+\df{3}{2}i$ y $d=i$ se forma la letra P. Rotar la letra $60^{\circ}$ en sentido horario. Por otra parte, obtener una letra P cuyo tamaño sea la mitad del original. Graficar.
+		\item Al conectar los puntos de los complejos $a=i$, $b=1+i$, $c=0$ y $d=1$ se forma la letra Z cuya altura mide 1 unidad. Aplicar una rotación y/o expansión para obtener una N cuya base mida 2 unidades. Graficar.
+	\end{enumerate}
+\end{enumerate}
+\vspace{20pt} 
+ \textbf{Respuestas}\begin{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $x=-\df{3}{2} \pm \df{\sqrt{3}}{2} i$. \href{https://youtu.be/WhcMOb6DzU0}{Resolución}
+		\item $y=-1 \pm \df{\sqrt{6}}{2} i$. \href{https://youtu.be/cED7hCNJGus}{Resolución}
+		\item $y=-\df{3}{2} \pm \df{23}{2} i$. \href{https://youtu.be/IPSEzvEefZw}{Resolución}
+		\item $x=5\pm3i$
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $-1+6i$
+		\item $-3-i$
+		\item $1+8i$
+		\item $-17-7i$
+		\item $-23-11i$. \href{https://youtu.be/bxbLVzLAH9k}{Resolución}
+		\item $\df{3}{25}-\df{4}{25}i$. \href{https://youtu.be/BarDCwpxapc}{Resolución}
+		\item $-\df{20}{29}-\df{21}{29}i$. \href{https://youtu.be/UK70wbES5L8}{Resolución}
+		\item $-\df{17}{25}+\df{6}{25}i$. \href{https://youtu.be/Khdqus5O4jk}{Resolución}
+		\item $-\df{7}{10}+\df{1}{10}i$. \href{https://youtu.be/VguP5HyAzpQ}{Resolución}
+		\item $-3-4i$
+		\item $\df{1}{2}-\df{3}{2}i$. \href{https://youtu.be/edNxbzDs2wA}{Resolución}
+		\item $-11-2i$
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $|1+i|=\sqrt{2}$, ~$\arg(1+i)=\df{\pi}{4}=45^{\circ}$. 
+		\item $|2-3i|=\sqrt{13}$, ~$\arg(2-3i) \simeq -56.31^{\circ}$
+		\item $|-1+3i|=\sqrt{10}$, ~$\arg(-1+3i) \simeq 108.43^{\circ}$
+		\item $|-2i-4|=2\sqrt{5}$, ~$\arg(-2i-4) \simeq -153.43^{\circ}$
+		\item $|3|=3$, ~$\arg(3)=0^{\circ}$
+		\item $|2i|=2$, ~$\arg(2i)=\df{\pi}{2}=90^{\circ}$
+		\item $|-1|=1$, ~$\arg(-1)=\pi=180^{\circ}$
+		\item $|-5i|=5$, ~$\arg(-5i)=-\df{\pi}{2}=-90^{\circ}$
+		\item $|-\sqrt{2}|=\sqrt{2}$, ~$\arg(-\sqrt{2})=\pi=180^{\circ}$
+		\item $|4i+2|=2\sqrt{5}$, ~$\arg(4i+2) \simeq 63.44^{\circ}$
+		\item $|1+\sqrt{2}|=1+\sqrt{2}\simeq 2.4142$, ~$\arg(1+\sqrt{2}) = 0^{\circ}$
+		\item $\left|-\df{1}{2}+\df{3}{4}i\right|=\df{\sqrt{13}}{4}$, ~$\arg\left(-\df{1}{2}+\df{3}{4}i\right) \simeq 123.69^{\circ}$
+		\item $|i-4|=\sqrt{17}$, ~$\arg(i-4) \simeq 165.96^{\circ}$
+		\item $|1+\sqrt{2}-\sqrt{3}i|=\sqrt{6+\sqrt{8}} \simeq 2.9713$, ~$\arg(1+\sqrt{2}-\sqrt{3}i) \simeq -35.657^{\circ}$
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $1+\sqrt{3}i=2\cis(\df{\pi}{3})=2e^{\frac{\pi}{3}i}$ 
+		\item $2 \cis{\df{\pi}{6}}= \sqrt{3}+i= 2e^{\frac{\pi}{6}i}$
+		\item $2e^{\frac{5\pi}{6}i}=2\cis{\df{5\pi}{6}}=-\sqrt{3}+i$
+		\item $\sqrt{2}-\sqrt{2}i=2\cis{-\df{\pi}{4}}=2e^{-\frac{\pi}{4}}$
+		\item $5 \cis{-\df{\pi}{3}}=5e^{-\frac{\pi}{3}}=\df{5}{2}-\df{5\sqrt{3}}{2}i$
+		\item $7e^{\pi i}=7\cis{\pi}=-7+0i$
+		\item $-7+0i=7\cis{\pi}=7e^{\pi i}$
+		\item $\sqrt{6}\cis{\pi}=\sqrt{6}e^{\pi i}=-\sqrt{6}+0i$
+		\item $3e^{\frac{\pi}{4}i}=3\cis{\df{\pi}{4}}=\df{3\sqrt{2}}{2}+\df{3\sqrt{2}}{2}i$
+		\item $4i=4\cis{\df{\pi}{2}}=4e^{\df{\pi}{2}i}$
+		\item $2\cis{\df{\pi}{4}}=2e^{\frac{\pi}{4}i}=\sqrt{2}+\sqrt{2}i$
+		\item $e^{\frac{\pi}{2}i}=\cos\left(\df{\pi}{2}\right)+i\sin\left(\df{\pi}{2}\right)=0+i$
+		\item $-2\sqrt{3}+2i=4\cis{\df{5\pi}{6}}=4e^{\frac{5\pi}{6}i}$
+		\item $4\cis{0}=4e^{0}=4+0i$
+		\item $2e^{-\frac{\pi}{3}i}=2\cis{-\df{\pi}{3}}=1-\sqrt{3}i$
+		\item $-1-i=\sqrt{2}\cis{\df{\pi}{4}}=\sqrt{2}e^{\frac{\pi}{4}i}$
+		\item $\cos\left(\df{\pi}{12}\right)+i\sin\left(\df{\pi}{12}\right)=e^{\frac{\pi}{12}} \simeq 0.9659 + 0.2588 i$
+		\item $4e^{\frac{3\pi}{2}i}=4\cis{\df{3\pi}{2}}=0-4i$
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $z+3w=(a+bi)+3(c+di)=a+bi+3c+3di=(a+3c)+(b+d)i$. Por lo ranto, $Re(z+3w)=a+3c=Re(z)+Re(3w)$
+		\item Ya que $\conj{z}=a-bi$, se obtiene que el lado izquierdo es $\conj{\conj{z}+w}= \conj{(a-bi)+(c+di)} = \conj{(a+c)+(-b+d)i} = (a+c)-(-b+d)i = (a+c)+(b-d)i$. Por otra parte, como $\conj{w}=c-di$ el lado derecho es $z+\conj{w}=(a+bi)+(c-di)=(a+c)+(b-d)i$. Podemos obserar que son iguales: $\conj{\conj{z}+w}=z+\conj{w}=(a+c)+(b-d)i$
+		\item $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2=(a^2+b^2)+0i$, por lo que su parte imaginaria es cero.
+		\item $\df{z}{i}=\df{a+bi}{i}=\df{a+bi}{i}\cdot\df{i}{i}=\df{(a+bi)i}{-1}=-i(a+bi)=-iz$
+		\item Desarrollando el lado izquierdo se obtiene $\conj{i.z}=\conj{i(a+bi)}=\conj{ai+bi^2}=\conj{-b+ai}=-b-ai$. Desarrollando el lado derecho se obtiene $-i.\conj{z}=-i(a-bi)=-ai+bi^2=-b-ai$, que es lo mismo.
+		\item Por el lado izquierdo tenemos: $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2$. Por el lado derecho tenemos $|z|^2=\sqrt{a^2+b^2}^2=a^2+b^2$. Por lo tanto, son iguales.
+\item ---\item ---\item ---\item ---\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $x=4$. \href{https://youtu.be/rZMja-gZ3q0}{Resolución}
+		\item $y=-\df{6}{5}$\. href{https://youtu.be/cgQsvNewGZ0}{Resolución}
+		\item $(x,m)=(3,-3)$. \href{https://youtu.be/kQmzdYU4EsY}{Resolución}
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $512$. \href{https://youtu.be/bi_tVZZeAtY}{Resolución}
+		\item $8^{-\frac{7}{2}} e^{\frac{\pi}{4}i}$. \href{https://youtu.be/5ET1IAoQNdc}{Resolución}
+		\item $-\df{1}{8}+\df{3}{8}i$. \href{https://youtu.be/xveCBuIad3s}{Resolución}
+		\item $2^{\frac{75}{2}} e^{\frac{7\pi}{4}i}$. \href{https://youtu.be/fyrIGxGpW8g}{Resolución}
+		\item \href{https://youtu.be/5Z0cwrDtvzU}{Resolución}
+		\item \href{https://youtu.be/egki90qZmjQ}{Resolución}
+		\item \href{https://youtu.be/GuqxEvxgHkQ}{Resolución}
+		\item \hfer{https://youtu.be/x1KOtRgsRrg}{Resolución}
+		\item \href{https://youtu.be/Be6upizltaE}{Resolución}
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $z=-\df{1}{5}+\df{2}{5}$. \href{https://youtu.be/Yrh7otV4DzI}{Resolución}
+		\item $z=0+0i$. \href{https://youtu.be/erb6iZXGQw4}{Resolución}
+		\item $z=\sqrt{3}-\df{\sqrt{3}}{3}i$ y $z=-\sqrt{3}+\df{\sqrt{3}}{3}i$
+		\item $z=-\df{1}{2}-i$
+		\item $z=2+i$ y $z=-3+i$
+		\item \href{https://youtu.be/plpDsgzooH4}{Resolución}
+		\item $z^5-1=0$
+		\item \href{https://youtu.be/8z_3vpIabLI}{Resolución}
+		\item $z \in \{2,-2,2i,-2i\}$
+		\item \href{https://youtu.be/7ggnxlrUnrk}{Resolución}
+\end{enumerate}\exercise---\exercise\begin{enumerate} [label=(\alph*)]		\item $|z|=3$ es la circunferencia de radio 3 centrada en el origen. \href{https://youtu.be/AQVEp9ncSwQ}{Resolución}
+		\item $|z|\leq 2$ es el circulo de radio 2 centrado en el origen.
+		\item $|z-3| = 3$ es la circunferencia de radio 4 centrada en el punto $(3,0)$.
+		\item $|z+1+i| \leq 4$ es el circulo de radio 4 centrado en el punto $(-1,-1)$. \href{https://youtu.be/Rj6VfY1fLzw}{Resolución}
+		\item \href{https://youtu.be/5OHpMCsd8iE}{Resolución}
+		\item \href{https://youtu.be/OhXOvWcryMI}{Resolución}
+\item ---		\item \href{https://youtu.be/9pxsYXL6k88}{Resolución}
+		\item \href{https://youtu.be/3m1ZDSuXsX8}{Resolución}
+\end{enumerate}\exercise---\end{enumerate}\end{document}
