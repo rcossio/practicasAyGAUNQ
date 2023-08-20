@@ -1,0 +1,154 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 2: Polinomios } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Realizar las operaciones polinomiales
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $2P(x)+3Q(x)$ con $P(x)=2x^2+3$ y $Q(x)=x^3-x-1$
+		\item $4P(x).Q(x)$ con $P(x)=2x^2+3$ y $Q(x)=x^3-x-1$
+		\item $P(x)^2$ con $P(x)=2x^2+3$
+		\item $P(-2)+Q\left(\df{1}{2}\right)$
+
+		\item $\df{P(x)}{Q(x)}$ con $P(x)=x^4+4$ y $Q(x)=x^2+2x+2$
+		\answer \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
+
+		\item $\df{x^3+2x^2-x+10}{x+2}$
+		\answer \href{https://youtu.be/bfCWsvZfFq0}{Resolución}
+
+		\item $\df{P(x)}{Q(x)}$ con $P(x)=2x^4-2x^3-13x^2+8x+15$ y $Q(x)=x-3$
+		\answer \href{https://youtu.be/W3HcTD4IC94}{Resolución}
+
+		\item $\df{8x^4-4}{-2x^2+x-3}$
+		\answer \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Calcular el los valores reales ($\alpha$, $\beta$, $m$, etc.) para que se cumplan las condiciones
+
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $\alpha P(x)^2 = Q(x) +\beta$ con $P(x)=x-1$ y $Q(x)=2x^2-4x$
+		\item $\alpha P(x)-\beta Q(x) = -2x^2 +7x-3$ con $P(x)=x-1$ y $Q(x)=2x^2-4x$
+		\item $gr\left(\alpha P(x)^2 - Q(x)\right)=gr\left(P(x)\right)$ con $P(x)=x-1$ y $Q(x)=2x^2-4x$
+		\item $Q(\alpha)=P(4)$ con $P(x)=x-1$ y $Q(x)=2x^2-4x$
+
+		\item $3x^2+mx+4$ tiene a 1 como raíz
+		\answer \href{https://youtu.be/09D5Z3dcaXc}{Resolución}
+
+		\item $x^3+ax^2+bx+5$ es divisible por $Q(x)=x^2+x+1$
+		\answer \href{https://youtu.be/jE5a43IQ91E}{Resolución}
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Factorizar los siguientes polinomios considerando raíces reales y luego complejas.
+
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $x^2+\sqrt{3}x-1$
+		\item $8x^3-28x^2+14x+15$
+
+		\item $x^5-1$
+		\answer \href{https://youtu.be/ZMBXAdxOleM}{Resolución}
+
+		\item $x^5+3x^4+3x^3+3x^2+2x$
+		
+		\item $x^4-\df{9}{2}x^3+21x-10$
+		\answer \href{https://youtu.be/1V06bnuaadA}{Resolución}
+
+		\item $x^7+18x^6+81x^5$
+		\answer \href{https://youtu.be/Z1KatpJM2eU}{Resolución}
+
+		\item $x^6-x^4-20x^2$
+		
+		\item $x^7-x$
+		\answer \href{https://youtu.be/EQIEmdkGOZE}{Resolución}
+
+		\item $x^4+2x^2-2$
+
+		\item $x^6+3x^3-4$
+		\answer \href{https://youtu.be/BCo0pxE288w}{Resolución}
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Proponer un polinomio $P(x)$ que cumpla con las siguientes condiciones.
+
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Es de grado 4, 2 es raíz simple, -1 es raíz triple y $P(1)=24$
+		\answer \href{https://youtu.be/_XVYatmUKBg}{Resolución}
+
+		\item $P(x)$ es mónico y de grado 2. Además, $P(1)=3$ y $P(-4)=2$.
+		\answer \href{https://youtu.be/LDpq_f-baPc}{Resolución}
+
+		\item $P(x)$ es de grado 5, tiene coeficientes reales, $P(i)=0$ y $P(1+i)=0$
+
+		\item $gr\left(P(x)\right)=6$, $P(x)$ tiene coeficientes reales y algunas de sus raíces son $i$ y $1+i$
+		\answer \href{https://youtu.be/LDpq_f-baPc}{Resolución}
+
+
+	\end{enumerate}
+	\end{multicols}
+
+
+\end{enumerate}
+
+\end{document}
