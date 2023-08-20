@@ -107,6 +107,29 @@
 		\item $4e^{\frac{3\pi}{2}i}$
 	\end{enumerate}
 	\end{multicols}
+	\exercise Utilizando la forma exponencial, calcular los siguientes números complejos.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(-1-\sqrt{3}i)^9$
+		\item $\df{1}{(2+2i)^7}$
+		\item $\df{(\sqrt{3}+i)^4}{(-1+\sqrt{3}i)^6}$
+		\item $\df{(1+i)^4}{(-1-i)^6}$
+		\item $\sqrt[3]{2\sqrt{3}+2i}$ (las raíces cúbicas de $2\sqrt{3}+2i$)
+		\item $\sqrt[5]{-\sqrt{3}i-1}$ (las raíces quintas de $-\sqrt{3}i-1$)
+		\item $\sqrt[4]{-\df{\sqrt{3}}{2}i+\df{1}{2}}$ (las raíces cuartas de $-\df{\sqrt{3}}{2}i+\df{1}{2}$)
+		\item $\sqrt[3]{-1-i\sqrt{3}}$ (las raíces cúbicas de $-1-i\sqrt{3}$)
+		\item $\sqrt[5]{-1+\sqrt{3}i}$ (las raíces quintas de $-1+\sqrt{3}i$)
+	\end{enumerate}
+	\end{multicols}
+	\exercise Indicar si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+	\begin{enumerate} [label=(\alph*)]
+		\item El módulo de $z=3+i$ es mayor que el de $w=2-2i$
+		\item Si el argumento de $z$ es $\alpha$, entonces el argumento de $2z$ será $2\alpha$
+		\item Dado $z=2e^{\beta i}$ y $w=1+i$, el argumento de $z.w$ será $\beta+\df{\pi}{4}$
+		\item Si $z$ es un número imaginario puro, entonces $z^2$ es un número real puro
+		\item La distancia entre $z=2$ y $w=3+3i$ es $\sqrt{5}$
+		\item Dado $z=1+2i$ y $w=3+4i$, el cálculo de $|z-w|$ es equivalente a la distancia $d(z,w)$
+	\end{enumerate}
 	\exercise Utilizando complejos genéricos $z=a+bi$ y $w=c+di$, demostrar que se cumplen las siguientes propiedades para todos los números complejos.
 	\begin{multicols}{2}
 	\begin{enumerate} [label=(\alph*)]
@@ -122,6 +145,7 @@
 		\item $|z.(1+2i)|^2=(|z|.|3+4i|)^2$
 		\item $z+\conj{z} \in \mathbb{R}$
 		\item $z-\conj{z} \not\in \mathbb{R}$
+		\item $|z-w|=d(z,w)$
 	\end{enumerate}
 	\end{multicols}
 	\exercise En cada inciso, hallar el número real ($x$, $y$, $m$, etc...) que cumpla la condición.
@@ -132,21 +156,7 @@
 		\item $(5x+2m)+m^3i = 9-27i$
 	\end{enumerate}
 	%\end{multicols}
-	\exercise Utilizando la forma exponencial, calcular los siguientes números complejos.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
-		\item $(-1-\sqrt{3}i)^9$
-		\item $\df{1}{(2+2i)^7}$
-		\item $\df{(\sqrt{3}+i)^4}{(-1+\sqrt{3}i)^6}$
-		\item $\df{(1+i)^4}{(-1-i)^6}$
-		\item $\sqrt[3]{2\sqrt{3}+2i}$ (las raíces cúbicas de $2\sqrt{3}+2i$)
-		\item $\sqrt[5]{-\sqrt{3}i-1}$ (las raíces quintas de $-\sqrt{3}i-1$)
-		\item $\sqrt[4]{-\df{\sqrt{3}}{2}i+\df{1}{2}}$ (las raíces cuartas de $-\df{\sqrt{3}}{2}i+\df{1}{2}$)
-		\item $\sqrt[3]{-1-i\sqrt{3}}$ (las raíces cúbicas de $-1-i\sqrt{3}$)
-		\item $\sqrt[5]{-1+\sqrt{3}i}$ (las raíces quintas de $-1+\sqrt{3}i$)
-	\end{enumerate}
-	\end{multicols}
-	\exercise Hallar todos los valores de $z \in \mathbb{C}$ que solucionan la ecuación.
+	\exercise Hallar todos los valores de $z \in \mathbb{C}$ que cumplan la condición.
 	\begin{multicols}{2}
 	\begin{enumerate} [label=(\alph*)]
 		\item $iz^{-1}=2-i$
@@ -159,15 +169,11 @@
 		\item $\df{-3i+1}{4i-2}=z^2i$
 		\item $z^4-8=0$
 		\item $z^4+i=0$
+		\item $z+\conj{z}=4$ y $|z|=3$
+		\item $z^2+4iz-8=0$
+		\item $z^2-(3+i)z+(2+1)=0$
 	\end{enumerate}
 	\end{multicols}
-	\exercise Indicar si las siguientes afirmaciones son verdaderas o falsas. Jusificar.
-	\begin{enumerate} [label=(\alph*)]
-		\item El módulo de $z=3+i$ es mayor que el de $w=2-2i$
-		\item Si el argumento de $(z)$ es $\alpha$, entonces el argumento de $2z$ será $2\alpha$ 
-		\item Dado $z=2e^{\beta i}$ y $w=1+i$, el argumento de $z.w$ será $\beta+\df{\pi}{4}$
-		\item Si $z$ es un número real puro, entonces $z^2$ es un número real puro
-	\end{enumerate}
 	\exercise Representar en el plano complejo los números $z=x+yi$ tales que cumplan las siguientes condiciones.
 	\begin{multicols}{2}
 	\begin{enumerate} [label=(\alph*)]
@@ -184,11 +190,29 @@
 	\end{multicols}
 	\exercise En el plano complejo, el número $w=z.e^{\phi i}$ está rotado $\phi$ grados con respecto a $z$ y el número $u=k.z$ presenta una expansión de factor $k\in \mathbb{R}$ con respecto al origen. Utilizar estas propiedades de los complejos y realizar las siguientes actividades.
 	\begin{enumerate} [label=(\alph*)]
-		\item Rotar el complejo $z=3+i$ para que pertenezca a la región $A=\{ z \in \mathbb{C} ~/~ |z+3| \leq 1 \}$. Graficar.
-		\item Escalar el complejo $z=1+4i$ para que pertenezca a la región $B=\{ z \in \mathbb{C} ~/~ Im(z) \leq 2 - Re(z) \}$. Graficar.
 		\item Al conectar los puntos de los complejos $a=2i$, $b=0$ y $c=1$ se forma la letra L. Rotar la letra $90^{\circ}$ en sentido antihorario. Independientemente, obtener una L cuyas dimensiones sean el triple de grandes. Graficar.
 		\item Al conectar los puntos de los complejos $a=0$, $b=2i$, $c=1+\df{3}{2}i$ y $d=i$ se forma la letra P. Rotar la letra $60^{\circ}$ en sentido horario. Por otra parte, obtener una letra P cuyo tamaño sea la mitad del original. Graficar.
 		\item Al conectar los puntos de los complejos $a=i$, $b=1+i$, $c=0$ y $d=1$ se forma la letra Z cuya altura mide 1 unidad. Aplicar una rotación y/o expansión para obtener una N cuya base mida 2 unidades. Graficar.
+		\item Rotar el complejo $z=1+\sqrt{3}i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ |z+2| \leq 1 \}$. Graficar.
+		\item Escalar el complejo $z=1+4i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ Im(z) \leq 2 - Re(z) \}$. Graficar.
+		\item Rotar el complejo $z=3+i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ |z+3| \leq 1 \}$. Graficar.
+	\end{enumerate}
+	\exercise Resolver los siguientes ejercicios contextualizados. \textit{Nota: es esperable que el contexto no se entienda completamente, sólo se espera que se pueda realizar la parte que involucra números complejos con las consideraciones dadas explicitamente.}
+	\begin{enumerate} [label=(\alph*)]
+		\item En la mecánica cuántica, la amplitud de probabilidad a menudo se da como un número complejo. Si la amplitud de un estado cuántico está dada por $\psi=\df{1}{\sqrt{3}}+\df{i}{\sqrt{6}}$, calcula la probabilidad de dicho estado cuántico con la ecuación $P=\psi .\conj{\psi}$.
+		\item Un circuito se describe por una impedancia $Z=4+3i$ ohmios y una corriente alterna con fasor $I=2.e^{\frac{\pi}{6}}$ amperios. Encuentra la representación en fasor del voltaje  $V$ a travès de la ecuación $V=Z.I$, ya sea en su forma binómica o exponencial.
+		\item En la ingeniería eléctrica, al analizar circuitos electrónicos, a menudo nos encontramos con parámetros conocido como "polos". Estos polos son fundamentales para determinar la estabilidad de un circuito. \\ Reglas: Si todos los polos tienen una parte real negativa, el circuito es estable. Si algún polo tiene una parte real positiva, el circuito es inestable. Si un par de polos se encuentran exactamente en el eje imaginario (parte real es cero), el circuito es marginalente estable. \\ Problema: Dado un circuito eléctrico que tiene tres polos: $P_1=5+2i$, $P_2=0+3i$ y $P_3=0-3i$, clasifica el circuito en estable, inestable inestable o marginalmente estable.
+	\end{enumerate}
+	\exercise Resolver los siguientes ejercicios de desafío. 
+	\begin{enumerate} [label=(\alph*)]
+		\item Considerando $z=3+i$ y $w=-4-2i$, calcular el número complejo $u=Re(w)+\df{\conj{z}+Im(w)}{z}$ en forma binómica. Luego, graficar $u$, calcular su módulo y ángulo aproximadamente.
+		\item Dado un $z \in \mathbb{C}$ genérico, calcular el módulo y la parte real del complejo $w=3\left(\df{z^2}{i}\right)$. Dar las respuestas en función de $|z|$, $Arg(z)$, $Re(z)$ o $Im(z)$ (según convenga).
+		\item Indicar el número de soluciones complejas de la ecuación $x^4=16$. Halalr todas las soluciones y graficarlas. Si las soluiones son complejas, ¿por qué el numero real $x=2$ es una solución?
+		\item Se cuenta con dos números complejos $z=3-i$ y $w$, que tiene módulo 3 y ángulo $\df{5\pi}{6}$. Averiguar si la región $R=\left\{z\in\mathbb{C} ~|~ Im(z)>0 ~~\land~~ \df{\pi}{2}<Arg(z)<\df{3\pi}{2}\right\}$ contiene a alguno de los dos números complejos y calcular la distancia entre los complejos $z$ y $w$.
+		\item Hallar las soluciones $x \in \mathbb{C}$ de la ecuación $i.x^2=\df{1-i}{2-i}x$
+		\item Se tienen tres complejos: $r=(-1-\sqrt{3})+i(1-\sqrt{3})$; $z$, que tiene módulo 3 y argumento $\phi$; y $w=\df{z^2}{r}$. Demostrar que $Arg(w)=2\phi-\df{13}{12}\pi$ y calcular $|w|$. Finalmente, graficar $z$, $r$ y $w$ aproximadamente considerando que $\phi=\df{\pi}{6}$
+		\item El complejo $z=2e^{\frac{\pi}{6}i}$ es una raíz tercera de $w$. Hallar $w$ y las demás raíces. Finalmente, graficar en el plano complejo todos los $r\in\mathbb{C}$ que cumplan la condición $|r-z|=3$
+		\item Hallar todos los números complejos que cumplan con $|z-1|=|z-i|$ y graficarlos. Elegir uno de ellos tal que $z\neq 0+0i$ y calcular susraíces cuadradas.
 	\end{enumerate}
 \end{enumerate}
 \vspace{20pt} 
@@ -240,15 +264,6 @@
 		\item $-1-i=\sqrt{2}\cis{\df{\pi}{4}}=\sqrt{2}e^{\frac{\pi}{4}i}$
 		\item $\cos\left(\df{\pi}{12}\right)+i\sin\left(\df{\pi}{12}\right)=e^{\frac{\pi}{12}} \simeq 0.9659 + 0.2588 i$
 		\item $4e^{\frac{3\pi}{2}i}=4\cis{\df{3\pi}{2}}=0-4i$
-\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $z+3w=(a+bi)+3(c+di)=a+bi+3c+3di=(a+3c)+(b+d)i$. Por lo ranto, $Re(z+3w)=a+3c=Re(z)+Re(3w)$
-		\item Ya que $\conj{z}=a-bi$, se obtiene que el lado izquierdo es $\conj{\conj{z}+w}= \conj{(a-bi)+(c+di)} = \conj{(a+c)+(-b+d)i} = (a+c)-(-b+d)i = (a+c)+(b-d)i$. Por otra parte, como $\conj{w}=c-di$ el lado derecho es $z+\conj{w}=(a+bi)+(c-di)=(a+c)+(b-d)i$. Podemos obserar que son iguales: $\conj{\conj{z}+w}=z+\conj{w}=(a+c)+(b-d)i$
-		\item $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2=(a^2+b^2)+0i$, por lo que su parte imaginaria es cero.
-		\item $\df{z}{i}=\df{a+bi}{i}=\df{a+bi}{i}\cdot\df{i}{i}=\df{(a+bi)i}{-1}=-i(a+bi)=-iz$
-		\item Desarrollando el lado izquierdo se obtiene $\conj{i.z}=\conj{i(a+bi)}=\conj{ai+bi^2}=\conj{-b+ai}=-b-ai$. Desarrollando el lado derecho se obtiene $-i.\conj{z}=-i(a-bi)=-ai+bi^2=-b-ai$, que es lo mismo.
-		\item Por el lado izquierdo tenemos: $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2$. Por el lado derecho tenemos $|z|^2=\sqrt{a^2+b^2}^2=a^2+b^2$. Por lo tanto, son iguales.
-\item ---\item ---\item ---\item ---\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $x=4$. \href{https://youtu.be/rZMja-gZ3q0}{Resolución}
-		\item $y=-\df{6}{5}$\. href{https://youtu.be/cgQsvNewGZ0}{Resolución}
-		\item $(x,m)=(3,-3)$. \href{https://youtu.be/kQmzdYU4EsY}{Resolución}
 \end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $512$. \href{https://youtu.be/bi_tVZZeAtY}{Resolución}
 		\item $8^{-\frac{7}{2}} e^{\frac{\pi}{4}i}$. \href{https://youtu.be/5ET1IAoQNdc}{Resolución}
 		\item $-\df{1}{8}+\df{3}{8}i$. \href{https://youtu.be/xveCBuIad3s}{Resolución}
@@ -256,8 +271,24 @@
 		\item \href{https://youtu.be/5Z0cwrDtvzU}{Resolución}
 		\item \href{https://youtu.be/egki90qZmjQ}{Resolución}
 		\item \href{https://youtu.be/GuqxEvxgHkQ}{Resolución}
-		\item \hfer{https://youtu.be/x1KOtRgsRrg}{Resolución}
+		\item \href{https://youtu.be/x1KOtRgsRrg}{Resolución}
 		\item \href{https://youtu.be/Be6upizltaE}{Resolución}
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item Verdadero. $|z|=|3+i|=\sqrt{10} \simeq 3.1623$ y $|w|=|2-2i|=\sqrt{8} \simeq 2.8284$
+		\item Falso. Si $z=|z|e^{\alpha i}$, entonces $2z=2|z|.e^{\alpha i}$. Por lo que el argumento de $2z$ también será $\alpha$
+		\item Verdadero. En su forma exponencial $w=\sqrt{2}e^{\frac{\pi}{4}i}$ por lo que $z.w=\left(2e^{\beta i}\right).\left(\sqrt{2}e^{\frac{\pi}{4}i}\right)=2\sqrt{2}e^{\left(\beta i + \frac{\pi}{4}i\right)}=2\sqrt{2}e^{\left(\beta + \frac{\pi}{4}\right)i}$
+		\item Verdadero. Si $z=0+bi$, entonces $z^2=(bi)^2=-b^2+0i$. Como $Im(z^2)=0$, $z^2$ es un número real puro.
+		\item Falso. $d(z,w)=|z-w|=|2-(3+3i)|=|-1-3i|=\sqrt{1+9}=\sqrt{10}$
+		\item Verdadero. $d(z,w)=\sqrt{\left(1-3\right)^2+\left(2-4\right)^2}=\sqrt{8}$ y $|z-w|=|-2-2i|=\sqrt{4+4}=\sqrt{8}$
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $z+3w=(a+bi)+3(c+di)=a+bi+3c+3di=(a+3c)+(b+d)i$. Por lo ranto, $Re(z+3w)=a+3c=Re(z)+Re(3w)$
+		\item Ya que $\conj{z}=a-bi$, se obtiene que el lado izquierdo es $\conj{\conj{z}+w}= \conj{(a-bi)+(c+di)} = \conj{(a+c)+(-b+d)i} = (a+c)-(-b+d)i = (a+c)+(b-d)i$. Por otra parte, como $\conj{w}=c-di$ el lado derecho es $z+\conj{w}=(a+bi)+(c-di)=(a+c)+(b-d)i$. Podemos obserar que son iguales: $\conj{\conj{z}+w}=z+\conj{w}=(a+c)+(b-d)i$
+		\item $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2=(a^2+b^2)+0i$, por lo que su parte imaginaria es cero.
+		\item $\df{z}{i}=\df{a+bi}{i}=\df{a+bi}{i}\cdot\df{i}{i}=\df{(a+bi)i}{-1}=-i(a+bi)=-iz$
+		\item Desarrollando el lado izquierdo se obtiene $\conj{i.z}=\conj{i(a+bi)}=\conj{ai+bi^2}=\conj{-b+ai}=-b-ai$. Desarrollando el lado derecho se obtiene $-i.\conj{z}=-i(a-bi)=-ai+bi^2=-b-ai$, que es lo mismo.
+		\item Por el lado izquierdo tenemos: $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2$. Por el lado derecho tenemos $|z|^2=\sqrt{a^2+b^2}^2=a^2+b^2$. Por lo tanto, son iguales.
+\item ---\item ---\item ---\item ---		\item Geometricamente la distancia entre le punto de $z$ y el de $w$ se puede calcular por Teorema de Pitágoras y da $d(z,w)=\sqrt{(a-c)^2+(b-d)^2}$. Si calculamos $z-w=(a-c)+(b-d)i$ podemos ver que su módulo es $|z-w|=\sqrt{(a-c)^2+(b-d)^2}$, que es lo mismo.
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $x=4$. \href{https://youtu.be/rZMja-gZ3q0}{Resolución}
+		\item $y=-\df{6}{5}$. \href{https://youtu.be/cgQsvNewGZ0}{Resolución}
+		\item $(x,m)=(3,-3)$. \href{https://youtu.be/kQmzdYU4EsY}{Resolución}
 \end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $z=-\df{1}{5}+\df{2}{5}$. \href{https://youtu.be/Yrh7otV4DzI}{Resolución}
 		\item $z=0+0i$. \href{https://youtu.be/erb6iZXGQw4}{Resolución}
 		\item $z=\sqrt{3}-\df{\sqrt{3}}{3}i$ y $z=-\sqrt{3}+\df{\sqrt{3}}{3}i$
@@ -268,7 +299,10 @@
 		\item \href{https://youtu.be/8z_3vpIabLI}{Resolución}
 		\item $z \in \{2,-2,2i,-2i\}$
 		\item \href{https://youtu.be/7ggnxlrUnrk}{Resolución}
-\end{enumerate}\exercise---\exercise\begin{enumerate} [label=(\alph*)]		\item $|z|=3$ es la circunferencia de radio 3 centrada en el origen. \href{https://youtu.be/AQVEp9ncSwQ}{Resolución}
+		\item Dado $z=a+bi$ la primera condición implica que $a+bi+a-bi=2a=4$, es decir, $a=2$. Sabiendo que $z=2+bi$ aplicamos la segunda condición $|z|=\sqrt{2^2+b^2}=3$, de lo que se puede despejar que $b=\pm\sqrt(5)$. Los números complejos posibles son $z=2+\sqrt{5}i$ y $z=2-\sqrt{5}i$.
+		\item Aplicando Bhaskara obtenemos $z_{1,2}=\df{-4i\pm\sqrt{(4i)^2-4.1.(-8)}}{2.1}=-2i\pm2$
+		\item Aplicamos Bhaskara considerando solo la raíz positiva $z_{1,2}=\df{(3+i)+\sqrt{(-3-i)^2-4.1.(2+1)}}{2.1}=\df{3+i+\sqrt{-2i}}{2}$. Calculamos las raíces cuadradas de $-2i$ con la fórmula de Moivre y obtenemos $-1+i$ y $1-i$. Reemplazamos cada raíz en la fórmula de Bhaskara y obtenemos $z_1=\df{3+i-1+i}{2}=1+i$ y $z_1=\df{3+i+1-i}{2}=2$.
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $|z|=3$ es la circunferencia de radio 3 centrada en el origen. \href{https://youtu.be/AQVEp9ncSwQ}{Resolución}
 		\item $|z|\leq 2$ es el circulo de radio 2 centrado en el origen.
 		\item $|z-3| = 3$ es la circunferencia de radio 4 centrada en el punto $(3,0)$.
 		\item $|z+1+i| \leq 4$ es el circulo de radio 4 centrado en el punto $(-1,-1)$. \href{https://youtu.be/Rj6VfY1fLzw}{Resolución}
@@ -276,4 +310,12 @@
 		\item \href{https://youtu.be/OhXOvWcryMI}{Resolución}
 \item ---		\item \href{https://youtu.be/9pxsYXL6k88}{Resolución}
 		\item \href{https://youtu.be/3m1ZDSuXsX8}{Resolución}
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item Para rotar la letra L se debe hacer la operación $w=z.e^{\frac{\pi}{2}i}=z.i$, con lo que obtendríamos los siguientes complejos $a'=-2$, $b'=0$ y $c'=i$. Para obtener una L cuyas dimensiones sean el triple de grandes se debe hacer la operación $u=3z$, con lo que obtendríamos los complejos $a''=3i$, $b''=0$ y $c''=3$. 
+\item ---		\item Primero rotamos los puntos $90^{\circ}$ en sentido antihorario con la operación $w=z.e^{\frac{\pi}{2}i}=z.i$. Luego expandimos los puntos obtenidos con la operación $u=2.z.i=2i.z$. Los nuevos puntos obtenidos serán $a=-2$, $b=2i-2$, $c=0$ y $d=2i$.
+		\item Notar que $Arg(z) = 60^{\circ}$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo $120^{\circ}=\df{2}{3}\pi$. Para rotarlo debemos hacer la operación $w=z.e^{\frac{2\pi}{3}i} = \left(2e^{\frac{\pi}{3}i}\right).e^{\frac{2\pi}{3}i} =2e^{\pi i}=-2+0i$, que está exactamente al centro de la región pedida.
+		\item Podemos escalar al complejo con la operación $u=kz=k+4ki$. Si queremos que se cumpla la condición límite $Im(u) = 2 - Re(u)$ debe pasar que $4k=2-k$, es decir, $k=2/5$. Por lo tanto, podremos utilizar valores de $k$ entre $0$ y $\df{2}{5}$. Se sugiere elegir algunos valores de $k$ para escalar al complejo y graficarlo junto con la región pedida.
+		\item Notar que $Arg(3+i) \simeq 18.43^{\circ}$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo alrededor de $160^{\circ}=\df{8}{9}\pi$ (no hace falta ser exactos ya que hay toda un área donde el complejo puede caer). Para rotarlo debemos hacer la operación $w=z.e^{\frac{8\pi}{9}i}\simeq \left(\sqrt{10}e^{0.3218 i}\right).e^{\frac{8\pi}{9}i}\simeq \sqrt{10}e^{3.1143 i} \simeq -3.1611 + 0.0864 i$, que gráficamente puede verse que comprueba lo pedido.
+\end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item La probabilidad del estado es $P=\psi .\conj{\psi}=\left(\df{1}{\sqrt{3}}+\df{i}{\sqrt{6}}\right).\left(\df{1}{\sqrt{3}}-\df{i}{\sqrt{6}}\right)=\df{1}{3}+\df{1}{6}=\df{1}{2}$, es decir, del 50\%.
+		\item En su forma exponencial: pasamos la impedancia a forma exponencial $Z \simeq 5e^{0.6435 i}$ y luego hallamos el voltaje $V=Z.I\simeq\left(5e^{0.6435 i}\right).\left(2.e^{\frac{\pi}{6}}\right)\simeq10e^{1.1671 i}$. En forma binómica: pasamos la corriente a su forma binómica $I=2\cis{\df{\pi}{6}}=2\left(\df{\sqrt{3}}{2}+\df{i}{2}\right)=\sqrt{3}+i$. Luego, obtenemos el voltaje $V=Z.I=(4+3i).(\sqrt{3}+i)=(4\sqrt{3}-3)+(3\sqrt{3}+4)i\simeq 3.9282 + 9.1962 i$. Notar que, ambas cuentas dan el mismo resultado, salvando la aproximación, ya que $10e^{1.1671 i} \simeq 3.9282 + 9.1962 i$.
+		\item El sistema es inestable porque $Re(P_1)=5>0$
 \end{enumerate}\exercise---\end{enumerate}\end{document}
