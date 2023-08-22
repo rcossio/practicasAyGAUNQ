@@ -53,48 +53,63 @@
 
 \begin{enumerate}
 
-	\exercise Realizar las operaciones polinomiales
-	\begin{multicols}{2}
+	\exercise Realizar las siguientes operaciones con polinomios
 	\begin{enumerate} [label=(\alph*)]
 		
-		\item $2P(x)+3Q(x)$ \\con $P(x)=2x^2+3$ y $Q(x)=x^3-x-1$
-		\item $4P(x).Q(x)$ \\con $P(x)=2x^2+3$ y $Q(x)=x^3-x-1$
-		\item $P(x)^2$ \\con $P(x)=2x^2+3$
-		\item $P(-2)+Q\left(\df{1}{2}\right)$ \\con $P(x)=2x^2+3$ y $Q(x)=x^3-x-1$
+		\item $2P(x)+3Q(x)$ ~~~~con $P(x)=3x^2+1$ ~~~~y $Q(x)=x^3-2x^2-1$
+		\answer $2(3x^2+1)+3(x^3-2x^2-1)=6x^2+2+3x^3-6x^2-3=3x^3-1$
 
-		\item $\df{P(x)}{Q(x)}$ \\con $P(x)=x^4+4$ y $Q(x)=x^2+2x+2$
+		\item $4R(t).S(t)$ ~~~~con $R(t)=2t^2+3$ ~~~~y $S(t)=t^3-t-1$
+		\answer $4(2t^2+3)(t^3-t-1)=8t^5+4t^3-8t^2-12t-12$ 
+
+		\item $T(y)^2$ ~~~~con $T(y)=\df{1}{2}y^2+y$
+		\answer $\df{1}{4}y^4+y^3+y^2$
+
+		\item $P(-2)+Q\left(\df{1}{2}\right)$ ~~~~con $P(x)=3x^2-4$ ~~~~y $Q(x)=x^3-x^2-1$
+		\answer $3(-2)^2-4+\left(\df{1}{2}\right)^3-\left(\df{1}{2}\right)^2-1=\df{55}{8} = 6.875$
+
+		\item $M(r-2)$ ~~~~con $M(x)=x^2-1$
+		\answer $M(r-2)=(r-2)^2-1=r^2-4r+3$
+
+		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=x^4+4$ ~~~~y $Q(x)=x^2+2x+2$
 		\answer \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
 
 		\item $\df{x^3+2x^2-x+10}{x+2}$
 		\answer \href{https://youtu.be/bfCWsvZfFq0}{Resolución}
 
-		\item $\df{P(x)}{Q(x)}$ \\con $P(x)=2x^4-2x^3-13x^2+8x+15$ y $Q(x)=x-3$
+		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=2x^4-2x^3-13x^2+8x+15$ ~~~~y $Q(x)=x-3$
 		\answer \href{https://youtu.be/W3HcTD4IC94}{Resolución}
 
-		\item $\df{8x^4-4}{-2x^2+x-3}$
+		\item $\df{8z^4-4}{-2z^2+z-3}$
 		\answer \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
 
 	\end{enumerate}
-	\end{multicols}
 
-	\exercise Calcular el los valores reales ($\alpha$, $\beta$, $m$, etc.) para que se cumplan las condiciones
-
-	\begin{multicols}{2}
+	\exercise Calcular el los valores reales ($\alpha$, $\beta$, $\gamma$, etc.) para que se cumplan las condiciones
 	\begin{enumerate} [label=(\alph*)]
 		
-		\item $\alpha P(x)^2 = Q(x) +\beta$ \\con $P(x)=x-1$ y $Q(x)=2x^2-4x$
-		\item $\alpha P(x)-\beta Q(x) = -2x^2 +7x-3$ \\con $P(x)=x-1$ y $Q(x)=2x^2-4x$
-		\item $gr\left(\alpha P(x)^2 - Q(x)\right)=gr\left(P(x)\right)$ \\con $P(x)=x-1$ y $Q(x)=2x^2-4x$
-		\item $Q(\alpha)=P(4)$ \\con $P(x)=x-1$ y $Q(x)=2x^2-4x$
+		\item $\alpha P(x)^2 = Q(x) +\beta$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\answer Lado izquierdo: $\alpha P(x)^2= \alpha x^2-2 \alpha x+ \alpha$. Lado derecho: $Q(x) +\beta= 2x^2-4x+\beta$. Se forma el sistema: \\ $\SEL{\alpha=2 \\ -2\alpha = -4 \\ \alpha= \beta}$ \\ Por lo que $\alpha=2$ y $\beta=2$.
 
-		\item $3x^2+mx+4$ tiene a 1 como raíz
-		\answer \href{https://youtu.be/09D5Z3dcaXc}{Resolución}
+		\item $\alpha A(y)-\beta B(y) = -2y^2 +7y-3$ ~~~~con $A(y)=y-1$ ~~~~y $B(y)=2y^2-4y$
+		\answer Lado izquierdo: $\alpha A(y)-\beta B(y) = \alpha (y-1)- \beta (2y^2-4y)= -2\beta y^2 + (\alpha+4\beta) y - \alpha$. Igualando cada término al lado derecho: \\  $\SEL{-2\beta =-2 \\ \alpha+4\beta=7 \\ -\alpha=-3}$ \\ Por lo que $\alpha=3$ y $\beta=1$.
 
-		\item $x^3+ax^2+bx+5$ es divisible por $Q(x)=x^2+x+1$
-		\answer \href{https://youtu.be/jE5a43IQ91E}{Resolución}
+		\item $gr\left(\alpha P(s)^2 - Q(s)\right)=gr\left(P(s)\right)$ ~~~~con $P(s)=s-1$ ~~~~y $Q(s)=2s^2-5s$
+		\answer El polinomio resultante es $\alpha P(s)^2 - Q(s)= \alpha (s-1)^2 - (2s^2-5s)= (\alpha-2) s^2 + (5-2\alpha) s + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(P(s)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Reemplazando ese valor podemos observar que se verifica que $gr(s+2)=gr(s-1)$.
+
+		\item $gr\left(\alpha R(x)^2 - S(x)\right)=gr\left(R(x)\right)$ ~~~~con $S(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\answer El polinomio resultante es $\alpha R(x)^2 - S(x)= \alpha (x-1)^2 - (2x^2-5x)= (\alpha-2) x^2 + (4-2\alpha) x + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(R(x)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Pero reemplazando ese valor podemos observar que la condición no se cumple ya que $\alpha=2$ también anula el coeficiente lineal y el polinomio resultante queda $0x^2+0x+2$ que tiene grado $0$.
+
+		\item $Q(\gamma)=P(4)$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\answer $Q(\gamma)=2 \gamma^2-4\gamma = (4)-1= P(4)$ por lo que obtenemos la ecuación $2 \gamma^2-4\gamma -3 = 0$, de donde despejamos los valores de $\gamma = 1 \pm \sqrt{\df{5}{2}}$.
+
+		\item $3x^2+\gamma x+4$ tiene a 1 como raíz
+		\answer $\gamma=-7$. \href{https://youtu.be/09D5Z3dcaXc}{Resolución}
+
+		\item $x^3+\alpha x^2+\beta x+5$ es divisible por $Q(x)=x^2+x+1$
+		\answer $\alpha=6$ y $\beta=6$. \href{https://youtu.be/jE5a43IQ91E}{Resolución}
 
 	\end{enumerate}
-	\end{multicols}
 
 	\exercise Factorizar los siguientes polinomios considerando raíces reales y luego complejas.
 
@@ -102,12 +117,16 @@
 	\begin{enumerate} [label=(\alph*)]
 		
 		\item $x^2+\sqrt{3}x-1$
+		\answer Utilizando la resolvente de segundo grado obtenemos las raíces $x=\df{-\sqrt{3}\pm\sqrt{7}}{2}$, por lo que el polinomio se factoriza como: $\left(x+\df{\sqrt{3}+\sqrt{7}}{2}\right)\left(x+\df{\sqrt{3}-\sqrt{7}}{2}\right)$.
+
 		\item $8x^3-28x^2+14x+15$
+		\answer Por el método de Gauss se pueden obtener las raices $-\df{1}{2}$, $\df{3}{2}$, y $\df{5}{2}$. Por lo tanto, el polinomio se factoriza como: $8\left(x+\df{1}{2}\right)\left(x-\df{3}{2}\right)\left(x-\df{5}{2}\right)$.
 
 		\item $x^5-1$
 		\answer \href{https://youtu.be/ZMBXAdxOleM}{Resolución}
 
 		\item $x^5+3x^4+3x^3+3x^2+2x$
+		\answer Sacando factor común tenemos $x(x^4+3x^3+3x^2+3x+2)$ Por el método de Gauss se pueden obtener las raices $-1$ y $-2$. Por lo que el polinomio quedaría: $x(x+1)(x+2)(x^2+1)$. Esta es la factoriación en reales. Finalmente, con la resolvente hallamos las raíces complejas $i$ y $-i$, por lo que el polinomio se factoriza como: $x(x+1)(x+2)(x+i)(x-i)$. Esta es la factorización en complejos.
 		
 		\item $x^4-\df{9}{2}x^3+21x-10$
 		\answer \href{https://youtu.be/1V06bnuaadA}{Resolución}
@@ -115,12 +134,14 @@
 		\item $x^7+18x^6+81x^5$
 		\answer \href{https://youtu.be/Z1KatpJM2eU}{Resolución}
 
+		\item $x^4-2x^2+2$
+		\answer Sustituimos $y=x^2$ yel polinomio queda como $y^2+2y-2$, al que le calculamos las raices con la resolvente. Obtenemos la raíz doble $y=1$, de la que obtenemos las raíces $x=\pm1$. Por lo tanto el polinomio factorizado es: $(x-1)^2(x+1)^2$. 
+
 		\item $x^6-x^4-20x^2$
+		\answer Sacamos factor común y obtenemos el polinomio $x^2(x^4-x^2-20)$. Para buscar las raíces restantes realizamos la sustitución $t^2$ y el polinomio resultante es $t(t^2-t-20)$. Con la resolvente obtenemos los valores de $t=5$, del que obtenemos $x=\pm \sqrt{5}$, y $t=-4$, del que obtenemos $x=\pm2i$. Finalmenta la factorización compleja queda como: $x^2(x-\sqrt{5})(x+\sqrt{5})(x-2i)(x+2i)$. Y la factorización real queda como $x^2(x-\sqrt{5})(x+\sqrt{5})(x^+4)$.
 		
 		\item $x^7-x$
 		\answer \href{https://youtu.be/EQIEmdkGOZE}{Resolución}
-
-		\item $x^4+2x^2-2$
 
 		\item $x^6+3x^3-4$
 		\answer \href{https://youtu.be/BCo0pxE288w}{Resolución}
