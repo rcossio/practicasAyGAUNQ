@@ -1,0 +1,243 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 2: Polinomios } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Realizar las siguientes operaciones con polinomios
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $2P(x)+3Q(x)$ ~~~~con $P(x)=3x^2+1$ ~~~~y $Q(x)=x^3-2x^2-1$
+		\answer $2(3x^2+1)+3(x^3-2x^2-1)=6x^2+2+3x^3-6x^2-3=3x^3-1$
+
+		\item $4R(t).S(t)$ ~~~~con $R(t)=2t^2+3$ ~~~~y $S(t)=t^3-t-1$
+		\answer $4(2t^2+3)(t^3-t-1)=8t^5+4t^3-8t^2-12t-12$ 
+
+		\item $T(y)^2$ ~~~~con $T(y)=\df{1}{2}y^2+y$
+		\answer $\df{1}{4}y^4+y^3+y^2$
+
+		\item $P(-2)+Q\left(\df{1}{2}\right)$ ~~~~con $P(x)=3x^2-4$ ~~~~y $Q(x)=x^3-x^2-1$
+		\answer $3(-2)^2-4+\left(\df{1}{2}\right)^3-\left(\df{1}{2}\right)^2-1=\df{55}{8} = 6.875$
+
+		\item $M(r-2)$ ~~~~con $M(x)=x^2-1$ y donde $r$ es un número real
+		\answer $M(r-2)=(r-2)^2-1=r^2-4r+3$
+
+		\item $H\left(\df{2}{u}\right)$ con $H(x)=x^2+5x$ y $u \in \mathbb{R}$
+		\answer $H\left(\df{2}{u}\right)=\df{4}{u^2}+\df{10}{u}$
+
+		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=x^4+4$ ~~~~y $Q(x)=x^2+2x+2$
+		\answer \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
+
+		\item $\df{x^3+2x^2-x+10}{x+2}$
+		\answer \href{https://youtu.be/bfCWsvZfFq0}{Resolución}
+
+		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=2x^4-2x^3-13x^2+8x+15$ ~~~~y $Q(x)=x-3$
+		\answer \href{https://youtu.be/W3HcTD4IC94}{Resolución}
+
+		\item $\df{8z^4-4}{-2z^2+z-3}$
+		\answer \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
+
+		\item $\df{x^2+3}{x-i}$
+		\answer $\df{x^2+3}{x-i}=(x+i)+\df{2}{x-i}$
+
+	\end{enumerate}
+
+	\exercise Calcular el los valores reales ($\alpha$, $\beta$, $\gamma$, etc.) para que se cumplan las condiciones
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $\alpha P(x)^2 = Q(x) +\beta$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\answer Lado izquierdo: $\alpha P(x)^2= \alpha x^2-2 \alpha x+ \alpha$. Lado derecho: $Q(x) +\beta= 2x^2-4x+\beta$. Se forma el sistema: \\ $\SEL{\alpha=2 \\ -2\alpha = -4 \\ \alpha= \beta}$ \\ Por lo que $\alpha=2$ y $\beta=2$.
+
+		\item $\alpha A(y)-\beta B(y) = -2y^2 +7y-3$ ~~~~con $A(y)=y-1$ ~~~~y $B(y)=2y^2-4y$
+		\answer Lado izquierdo: $\alpha A(y)-\beta B(y) = \alpha (y-1)- \beta (2y^2-4y)= -2\beta y^2 + (\alpha+4\beta) y - \alpha$. Igualando cada término al lado derecho: \\  $\SEL{-2\beta =-2 \\ \alpha+4\beta=7 \\ -\alpha=-3}$ \\ Por lo que $\alpha=3$ y $\beta=1$.
+
+		\item $gr\left(\alpha P(s)^2 - Q(s)\right)=gr\left(P(s)\right)$ ~~~~con $P(s)=s-1$ ~~~~y $Q(s)=2s^2-5s$
+		\answer El polinomio resultante es $\alpha P(s)^2 - Q(s)= \alpha (s-1)^2 - (2s^2-5s)= (\alpha-2) s^2 + (5-2\alpha) s + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(P(s)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Reemplazando ese valor podemos observar que se verifica que $gr(s+2)=gr(s-1)$.
+
+		\item $gr\left(\alpha R(x) - S(x)\right)=gr\left(R(x)\right)$ ~~~~con $R(x)=x^2-2x+1$ ~~~~y $S(x)=2x^2-4x$
+		\answer El polinomio resultante es $\alpha R(x)^2 - S(x)= \alpha (x-1)^2 - (2x^2-5x)= (\alpha-2) x^2 + (4-2\alpha) x + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(R(x)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Pero reemplazando ese valor podemos observar que la condición no se cumple ya que $\alpha=2$ también anula el coeficiente lineal y el polinomio resultante queda $0x^2+0x+2$ que tiene grado $0$.
+
+		\item $Q(\gamma)=P(4)$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\answer $Q(\gamma)=2 \gamma^2-4\gamma = (4)-1= P(4)$ por lo que obtenemos la ecuación $2 \gamma^2-4\gamma -3 = 0$, de donde despejamos los valores de $\gamma = 1 \pm \sqrt{\df{5}{2}}$.
+
+		\item $3x^2+\gamma x+4$ tiene a 1 como raíz
+		\answer $\gamma=-7$. \href{https://youtu.be/09D5Z3dcaXc}{Resolución}
+
+		\item $x^3+\alpha x^2+\beta x+5$ es divisible por $Q(x)=x^2+x+1$
+		\answer $\alpha=6$ y $\beta=6$. \href{https://youtu.be/jE5a43IQ91E}{Resolución}
+
+	\end{enumerate}
+
+	\exercise Hallar o aproximar las raíces reales y complejas de los siguientes polinomios y escribir su forma factorizada. 
+
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $x^2+\sqrt{3}x-1$
+		\answer Utilizando la resolvente de segundo grado obtenemos las raíces $x=\df{-\sqrt{3}\pm\sqrt{7}}{2}$, por lo que el polinomio se factoriza como: $\left(x+\df{\sqrt{3}+\sqrt{7}}{2}\right)\left(x+\df{\sqrt{3}-\sqrt{7}}{2}\right)$.
+
+		\item $8x^3-28x^2+14x+15$
+		\answer Por el método de Gauss se pueden obtener las raices $-\df{1}{2}$, $\df{3}{2}$, y $\df{5}{2}$. Por lo tanto, el polinomio se factoriza como: $8\left(x+\df{1}{2}\right)\left(x-\df{3}{2}\right)\left(x-\df{5}{2}\right)$.
+
+		\item $x^5-1$
+		\answer \href{https://youtu.be/ZMBXAdxOleM}{Resolución}
+
+		\item $x^5+3x^4+3x^3+3x^2+2x$
+		\answer Sacando factor común tenemos $x(x^4+3x^3+3x^2+3x+2)$ Por el método de Gauss se pueden obtener las raices $-1$ y $-2$. Por lo que el polinomio quedaría: $x(x+1)(x+2)(x^2+1)$. Esta es la factoriación en reales. Finalmente, con la resolvente hallamos las raíces complejas $i$ y $-i$, por lo que el polinomio se factoriza como: $x(x+1)(x+2)(x+i)(x-i)$. Esta es la factorización en complejos.
+		
+		\item $x^4-\df{9}{2}x^3+21x-10$
+		\answer \href{https://youtu.be/1V06bnuaadA}{Resolución}
+
+		\item $x^7+18x^6+81x^5$
+		\answer \href{https://youtu.be/Z1KatpJM2eU}{Resolución}
+
+		\item $x^4-2x^2+2$
+		\answer Sustituimos $y=x^2$ yel polinomio queda como $y^2+2y-2$, al que le calculamos las raices con la resolvente. Obtenemos la raíz doble $y=1$, de la que obtenemos las raíces $x=\pm1$. Por lo tanto el polinomio factorizado es: $(x-1)^2(x+1)^2$. 
+
+		\item $x^6-x^4-20x^2$
+		\answer Sacamos factor común y obtenemos el polinomio $x^2(x^4-x^2-20)$. Para buscar las raíces restantes realizamos la sustitución $t^2$ y el polinomio resultante es $t(t^2-t-20)$. Con la resolvente obtenemos los valores de $t=5$, del que obtenemos $x=\pm \sqrt{5}$, y $t=-4$, del que obtenemos $x=\pm2i$. Finalmenta la factorización compleja queda como: $x^2(x-\sqrt{5})(x+\sqrt{5})(x-2i)(x+2i)$. Y la factorización real queda como $x^2(x-\sqrt{5})(x+\sqrt{5})(x^+4)$.
+		
+		\item $x^7-x$
+		\answer \href{https://youtu.be/EQIEmdkGOZE}{Resolución}
+
+		\item $x^6+3x^3-4$
+		\answer \href{https://youtu.be/BCo0pxE288w}{Resolución}
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Hallar o aproximar los valores que cumplen con las siguientes ecuaciones polinómicas 
+
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $x^2+2x=5$
+		\answer Es equivalente $x^2+2x-5=0$, cuyas raíces se calculan con la resolvente: $x=-1\pm\sqrt{6}$.
+
+		\item $x^3+5x^2-13x = -7$
+		\answer Es equivalente a $x^3+5x^2-13x +7 =0$. Por el método de Gauss encontramos las raíces $1$ y $-7$. Debe haber tres raíces pero $1$ es raíz doble.
+
+		\item $x^3 -\sqrt{3}x^2 = 2x - 2\sqrt{3}$
+		\answer Es equivalente a $x^3 -\sqrt{3}x^2 - 2x + 2\sqrt{3} = 0$. Como no podemos aplicar el método de Gauss, podemos aproximar una raíz por el método de Bolzano. Las raíces son $x_1 \simeq 1.4142$, $x_2 \simeq -1.4142$ y $x_3 \simeq 1.7321$.
+
+		\item $x^3-x=10$
+		\answer Es equivalente a $x^3-x-10=0$. Por el teorema de la raíz real para polinomios de grado impar sabemos que debe tener una raíz real. La aproximamos por Bolzano: $x_1 \simeq 2.3089$. Lo unico que podemos saber de las otras raíces sin efectuar la división es que son reales o bien complejas conjugadas.
+
+		\item $x^5-8=3x$
+		\answer Es equivalente a $x^5-3x-8=0$. Por el teorema de la raíz real para polinomios de grado impar sabemos que debe tener una raíz real. La aproximamos por Bolzano: $x_1 \simeq 1.6706$. 
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Proponer un polinomio $P(x)$ que cumpla con las siguientes condiciones.
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Es de grado 4, 2 es raíz simple, -1 es raíz triple y $P(1)=24$
+		\answer \href{https://youtu.be/_XVYatmUKBg}{Resolución}
+
+		\item $P(x)$ es mónico y de grado 2. Además, $P(1)=3$ y $P(-4)=2$.
+		\answer \href{https://youtu.be/LDpq_f-baPc}{Resolución}
+
+		\item $P(x)$ es de grado 5, tiene coeficientes reales, $P(i)=0$ y $P(1+i)=0$
+
+		\item $gr\left(P(x)\right)=6$, $P(x)$ tiene coeficientes reales y algunas de sus raíces son $i$ y $1+i$
+		\answer \href{https://youtu.be/LDpq_f-baPc}{Resolución}
+
+	\end{enumerate}
+
+
+	\exercise Resolver los siguientes problemas de aplicación
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item La posición de un objeto que se mueve en línea recta viene dada por el polinomio $x(t) = t^3 - 3t^2 -10t$ donde $t$ está en segundos y $x(t)$ en metros. ¿Cuál es la posición del objeto al tiempo $t=1$ y a tiempo $t=2$? Si no se admiten valores negativos de tiempo ($t \geq 0$), ¿en que momento(s) el objeto pasa por la posición $x=0$?
+
+		\item En algunos movimientos rectilineos, la posición de un objeto está dada por un polinomio $x(t)$. Conociendo que valen las siguientes reglas (y sus recíprocos): \\ - Si la \textit{velocidad} es nula, el polinomio será de grado 0 \\ - Si la \textit{velocidad} es constante y no nula, el polinomio tendrá, grado 1 \\ - Si la \textit{aceleración} es constante y no nula, el polinomio tendrá grado 2 \\ - Si el \textit{tirón} es constante y no nulo, el polinomio tendrá grado 3 \\ Clasificar el tipo de movimiento un tren caracterizado por el polinomio $x_T(t)=3t^2-5$, de un auto caracterizado por el polinomio $x_A(t)=t^3-2t^2+3t-1$, y de una persona caracterizada por el polinomio $x_P(t)=-4t+5$.
+
+		\item Se está diseñando una lata de 7 cm de alto y base circular. Analizar la geometría de la lata y dar expresiones para su área y su volumen en función del radio $r$ en cm. Finalmente, indicar el área y el volumen de la lata para un radio de $5$~cm.
+		\answer El área es $A(r)=2 \pi r^2+ 14 \pi r$ (en cm$^2$) y el volumen es $V(r)=4 \pi r^2$ (en cm$^3$). Si el radio es $5$, tenemos que $A(5)=120\pi \simeq 376.9911$ (en cm$^2$) y que $V(r)=100\pi \simeq 314.1593$ (en cm$^3$)
+
+		\item Se realiza una caja sin tapa de acuerdo al esquema de la foto. Calcular el área de la base y el volumen de la caja en función de la medida $x$. Indicar cuanto debe medir $x$ para que la caja tenga un volumen de 400 cm$^3$: \img{0.5\textwidth}{img/box.png} 
+
+		\item En análisis de sistemas, una función de transferencia puede expresarse como el cociente de dos polinomios, tal como, $H(s)=\df{s^2-2s}{3s^3+11s^2+40+50s^2}$. Las raíces del numerador se denominan \textit{ceros} del sistema y las raíces del denominador se denominan \textit{polos} del sistema. Calcular los ceros y los polos del sistema $H(s)$ y graficarlos en el plano complejo.
+		\answer Ceros: $z_1=0$ y $z_2=2$. Polos: $p_1=-5$, $p_2=-3+i$, $p_3=-3-i$.
+
+		\item El \textit{factor de compresibilidad} de un gas ideal es $Z=1$. Sin embargo, en la vida real el coeficiente se puede expresar como un polinomio donde la variable es el volumen molar recíproco: $Z\left(\frac{1}{V_m}\right)=1+B\left(\frac{1}{V_m}\right)+C\left(\frac{1}{V_m}\right)^2+D\left(\frac{1}{V_m}\right)^3 + \cdots$. Los coeficientes $B$, $C$ y $D$ se denominan segundo, tercer y cuarto coeficiente virial, respectivamente. A la temperatura de 273 kelvin, los coeficientes del gas argón B y C son $-21.7$ (en $\frac{\text{cm}^3}{\text{mol}}$) y $1200$ (en $\frac{\text{cm}^6}{\text{mol}^2}$), respectivamente, y los demás se consideran despreciables (cero). Escribir el polinomio $Z\left(\frac{1}{V_m}\right)$ y calcular el \textit{factor de compresibilidad} de una muestra de gas argón que presenta un volúmen molar de $540~\frac{\text{cm}^3}{\text{mol}}$ a 273 kelvin.
+		\answer Como los coeficientes y la muestra corresponden a la misma temperatura (273 kelvin) los podemos usar en conjunto. El factor de compresibilidad será $Z\left(\frac{1}{V_m}\right)=1-21.7\left(\frac{1}{V_m}\right)+1200\left(\frac{1}{V_m}\right)^2$. Introducimos el volumen molar y obtenemos $Z\left(\frac{1}{540}\right)=1-21.7\left(\frac{1}{540}\right)+1200\left(\frac{1}{540}\right)^2 \simeq 0.9589$.
+
+	\end{enumerate}
+
+	\exercise Resolver los siguientes ejercicios de desafío
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Hallar las raíces del polinomio $E(x)=\df{x^4}{2}+x^3-\df{x}{2}-1$ y graficarlas. Obtener el cociente y el resto de dividir a $E(x)$ por $D(x)=(x+2)(x-3)$.
+
+		\item Dados los polinomios $K(x)=ax+b$, $L(x)=cx^2+x$ y $M(x)=x.K(x)-L(x)$, hallas los coeficientes $a,b,c \in \mathbb{R}$ que hacen que el grado $M(x)$ sea 1, $L(-2)=10$ y que $\df{1}{2}$ sea raíz de $K(x)$.
+
+		\item Proponer un polinomio $H(x)$ de grado 3 con coeficientes reales que tenga al número $2-i$ como raíz, que cumpla con $H(0)=10$ y que no tenga raíces reales positivas. Luego, obtener el cociente y resto de dividir $H(x)$ por $L(x)=x^2+1$
+
+		\item Hallar todas las raíces del polinomio $P(x)=x^6-3x^3-4$ y graficarlas en el plano complejo
+
+		\item Encontrar y graficar todas las raíces complejas del polinomio $P(x)=2x^3+7x^2+6x-5$ e indicar cuáles de ellas se encuentran en la región $R=\{ z \in \mathbb{C} ~/~ |z|<1 \}$ del plano complejo
+
+		\item Dado el polinomio $P(x)=x^3-ix^2+4x-4i$: indicar porqué no se puede aplicar el método de Gauss para encontrar ls raíces de $P(x)$; indicar cuántas raíces tiene $P(x)$ (sin calcularlas); y, finalmente, demostrar que $i$ es raíz de $P(x)$ dividiéndolo por $(x-i)$ mediante Ruffini o división tradicional
+
+		\item Encontrar los valores de $\alpha, \beta \in \mathbb{R}$ que permitan expresar el polinomio $P(x)=x-7$ como $P(x)=\alpha Q(x)+\beta R(x)$ considerando $Q(x)=2x$ y $R(x)=x$
+
+	\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
