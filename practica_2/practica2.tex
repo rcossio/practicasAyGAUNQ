@@ -38,6 +38,7 @@
 \newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
 
 \begin{document}
 
@@ -68,8 +69,11 @@
 		\item $P(-2)+Q\left(\df{1}{2}\right)$ ~~~~con $P(x)=3x^2-4$ ~~~~y $Q(x)=x^3-x^2-1$
 		\answer $3(-2)^2-4+\left(\df{1}{2}\right)^3-\left(\df{1}{2}\right)^2-1=\df{55}{8} = 6.875$
 
-		\item $M(r-2)$ ~~~~con $M(x)=x^2-1$
+		\item $M(r-2)$ ~~~~con $M(x)=x^2-1$ y donde $r$ es un número real
 		\answer $M(r-2)=(r-2)^2-1=r^2-4r+3$
+
+		\item $H\left(\df{2}{u}\right)$ con $H(x)=x^2+5x$ y $u \in \mathbb{R}$
+		\answer $H\left(\df{2}{u}\right)=\df{4}{u^2}+\df{10}{u}$
 
 		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=x^4+4$ ~~~~y $Q(x)=x^2+2x+2$
 		\answer \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
@@ -82,6 +86,9 @@
 
 		\item $\df{8z^4-4}{-2z^2+z-3}$
 		\answer \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
+
+		\item $\df{x^2+3}{x-i}$
+		\answer $\df{x^2+3}{x-i}=(x+i)+\df{2}{x-i}$
 
 	\end{enumerate}
 
@@ -97,7 +104,7 @@
 		\item $gr\left(\alpha P(s)^2 - Q(s)\right)=gr\left(P(s)\right)$ ~~~~con $P(s)=s-1$ ~~~~y $Q(s)=2s^2-5s$
 		\answer El polinomio resultante es $\alpha P(s)^2 - Q(s)= \alpha (s-1)^2 - (2s^2-5s)= (\alpha-2) s^2 + (5-2\alpha) s + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(P(s)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Reemplazando ese valor podemos observar que se verifica que $gr(s+2)=gr(s-1)$.
 
-		\item $gr\left(\alpha R(x)^2 - S(x)\right)=gr\left(R(x)\right)$ ~~~~con $S(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
+		\item $gr\left(\alpha R(x) - S(x)\right)=gr\left(R(x)\right)$ ~~~~con $R(x)=x^2-2x+1$ ~~~~y $S(x)=2x^2-4x$
 		\answer El polinomio resultante es $\alpha R(x)^2 - S(x)= \alpha (x-1)^2 - (2x^2-5x)= (\alpha-2) x^2 + (4-2\alpha) x + \alpha$ y necesitamos que tenga grado 1, ya que $gr\left(R(x)\right)=1$. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Pero reemplazando ese valor podemos observar que la condición no se cumple ya que $\alpha=2$ también anula el coeficiente lineal y el polinomio resultante queda $0x^2+0x+2$ que tiene grado $0$.
 
 		\item $Q(\gamma)=P(4)$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
@@ -111,7 +118,7 @@
 
 	\end{enumerate}
 
-	\exercise Factorizar los siguientes polinomios considerando raíces reales y luego complejas.
+	\exercise Hallar o aproximar las raíces reales y complejas de los siguientes polinomios y escribir su forma factorizada. 
 
 	\begin{multicols}{2}
 	\begin{enumerate} [label=(\alph*)]
@@ -149,9 +156,32 @@
 	\end{enumerate}
 	\end{multicols}
 
-	\exercise Proponer un polinomio $P(x)$ que cumpla con las siguientes condiciones.
+
+	\exercise Hallar o aproximar los valores que cumplen con las siguientes ecuaciones polinómicas 
 
 	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $x^2+2x=5$
+		\answer Es equivalente $x^2+2x-5=0$, cuyas raíces se calculan con la resolvente: $x=-1\pm\sqrt{6}$.
+
+		\item $x^3+5x^2-13x = -7$
+		\answer Es equivalente a $x^3+5x^2-13x +7 =0$. Por el método de Gauss encontramos las raíces $1$ y $-7$. Debe haber tres raíces pero $1$ es raíz doble.
+
+		\item $x^3 -\sqrt{3}x^2 = 2x - 2\sqrt{3}$
+		\answer Es equivalente a $x^3 -\sqrt{3}x^2 - 2x + 2\sqrt{3} = 0$. Como no podemos aplicar el método de Gauss, podemos aproximar una raíz por el método de Bolzano. Las raíces son $x_1 \simeq 1.4142$, $x_2 \simeq -1.4142$ y $x_3 \simeq 1.7321$.
+
+		\item $x^3-x=10$
+		\answer Es equivalente a $x^3-x-10=0$. Por el teorema de la raíz real para polinomios de grado impar sabemos que debe tener una raíz real. La aproximamos por Bolzano: $x_1 \simeq 2.3089$. Lo unico que podemos saber de las otras raíces sin efectuar la división es que son reales o bien complejas conjugadas.
+
+		\item $x^5-8=3x$
+		\answer Es equivalente a $x^5-3x-8=0$. Por el teorema de la raíz real para polinomios de grado impar sabemos que debe tener una raíz real. La aproximamos por Bolzano: $x_1 \simeq 1.6706$. 
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Proponer un polinomio $P(x)$ que cumpla con las siguientes condiciones.
 	\begin{enumerate} [label=(\alph*)]
 		
 		\item Es de grado 4, 2 es raíz simple, -1 es raíz triple y $P(1)=24$
@@ -165,9 +195,28 @@
 		\item $gr\left(P(x)\right)=6$, $P(x)$ tiene coeficientes reales y algunas de sus raíces son $i$ y $1+i$
 		\answer \href{https://youtu.be/LDpq_f-baPc}{Resolución}
 
+	\end{enumerate}
+
+
+	\exercise Resolver los siguientes problemas de aplicación
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item La posición de un objeto que se mueve en línea recta viene dada por el polinomio $x(t) = t^3 - 3t^2 -10t$ donde $t$ está en segundos y $x(t)$ en metros. ¿Cuál es la posición del objeto al tiempo $t=1$ y a tiempo $t=2$? Si no se admiten valores negativos de tiempo ($t \geq 0$), ¿en que momento(s) el objeto pasa por la posición $x=0$?
+
+		\item En algunos movimientos rectilineos, la posición de un objeto está dada por un polinomio $x(t)$. Conociendo que valen las siguientes reglas (y sus recíprocos): \\ - Si la \textit{velocidad} es nula, el polinomio será de grado 0 \\ - Si la \textit{velocidad} es constante y no nula, el polinomio tendrá, grado 1 \\ - Si la \textit{aceleración} es constante y no nula, el polinomio tendrá grado 2 \\ - Si el \textit{tirón} es constante y no nulo, el polinomio tendrá grado 3 \\ Clasificar el tipo de movimiento un tren caracterizado por el polinomio $x_T(t)=3t^2-5$, de un auto caracterizado por el polinomio $x_A(t)=t^3-2t^2+3t-1$, y de una persona caracterizada por el polinomio $x_P(t)=-4t+5$.
+
+		\item Se está diseñando una lata de 7 cm de alto y base circular. Analizar la geometría de la lata y dar expresiones para su área y su volumen en función del radio $r$ en cm. Finalmente, indicar el área y el volumen de la lata para un radio de $5$~cm.
+		\answer El área es $A(r)=2 \pi r^2+ 14 \pi r$ (en cm$^2$) y el volumen es $V(r)=4 \pi r^2$ (en cm$^3$). Si el radio es $5$, tenemos que $A(5)=120\pi \simeq 376.9911$ (en cm$^2$) y que $V(r)=100\pi \simeq 314.1593$ (en cm$^3$)
+
+		\item Se realiza una caja sin tapa de acuerdo al esquema de la foto. Calcular el área de la base y el volumen de la caja en función de la medida $x$. Indicar cuanto debe medir $x$ para que la caja tenga un volumen de 400 cm$^3$: \img{0.5\textwidth}{img/box.png} 
+
+		\item En análisis de sistemas, una función de transferencia puede expresarse como el cociente de dos polinomios, tal como, $H(s)=\df{s^2-2s}{3s^3+11s^2+40+50s^2}$. Las raíces del numerador se denominan \textit{ceros} del sistema y las raíces del denominador se denominan \textit{polos} del sistema. Calcular los ceros y los polos del sistema $H(s)$ y graficarlos en el plano complejo.
+		\answer Ceros: $z_1=0$ y $z_2=2$. Polos: $p_1=-5$, $p_2=-3+i$, $p_3=-3-i$.
+
+		\item El \textit{factor de compresibilidad} de un gas ideal es $Z=1$. Sin embargo, en la vida real el coeficiente se puede expresar como un polinomio donde la variable es el volumen molar recíproco: $Z\left(\frac{1}{V_m}\right)=1+B\left(\frac{1}{V_m}\right)+C\left(\frac{1}{V_m}\right)^2+D\left(\frac{1}{V_m}\right)^3 + \cdots$. Los coeficientes $B$, $C$ y $D$ se denominan segundo, tercer y cuarto coeficiente virial, respectivamente. A la temperatura de 273 kelvin, los coeficientes del gas argón B y C son $-21.7$ (en $\frac{\text{cm}^3}{\text{mol}}$) y $1200$ (en $\frac{\text{cm}^6}{\text{mol}^2}$), respectivamente, y los demás se consideran despreciables (cero). Escribir el polinomio $Z\left(\frac{1}{V_m}\right)$ y calcular el \textit{factor de compresibilidad} de una muestra de gas argón que presenta un volúmen molar de $540~\frac{\text{cm}^3}{\text{mol}}$ a 273 kelvin.
+		\answer Como los coeficientes y la muestra corresponden a la misma temperatura (273 kelvin) los podemos usar en conjunto. El factor de compresibilidad será $Z\left(\frac{1}{V_m}\right)=1-21.7\left(\frac{1}{V_m}\right)+1200\left(\frac{1}{V_m}\right)^2$. Introducimos el volumen molar y obtenemos $Z\left(\frac{1}{540}\right)=1-21.7\left(\frac{1}{540}\right)+1200\left(\frac{1}{540}\right)^2 \simeq 0.9589$.
 
 	\end{enumerate}
-	\end{multicols}
 
 	\exercise Resolver los siguientes ejercicios de desafío
 	\begin{enumerate} [label=(\alph*)]
