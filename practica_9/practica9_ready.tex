@@ -1,0 +1,120 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+%Enumeracion
+\usepackage{enumitem}
+%Páginas sin numeración
+\pagestyle{empty}
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+\begin{document}
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 9: Superficies } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+\begin{enumerate}
+	\exercise Clasificar las siguientes superficies cuadráticas mediante el análisis de trazas y graficarlas aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $x^2+y^2+z^2=9$
+		\item $16x^2+4y^2+8z^2=32$
+		\item $x^2+y^2-9z^2=9$
+		\item $36x^2-9y^2-36z^2=36$
+		\item $x^2+4y^2=-16z$
+		\item $4x^2-9y^2=-36z$
+		\item $x^2+y^2-z^2=0$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Identificar las siguientes superficies cilíndricas y graficarlas aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $y^2+z^2=4$
+		\item $4x^2+25y^2=100$
+		\item $z=4y^2$
+		\item $x^2-y^2=1$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Las siguientes ecuaciones no representan superficies cuádricas ni cilíndricas. Hallar el lugar geométrico que representan. aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(x-1)^2+(y-2)^2+(z-3)^2=0$
+		\item $3x^2+5y^2+5z^2+75=0$
+		\item $36y^2-25z^2=0$
+		\item $3x^2+4y^2=0$
+		\item $2z^2-8=0$
+		\item $x^2=9$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Clasificar las siguientes superficies y hacer un gráfico aproximado de las mismas. Identificar ejes de simetría rotacional, planos de simetría, puntos de inversión y rango de posibles de $x$, $y$ y $z$.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $4+x^2+y^2-4z+z^2=0$
+		\item $-20+36x^2+9y^2-16z+4z^2=0$
+		\item $2+2x^2+2y^2-z=0$
+		\item $2-x+4y^2+4z^2=0$
+		\item $x^2-8y+4y^2+16z=0$
+		\item $2x-3y+z-3=0$
+		\item $y-7=0$
+		\item $-3+x^2+2y-y^2-4z=0$
+		\item $-1-x+2y-y^2+z^2=0$
+		\item $x^2+y^2-4=0$
+		\item $x^2+z^2-4=0$
+		\item $-2y^2+z=0$
+		\item $1-16x+4x^2+2z+z^2=0$
+		\item $-45-18x-9x^2+4y^2=0$
+		\item $2x-3y+z=6$
+		\item $-5+x^2+y^2-4z+z^2=0$
+		\item $-20+36x^2-9y^2-16z+4z^2=0$
+		\item $-20-36x^2-9y^2-16z+4z^2=0$
+		\item $16+36x^2-9y^2-16z+4z^2=0$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Sea la ecuación $x^2+ky^2-4z^2=m$, identificar la superficie que se obtiene con
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $k=0$ y $m>0$
+		\item $k<0$ y $m=0$
+		\item $k>0$ y $m<0$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Dada la superficie $r.x^2+12y^2+s.z^2=144$, determinar los valores de $r,s \in \mathbb{R}$ para que la superficie sea:
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item Una hipérbola de una hoja
+		\item Una hiperbola de una hoja con sección circular
+		\item Una hiperbola de dos hojas
+		\item Una superficie cilíndrica recta de directriz hiperbólica
+		\item Una elipsoide cuya intersección con el plano $x$-$z$ es una elipse de eje focal $z$, con semidiametro menor $3$ y semidiametro mayor $4$
+		\item Una superficie cilindrica cuya intersección con el plano $y$-$z$ es una hipérbola con diámetros transverso y conjugado iguales 
+	\end{enumerate}
+	\end{multicols}
+\end{enumerate}
+\vspace{20pt} 
+ \textbf{Respuestas}\begin{enumerate}\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\end{enumerate}\end{document}
