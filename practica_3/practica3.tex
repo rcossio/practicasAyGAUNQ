@@ -1,0 +1,299 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{ \left\{\begin{matrix} #1 \end{matrix}\right. }
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\degs}{^{\circ}}
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 3: Vectores } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Definir los vectores a partir de sus puntos extremo y origen, y graficarlos desplazados al origen indicando su cuadrante/octante.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $\vect{AB}$, con $A(1,2)$ y $B(3,4)$
+		\answer $\vect{AB}= \vect{OB} - \vect{OA} = (3,4) - (1,2) = (2,2)$
+
+		\item $\vec{v}$ es el vector con origen $C(3,1)$ y $D(0,4)$
+		\answer $\vec{v}= \vect{OD} - \vect{OC} = (0,4) - (3,1)= (-3,3)$
+
+		\item $\vect{EF}$ y $\vect{FE}$, con $E(-1,2)$ y $F(1,1)$
+		\answer $\vect{EF} = \vect{OF} - \vect{OE} = (1,1) - (-1,2) = (2,-1)$. $\vect{FE} = \vect{OE} - \vect{OF} = (-1,2) - (1,1) = (-2,1)$
+
+		\item $\vect{AB}$, con $A(1,2,3)$ y $B(1,4,4)$
+		\answer $\vect{AB} = \vect{OB} - \vect{OA} = (1,4,4) - (1,2,3) = (0,2,1)$
+
+		\item $\vec{u}$ que parte desde el origen al punto $D(2,-3,4)$
+		\answer $\vec{u} = \vect{OD} = (2,-3,4)$
+
+		\item $\vec{r}$ con origen $P_0(0,0,4)$ y $P_1(2,2,1)$
+		\answer $\vec{r} = \vect{OP_1} - \vect{OP_0} = (2,2,1) - (0,0,4) = (2,2,-3)$
+ 
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Interpretar gráficamente las siguientes sumas y restas de vectores, acompañando el gráfico con el cálculo analítico.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $(1,1)+(2,3)$
+		\answer $(1,1)+(2,3) = (3,4)$
+
+		\item $\vec{v} + \vec{u}$ con $\vec{v}=(-1,3)$ y $\vec{u}=(1,3)$
+		\answer $\vec{v} + \vec{u} = (-1,3) + (1,3) = (0,6)$
+
+		\item $(4,-1)+(3,3)+(-2,0)$
+		\answer $(4,-1)+(3,3)+(-2,0) = (5,2)$
+
+		\item $(3,1)-(2,4)$
+		\answer $(3,1)-(2,4) = (1,-3)$
+
+		\item $\vec{a} - \vec{b}$ y $\vec{b} - \vec{a}$ con $\vec{a}=(-1,2)$ y $\vec{b}=(1,2)$
+		\answer $\vec{a} - \vec{b} = (-1,2) - (1,2) = (-2,0)$. $\vec{b} - \vec{a} = (1,2) - (-1,2) = (2,0)$
+
+		\item $\left(\vec{v}+\vec{u}\right)-\vec{w}$ con $\vec{v}=(1,2)$, $\vec{u}=(2,1)$ y $\vec{w}=(1,1)$
+		\answer $\left(\vec{v}+\vec{u}\right)-\vec{w} = (1,2)+(2,1)-(1,1) = (2,2)$
+
+		\item $(2,0,0)+(0,3,0)+(0,0,1)$
+		\answer $(2,0,0)+(0,3,0)+(0,0,1) = (2,3,1)$
+
+		\item $(2,2,0)+(0,-1,1)$
+		\answer $(2,2,0)+(0,-1,1) = (2,1,1)$
+
+		\item $(1,-1,0)-(-2,-1,3)$
+		\answer $(1,-1,0)-(-2,-1,3) = (3,0,-3)$
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Calcular el módulo y ángulo de los siguientes vectores de $\mathbb{R}^2$ y escribir sus coordenadas en forma polar.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $(1,1)$
+		\answer $|(1,1)| = \sqrt{1^2+1^2} = \sqrt{2}$. $\theta=\arctan\left(\df{1}{1}\right) = \arctan(1) = 45\degs$. $\SEL{v_x=\sqrt{2} \cos{45\degs} \\ v_y=\sqrt{2} \sin{45\degs} }$
+
+		\item $(2,3)$
+		\answer $|(2,3)| = \sqrt{2^2+3^2} = \sqrt{13}$. $\theta=\arctan\left(\df{3}{2}\right) \simeq 56.31\degs$.  $\SEL{v_x \simeq\sqrt{13} \cos{56\degs} \\ v_y\simeq\sqrt{13} \sin{56\degs} }$
+
+		\item $(3,-4)$
+		\answer $|(3,-4)| = \sqrt{3^2+(-4)^2} = \sqrt{25} = 5$. $\theta=\arctan\left(\df{-4}{3}\right) \simeq -53.13\degs$. $\SEL{v_x \simeq 5 \cos{-53\degs} \\ v_y\simeq5 \sin{-53\degs} }$
+
+		\item $(0,5)$
+		\answer $|(0,5)| = \sqrt{0^2+5^2} = \sqrt{25} = 5$. $\theta= 90\degs$. $\SEL{v_x=5 \cos{90\degs} \\ v_y=5 \sin{90\degs} }$
+
+		\item $(-2,1)$
+		\answer $|(-2,1)| = \sqrt{(-2)^2+1^2} = \sqrt{5}$. $\theta=\arctan\left(\df{1}{-2}\right) +180\degs \simeq 153.43\degs$. $\SEL{v_x \simeq \sqrt{5} \cos{153\degs} \\ v_y \simeq \sqrt{5} \sin{153\degs} }$
+
+		\item $(-3,-4)$
+		\answer $|(-3,-4)| = \sqrt{(-3)^2+(-4)^2} = \sqrt{25} = 5$. $\theta=\arctan\left(\df{-4}{-3}\right) +180\degs \simeq 233.13\degs$. $\SEL{v_x \simeq 5 \cos{233\degs} \\ v_y \simeq 5 \sin{233\degs} }$
+
+		\item $(-4,0)$
+		\answer $|(-4,0)| = \sqrt{(-4)^2+0^2} = \sqrt{16} = 4$. $\theta= 180\degs$. $\SEL{v_x = 4 \cos{180\degs} \\ v_y = 4 \sin{180\degs} }$
+
+		\item $(0,0)$
+		\answer $|(0,0)| = \sqrt{0^2+0^2} = \sqrt{0} = 0$. No se define un ángulo. $\SEL{v_x = 0 \\ v_y= 0}$
+
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Escribir los siguientes vectores de $\mathbb{R}^2$ en coordenadas rectangulares a partir de su ángulo y módulo
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $\left|\vec{v}\right|=5$ y $\theta=30\degs$
+		\answer $\vec{v}=(5 \cos{30\degs}, 5 \sin{30\degs})=\left(\df{5\sqrt{3}}{2}, \df{5}{2}\right)$
+
+		\item $\left|\vec{u}\right|=8$ y $\theta=60\degs$
+		\answer $\vec{u}=(8 \cos{60\degs}, 8 \sin{60\degs})=( 4, 4\sqrt{3})$
+
+		\item $\left|\vec{r}\right|=4$ y $\theta=180\degs$
+		\answer $\vec{r}=(4 \cos{180\degs}, 4 \sin{180\degs})= (-4,0)$
+
+		\item $\left|\vec{P}\right|=7$ y $\theta=300\degs$
+		\answer $\vec{P}=(7 \cos{300\degs}, 7 \sin{300\degs})= \left(-\df{7}{2}, -\df{7\sqrt{3}}{2}\right)$
+
+		\item $\left|\vec{w}\right|=3$ y $\theta=145\degs$
+		\answer $\vec{w}=(3 \cos{145\degs}, 3 \sin{145\degs})= \left(-\df{3\sqrt{2}}{2}, \df{3\sqrt{2}}{2}\right)$
+
+		\item $\left|\vec{F}\right|=1$ y $\theta=210\degs$
+		\answer $\vec{F}=(\cos{210\degs}, \sin{210\degs})= \left(-\df{\sqrt{3}}{2}, -\df{1}{2}\right)$
+
+		\item $\left|\vec{T}\right|=2$ y $\theta=0\degs$
+		\answer $\vec{T}=(2 \cos{0\degs}, 2 \sin{0\degs})= (2,0)$
+		
+		\item $\left|\vec{L}\right|=6$ y $\theta=330\degs$
+		\answer $\vec{L}=(6 \cos{330\degs}, 6 \sin{330\degs})= \left(\df{3\sqrt{3}}{2}, -\df{3}{2}\right)$
+
+		\item $\left|\vec{a}\right|=5$ y $\theta=-45\degs$
+		\answer $\vec{a}=(5 \cos{-45\degs}, 5 \sin{-45\degs})= \left(\df{5\sqrt{2}}{2}, -\df{5\sqrt{2}}{2}\right)$
+
+		\item $\left|\vec{n}\right|=0$
+		\answer $\vec{n}=(0, 0)$
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise De los siguientes vectores de $\mathbb{R}^3$, calcular su módulo $|\vec{v}|$, coordenada radial $\rho$, ángulo azimutal $\phi$ y colatitud $\theta$. Luego, interpretarlos graficamente y escribirlos en coordenadas cilindricas y esféricas.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $(1,1,1)$
+		\answer $|\vec{v}| = \sqrt{1^2+1^2+1^2} = \sqrt{3}$. $\rho = \sqrt{1^2+1^2} = \sqrt{2}$. $\phi = \arctan\left(\df{1}{1}\right) = 45\degs$. $\theta = \arccos\left(\df{1}{\sqrt{3}}\right) \simeq 54.74\degs$. \\ Cilindricas: $\SEL{v_x=\sqrt{2} \cos{45\degs} \\ v_y=\sqrt{2} \sin{45\degs} \\ v_z=1 }$. Esféricas: $\SEL{v_x \simeq \sqrt{3} \sin{54\degs} \cos{45\degs} \\ v_y \simeq \sqrt{3} \sin{54\degs} \sin{45\degs} \\ v_z \simeq \sqrt{3} \cos{54\degs} }$ 
+
+		\item $(2,3,4)$
+		\answer $|\vec{v}| = \sqrt{2^2+3^2+4^2} = \sqrt{29}$. $\rho = \sqrt{2^2+3^2} = \sqrt{13}$. $\phi = \arctan\left(\df{3}{2}\right) \simeq 56.31\degs$. $\theta = \arccos\left(\df{4}{\sqrt{29}}\right) \simeq 42.03\degs$. \\ Cilindricas: $\SEL{v_x \simeq \sqrt{13} \cos{56\degs} \\ v_y \simeq \sqrt{13} \sin{56\degs} \\ v_z=4 }$. Esféricas: $\SEL{v_x \simeq \sqrt{29} \sin{42\degs} \cos{56\degs} \\ v_y \simeq \sqrt{29} \sin{42\degs} \sin{56\degs} \\ v_z \simeq \sqrt{29} \cos{42\degs} }$
+
+		\item $(3,-4,0)$
+		\answer $|\vec{v}| = \sqrt{3^2+(-4)^2+0^2} = 5$. $\rho = \sqrt{3^2+(-4)^2} = 5$. $\phi = \arctan\left(\df{-4}{3}\right) \simeq -53.13\degs$. $\theta = \arccos\left(\df{0}{5}\right) = 90\degs$. \\ Cilindricas: $\SEL{v_x \simeq 5 \cos{-53\degs} \\ v_y \simeq 5 \sin{-53\degs} \\ v_z=0 }$. Esféricas: $\SEL{v_x \simeq 5 \sin{90\degs} \cos{-53\degs} \\ v_y \simeq 5 \sin{90\degs} \sin{-53\degs} \\ v_z \simeq 5 \cos{90\degs} }$
+
+		\item $(0,5,0)$
+		\answer $|\vec{v}| = \sqrt{0^2+5^2+0^2} = 5$. $\rho = \sqrt{0^2+5^2} = 5$. $\phi = 90\degs$. $\theta = \arccos\left(\df{0}{5}\right) = 90\degs$. \\ Cilindricas: $\SEL{v_x=5 \cos{90\degs} \\ v_y=5 \sin{90\degs} \\ v_z=0 }$. Esféricas: $\SEL{v_x \simeq 5 \sin{90\degs} \cos{90\degs} \\ v_y \simeq 5 \sin{90\degs} \sin{90\degs} \\ v_z \simeq 5 \cos{90\degs} }$
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Escribir los siguientes vectores de $\mathbb{R}^3$ en coordenadas rectangulares a partir de su módulo $|\vec{v}|$, coordenada radial $\rho$, cota $z$, ángulo azimutal $\phi$ y/o colatitud $\theta$.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $\rho=3$, $\phi=45\degs$ y $z=2$
+		\answer $\vec{v} = (3 \cos{45\degs}, 3 \sin{45\degs}, 2)= \left(\df{3\sqrt{2}}{2}, \df{3\sqrt{2}}{2}, 2 \right)$
+
+		\item $\rho=2$, $\phi=180\degs$ y $z=4$
+		\answer $\vec{v} = (2 \cos{180\degs}, 2 \sin{180\degs}, 4)= (-2, 0, 4)$
+
+		\item $\rho=1$, $\phi=300\degs$ y $z=-2$
+		\answer $\vec{v} = (1 \cos{300\degs}, 1 \sin{300\degs}, -2)= \left(\df{1}{2}, -\df{\sqrt{3}}{2}, -2 \right)$
+
+		\item $\rho=4$, $\phi=0\degs$ y $z=0$
+		\answer $\vec{v} = (4 \cos{0\degs}, 4 \sin{0\degs}, 0)= (4, 0, 0)$
+
+		\item $\rho=0$ y $z=3$
+		\answer $\vec{v}=(0,0,3)$
+
+		\item $\left|\vec{v}\right|=5$, $\phi=45\degs$ y $\theta=30\degs$
+		\answer $\vec{v} = (5 \sin{30\degs} \cos{45\degs}, 5 \sin{30\degs} \sin{45\degs}, 5 \cos{30\degs})= \left(\df{5\sqrt{2}}{4}, \df{5\sqrt{2}}{4}, \df{5\sqrt{3}}{2} \right)$
+
+		\item $\left|\vec{T}\right|=3$, $\phi=270\degs$ y $\theta=90\degs$
+		\answer $\vec{T} = (3 \sin{90\degs} \cos{270\degs}, 3 \sin{90\degs} \sin{270\degs}, 3 \cos{90\degs})= (0, -3, 0)$
+
+		\item $\left|\vec{d}\right|=2$ y $\theta=0\degs$
+		\answer $\vec{d} = (0, 0, 2)$
+
+		\item $\left|\vec{F}\right|=1$ y $\theta=180\degs$
+		\answer $\vec{F} = (0, 0, -1)$
+
+		\item $\left|\vec{d}\right|=0$
+		\answer $\vec{d} = (0, 0, 0)$
+
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Resolver los siguientes ejercicios sobre geometría
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Calcular la distancia entre los puntos $P(-1,2,7)$ y $Q(3,0,1)$
+		\answer $d(P,Q) = \left| \vect{PQ} \right| = \left| (4,-2,-6) \right| \sqrt{4^2+(-2)^2+(-6)^2} = \sqrt{56} \simeq 7.4833$
+
+		\item Dado $\vect{PQ}=(5,7)$ y $P(-1,-1)$, calcular $Q$.
+		\answer $\vect{PQ} = \vect{OQ} - \vect{0P}$, por lo que $\vect{OQ}=\vect{OP}+\vect{PQ}=(-1,-1)+(5,7)=(4,6)$. El punto es $Q(4,6)$
+
+		\item Dado $\vect{AB}=(4,1)$ y $B(1,2)$, calcular $A$
+		\answer $\vect{AB} = \vect{OB} - \vect{OA}$, por lo que $\vect{OA}=\vect{OB}-\vect{AB}=(1,2)-(4,1)=(-3,1)$. El punto es $A(-3,1)$
+
+		\item Indicar si la distancia entre $R(1,-4,0)$ y $S(4,1,2)$ es menor a $10$ unidades
+		\answer $d(R,S) = \left| \vect{RS} \right| = \left| (3,5,2) \right| \sqrt{3^2+5^2+2^2} = \sqrt{38} \simeq 6.1644$. La distancia es menor a $10$ unidades.
+
+		\item El triangulo $ABC$ tiene vértices $A(1,2,3)$, $B(2,3,4)$ y $C(3,4,5)$. Calcular el perímetro del triángulo.
+		\answer El perímetro es la suma de los lados $\overline{AB}$, $\overline{BC}$ y $\overline{CA}$. Calculamos cada lado: \\ $\overline{AB} = \left| \vect{AB}\right| = \left| (1,1,1) \right| \sqrt{1^2+1^2+1^2} = \sqrt{3}$. \\ $\overline{BC} = \left| \vect{BC}\right| = \left| (1,1,1) \right| \sqrt{1^2+1^2+1^2} = \sqrt{3}$. $\overline{CA} = \left| \vect{CA}\right| = \left| (-2,-2,-2) \right| \sqrt{(-2)^2+(-2)^2+(-2)^2} = 2\sqrt{3}$. El perímetro es $\sqrt{3}+\sqrt{3}+2\sqrt{3} = 4\sqrt{3} \simeq 6.9282$
+
+		\item La suma de los vectores $\vect{v_1}$ , $\vect{v_2}=(5,1)$ y $\vect{v_3} = (-5.1)$ es el vector nulo. Calcular $\vect{v_1}$ e interpretar gráficamente
+		\answer Como $\vect{v_1}+\vect{v_2}+\vect{v_3}=(0,0)$, despejamos $\vect{v_1} = (0,0) -\vect{v_2} - \vect{v_3} = (0,0) - (5,1) - (-5,1) = (0,-2)$.
+
+		\item Se sabe que $\vect{u_1} + \vect{u_2} = \vect{u_3}$ y que $\vect{u_1} = (1,1,0)$ y $\vect{u_3}=(0,2,0)$. Calcular $\vect{u_2}$ e interpretar gráficamente.
+		\answer Como $\vect{u_1} + \vect{u_2} = \vect{u_3}$, despejamos $\vect{u_2} = \vect{u_3} - \vect{u_1} = (0,2,0) - (1,1,0) = (-1,1,0)$
+
+		\item Dados $\vec{a},\vec{b}$ en $\mathbb{R}^2$, se sabe que $\vec{a}+\vec{b}=(5,4)$ y que $\vec{a}-\vec{b}=(1,-2)$. Calcular $\vec{a}$ y $\vec{b}$ y comprobar el resultado gráficamente.
+		\answer Como $\vec{a}+\vec{b}=(5,4)$ y $\vec{a}-\vec{b}=(1,-2)$, sumando ambas ecuaciones obtenemos $2\vec{a}=(6,2)$, por lo que $\vec{a}=(3,1)$. Restando ambas ecuaciones obtenemos $2\vec{b}=(4,6)$, por lo que $\vec{b}=(2,3)$.
+
+		\item Determinar $D$ para que $\vect{AB}$ sea equivalente a $\vect{CD}$ con $A(5,-1,3)$, $B(2,3,-2)$, $C(-5,8,-5)$. Interpretar gráficamente.
+		\answer $\vect{AB} = \vect{OB} - \vect{OA} = (2,3,-2) - (5,-1,3) = (-3,4,-5)$. Por lo tanto $\vect{CD} = \vect{AB} = (-3,4,-5)$. Además $ \vect{CD}= \vect{OD} - \vect{OC}$ por lo que $\vect{OD} = \vect{OC} + \vect{CD} = (-5,8,-5) + (-3,4,-5) = (-8,12,-10)$. El punto es $D(-8,12,-10)$
+
+		\item Encontrar las coordenadas del punto medio entre $A(7,5)$ y $B(1,2)$
+		\answer El punto medio es $\left(\df{7+1}{2}, \df{5+2}{2}\right) = \left(4,\df{7}{2}\right)$
+
+		\item Encontrar las coordenadas el punto medio entre $M(0,-1,1)$ y $N(2,2,-1)$
+		\answer El punto medio es $\left(\df{0+2}{2}, \df{-1+2}{2}, \df{1-1}{2}\right) = \left(1,\df{1}{2},0\right)$
+
+		\item Sean $A(2,-3)$, $B(-3,5)$ y $C(-1,5)$ y $D$ los vertices de un paralelogramo, donde $D$ es el vertice opuesto a $A$, hallar $D$ e interpretar geométricamente.
+		\answer El centro del paralelogramo es el punto medio entre $B$ y $C$, por lo que el centro es $E(-2,5)$. El vector $\vect{AE}=(-4,8)$ es equivalente a $\vect{ED}$, por lo que $\vect{OD} = \vect{OE} + \vect{ED} = (-2,5) + (-4,8) = (-6,13)$. El punto es $D(-6,13)$
+
+	\end{enumerate}
+
+	% Aca se harán ejercicios para introducir el concepto de paralelismo con vectories y la operacion k.v
+	% Aca se puede dar el concepto de combinación lineal
+	% Luego se introducirá el concepto de producto escalar para relacionarlo con angulo y perpendicularidad
+	% Luego se introducirá el producto vectorial y su significado geométrico
+	% Producto mixto con su interpretacion geométrica
+	% Aca se pueden hacer ejercicios con todas las operaciones para que vean cuales tienen sentido y cuales no
+	% Aca se pueden hacer ejercicios de proyección vectorial y componente ortogonal
+
+	% Finalmente ejercicios aplicador, recordar fuerza palicada sobre una pared en angulo, etc
+
+	% Ejercicios valiosos de la UTN: 5, 1, 6-7-8, 2, 9, 3, 10, 12, 13, 14, (15), 16, 17, 18  11, 19
+	% Ejercicios valiosos de Ernesto: 3, 4, 6b, 9 ,10, 11, 12, 13.
+\end{enumerate}
+
+\end{document}
