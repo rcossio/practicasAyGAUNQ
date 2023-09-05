@@ -1,0 +1,215 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+%Links
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%Simbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Enumeracion
+\usepackage{enumitem}
+
+%Páginas sin numeración
+\pagestyle{empty}
+
+%Interlineado
+\renewcommand{\baselinestretch}{1.5}
+
+%Arreglar comillas
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+%Macros
+\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
+\newcommand{\answer}{\item[**]}
+\newcommand{\exercise}{\item}
+\newcommand{\SEL}[1]{ \left\{\begin{matrix} #1 \end{matrix}\right. }
+\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+
+\begin{document}
+
+\noindent \hrulefill 
+\vspace{-7pt}
+\begin{center} 
+	\textbf{ Práctica 9: Superficies } \\
+	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
+\end{center}
+\vspace{-10pt}
+\hrulefill
+
+
+\begin{enumerate}
+
+	\exercise Clasificar las siguientes superficies cuadráticas mediante el análisis de trazas y graficarlas aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $x^2+y^2+z^2=9$
+		\item $16x^2+4y^2+8z^2=32$
+		\item $x^2+y^2-9z^2=9$
+		\item $36x^2-9y^2-36z^2=36$
+		\item $x^2+4y^2=-16z$
+		\item $4x^2-9y^2=-36z$
+		\item $x^2+y^2-z^2=0$
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Identificar las siguientes superficies cilíndricas y graficarlas aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $y^2+z^2=4$
+		\item $4x^2+25y^2=100$
+		\item $z=4y^2$
+		\item $x^2-y^2=1$
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Las siguientes ecuaciones no representan superficies cuádricas ni cilíndricas. Hallar el lugar geométrico que representan. aproximadasmente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $(x-1)^2+(y-2)^2+(z-3)^2=0$
+		\answer Punto $(1,2,3)$ 
+
+		\item $3x^2+5y^2+5z^2+75=0$
+		\answer Conjunto vacío $\emptyset$
+
+		\item $36y^2-25z^2=0$
+		\answer Dos planos: $6y-5z=0$ y $6y+5z=0$
+
+		\item $3x^2+4y^2=0$
+		\answer La recta $(x,y,z)=(0,0,0)+k(0,0,1)$. Recordar que $z$ es libre.
+
+		\item $2z^2-8=0$
+		\answer Dos planos: $z=2$ y $z=-2$
+
+		\item $x^2=9$
+		\answer Dos planos: $x=3$ y $x=-3$
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Clasificar las siguientes superficies y hacer un gráfico aproximado de las mismas. Identificar si existen ejes de simetría rotacional, planos de simetría, puntos de inversión y rango de valores posibles de $x$, $y$ y $z$.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $4+x^2+y^2-4z+z^2=0$
+		\item $-20+36x^2+9y^2-16z+4z^2=0$
+		\item $2+2x^2+2y^2-z=0$
+		\item $2-x+4y^2+4z^2=0$
+		\item $x^2-8y+4y^2+16z=0$
+		\item $2x-3y+z-3=0$
+		\item $y-7=0$
+		\item $-3+x^2+2y-y^2-4z=0$
+		\item $-1-x+2y-y^2+z^2=0$
+		\item $x^2+y^2-4=0$
+		\item $x^2+z^2-4=0$
+		\item $-2y^2+z=0$
+		\item $1-16x+4x^2+2z+z^2=0$
+		\item $-45-18x-9x^2+4y^2=0$
+		\item $2x-3y+z=6$
+		\item $-5+x^2+y^2-4z+z^2=0$
+		\item $-20+36x^2-9y^2-16z+4z^2=0$
+		\item $-20-36x^2-9y^2-16z+4z^2=0$
+		\item $16+36x^2-9y^2-16z+4z^2=0$
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Sea la ecuación $x^2+ky^2-4z^2=m$, identificar la superficie que se obtiene con
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item $k>0$ y $m>0$
+		\answer Un hiperboloide de una hoja con centro en el origen y con eje principal $z$.
+
+		\item $k=0$ y $m>0$
+		\answer Un cilindro hiperbólico de generatrices paralelas al eje $y$ donde la hipérbola generatriz tiene eje focal $x$.
+
+		\item $k<0$ y $m=0$
+		\answer Un cono de vértice en el origen y eje principal $x$.
+
+		\item $k>0$ y $m<0$
+		\answer Un hiperboloide de dos hojas con centro en el origen y con eje principal $z$.
+
+	\end{enumerate}
+	\end{multicols}
+
+
+	\exercise Dada la superficie $r.x^2+12y^2+s.z^2=144$, determinar los valores de $r,s \in \mathbb{R}$ para que la superficie sea:
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		
+		\item Un hiperboloide de una hoja
+		\answer $r>0$ y $s<0$ para obtener un hiperboloide con eje principal $z$, o $r<0$ y $s>0$ para obtener un hiperboloide con eje principal $x$.
+
+		\item Una hiperboloide de una hoja con sección circular
+		\answer $r=12$ y $s<0$ para obtener un hiperboloide con eje principal $z$, o $r<0$ y $s=12$ para obtener un hiperboloide con eje principal $x$.
+
+		\item Una hiperboloide de dos hojas
+		\answer $r<0$ y $s<0$ para obtener un hiperboloide con eje principal $y$.
+
+		\item Una superficie cilíndrica recta de directriz hiperbólica
+		\answer $r=0$ y $s<0$ para obtener un cilindro hiperbólico con generatrices paralelas al eje $x$, o $r<0$ y $s=0$ para obtener un cilindro hiperbólico con generatrices paralelas al eje $z$.
+
+		\item Una elipsoide cuya intersección con el plano $xz$ es una elipse de eje focal $z$, con semidiametro menor $3$ y semidiametro mayor $4$
+
+		\item Una superficie cilindrica cuya intersección con el plano $yz$ es una hipérbola con diámetros transverso y conjugado iguales 
+		\answer El plano $yz$ tiene ecuación $x=0$ por lo que la intersección es $12y^2+s.z^2=144$. Para que sea una hiperbola con diámetros transverso y conjugado iguales $s=12$. Para que sea una superficie cilíndrica $r=0$.
+
+	\end{enumerate}
+	\end{multicols}
+
+	\exercise Parametrizar las siguientes superficies y realizar un esquema del significado de los parámetros.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+
+		\item $(x-3)^2+y^2+(z-2)^2=49$
+		\answer En coordenadas esféricas, utilizando la colatitud $u \in \left[0,\pi\right]$ y el ángulo azimutal $v \in \left[0,2\pi\right)$: \\ $\SEL{x=7\sin(u)\cos(v)+3 \\ y=7\sin(u)\sin(v) \\ z=7 cos(u)}$
+
+		\item $\df{x^2}{4}+\df{y^2}{9}+\df{(z-2)^2}{1}=1$
+		\answer Basado en la parametrización de una esfera utilizando $u \in \left[0,\pi\right]$ (colatitud) y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=2\sin(u)\cos(v) \\ y=3\sin(u)\sin(v) \\ z= \cos(u)+2}$
+
+		\item $\df{x^2}{9}+\df{y^2}{9}-\df{z^2}{4}=1$
+		\answer Parametrizando con funciónes hiperbólicas utilizamos $u \in \mathbb{R}$ (ángulo hiperbólico) y $v \in \left[0,2\pi\right)$ (ángulo asimutal): \\ $\SEL{x=3\cosh(u)\cos(v) \\ y=3\cosh(u)\sin(v) \\ z=3\sinh(u)}$
+
+		\item $-\df{x^2}{4}+\df{y^2}{1}-\df{z^2}{4}=1$
+		\answer Parametrizando la mitad que corresponde a $+y$ con funciones hiperbólicas, utilizamos $u \in \mathbb{R}$ (ángulo hiperbólico) y $v \in \left[0,2\pi\right)$ (ángulo con eje $x$ en el plano $xz$): \\ $\SEL{x=2\sinh(u)\cos(v) \\ y=\cosh(u) \\ z=2\sinh(u)\sin(v)}$. \\ La mitad que corresponde a $-y$ es: \\ $\SEL{x=2\sinh(u)\cos(v) \\ y=-\cosh(u) \\ z=2\sinh(u)\sin(v)}$
+
+		\item $4x^2+y^2-8z=0$
+		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\df{u^2}{2}+\df{v^2}{8}}$
+
+		\item $4x^2-9y^2-36z=0$
+		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\df{u^2}{9}-\df{v^2}{4}}$
+
+		\item $5x^2+5y^2-z^2=0$
+		\answer En coordenadas cilíndricas, utilizamos $u \in \left[0,+\infty\right)$ (coordenada radial) y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=u\cos(v) \\ y=u \sin(v) \\ z=5u}$
+
+		\item $x^2+y^2=100$
+		\answer En coordenadas cilíndricas, utilizamos $z=u \in \mathbb{R}$ y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=10\cos(v) \\ y=10 \sin(v) \\ z=u}$
+
+	\end{enumerate}
+	\end{multicols}
+
+\end{enumerate}
+
+\end{document}
