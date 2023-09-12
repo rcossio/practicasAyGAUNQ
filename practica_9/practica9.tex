@@ -1,10 +1,5 @@
-
 \documentclass[a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-
-\usepackage{multicol}
-\usepackage{enumitem}
-\usepackage{graphicx}
 
 %Links
 \usepackage[colorlinks = true,
@@ -20,6 +15,12 @@
 %Enumeracion
 \usepackage{enumitem}
 
+%Multicolumna
+\usepackage{multicol}
+
+%Graficos
+\usepackage{graphicx}
+
 %Páginas sin numeración
 \pagestyle{empty}
 
@@ -30,16 +31,42 @@
 \usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
 
+% Formato de enumitem de incisos
+\setlist[enumerate,2]{label=(\alph*)}
+
+% Define a new environment that combines enumerate with multicols
+\NewDocumentEnvironment{enumcols}{O{1}}
+{
+  \ifnum#1>1 \begin{multicols}{#1} \fi
+  \begin{enumerate}
+}
+{
+  \end{enumerate}
+  \ifnum#1>1 \end{multicols} \fi
+}
+
 %Macros
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
-\newcommand{\answer}{\item[**]}
-\newcommand{\exercise}{\item}
-\newcommand{\SEL}[1]{ \left\{\begin{matrix} #1 \end{matrix}\right. }
-\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
-\newcommand{\conj}[1]{\overline{#1}}
-\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
-\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
-
+\newcommand{\answer}{\item[**]} % Respuesta
+\newcommand{\exercise}{\item} % Ejercicio
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.} %Sistema de ecuaciones lineales
+\newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Matriz ampliada
+\newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fracción grande
+\newcommand{\conj}[1]{\overline{#1}} % Conjugado de complejo
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} %Forma trigonométrica de complejo
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Imagen en inciso
+\newcommand{\vect}[1]{\overrightarrow{#1}} %Vector con flecha amplia
+\newcommand{\degs}{^{\circ}} % Grados
+\newcommand{\R}{\mathbb{R}} % Conjunto de los reales
+\newcommand{\C}{\mathbb{C}} % Conjunto de los complejos
+\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Matrices complejas
+\newcommand{\Z}{\mathbb{Z}} % Conjunto de los enteros
+\newcommand{\Q}{\mathbb{Q}} % Conjunto de los racionales
+\newcommand{\ivec}{\check{\imath}} % i vector
+\newcommand{\jvec}{\check{\jmath}} % j vector
+\newcommand{\kvec}{\check{k}} % k vector
 \begin{document}
 
 \noindent \hrulefill 
@@ -55,8 +82,7 @@
 \begin{enumerate}
 
 	\exercise Clasificar las siguientes superficies cuadráticas mediante el análisis de trazas y graficarlas aproximadasmente.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $x^2+y^2+z^2=9$
 		\item $16x^2+4y^2+8z^2=32$
@@ -66,25 +92,22 @@
 		\item $4x^2-9y^2=-36z$
 		\item $x^2+y^2-z^2=0$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
 
 	\exercise Identificar las siguientes superficies cilíndricas y graficarlas aproximadasmente.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $y^2+z^2=4$
 		\item $4x^2+25y^2=100$
 		\item $z=4y^2$
 		\item $x^2-y^2=1$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Las siguientes ecuaciones no representan superficies cuádricas ni cilíndricas. Hallar el lugar geométrico que representan. aproximadasmente.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $(x-1)^2+(y-2)^2+(z-3)^2=0$
 		\answer Punto $(1,2,3)$ 
@@ -104,12 +127,11 @@
 		\item $x^2=9$
 		\answer Dos planos: $x=3$ y $x=-3$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Clasificar las siguientes superficies y hacer un gráfico aproximado de las mismas. Identificar si existen ejes de simetría rotacional, planos de simetría, puntos de inversión y rango de valores posibles de $x$, $y$ y $z$.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $4+x^2+y^2-4z+z^2=0$
 		\item $-20+36x^2+9y^2-16z+4z^2=0$
@@ -131,13 +153,11 @@
 		\item $-20-36x^2-9y^2-16z+4z^2=0$
 		\item $16+36x^2-9y^2-16z+4z^2=0$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
 
 	\exercise Sea la ecuación $x^2+ky^2-4z^2=m$, identificar la superficie que se obtiene con
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $k>0$ y $m>0$
 		\answer Un hiperboloide de una hoja con centro en el origen y con eje principal $z$.
@@ -151,13 +171,11 @@
 		\item $k>0$ y $m<0$
 		\answer Un hiperboloide de dos hojas con centro en el origen y con eje principal $z$.
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
 
 	\exercise Dada la superficie $r.x^2+12y^2+s.z^2=144$, determinar los valores de $r,s \in \mathbb{R}$ para que la superficie sea:
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item Un hiperboloide de una hoja
 		\answer $r>0$ y $s<0$ para obtener un hiperboloide con eje principal $z$, o $r<0$ y $s>0$ para obtener un hiperboloide con eje principal $x$.
@@ -176,30 +194,29 @@
 		\item Una superficie cilindrica cuya intersección con el plano $yz$ es una hipérbola con diámetros transverso y conjugado iguales 
 		\answer El plano $yz$ tiene ecuación $x=0$ por lo que la intersección es $12y^2+s.z^2=144$. Para que sea una hiperbola con diámetros transverso y conjugado iguales $s=12$. Para que sea una superficie cilíndrica $r=0$.
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Parametrizar las siguientes superficies y realizar un esquema del significado de los parámetros.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 
 		\item $(x-3)^2+y^2+(z-2)^2=49$
 		\answer En coordenadas esféricas, utilizando la colatitud $u \in \left[0,\pi\right]$ y el ángulo azimutal $v \in \left[0,2\pi\right)$: \\ $\SEL{x=7\sin(u)\cos(v)+3 \\ y=7\sin(u)\sin(v) \\ z=7 cos(u)}$
 
-		\item $\df{x^2}{4}+\df{y^2}{9}+\df{(z-2)^2}{1}=1$
+		\item $\f{x^2}{4}+\f{y^2}{9}+\f{(z-2)^2}{1}=1$
 		\answer Basado en la parametrización de una esfera utilizando $u \in \left[0,\pi\right]$ (colatitud) y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=2\sin(u)\cos(v) \\ y=3\sin(u)\sin(v) \\ z= \cos(u)+2}$
 
-		\item $\df{x^2}{9}+\df{y^2}{9}-\df{z^2}{4}=1$
+		\item $\f{x^2}{9}+\f{y^2}{9}-\f{z^2}{4}=1$
 		\answer Parametrizando con funciónes hiperbólicas utilizamos $u \in \mathbb{R}$ (ángulo hiperbólico) y $v \in \left[0,2\pi\right)$ (ángulo asimutal): \\ $\SEL{x=3\cosh(u)\cos(v) \\ y=3\cosh(u)\sin(v) \\ z=3\sinh(u)}$
 
-		\item $-\df{x^2}{4}+\df{y^2}{1}-\df{z^2}{4}=1$
+		\item $-\f{x^2}{4}+\f{y^2}{1}-\f{z^2}{4}=1$
 		\answer Parametrizando la mitad que corresponde a $+y$ con funciones hiperbólicas, utilizamos $u \in \mathbb{R}$ (ángulo hiperbólico) y $v \in \left[0,2\pi\right)$ (ángulo con eje $x$ en el plano $xz$): \\ $\SEL{x=2\sinh(u)\cos(v) \\ y=\cosh(u) \\ z=2\sinh(u)\sin(v)}$. \\ La mitad que corresponde a $-y$ es: \\ $\SEL{x=2\sinh(u)\cos(v) \\ y=-\cosh(u) \\ z=2\sinh(u)\sin(v)}$
 
 		\item $4x^2+y^2-8z=0$
-		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\df{u^2}{2}+\df{v^2}{8}}$
+		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\f{u^2}{2}+\f{v^2}{8}}$
 
 		\item $4x^2-9y^2-36z=0$
-		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\df{u^2}{9}-\df{v^2}{4}}$
+		\answer Utilizando $x=u \in \mathbb{R}$ e $y=v\in \mathbb{R}$ como parámetros: \\ $\SEL{x=u \\ y=v \\ z=\f{u^2}{9}-\f{v^2}{4}}$
 
 		\item $5x^2+5y^2-z^2=0$
 		\answer En coordenadas cilíndricas, utilizamos $u \in \left[0,+\infty\right)$ (coordenada radial) y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=u\cos(v) \\ y=u \sin(v) \\ z=5u}$
@@ -207,8 +224,8 @@
 		\item $x^2+y^2=100$
 		\answer En coordenadas cilíndricas, utilizamos $z=u \in \mathbb{R}$ y $v \in \left[0,2\pi\right)$ (ángulo azimutal): \\ $\SEL{x=10\cos(v) \\ y=10 \sin(v) \\ z=u}$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 \end{enumerate}
 

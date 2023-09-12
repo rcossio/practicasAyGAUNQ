@@ -1,10 +1,5 @@
-
 \documentclass[a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-
-\usepackage{multicol}
-\usepackage{enumitem}
-\usepackage{graphicx}
 
 %Links
 \usepackage[colorlinks = true,
@@ -20,6 +15,12 @@
 %Enumeracion
 \usepackage{enumitem}
 
+%Multicolumna
+\usepackage{multicol}
+
+%Graficos
+\usepackage{graphicx}
+
 %Páginas sin numeración
 \pagestyle{empty}
 
@@ -30,15 +31,42 @@
 \usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
 
+% Formato de enumitem de incisos
+\setlist[enumerate,2]{label=(\alph*)}
+
+% Define a new environment that combines enumerate with multicols
+\NewDocumentEnvironment{enumcols}{O{1}}
+{
+  \ifnum#1>1 \begin{multicols}{#1} \fi
+  \begin{enumerate}
+}
+{
+  \end{enumerate}
+  \ifnum#1>1 \end{multicols} \fi
+}
+
 %Macros
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
-\newcommand{\answer}{\item[**]}
-\newcommand{\exercise}{\item}
-\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
-\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
-\newcommand{\conj}[1]{\overline{#1}}
-\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
-\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
+\newcommand{\answer}{\item[**]} % Respuesta
+\newcommand{\exercise}{\item} % Ejercicio
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.} %Sistema de ecuaciones lineales
+\newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Matriz ampliada
+\newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fracción grande
+\newcommand{\conj}[1]{\overline{#1}} % Conjugado de complejo
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} %Forma trigonométrica de complejo
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Imagen en inciso
+\newcommand{\vect}[1]{\overrightarrow{#1}} %Vector con flecha amplia
+\newcommand{\degs}{^{\circ}} % Grados
+\newcommand{\R}{\mathbb{R}} % Conjunto de los reales
+\newcommand{\C}{\mathbb{C}} % Conjunto de los complejos
+\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Matrices complejas
+\newcommand{\Z}{\mathbb{Z}} % Conjunto de los enteros
+\newcommand{\Q}{\mathbb{Q}} % Conjunto de los racionales
+\newcommand{\ivec}{\check{\imath}} % i vector
+\newcommand{\jvec}{\check{\jmath}} % j vector
+\newcommand{\kvec}{\check{k}} % k vector
 
 \begin{document}
 
@@ -55,7 +83,7 @@
 \begin{enumerate}
 
 	\exercise Realizar las siguientes operaciones con polinomios
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
 		\item $2P(x)+3Q(x)$ ~~~~con $P(x)=3x^2+1$ ~~~~y $Q(x)=x^3-2x^2-1$
 		\answer $2(3x^2+1)+3(x^3-2x^2-1)=6x^2+2+3x^3-6x^2-3=3x^3-1$
@@ -63,37 +91,38 @@
 		\item $4R(t).S(t)$ ~~~~con $R(t)=2t^2+3$ ~~~~y $S(t)=t^3-t-1$
 		\answer $4(2t^2+3)(t^3-t-1)=8t^5+4t^3-8t^2-12t-12$ 
 
-		\item $T(y)^2$ ~~~~con $T(y)=\df{1}{2}y^2+y$
-		\answer $\df{1}{4}y^4+y^3+y^2$
+		\item $T(y)^2$ ~~~~con $T(y)=\f{1}{2}y^2+y$
+		\answer $\f{1}{4}y^4+y^3+y^2$
 
-		\item $P(-2)+Q\left(\df{1}{2}\right)$ ~~~~con $P(x)=3x^2-4$ ~~~~y $Q(x)=x^3-x^2-1$
-		\answer $3(-2)^2-4+\left(\df{1}{2}\right)^3-\left(\df{1}{2}\right)^2-1=\df{55}{8} = 6.875$
+		\item $P(-2)+Q\left(\f{1}{2}\right)$ ~~~~con $P(x)=3x^2-4$ ~~~~y $Q(x)=x^3-x^2-1$
+		\answer $3(-2)^2-4+\left(\f{1}{2}\right)^3-\left(\f{1}{2}\right)^2-1=\f{55}{8} = 6.875$
 
 		\item $M(r-2)$ ~~~~con $M(x)=x^2-1$ y donde $r$ es un número real
 		\answer $M(r-2)=(r-2)^2-1=r^2-4r+3$
 
-		\item $H\left(\df{2}{u}\right)$ con $H(x)=x^2+5x$ y $u \in \mathbb{R}$
-		\answer $H\left(\df{2}{u}\right)=\df{4}{u^2}+\df{10}{u}$
+		\item $H\left(\f{2}{u}\right)$ con $H(x)=x^2+5x$ y $u \in \R$
+		\answer $H\left(\f{2}{u}\right)=\f{4}{u^2}+\f{10}{u}$
 
-		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=x^4+4$ ~~~~y $Q(x)=x^2+2x+2$
-		\answer $\df{x^4+4}{x^2+2x+2}=x^2-2x+2$. \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
+		\item $\f{P(x)}{Q(x)}$ ~~~~con $P(x)=x^4+4$ ~~~~y $Q(x)=x^2+2x+2$
+		\answer $\f{x^4+4}{x^2+2x+2}=x^2-2x+2$. \href{https://youtu.be/DWDi7BKAKbc}{Resolución}
 
-		\item $\df{x^3+2x^2-x+10}{x+2}$
-		\answer $\df{x^3+2x^2-x+10}{x+2}=(x^2-1)+\df{12}{x+2}$. \href{https://youtu.be/bfCWsvZfFq0}{Resolución}
+		\item $\f{x^3+2x^2-x+10}{x+2}$
+		\answer $\f{x^3+2x^2-x+10}{x+2}=(x^2-1)+\f{12}{x+2}$. \href{https://youtu.be/bfCWsvZfFq0}{Resolución}
 
-		\item $\df{P(x)}{Q(x)}$ ~~~~con $P(x)=2x^4-2x^3-13x^2+8x-15$ ~~~~y $Q(x)=x-3$
-		\answer $\df{2x^4-2x^3-13x^2+8x-15}{x-3}=2x^3+4x^2-x+5$. \href{https://youtu.be/W3HcTD4IC94}{Resolución}
+		\item $\f{P(x)}{Q(x)}$ ~~~~con $P(x)=2x^4-2x^3-13x^2+8x-15$ ~~~~y $Q(x)=x-3$
+		\answer $\f{2x^4-2x^3-13x^2+8x-15}{x-3}=2x^3+4x^2-x+5$. \href{https://youtu.be/W3HcTD4IC94}{Resolución}
 
-		\item $\df{8z^4-4}{-2z^2+z+3}$
-		\answer $\df{8z^4-4}{-2z^2+z+3}=(-4x^2-2x-7)+\df{13z+17}{-2z^2+z+3}$. \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
+		\item $\f{8z^4-4}{-2z^2+z+3}$
+		\answer $\f{8z^4-4}{-2z^2+z+3}=(-4x^2-2x-7)+\f{13z+17}{-2z^2+z+3}$. \href{https://youtu.be/0Dw3MAwrA34}{Resolución}
 
-		\item $\df{x^2+3}{x-i}$
-		\answer $\df{x^2+3}{x-i}=(x+i)+\df{2}{x-i}$
+		\item $\f{x^2+3}{x-i}$
+		\answer $\f{x^2+3}{x-i}=(x+i)+\f{2}{x-i}$
 
-	\end{enumerate}
+	\end{enumcols}
+
 
 	\exercise Calcular el los valores reales ($\alpha$, $\beta$, $\gamma$, etc.) para que se cumplan las condiciones
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
 		\item $\alpha P(x)^2 = Q(x) +\beta$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
 		\answer Lado izquierdo: $\alpha P(x)^2= \alpha x^2-2 \alpha x+ \alpha$. Lado derecho: $Q(x) +\beta= 2x^2-4x+\beta$. Se forma el sistema: \\ $\SEL{\alpha=2 \\ -2\alpha = -4 \\ \alpha= \beta}$ \\ Por lo que $\alpha=2$ y $\beta=2$.
@@ -108,7 +137,7 @@
 		\answer El polinomio resultante es $\alpha R(x)^2 - S(x)= \alpha (x-1)^2 - (2x^2-5x)= (\alpha-2) x^2 + (4-2\alpha) x + \alpha$ y necesitamos que tenga grado 1. Para ello el coeficiente cuadrático debe ser nulo, es decir $\alpha=2$. Pero reemplazando ese valor podemos observar que la condición no se cumple ya que $\alpha=2$ también anula el coeficiente lineal y el polinomio resultante queda $0x^2+0x+2$ que tiene grado $0$. Por lo tanto, no existe valor de $\alpha$ que cumpla la condición.
 
 		\item $Q(\gamma)=P(4)$ ~~~~con $P(x)=x-1$ ~~~~y $Q(x)=2x^2-4x$
-		\answer $Q(\gamma)=2 \gamma^2-4\gamma = (4)-1= P(4)$ por lo que obtenemos la ecuación $2 \gamma^2-4\gamma -3 = 0$, de donde despejamos los valores de $\gamma = 1 \pm \sqrt{\df{5}{2}}$.
+		\answer $Q(\gamma)=2 \gamma^2-4\gamma = (4)-1= P(4)$ por lo que obtenemos la ecuación $2 \gamma^2-4\gamma -3 = 0$, de donde despejamos los valores de $\gamma = 1 \pm \sqrt{\f{5}{2}}$.
 
 		\item $3x^2+\gamma x+4$ tiene a 1 como raíz
 		\answer $\gamma=-7$. \href{https://youtu.be/09D5Z3dcaXc}{Resolución}
@@ -116,18 +145,17 @@
 		\item $x^3+\alpha x^2+\beta x+5$ es divisible por $Q(x)=x^2+x+1$
 		\answer $\alpha=6$ y $\beta=6$. \href{https://youtu.be/jE5a43IQ91E}{Resolución}
 
-	\end{enumerate}
+	\end{enumcols}
+
 
 	\exercise Hallar o aproximar las raíces reales y complejas de los siguientes polinomios y escribir su forma factorizada. 
-
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $x^2+\sqrt{3}x-1$
-		\answer Utilizando la resolvente de segundo grado obtenemos las raíces $x=\df{-\sqrt{3}\pm\sqrt{7}}{2}$, por lo que el polinomio se factoriza como: $\left(x+\df{\sqrt{3}+\sqrt{7}}{2}\right)\left(x+\df{\sqrt{3}-\sqrt{7}}{2}\right)$.
+		\answer Utilizando la resolvente de segundo grado obtenemos las raíces $x=\f{-\sqrt{3}\pm\sqrt{7}}{2}$, por lo que el polinomio se factoriza como: $\left(x+\f{\sqrt{3}+\sqrt{7}}{2}\right)\left(x+\f{\sqrt{3}-\sqrt{7}}{2}\right)$.
 
 		\item $8x^3-28x^2+14x+15$
-		\answer Por el método de Gauss se pueden obtener las raices $-\df{1}{2}$, $\df{3}{2}$, y $\df{5}{2}$. Por lo tanto, el polinomio se factoriza como: $8\left(x+\df{1}{2}\right)\left(x-\df{3}{2}\right)\left(x-\df{5}{2}\right)$.
+		\answer Por el método de Gauss se pueden obtener las raices $-\f{1}{2}$, $\f{3}{2}$, y $\f{5}{2}$. Por lo tanto, el polinomio se factoriza como: $8\left(x+\f{1}{2}\right)\left(x-\f{3}{2}\right)\left(x-\f{5}{2}\right)$.
 
 		\item $x^5-1$
 		\answer Para buscar las raíces se resuelve la ecuación $x^5-1=0$ en complejos, es decir, $x^5=1$. Se obtienen las raíces por la fórmula de De Moivre y se factoriza: $x^5-1=(x-1)(x-e^{\frac{2\pi}{5}i})(x-e^{\frac{4\pi}{5}i})(x-e^{\frac{6\pi}{5}i})(x-e^{\frac{8\pi}{5}i})$. \href{https://youtu.be/ZMBXAdxOleM}{Resolución}
@@ -135,8 +163,8 @@
 		\item $x^5+3x^4+3x^3+3x^2+2x$
 		\answer Sacando factor común tenemos $x(x^4+3x^3+3x^2+3x+2)$ Por el método de Gauss se pueden obtener las raices $-1$ y $-2$. Por lo que el polinomio quedaría: $x(x+1)(x+2)(x^2+1)$. Esta es la factoriación en reales. Finalmente, con la resolvente hallamos las raíces complejas $i$ y $-i$, por lo que el polinomio se factoriza como: $x(x+1)(x+2)(x+i)(x-i)$. Esta es la factorización en complejos.
 		
-		\item $x^4-\df{9}{2}x^3+21x-10$
-		\answer Reformulamos el polinomio como $\df{1}{2}(2x^4-9x^3+42x-20)$. Por el método de Gauss se obtienen las raíces $\df{1}{2}$ y $-2$, luego con la resolvente obtenemos las raíces $3\pm i$. La factorización es $\left(x-\df{1}{2}\right)(x+2)(x-3-i)(x-3+i)$. \href{https://youtu.be/1V06bnuaadA}{Resolución}
+		\item $x^4-\f{9}{2}x^3+21x-10$
+		\answer Reformulamos el polinomio como $\f{1}{2}(2x^4-9x^3+42x-20)$. Por el método de Gauss se obtienen las raíces $\f{1}{2}$ y $-2$, luego con la resolvente obtenemos las raíces $3\pm i$. La factorización es $\left(x-\f{1}{2}\right)(x+2)(x-3-i)(x-3+i)$. \href{https://youtu.be/1V06bnuaadA}{Resolución}
 
 		\item $x^7+18x^6+81x^5$
 		\answer Sacando facotr común obtenemos $x^5~(x^2+18x+81)$, y por la fórmula resolvente cuadrática obtenemos la raiz dolbe $-9$. La factorización queda $x^5~(x+9)^2$. \href{https://youtu.be/Z1KatpJM2eU}{Resolución}
@@ -153,14 +181,12 @@
 		\item $x^6+3x^3-4$
 		\answer Sustituímos $u=x^3$ y obtenemos $u^2+3u-4$. Por la resolvente obtenemos las raíces $u=1$ y $u=-4$. Resolvemos $x^3=1$ y $x^3=-4$ con la fórmula de De Moivre para encontrar las raíces. La factorización queda $(x-1)(x-e^{\frac{2\pi}{3}i})(x-e^{\frac{4\pi}{3}i})(x-\sqrt[3]{4})(x-\sqrt[3]{4}e^{\frac{\pi}{3}i})(x-\sqrt[3]{4}e^{\frac{5\pi}{3}i})$. \href{https://youtu.be/BCo0pxE288w}{Resolución}
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 
 	\exercise Hallar o aproximar los valores que cumplen con las siguientes ecuaciones polinómicas 
-
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $x^2+2x=5$
 		\answer Es equivalente $x^2+2x-5=0$, cuyas raíces se calculan con la resolvente: $x=-1\pm\sqrt{6}$.
@@ -177,18 +203,18 @@
 		\item $x^5-8=3x$
 		\answer Es equivalente a $x^5-3x-8=0$. Por el teorema de la raíz real para polinomios de grado impar sabemos que debe tener una raíz real. La aproximamos por Bolzano: $x_1 \simeq 1.6706$. 
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 
 	\exercise Proponer un polinomio $P(x)$ que cumpla con las siguientes condiciones.
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
 		\item Es de grado 4, 2 es raíz simple, -1 es raíz triple y $P(1)=24$
 		\answer Por el grado y las raíces sabemos que $P(x)=a(x-2)(x+1)^3$. Reemplazando obtenemos $P(1)=a.(-1).2^3=24$, es decir, $a=-3$. Finalmente, $P(x)=-3(x-2)(x+1)^3$. \href{https://youtu.be/_XVYatmUKBg}{Resolución}
 
 		\item $P(x)$ es mónico y de grado 2. Además, $P(1)=3$ y $P(-4)=2$.
-		\answer Sabemos que $P(x)=x^2+bx+c$. Reemplazando obtenemos $P(1)=b+c=3$ y $P(-4)=16-4b+c=2$. Del sistema de ecuaciones $\SEL{b+c=3 \\ -4b+c=-14}$ obtenemos que $P(x)=x^2+\df{16}{5}x-\df{6}{5}$. \href{https://youtu.be/LDpq_f-baPc}{Resolución}
+		\answer Sabemos que $P(x)=x^2+bx+c$. Reemplazando obtenemos $P(1)=b+c=3$ y $P(-4)=16-4b+c=2$. Del sistema de ecuaciones $\SEL{b+c=3 \\ -4b+c=-14}$ obtenemos que $P(x)=x^2+\f{16}{5}x-\f{6}{5}$. \href{https://youtu.be/LDpq_f-baPc}{Resolución}
 
 		\item $P(x)$ es de grado 5, tiene coeficientes reales, $P(i)=0$ y $P(1+i)=0$
 		\answer Por el teorema de raíces conjugadas y el grado sabemos que $P(x)=a(x-x_1)(x-i)(x+i)(x-1-i)(x-1+i)$. Podemos elegir arbitrariamente $a$ y $x_1$. Por ejemplo, $P(x)=3(x-2)(x-i)(x+i)(x-1-i)(x-1+i)$.
@@ -196,11 +222,11 @@
 		\item $gr\left(P(x)\right)=6$, $P(x)$ es mónico, tiene coeficientes reales y algunas de sus raíces son $i$ y $1+i$
 		\answer Por el teorema de raíces conjugadas y el grado sabemos que $P(x)=(x-x_1)(x-x_2)(x-i)(x+i)(x-1-i)(x-1+i)$. Podemos elegir arbitrariamente $x_1$ y $x_2$. Por ejemplo, $P(x)=(x-7)(x-5)(x-i)(x+i)(x-1-i)(x-1+i)$.
 
-	\end{enumerate}
+	\end{enumcols}
 
 
 	\exercise Resolver los siguientes problemas de aplicación
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
 		\item La posición de un objeto que se mueve en línea recta viene dada por el polinomio $x(t) = t^3 - 3t^2 -10t$ donde $t$ está en segundos y $x(t)$ en metros. ¿Cuál es la posición del objeto al tiempo $t=1$ y a tiempo $t=2$? Si no se admiten valores negativos de tiempo ($t \geq 0$), ¿en que momento(s) el objeto pasa por la posición $x=0$?
 		\answer $x(1)=-12$ y $x(2)=-24$. El objeto pasa por la posición $x=0$ en los tiempos $t=0$, $t=5$ (se descarta la raíz $t=-2$ por ser negativa). 
@@ -213,32 +239,33 @@
 
 		\item Se realiza una caja sin tapa de acuerdo al esquema de la foto. Calcular el área de la base y el volumen de la caja en función de la medida $x$. Indicar cuanto debe medir $x$ para que la caja tenga un volumen de 400 cm$^3$: \img{0.5\textwidth}{img/box.png} 
 
-		\item En análisis de sistemas, una función de transferencia puede expresarse como el cociente de dos polinomios, tal como, $H(s)=\df{s^2-2s}{3s^3+11s^2+40+50s^2}$. Las raíces del numerador se denominan \textit{ceros} del sistema y las raíces del denominador se denominan \textit{polos} del sistema. Calcular los ceros y los polos del sistema $H(s)$ y graficarlos en el plano complejo.
+		\item En análisis de sistemas, una función de transferencia puede expresarse como el cociente de dos polinomios, tal como, $H(s)=\f{s^2-2s}{3s^3+11s^2+40+50s^2}$. Las raíces del numerador se denominan \textit{ceros} del sistema y las raíces del denominador se denominan \textit{polos} del sistema. Calcular los ceros y los polos del sistema $H(s)$ y graficarlos en el plano complejo.
 		\answer Ceros: $z_1=0$ y $z_2=2$. Polos: $p_1=-5$, $p_2=-3+i$, $p_3=-3-i$.
 
 		\item El \textit{factor de compresibilidad} de un gas ideal es $Z=1$. Sin embargo, en la vida real el coeficiente se puede expresar como un polinomio donde la variable es el volumen molar recíproco: $Z\left(\frac{1}{V_m}\right)=1+B\left(\frac{1}{V_m}\right)+C\left(\frac{1}{V_m}\right)^2+D\left(\frac{1}{V_m}\right)^3 + \cdots$. Los coeficientes $B$, $C$ y $D$ se denominan segundo, tercer y cuarto coeficiente virial, respectivamente. A la temperatura de 273 kelvin, los coeficientes del gas argón B y C son $-21.7$ (en $\frac{\text{cm}^3}{\text{mol}}$) y $1200$ (en $\frac{\text{cm}^6}{\text{mol}^2}$), respectivamente, y los demás se consideran despreciables (cero). Escribir el polinomio $Z\left(\frac{1}{V_m}\right)$ y calcular el \textit{factor de compresibilidad} de una muestra de gas argón que presenta un volúmen molar de $540~\frac{\text{cm}^3}{\text{mol}}$ a 273 kelvin.
 		\answer Como los coeficientes y la muestra corresponden a la misma temperatura (273 kelvin) los podemos usar en conjunto. El factor de compresibilidad será $Z\left(\frac{1}{V_m}\right)=1-21.7\left(\frac{1}{V_m}\right)+1200\left(\frac{1}{V_m}\right)^2$. Introducimos el volumen molar y obtenemos $Z\left(\frac{1}{540}\right)=1-21.7\left(\frac{1}{540}\right)+1200\left(\frac{1}{540}\right)^2 \simeq 0.9589$.
 
-	\end{enumerate}
+	\end{enumcols}
+
 
 	\exercise Resolver los siguientes ejercicios de desafío
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
-		\item Hallar las raíces del polinomio $E(x)=\df{x^4}{2}+x^3-\df{x}{2}-1$ y graficarlas. Obtener el cociente y el resto de dividir a $E(x)$ por $D(x)=(x+2)(x-3)$.
+		\item Hallar las raíces del polinomio $E(x)=\f{x^4}{2}+x^3-\f{x}{2}-1$ y graficarlas. Obtener el cociente y el resto de dividir a $E(x)$ por $D(x)=(x+2)(x-3)$.
 
-		\item Dados los polinomios $K(x)=ax+b$, $L(x)=cx^2+x$ y $M(x)=x.K(x)-L(x)$, hallas los coeficientes $a,b,c \in \mathbb{R}$ que hacen que el grado $M(x)$ sea 1, $L(-2)=10$ y que $\df{1}{2}$ sea raíz de $K(x)$.
+		\item Dados los polinomios $K(x)=ax+b$, $L(x)=cx^2+x$ y $M(x)=x.K(x)-L(x)$, hallas los coeficientes $a,b,c \in \R$ que hacen que el grado $M(x)$ sea 1, $L(-2)=10$ y que $\f{1}{2}$ sea raíz de $K(x)$.
 
 		\item Proponer un polinomio $H(x)$ de grado 3 con coeficientes reales que tenga al número $2-i$ como raíz, que cumpla con $H(0)=10$ y que no tenga raíces reales positivas. Luego, obtener el cociente y resto de dividir $H(x)$ por $L(x)=x^2+1$
 
 		\item Hallar todas las raíces del polinomio $P(x)=x^6-3x^3-4$ y graficarlas en el plano complejo
 
-		\item Encontrar y graficar todas las raíces complejas del polinomio $P(x)=2x^3+7x^2+6x-5$ e indicar cuáles de ellas se encuentran en la región $R=\{ z \in \mathbb{C} ~/~ |z|<1 \}$ del plano complejo
+		\item Encontrar y graficar todas las raíces complejas del polinomio $P(x)=2x^3+7x^2+6x-5$ e indicar cuáles de ellas se encuentran en la región $R=\{ z \in \C ~/~ |z|<1 \}$ del plano complejo
 
 		\item Dado el polinomio $P(x)=x^3-ix^2+4x-4i$: indicar porqué no se puede aplicar el método de Gauss para encontrar ls raíces de $P(x)$; indicar cuántas raíces tiene $P(x)$ (sin calcularlas); y, finalmente, demostrar que $i$ es raíz de $P(x)$ dividiéndolo por $(x-i)$ mediante Ruffini o división tradicional
 
-		\item Encontrar los valores de $\alpha, \beta \in \mathbb{R}$ que permitan expresar el polinomio $P(x)=x-7$ como $P(x)=\alpha Q(x)+\beta R(x)$ considerando $Q(x)=2x$ y $R(x)=x$
+		\item Encontrar los valores de $\alpha, \beta \in \R$ que permitan expresar el polinomio $P(x)=x-7$ como $P(x)=\alpha Q(x)+\beta R(x)$ considerando $Q(x)=2x$ y $R(x)=x$
 
-	\end{enumerate}
+	\end{enumcols}
 
 
 \end{enumerate}

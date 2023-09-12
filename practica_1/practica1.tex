@@ -1,10 +1,5 @@
-
 \documentclass[a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-
-\usepackage{multicol}
-\usepackage{enumitem}
-\usepackage{graphicx}
 
 %Links
 \usepackage[colorlinks = true,
@@ -20,6 +15,12 @@
 %Enumeracion
 \usepackage{enumitem}
 
+%Multicolumna
+\usepackage{multicol}
+
+%Graficos
+\usepackage{graphicx}
+
 %Páginas sin numeración
 \pagestyle{empty}
 
@@ -30,14 +31,42 @@
 \usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
 
+% Formato de enumitem de incisos
+\setlist[enumerate,2]{label=(\alph*)}
+
+% Define a new environment that combines enumerate with multicols
+\NewDocumentEnvironment{enumcols}{O{1}}
+{
+  \ifnum#1>1 \begin{multicols}{#1} \fi
+  \begin{enumerate}
+}
+{
+  \end{enumerate}
+  \ifnum#1>1 \end{multicols} \fi
+}
+
 %Macros
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
-\newcommand{\answer}{\item[**]}
-\newcommand{\exercise}{\item}
-\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.}
-\newcommand{\df}[2]{\displaystyle\frac{#1}{#2}}
-\newcommand{\conj}[1]{\overline{#1}}
-\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]}
+\newcommand{\answer}{\item[**]} % Respuesta
+\newcommand{\exercise}{\item} % Ejercicio
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.} %Sistema de ecuaciones lineales
+\newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Matriz ampliada
+\newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fracción grande
+\newcommand{\conj}[1]{\overline{#1}} % Conjugado de complejo
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} %Forma trigonométrica de complejo
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Imagen en inciso
+\newcommand{\vect}[1]{\overrightarrow{#1}} %Vector con flecha amplia
+\newcommand{\degs}{^{\circ}} % Grados
+\newcommand{\R}{\mathbb{R}} % Conjunto de los reales
+\newcommand{\C}{\mathbb{C}} % Conjunto de los complejos
+\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Matrices complejas
+\newcommand{\Z}{\mathbb{Z}} % Conjunto de los enteros
+\newcommand{\Q}{\mathbb{Q}} % Conjunto de los racionales
+\newcommand{\ivec}{\check{\imath}} % i vector
+\newcommand{\jvec}{\check{\jmath}} % j vector
+\newcommand{\kvec}{\check{k}} % k vector
 
 \begin{document}
 
@@ -54,27 +83,25 @@
 \begin{enumerate}
 
 	\exercise Resolver las ecuaciones cuadráticas y comprobar el resultado.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $x^2+3x=-3$
-		\answer $x=-\df{3}{2} \pm \df{\sqrt{3}}{2} i$. \href{https://youtu.be/WhcMOb6DzU0}{Resolución}
+		\answer $x=-\f{3}{2} \pm \f{\sqrt{3}}{2} i$. \href{https://youtu.be/WhcMOb6DzU0}{Resolución}
 
 		\item $2y^2+4y=-5$
-		\answer $y=-1 \pm \df{\sqrt{6}}{2} i$. \href{https://youtu.be/cED7hCNJGus}{Resolución}
+		\answer $y=-1 \pm \f{\sqrt{6}}{2} i$. \href{https://youtu.be/cED7hCNJGus}{Resolución}
 
 		\item $t^2+3t=-8$
-		\answer $y=-\df{3}{2} \pm \df{23}{2} i$. \href{https://youtu.be/IPSEzvEefZw}{Resolución}
+		\answer $y=-\f{3}{2} \pm \f{23}{2} i$. \href{https://youtu.be/IPSEzvEefZw}{Resolución}
 
 		\item $x(x-10)=-34$
 		\answer $x=5\pm3i$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Efectuar las siguientes operaciones y obtener el número complejo en forma binómica.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $(-2+3i)+(1+3i)$
 		\answer $-1+6i$
@@ -92,97 +119,94 @@
 		\answer $-23-11i$. \href{https://youtu.be/bxbLVzLAH9k}{Resolución}
 
 		\item $(3+4i)^{-1}$
-		\answer $\df{3}{25}-\df{4}{25}i$. \href{https://youtu.be/BarDCwpxapc}{Resolución}
+		\answer $\f{3}{25}-\f{4}{25}i$. \href{https://youtu.be/BarDCwpxapc}{Resolución}
 
-		\item $\df{5-2i}{5i-2}$
-		\answer $-\df{20}{29}-\df{21}{29}i$. \href{https://youtu.be/UK70wbES5L8}{Resolución}
+		\item $\f{5-2i}{5i-2}$
+		\answer $-\f{20}{29}-\f{21}{29}i$. \href{https://youtu.be/UK70wbES5L8}{Resolución}
 
-		\item $\df{3+2i}{-3-4i}$
-		\answer $-\df{17}{25}+\df{6}{25}i$. \href{https://youtu.be/Khdqus5O4jk}{Resolución}
+		\item $\f{3+2i}{-3-4i}$
+		\answer $-\f{17}{25}+\f{6}{25}i$. \href{https://youtu.be/Khdqus5O4jk}{Resolución}
 
-		\item $\df{-3i+1}{4i-2}$
-		\answer $-\df{7}{10}+\df{1}{10}i$. \href{https://youtu.be/VguP5HyAzpQ}{Resolución}
+		\item $\f{-3i+1}{4i-2}$
+		\answer $-\f{7}{10}+\f{1}{10}i$. \href{https://youtu.be/VguP5HyAzpQ}{Resolución}
 
 		\item $(1-2i)^2$
 		\answer $-3-4i$
 
-		\item $\df{i}{i+1}+\left(\df{1+i}{i}\right)^2$
-		\answer $\df{1}{2}-\df{3}{2}i$. \href{https://youtu.be/edNxbzDs2wA}{Resolución}
+		\item $\f{i}{i+1}+\left(\f{1+i}{i}\right)^2$
+		\answer $\f{1}{2}-\f{3}{2}i$. \href{https://youtu.be/edNxbzDs2wA}{Resolución}
 
 		\item $(1+2i)^3$
 		\answer $-11-2i$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
 
 	\exercise Representar en el plano complejo los siguientes números e indicar su módulo y argumento.
-	\begin{multicols}{3}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[3]
 		
 		\item $1+i$
-		\answer $|1+i|=\sqrt{2}$, ~$\arg(1+i)=\df{\pi}{4}=45^{\circ}$. 
+		\answer $|1+i|=\sqrt{2}$, ~$\arg(1+i)=\f{\pi}{4}=45\degs$. 
 
 		\item $2-3i$
-		\answer $|2-3i|=\sqrt{13}$, ~$\arg(2-3i) \simeq -56.31^{\circ}$
+		\answer $|2-3i|=\sqrt{13}$, ~$\arg(2-3i) \simeq -56.31\degs$
 
 		\item $-1+3i$
-		\answer $|-1+3i|=\sqrt{10}$, ~$\arg(-1+3i) \simeq 108.43^{\circ}$
+		\answer $|-1+3i|=\sqrt{10}$, ~$\arg(-1+3i) \simeq 108.43\degs$
 
 		\item $-2i-4$
-		\answer $|-2i-4|=2\sqrt{5}$, ~$\arg(-2i-4) \simeq -153.43^{\circ}$
+		\answer $|-2i-4|=2\sqrt{5}$, ~$\arg(-2i-4) \simeq -153.43\degs$
 
 		\item $3$
-		\answer $|3|=3$, ~$\arg(3)=0^{\circ}$
+		\answer $|3|=3$, ~$\arg(3)=0\degs$
 
 		\item $2i$
-		\answer $|2i|=2$, ~$\arg(2i)=\df{\pi}{2}=90^{\circ}$
+		\answer $|2i|=2$, ~$\arg(2i)=\f{\pi}{2}=90\degs$
 	
 		\item $-1$
-		\answer $|-1|=1$, ~$\arg(-1)=\pi=180^{\circ}$
+		\answer $|-1|=1$, ~$\arg(-1)=\pi=180\degs$
 
 		\item $-5i$
-		\answer $|-5i|=5$, ~$\arg(-5i)=-\df{\pi}{2}=-90^{\circ}$
+		\answer $|-5i|=5$, ~$\arg(-5i)=-\f{\pi}{2}=-90\degs$
 
 		\item $-\sqrt{2}$
-		\answer $|-\sqrt{2}|=\sqrt{2}$, ~$\arg(-\sqrt{2})=\pi=180^{\circ}$
+		\answer $|-\sqrt{2}|=\sqrt{2}$, ~$\arg(-\sqrt{2})=\pi=180\degs$
 
 		\item $4i+2$
-		\answer $|4i+2|=2\sqrt{5}$, ~$\arg(4i+2) \simeq 63.44^{\circ}$
+		\answer $|4i+2|=2\sqrt{5}$, ~$\arg(4i+2) \simeq 63.44\degs$
 
 		\item $1+\sqrt{2}$
-		\answer $|1+\sqrt{2}|=1+\sqrt{2}\simeq 2.4142$, ~$\arg(1+\sqrt{2}) = 0^{\circ}$
+		\answer $|1+\sqrt{2}|=1+\sqrt{2}\simeq 2.4142$, ~$\arg(1+\sqrt{2}) = 0\degs$
 
-		\item $-\df{1}{2}+\df{3}{4}i$
-		\answer $\left|-\df{1}{2}+\df{3}{4}i\right|=\df{\sqrt{13}}{4}$, ~$\arg\left(-\df{1}{2}+\df{3}{4}i\right) \simeq 123.69^{\circ}$
+		\item $-\f{1}{2}+\f{3}{4}i$
+		\answer $\left|-\f{1}{2}+\f{3}{4}i\right|=\f{\sqrt{13}}{4}$, ~$\arg\left(-\f{1}{2}+\f{3}{4}i\right) \simeq 123.69\degs$
 
 		\item $i-4$
-		\answer $|i-4|=\sqrt{17}$, ~$\arg(i-4) \simeq 165.96^{\circ}$
+		\answer $|i-4|=\sqrt{17}$, ~$\arg(i-4) \simeq 165.96\degs$
 
 		\item $1+\sqrt{2}-\sqrt{3}i$
-		\answer $|1+\sqrt{2}-\sqrt{3}i|=\sqrt{6+\sqrt{8}} \simeq 2.9713$, ~$\arg(1+\sqrt{2}-\sqrt{3}i) \simeq -35.657^{\circ}$
+		\answer $|1+\sqrt{2}-\sqrt{3}i|=\sqrt{6+\sqrt{8}} \simeq 2.9713$, ~$\arg(1+\sqrt{2}-\sqrt{3}i) \simeq -35.657\degs$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Transformar los números complejos a sus formas restantes (binómica, trigonométrica o exponencial).
-	\begin{multicols}{3}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[3]
 		
 		\item $1+\sqrt{3}i$
-		\answer $1+\sqrt{3}i=2\cis(\df{\pi}{3})=2e^{\frac{\pi}{3}i}$ 
+		\answer $1+\sqrt{3}i=2\cis(\f{\pi}{3})=2e^{\frac{\pi}{3}i}$ 
 
-		\item $2 \cis{\df{\pi}{6}}$
-		\answer $2 \cis{\df{\pi}{6}}= \sqrt{3}+i= 2e^{\frac{\pi}{6}i}$
+		\item $2 \cis{\f{\pi}{6}}$
+		\answer $2 \cis{\f{\pi}{6}}= \sqrt{3}+i= 2e^{\frac{\pi}{6}i}$
 
 		\item $2e^{\frac{5\pi}{6}i}$
-		\answer $2e^{\frac{5\pi}{6}i}=2\cis{\df{5\pi}{6}}=-\sqrt{3}+i$
+		\answer $2e^{\frac{5\pi}{6}i}=2\cis{\f{5\pi}{6}}=-\sqrt{3}+i$
 
 		\item $\sqrt{2}-\sqrt{2}i$
-		\answer $\sqrt{2}-\sqrt{2}i=2\cis{-\df{\pi}{4}}=2e^{-\frac{\pi}{4}}$
+		\answer $\sqrt{2}-\sqrt{2}i=2\cis{-\f{\pi}{4}}=2e^{-\frac{\pi}{4}}$
 
-		\item $5 \cis{-\df{\pi}{3}}$
-		\answer $5 \cis{-\df{\pi}{3}}=5e^{-\frac{\pi}{3}}=\df{5}{2}-\df{5\sqrt{3}}{2}i$
+		\item $5 \cis{-\f{\pi}{3}}$
+		\answer $5 \cis{-\f{\pi}{3}}=5e^{-\frac{\pi}{3}}=\f{5}{2}-\f{5\sqrt{3}}{2}i$
 
 		\item $7e^{\pi i}$
 		\answer $7e^{\pi i}=7\cis{\pi}=-7+0i$
@@ -194,52 +218,51 @@
 		\answer $\sqrt{6}\cis{\pi}=\sqrt{6}e^{\pi i}=-\sqrt{6}+0i$
 
 		\item $3e^{\frac{\pi}{4}i}$
-		\answer $3e^{\frac{\pi}{4}i}=3\cis{\df{\pi}{4}}=\df{3\sqrt{2}}{2}+\df{3\sqrt{2}}{2}i$
+		\answer $3e^{\frac{\pi}{4}i}=3\cis{\f{\pi}{4}}=\f{3\sqrt{2}}{2}+\f{3\sqrt{2}}{2}i$
 
 		\item $4i$
-		\answer $4i=4\cis{\df{\pi}{2}}=4e^{\df{\pi}{2}i}$
+		\answer $4i=4\cis{\f{\pi}{2}}=4e^{\f{\pi}{2}i}$
 
-		\item $2\cis{\df{\pi}{4}}$
-		\answer $2\cis{\df{\pi}{4}}=2e^{\frac{\pi}{4}i}=\sqrt{2}+\sqrt{2}i$
+		\item $2\cis{\f{\pi}{4}}$
+		\answer $2\cis{\f{\pi}{4}}=2e^{\frac{\pi}{4}i}=\sqrt{2}+\sqrt{2}i$
 
 		\item $e^{\frac{\pi}{2}i}$
-		\answer $e^{\frac{\pi}{2}i}=\cos\left(\df{\pi}{2}\right)+i\sin\left(\df{\pi}{2}\right)=0+i$
+		\answer $e^{\frac{\pi}{2}i}=\cos\left(\f{\pi}{2}\right)+i\sin\left(\f{\pi}{2}\right)=0+i$
 
 		\item $-2\sqrt{3}+2i$
-		\answer $-2\sqrt{3}+2i=4\cis{\df{5\pi}{6}}=4e^{\frac{5\pi}{6}i}$
+		\answer $-2\sqrt{3}+2i=4\cis{\f{5\pi}{6}}=4e^{\frac{5\pi}{6}i}$
 
 		\item $4\cis{0}$
 		\answer $4\cis{0}=4e^{0}=4+0i$
 
 		\item $2e^{-\frac{\pi}{3}i}$
-		\answer $2e^{-\frac{\pi}{3}i}=2\cis{-\df{\pi}{3}}=1-\sqrt{3}i$
+		\answer $2e^{-\frac{\pi}{3}i}=2\cis{-\f{\pi}{3}}=1-\sqrt{3}i$
 
 		\item $-1-i$
-		\answer $-1-i=\sqrt{2}\cis{\df{\pi}{4}}=\sqrt{2}e^{\frac{\pi}{4}i}$
+		\answer $-1-i=\sqrt{2}\cis{\f{\pi}{4}}=\sqrt{2}e^{\frac{\pi}{4}i}$
 
-		\item $1\cis{\df{\pi}{12}}$
-		\answer $\cos\left(\df{\pi}{12}\right)+i\sin\left(\df{\pi}{12}\right)=e^{\frac{\pi}{12}} \simeq 0.9659 + 0.2588 i$
+		\item $1\cis{\f{\pi}{12}}$
+		\answer $\cos\left(\f{\pi}{12}\right)+i\sin\left(\f{\pi}{12}\right)=e^{\frac{\pi}{12}} \simeq 0.9659 + 0.2588 i$
 
 		\item $4e^{\frac{3\pi}{2}i}$
-		\answer $4e^{\frac{3\pi}{2}i}=4\cis{\df{3\pi}{2}}=0-4i$
+		\answer $4e^{\frac{3\pi}{2}i}=4\cis{\f{3\pi}{2}}=0-4i$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Utilizando la forma exponencial, calcular los siguientes números complejos.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $(-1-\sqrt{3}i)^9$
 		\answer $512$. \href{https://youtu.be/bi_tVZZeAtY}{Resolución}
 
-		\item $\df{1}{(2+2i)^7}$
+		\item $\f{1}{(2+2i)^7}$
 		\answer $8^{-\frac{7}{2}} e^{\frac{\pi}{4}i}$. \href{https://youtu.be/5ET1IAoQNdc}{Resolución}
 
-		\item $\df{(\sqrt{3}+i)^4}{(-1+\sqrt{3}i)^6}$
-		\answer $-\df{1}{8}+\df{3}{8}i$. \href{https://youtu.be/xveCBuIad3s}{Resolución}
+		\item $\f{(\sqrt{3}+i)^4}{(-1+\sqrt{3}i)^6}$
+		\answer $-\f{1}{8}+\f{3}{8}i$. \href{https://youtu.be/xveCBuIad3s}{Resolución}
 
-		\item $\df{(1+i)^4}{(-1-i)^6}$
+		\item $\f{(1+i)^4}{(-1-i)^6}$
 		\answer $2^{\frac{75}{2}} e^{\frac{7\pi}{4}i}$. \href{https://youtu.be/fyrIGxGpW8g}{Resolución}
 
 		\item $\sqrt[3]{2\sqrt{3}+2i}$ (las raíces cúbicas de $2\sqrt{3}+2i$)
@@ -248,7 +271,7 @@
 		\item $\sqrt[5]{-\sqrt{3}i-1}$ (las raíces quintas de $-\sqrt{3}i-1$)
 		\answer \href{https://youtu.be/egki90qZmjQ}{Resolución}
 
-		\item $\sqrt[4]{-\df{\sqrt{3}}{2}i+\df{1}{2}}$ (las raíces cuartas de $-\df{\sqrt{3}}{2}i+\df{1}{2}$)
+		\item $\sqrt[4]{-\f{\sqrt{3}}{2}i+\f{1}{2}}$ (las raíces cuartas de $-\f{\sqrt{3}}{2}i+\f{1}{2}$)
 		\answer \href{https://youtu.be/GuqxEvxgHkQ}{Resolución}
 
 		\item $\sqrt[3]{-1-i\sqrt{3}}$ (las raíces cúbicas de $-1-i\sqrt{3}$)
@@ -257,12 +280,11 @@
 		\item $\sqrt[5]{-1+\sqrt{3}i}$ (las raíces quintas de $-1+\sqrt{3}i$)
 		\answer \href{https://youtu.be/Be6upizltaE}{Resolución}
 
+	\end{enumcols}
 
-	\end{enumerate}
-	\end{multicols}
 
 	\exercise Indicar si las siguientes afirmaciones son verdaderas o falsas. Justificar.
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
 		\item El módulo de $z=3+i$ es mayor que el de $w=2-2i$
 		\answer Verdadero. $|z|=|3+i|=\sqrt{10} \simeq 3.1623$ y $|w|=|2-2i|=\sqrt{8} \simeq 2.8284$
@@ -270,7 +292,7 @@
 		\item Si el argumento de $z$ es $\alpha$, entonces el argumento de $2z$ será $2\alpha$
 		\answer Falso. Si $z=|z|e^{\alpha i}$, entonces $2z=2|z|.e^{\alpha i}$. Por lo que el argumento de $2z$ también será $\alpha$
 
-		\item Dado $z=2e^{\beta i}$ y $w=1+i$, el argumento de $z.w$ será $\beta+\df{\pi}{4}$
+		\item Dado $z=2e^{\beta i}$ y $w=1+i$, el argumento de $z.w$ será $\beta+\f{\pi}{4}$
 		\answer Verdadero. En su forma exponencial $w=\sqrt{2}e^{\frac{\pi}{4}i}$ por lo que $z.w=\left(2e^{\beta i}\right).\left(\sqrt{2}e^{\frac{\pi}{4}i}\right)=2\sqrt{2}e^{\left(\beta i + \frac{\pi}{4}i\right)}=2\sqrt{2}e^{\left(\beta + \frac{\pi}{4}\right)i}$
 
 		\item Si $z$ es un número imaginario puro, entonces $z^2$ es un número real puro
@@ -282,12 +304,12 @@
 		\item Dado $z=1+2i$ y $w=3+4i$, el cálculo de $|z-w|$ es equivalente a la distancia $d(z,w)$
 		\answer Verdadero. $d(z,w)=\sqrt{\left(1-3\right)^2+\left(2-4\right)^2}=\sqrt{8}$ y $|z-w|=|-2-2i|=\sqrt{4+4}=\sqrt{8}$
 
-	\end{enumerate}
+	\end{enumcols}
 
 
 	\exercise Utilizando complejos genéricos $z=a+bi$ y $w=c+di$, demostrar que se cumplen las siguientes propiedades para todos los números complejos.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
+
 		\item $Re(z+3w)=Re(z)+Re(3w)$
 		\answer $z+3w=(a+bi)+3(c+di)=a+bi+3c+3di=(a+3c)+(b+d)i$. Por lo ranto, $Re(z+3w)=a+3c=Re(z)+Re(3w)$
 
@@ -297,8 +319,8 @@
 		\item $Im(z.\conj{z})=0$
 		\answer $z.\conj{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2-b^2 i^2=a^2+b^2=(a^2+b^2)+0i$, por lo que su parte imaginaria es cero.
 
-		\item $\df{z}{i}=-i.z$
-		\answer $\df{z}{i}=\df{a+bi}{i}=\df{a+bi}{i}\cdot\df{i}{i}=\df{(a+bi)i}{-1}=-i(a+bi)=-iz$
+		\item $\f{z}{i}=-i.z$
+		\answer $\f{z}{i}=\f{a+bi}{i}=\f{a+bi}{i}\cdot\f{i}{i}=\f{(a+bi)i}{-1}=-i(a+bi)=-iz$
 
 		\item $\conj{i.z}=-i.\conj{z}$
 		\answer Desarrollando el lado izquierdo se obtiene $\conj{i.z}=\conj{i(a+bi)}=\conj{ai+bi^2}=\conj{-b+ai}=-b-ai$. Desarrollando el lado derecho se obtiene $-i.\conj{z}=-i(a-bi)=-ai+bi^2=-b-ai$, que es lo mismo.
@@ -310,48 +332,46 @@
 		%\item $Re(z.w)\neq Re(z).Re(w)$
 		%\item $|z+w|\neq|z|+|w|$
 		\item $|z.(1+2i)|^2=|z|^2.|1+2i|^2$
-		\item $z+\conj{z} \in \mathbb{R}$
-		\item $z-\conj{z} \not\in \mathbb{R}$
+		\item $z+\conj{z} \in \R$
+		\item $z-\conj{z} \not\in \R$
 
 		\item $|z-w|=d(z,w)$
 		\answer Geometricamente la distancia entre le punto de $z$ y el de $w$ se puede calcular por Teorema de Pitágoras y da $d(z,w)=\sqrt{(a-c)^2+(b-d)^2}$. Si calculamos $z-w=(a-c)+(b-d)i$ podemos ver que su módulo es $|z-w|=\sqrt{(a-c)^2+(b-d)^2}$, que es lo mismo.
 
 		\item $(z-\conj{z})^2=-4Im(z)^2$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise En cada inciso, hallar el número real ($x$, $y$, $m$, etc...) que cumpla la condición.
-	%\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
-		
+	\begin{enumcols}
+
 		\item $(3+2i)(x+6i)$ es un número imaginario puro
 		\answer $x=4$. \href{https://youtu.be/rZMja-gZ3q0}{Resolución}
 
-		\item $\df{y+3i}{2-5i}$ es un número real puro
-		\answer $y=-\df{6}{5}$. \href{https://youtu.be/cgQsvNewGZ0}{Resolución}
+		\item $\f{y+3i}{2-5i}$ es un número real puro
+		\answer $y=-\f{6}{5}$. \href{https://youtu.be/cgQsvNewGZ0}{Resolución}
 
 		\item $(5x+2m)+m^3i = 9-27i$
 		\answer $(x,m)=(3,-3)$. \href{https://youtu.be/kQmzdYU4EsY}{Resolución}
 
-	\end{enumerate}
-	%\end{multicols}
+	\end{enumcols}
 
-	\exercise Hallar todos los valores de $z \in \mathbb{C}$ que cumplan la condición.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+
+	\exercise Hallar todos los valores de $z \in \C$ que cumplan la condición.
+	\begin{enumcols}[2]
 		
 		\item $iz^{-1}=2-i$
-		\answer $z=-\df{1}{5}+\df{2}{5}$. \href{https://youtu.be/Yrh7otV4DzI}{Resolución}
+		\answer $z=-\f{1}{5}+\f{2}{5}$. \href{https://youtu.be/Yrh7otV4DzI}{Resolución}
 
 		\item $z(1+2i)=2z+\conj{z}$
 		\answer $z=0+0i$. \href{https://youtu.be/erb6iZXGQw4}{Resolución}
 
-		\item $\conj{z}=\df{3+i}{Re(z)}$
-		\answer $z=\sqrt{3}-\df{\sqrt{3}}{3}i$ y $z=-\sqrt{3}+\df{\sqrt{3}}{3}i$
+		\item $\conj{z}=\f{3+i}{Re(z)}$
+		\answer $z=\sqrt{3}-\f{\sqrt{3}}{3}i$ y $z=-\sqrt{3}+\f{\sqrt{3}}{3}i$
 
-		\item $\df{z+1}{Im(z)}=\conj{z}$
-		\answer $z=-\df{1}{2}-i$
+		\item $\f{z+1}{Im(z)}=\conj{z}$
+		\answer $z=-\f{1}{2}-i$
 
 		\item $z+|z|^2=7+i$
 		\answer $z=2+i$ y $z=-3+i$
@@ -362,7 +382,7 @@
 		\item $z^5-1=0$
 		\answer $z^5-1=0$
 
-		\item $\df{-3i+1}{4i-2}=z^2i$
+		\item $\f{-3i+1}{4i-2}=z^2i$
 		\answer \href{https://youtu.be/8z_3vpIabLI}{Resolución}
 
 		\item $z^4-8=0$
@@ -375,17 +395,16 @@
 		\answer Dado $z=a+bi$ la primera condición implica que $a+bi+a-bi=2a=4$, es decir, $a=2$. Sabiendo que $z=2+bi$ aplicamos la segunda condición $|z|=\sqrt{2^2+b^2}=3$, de lo que se puede despejar que $b=\pm\sqrt(5)$. Los números complejos posibles son $z=2+\sqrt{5}i$ y $z=2-\sqrt{5}i$.
 
 		\item $z^2+4iz-8=0$
-		\answer Aplicando Bhaskara obtenemos $z_{1,2}=\df{-4i\pm\sqrt{(4i)^2-4.1.(-8)}}{2.1}=-2i\pm2$
+		\answer Aplicando Bhaskara obtenemos $z_{1,2}=\f{-4i\pm\sqrt{(4i)^2-4.1.(-8)}}{2.1}=-2i\pm2$
 
 		\item $z^2-(3+i)z+(2+1)=0$
-		\answer Aplicamos Bhaskara considerando solo la raíz positiva $z_{1,2}=\df{(3+i)+\sqrt{(-3-i)^2-4.1.(2+1)}}{2.1}=\df{3+i+\sqrt{-2i}}{2}$. Calculamos las raíces cuadradas de $-2i$ con la fórmula de Moivre y obtenemos $-1+i$ y $1-i$. Reemplazamos cada raíz en la fórmula de Bhaskara y obtenemos $z_1=\df{3+i-1+i}{2}=1+i$ y $z_1=\df{3+i+1-i}{2}=2$.
+		\answer Aplicamos Bhaskara considerando solo la raíz positiva $z_{1,2}=\f{(3+i)+\sqrt{(-3-i)^2-4.1.(2+1)}}{2.1}=\f{3+i+\sqrt{-2i}}{2}$. Calculamos las raíces cuadradas de $-2i$ con la fórmula de Moivre y obtenemos $-1+i$ y $1-i$. Reemplazamos cada raíz en la fórmula de Bhaskara y obtenemos $z_1=\f{3+i-1+i}{2}=1+i$ y $z_1=\f{3+i+1-i}{2}=2$.
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Representar en el plano complejo los números $z=x+yi$ tales que cumplan las siguientes condiciones.
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 		
 		\item $|z|=3$
 		\answer $|z|=3$ es la circunferencia de radio 3 centrada en el origen. \href{https://youtu.be/AQVEp9ncSwQ}{Resolución}
@@ -399,13 +418,13 @@
 		\item $|z+1+i| \leq 4$
 		\answer $|z+1+i| \leq 4$ es el circulo de radio 4 centrado en el punto $(-1,-1)$. \href{https://youtu.be/Rj6VfY1fLzw}{Resolución}
 
-		\item $|z-2-2i|=2 ~~\land~~ \df{\pi}{4} \leq Arg(z) \leq \df{\pi}{2}$
+		\item $|z-2-2i|=2 ~~\land~~ \f{\pi}{4} \leq Arg(z) \leq \f{\pi}{2}$
 		\answer \href{https://youtu.be/5OHpMCsd8iE}{Resolución}
 
-		\item $|z+i|<1 ~~\land~~ \df{7}{4}\pi < Arg(z) < \df{\pi}{2}$
+		\item $|z+i|<1 ~~\land~~ \f{7}{4}\pi < Arg(z) < \f{\pi}{2}$
 		\answer \href{https://youtu.be/OhXOvWcryMI}{Resolución}
 		
-		\item $Im(z)> -\df{1}{3}Re(z) ~~\land~~ 2 \leq |z-3+i| \leq 4$
+		\item $Im(z)> -\f{1}{3}Re(z) ~~\land~~ 2 \leq |z-3+i| \leq 4$
 
 		\item $3Im(z)<0 ~~\lor~~ |z+1| \leq 4$
 		\answer \href{https://youtu.be/9pxsYXL6k88}{Resolución}
@@ -413,70 +432,72 @@
 		\item $4Im(z)=4 ~~\lor~~ 2<|z-3+i|$
 		\answer \href{https://youtu.be/3m1ZDSuXsX8}{Resolución}
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
-	\exercise En el plano complejo, el número $w=z.e^{\phi i}$ está rotado $\phi$ grados con respecto a $z$ y el número $u=k.z$ presenta una expansión de factor $k\in \mathbb{R}$ con respecto al origen. Utilizar estas propiedades de los complejos y realizar las siguientes actividades.
-	\begin{enumerate} [label=(\alph*)]
 
-		\item Al conectar los puntos de los complejos $a=2i$, $b=0$ y $c=1$ se forma la letra L. Rotar la letra $90^{\circ}$ en sentido antihorario. Independientemente, obtener una L cuyas dimensiones sean el triple de grandes. Graficar.
+	\exercise En el plano complejo, el número $w=z.e^{\phi i}$ está rotado $\phi$ grados con respecto a $z$ y el número $u=k.z$ presenta una expansión de factor $k\in \R$ con respecto al origen. Utilizar estas propiedades de los complejos y realizar las siguientes actividades.
+	\begin{enumcols}
+
+		\item Al conectar los puntos de los complejos $a=2i$, $b=0$ y $c=1$ se forma la letra L. Rotar la letra $90\degs$ en sentido antihorario. Independientemente, obtener una L cuyas dimensiones sean el triple de grandes. Graficar.
 		\answer Para rotar la letra L se debe hacer la operación $w=z.e^{\frac{\pi}{2}i}=z.i$, con lo que obtendríamos los siguientes complejos $a'=-2$, $b'=0$ y $c'=i$. Para obtener una L cuyas dimensiones sean el triple de grandes se debe hacer la operación $u=3z$, con lo que obtendríamos los complejos $a''=3i$, $b''=0$ y $c''=3$. 
 
-		\item Al conectar los puntos de los complejos $a=0$, $b=2i$, $c=1+\df{3}{2}i$ y $d=i$ se forma la letra P. Rotar la letra $60^{\circ}$ en sentido horario. Por otra parte, obtener una letra P cuyo tamaño sea la mitad del original. Graficar.
+		\item Al conectar los puntos de los complejos $a=0$, $b=2i$, $c=1+\f{3}{2}i$ y $d=i$ se forma la letra P. Rotar la letra $60\degs$ en sentido horario. Por otra parte, obtener una letra P cuyo tamaño sea la mitad del original. Graficar.
 
 		\item Al conectar los puntos de los complejos $a=i$, $b=1+i$, $c=0$ y $d=1$ se forma la letra Z cuya altura mide 1 unidad. Aplicar una rotación y/o expansión para obtener una N cuya base mida 2 unidades. Graficar.
-		\answer Primero rotamos los puntos $90^{\circ}$ en sentido antihorario con la operación $w=z.e^{\frac{\pi}{2}i}=z.i$. Luego expandimos los puntos obtenidos con la operación $u=2.z.i=2i.z$. Los nuevos puntos obtenidos serán $a=-2$, $b=2i-2$, $c=0$ y $d=2i$.
+		\answer Primero rotamos los puntos $90\degs$ en sentido antihorario con la operación $w=z.e^{\frac{\pi}{2}i}=z.i$. Luego expandimos los puntos obtenidos con la operación $u=2.z.i=2i.z$. Los nuevos puntos obtenidos serán $a=-2$, $b=2i-2$, $c=0$ y $d=2i$.
 
-		\item Rotar el complejo $z=1+\sqrt{3}i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ |z+2| \leq 1 \}$. Graficar.
-		\answer Notar que $Arg(z) = 60^{\circ}$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo $120^{\circ}=\df{2}{3}\pi$. Para rotarlo debemos hacer la operación $w=z.e^{\frac{2\pi}{3}i} = \left(2e^{\frac{\pi}{3}i}\right).e^{\frac{2\pi}{3}i} =2e^{\pi i}=-2+0i$, que está exactamente al centro de la región pedida.
+		\item Rotar el complejo $z=1+\sqrt{3}i$ para que pertenezca a la región $\{ z \in \C ~/~ |z+2| \leq 1 \}$. Graficar.
+		\answer Notar que $Arg(z) = 60\degs$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo $120\degs=\f{2}{3}\pi$. Para rotarlo debemos hacer la operación $w=z.e^{\frac{2\pi}{3}i} = \left(2e^{\frac{\pi}{3}i}\right).e^{\frac{2\pi}{3}i} =2e^{\pi i}=-2+0i$, que está exactamente al centro de la región pedida.
 
-		\item Escalar el complejo $z=1+4i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ Im(z) \leq 2 - Re(z) \}$. Graficar.
-		\answer Podemos escalar al complejo con la operación $u=kz=k+4ki$. Si queremos que se cumpla la condición límite $Im(u) = 2 - Re(u)$ debe pasar que $4k=2-k$, es decir, $k=2/5$. Por lo tanto, podremos utilizar valores de $k$ entre $0$ y $\df{2}{5}$. Se sugiere elegir algunos valores de $k$ para escalar al complejo y graficarlo junto con la región pedida.
+		\item Escalar el complejo $z=1+4i$ para que pertenezca a la región $\{ z \in \C ~/~ Im(z) \leq 2 - Re(z) \}$. Graficar.
+		\answer Podemos escalar al complejo con la operación $u=kz=k+4ki$. Si queremos que se cumpla la condición límite $Im(u) = 2 - Re(u)$ debe pasar que $4k=2-k$, es decir, $k=2/5$. Por lo tanto, podremos utilizar valores de $k$ entre $0$ y $\f{2}{5}$. Se sugiere elegir algunos valores de $k$ para escalar al complejo y graficarlo junto con la región pedida.
 
-		\item Rotar el complejo $z=3+i$ para que pertenezca a la región $\{ z \in \mathbb{C} ~/~ |z+3| \leq 1 \}$. Graficar.
-		\answer Notar que $Arg(3+i) \simeq 18.43^{\circ}$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo alrededor de $160^{\circ}=\df{8}{9}\pi$ (no hace falta ser exactos ya que hay toda un área donde el complejo puede caer). Para rotarlo debemos hacer la operación $w=z.e^{\frac{8\pi}{9}i}\simeq \left(\sqrt{10}e^{0.3218 i}\right).e^{\frac{8\pi}{9}i}\simeq \sqrt{10}e^{3.1143 i} \simeq -3.1611 + 0.0864 i$, que gráficamente puede verse que comprueba lo pedido.
+		\item Rotar el complejo $z=3+i$ para que pertenezca a la región $\{ z \in \C ~/~ |z+3| \leq 1 \}$. Graficar.
+		\answer Notar que $Arg(3+i) \simeq 18.43\degs$ y queremos rotarlo para que esté orientado hace el eje $-x$, por lo que deberíamos rotarlo alrededor de $160\degs=\f{8}{9}\pi$ (no hace falta ser exactos ya que hay toda un área donde el complejo puede caer). Para rotarlo debemos hacer la operación $w=z.e^{\frac{8\pi}{9}i}\simeq \left(\sqrt{10}e^{0.3218 i}\right).e^{\frac{8\pi}{9}i}\simeq \sqrt{10}e^{3.1143 i} \simeq -3.1611 + 0.0864 i$, que gráficamente puede verse que comprueba lo pedido.
 
+	\end{enumcols}
 
-	\end{enumerate}
 
 	\exercise Resolver los siguientes ejercicios contextualizados. \textit{Nota: es esperable que el contexto no se entienda completamente, sólo se espera que se pueda realizar la parte que involucra números complejos con las consideraciones dadas explicitamente.}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
-		\item En la mecánica cuántica, la amplitud de probabilidad a menudo se da como un número complejo. Si la amplitud de un estado cuántico está dada por $\psi=\df{1}{\sqrt{3}}+\df{i}{\sqrt{6}}$, calcula la probabilidad de dicho estado cuántico con la ecuación $P=\psi .\conj{\psi}$.
-		\answer La probabilidad del estado es $P=\psi .\conj{\psi}=\left(\df{1}{\sqrt{3}}+\df{i}{\sqrt{6}}\right).\left(\df{1}{\sqrt{3}}-\df{i}{\sqrt{6}}\right)=\df{1}{3}+\df{1}{6}=\df{1}{2}$, es decir, del 50\%.
+		\item En la mecánica cuántica, la amplitud de probabilidad a menudo se da como un número complejo. Si la amplitud de un estado cuántico está dada por $\psi=\f{1}{\sqrt{3}}+\f{i}{\sqrt{6}}$, calcula la probabilidad de dicho estado cuántico con la ecuación $P=\psi .\conj{\psi}$.
+		\answer La probabilidad del estado es $P=\psi .\conj{\psi}=\left(\f{1}{\sqrt{3}}+\f{i}{\sqrt{6}}\right).\left(\f{1}{\sqrt{3}}-\f{i}{\sqrt{6}}\right)=\f{1}{3}+\f{1}{6}=\f{1}{2}$, es decir, del 50\%.
 
 		\item Un circuito se describe por una impedancia $Z=4+3i$ ohmios y una corriente alterna con fasor $I=2.e^{\frac{\pi}{6}}$ amperios. Encuentra la representación en fasor del voltaje  $V$ a travès de la ecuación $V=Z.I$, ya sea en su forma binómica o exponencial.
-		\answer En su forma exponencial: pasamos la impedancia a forma exponencial $Z \simeq 5e^{0.6435 i}$ y luego hallamos el voltaje $V=Z.I\simeq\left(5e^{0.6435 i}\right).\left(2.e^{\frac{\pi}{6}}\right)\simeq10e^{1.1671 i}$. En forma binómica: pasamos la corriente a su forma binómica $I=2\cis{\df{\pi}{6}}=2\left(\df{\sqrt{3}}{2}+\df{i}{2}\right)=\sqrt{3}+i$. Luego, obtenemos el voltaje $V=Z.I=(4+3i).(\sqrt{3}+i)=(4\sqrt{3}-3)+(3\sqrt{3}+4)i\simeq 3.9282 + 9.1962 i$. Notar que, ambas cuentas dan el mismo resultado, salvando la aproximación, ya que $10e^{1.1671 i} \simeq 3.9282 + 9.1962 i$.
+		\answer En su forma exponencial: pasamos la impedancia a forma exponencial $Z \simeq 5e^{0.6435 i}$ y luego hallamos el voltaje $V=Z.I\simeq\left(5e^{0.6435 i}\right).\left(2.e^{\frac{\pi}{6}}\right)\simeq10e^{1.1671 i}$. En forma binómica: pasamos la corriente a su forma binómica $I=2\cis{\f{\pi}{6}}=2\left(\f{\sqrt{3}}{2}+\f{i}{2}\right)=\sqrt{3}+i$. Luego, obtenemos el voltaje $V=Z.I=(4+3i).(\sqrt{3}+i)=(4\sqrt{3}-3)+(3\sqrt{3}+4)i\simeq 3.9282 + 9.1962 i$. Notar que, ambas cuentas dan el mismo resultado, salvando la aproximación, ya que $10e^{1.1671 i} \simeq 3.9282 + 9.1962 i$.
 
 		\item En la ingeniería eléctrica, al analizar circuitos electrónicos, a menudo nos encontramos con parámetros conocido como "polos". Estos polos son fundamentales para determinar la estabilidad de un circuito. \\ Reglas: Si todos los polos tienen una parte real negativa, el circuito es estable. Si algún polo tiene una parte real positiva, el circuito es inestable. Si un par de polos se encuentran exactamente en el eje imaginario (parte real es cero), el circuito es marginalente estable. \\ Problema: Dado un circuito eléctrico que tiene tres polos: $P_1=5+2i$, $P_2=0+3i$ y $P_3=0-3i$, clasifica el circuito en estable, inestable inestable o marginalmente estable.
 		\answer El sistema es inestable porque $Re(P_1)=5>0$
+		
+	\end{enumcols}
 
-	\end{enumerate}
 	
 	\exercise Resolver los siguientes ejercicios de desafío. 
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 		
-		\item Considerando $z=3+i$ y $w=-4-2i$, calcular el número complejo $u=Re(w)+\df{\conj{z}+Im(w)}{z}$ en forma binómica. Luego, graficar $u$, calcular su módulo y ángulo aproximadamente.
+		\item Considerando $z=3+i$ y $w=-4-2i$, calcular el número complejo $u=Re(w)+\f{\conj{z}+Im(w)}{z}$ en forma binómica. Luego, graficar $u$, calcular su módulo y ángulo aproximadamente.
 
-		\item Dado un $z \in \mathbb{C}$ genérico, calcular el módulo y la parte real del complejo $w=3\left(\df{z^2}{i}\right)$. Dar las respuestas en función de $|z|$, $Arg(z)$, $Re(z)$ o $Im(z)$ (según convenga).
+		\item Dado un $z \in \C$ genérico, calcular el módulo y la parte real del complejo $w=3\left(\f{z^2}{i}\right)$. Dar las respuestas en función de $|z|$, $Arg(z)$, $Re(z)$ o $Im(z)$ (según convenga).
 
 		\item Indicar el número de soluciones complejas de la ecuación $x^4=16$. Halalr todas las soluciones y graficarlas. Si las soluiones son complejas, ¿por qué el numero real $x=2$ es una solución?
 
-		\item Se cuenta con dos números complejos $z=3-i$ y $w$, que tiene módulo 3 y ángulo $\df{5\pi}{6}$. Averiguar si la región $R=\left\{z\in\mathbb{C} ~|~ Im(z)>0 ~~\land~~ \df{\pi}{2}<Arg(z)<\df{3\pi}{2}\right\}$ contiene a alguno de los dos números complejos y calcular la distancia entre los complejos $z$ y $w$.
+		\item Se cuenta con dos números complejos $z=3-i$ y $w$, que tiene módulo 3 y ángulo $\f{5\pi}{6}$. Averiguar si la región $R=\left\{z\in\C ~|~ Im(z)>0 ~~\land~~ \f{\pi}{2}<Arg(z)<\f{3\pi}{2}\right\}$ contiene a alguno de los dos números complejos y calcular la distancia entre los complejos $z$ y $w$.
 
-		\item Hallar las soluciones $x \in \mathbb{C}$ de la ecuación $i.x^2=\df{1-i}{2-i}x$
+		\item Hallar las soluciones $x \in \C$ de la ecuación $i.x^2=\f{1-i}{2-i}x$
 
-		\item Se tienen tres complejos: $r=(-1-\sqrt{3})+i(1-\sqrt{3})$; $z$, que tiene módulo 3 y argumento $\phi$; y $w=\df{z^2}{r}$. Demostrar que $Arg(w)=2\phi-\df{13}{12}\pi$ y calcular $|w|$. Finalmente, graficar $z$, $r$ y $w$ aproximadamente considerando que $\phi=\df{\pi}{6}$
+		\item Se tienen tres complejos: $r=(-1-\sqrt{3})+i(1-\sqrt{3})$; $z$, que tiene módulo 3 y argumento $\phi$; y $w=\f{z^2}{r}$. Demostrar que $Arg(w)=2\phi-\f{13}{12}\pi$ y calcular $|w|$. Finalmente, graficar $z$, $r$ y $w$ aproximadamente considerando que $\phi=\f{\pi}{6}$
 
-		\item El complejo $z=2e^{\frac{\pi}{6}i}$ es una raíz tercera de $w$. Hallar $w$ y las demás raíces. Finalmente, graficar en el plano complejo todos los $r\in\mathbb{C}$ que cumplan la condición $|r-z|=3$
+		\item El complejo $z=2e^{\frac{\pi}{6}i}$ es una raíz tercera de $w$. Hallar $w$ y las demás raíces. Finalmente, graficar en el plano complejo todos los $r\in\C$ que cumplan la condición $|r-z|=3$
 		
 		\item Hallar todos los números complejos que cumplan con $|z-1|=|z-i|$ y graficarlos. Elegir uno de ellos tal que $z\neq 0+0i$ y calcular sus raíces cuadradas.
 
-		\item Si $w=\frac{3z+2}{z-i}$, con $z$ un número complejo cualquiera, calcule $w$ en función de $z$
+		\item Si $w=\f{3z+2}{z-i}$, con $z$ un número complejo cualquiera, dar la forma binómica de $w$ en función de $Re(z)$ e $Im(z)$
 
-	\end{enumerate}
+	\end{enumcols}
 
-	\exercise Actividad experimental: \\ Formar un grupo de 4 personas. Un/a integrante pensará un complejo secreto utilizando números enteros. Lo puede pensar en forma trigonométrica o binómica. Por ejemplo, $2-3i$ y $2\cis{30^{\circ}}$ son válidos. Por turnos, realizar preguntas sobre las caracteristicas del número complejo hasta adivinarlo. Las preguntas pueden ser sobre el módulo, el argumento, el cuadrante, las partes real e imaginaria, o lo que se les ocurra. El/la integrante que pensó el número complejo deberá responder sólo con un "si" o un "no". El/la integrante a quien se le tuvieron que hacer más preguntas gana. \textit{Nota: numeros como $\sqrt{3}+\sqrt{2}i \simeq \sqrt{5}\cis{39.23^{\circ}}$ no están permitidos porque no tienen numeros enteros ni en forma binómica ni en su forma trigonométrica.}
+
+	\exercise Actividad experimental: \\ Formar un grupo de 4 personas. Un/a integrante pensará un complejo secreto utilizando números enteros. Lo puede pensar en forma trigonométrica o binómica. Por ejemplo, $2-3i$ y $2\cis{30\degs}$ son válidos. Por turnos, realizar preguntas sobre las caracteristicas del número complejo hasta adivinarlo. Las preguntas pueden ser sobre el módulo, el argumento, el cuadrante, las partes real e imaginaria, o lo que se les ocurra. El/la integrante que pensó el número complejo deberá responder sólo con un "si" o un "no". El/la integrante a quien se le tuvieron que hacer más preguntas gana. \textit{Nota: numeros como $\sqrt{3}+\sqrt{2}i \simeq \sqrt{5}\cis{39.23\degs}$ no están permitidos porque no tienen numeros enteros ni en forma binómica ni en su forma trigonométrica.}
 
 \end{enumerate}
 

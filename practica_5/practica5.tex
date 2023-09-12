@@ -1,10 +1,5 @@
-
 \documentclass[a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-
-\usepackage{multicol}
-\usepackage{enumitem}
-\usepackage{graphicx}
 
 %Links
 \usepackage[colorlinks = true,
@@ -20,6 +15,12 @@
 %Enumeracion
 \usepackage{enumitem}
 
+%Multicolumna
+\usepackage{multicol}
+
+%Graficos
+\usepackage{graphicx}
+
 %Páginas sin numeración
 \pagestyle{empty}
 
@@ -30,10 +31,42 @@
 \usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
 
+% Formato de enumitem de incisos
+\setlist[enumerate,2]{label=(\alph*)}
+
+% Define a new environment that combines enumerate with multicols
+\NewDocumentEnvironment{enumcols}{O{1}}
+{
+  \ifnum#1>1 \begin{multicols}{#1} \fi
+  \begin{enumerate}
+}
+{
+  \end{enumerate}
+  \ifnum#1>1 \end{multicols} \fi
+}
+
 %Macros
 \newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
-\newcommand{\answer}{\item[**]}
-\newcommand{\exercise}{\item}
+\newcommand{\answer}{\item[**]} % Respuesta
+\newcommand{\exercise}{\item} % Ejercicio
+\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.} %Sistema de ecuaciones lineales
+\newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Matriz ampliada
+\newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fracción grande
+\newcommand{\conj}[1]{\overline{#1}} % Conjugado de complejo
+\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} %Forma trigonométrica de complejo
+\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Imagen en inciso
+\newcommand{\vect}[1]{\overrightarrow{#1}} %Vector con flecha amplia
+\newcommand{\degs}{^{\circ}} % Grados
+\newcommand{\R}{\mathbb{R}} % Conjunto de los reales
+\newcommand{\C}{\mathbb{C}} % Conjunto de los complejos
+\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Matrices complejas
+\newcommand{\Z}{\mathbb{Z}} % Conjunto de los enteros
+\newcommand{\Q}{\mathbb{Q}} % Conjunto de los racionales
+\newcommand{\ivec}{\check{\imath}} % i vector
+\newcommand{\jvec}{\check{\jmath}} % j vector
+\newcommand{\kvec}{\check{k}} % k vector
 
 \begin{document}
 
@@ -49,43 +82,42 @@
 
 \begin{enumerate}
 
-	\exercise Dadas las matrices \vspace{2mm} \\ \vspace{2mm} $A=\left(\begin{matrix} 1 & 2 & 2i\\ -1 & -2i & 2 \end{matrix}\right)$ ~~~~~~~~ $B=\left(\begin{matrix} -2 & 4i & 0\\ i & 3 & 2i \end{matrix}\right)$ \\ Cuando sea posible, resolver las siguientes operaciones
-	\begin{multicols}{3}
-	\begin{enumerate} [label=(\alph*)]
-		\item $A+B$
-		\answer $A+B=\left(\begin{matrix} -1 & 2+4i & 2i\\ -1-i & 3-2i & 2+i \end{matrix}\right)$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
+	\exercise Dadas las matrices \vspace{2mm} \\ \vspace{2mm} $A=\begin{pmatrix} 1 & 2 & 2i\\ -1 & -2i & 2 \end{pmatrix}$ ~~~~~~~~ $B=\begin{pmatrix} -2 & 4i & 0\\ i & 3 & 2i \end{pmatrix}$ \\ Cuando sea posible, resolver las siguientes operaciones
+	\begin{enumcols}[3]
 
-		\item $\frac{2}{5} B$
-		\answer $\frac{2}{5}B=\left(\begin{matrix} -\frac{4}{5} & \frac{8}{5}i & 0\\ \frac{2}{5}i & \frac{6}{5} & \frac{4}{5}i \end{matrix}\right)$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
+		\item $A+B$
+		\answer $A+B=\begin{pmatrix} -1 & 2+4i & 2i\\ -1-i & 3-2i & 2+i \end{pmatrix}$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
+
+		\item $\f{2}{5} B$
+		\answer $\f{2}{5}B=\begin{pmatrix} -\f{4}{5} & \f{8}{5}i & 0\\ \f{2}{5}i & \f{6}{5} & \f{4}{5}i \end{pmatrix}$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
 
 		\item $-2B$
-		\answer $2B=\left(\begin{matrix} 4 & -8i & 0\\ -2i & -6 & -4i \end{matrix}\right)$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
-
+		\answer $-2B=\begin{pmatrix} 4 & -8i & 0\\ -2i & -6 & -4i \end{pmatrix}$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
 
 		\item $A^T+2B^T$
-		\answer $A^T+2B^T=\left(\begin{matrix} 3 & -1+2i\\ 2+8i & 6-2i \\ 2i & 2+4i \end{matrix}\right)$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
+		\answer $A^T+2B^T=\begin{pmatrix} 3 & -1+2i\\ 2+8i & 6-2i \\ 2i & 2+4i \end{pmatrix}$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
 
 		\item $A^T-B^T$
-		\answer $A^T-B^T=\left(\begin{matrix} 3 & -1-i\\ 2-4i & -3-2i \\ 2i & 2-2i \end{matrix}\right)$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
+		\answer $A^T-B^T=\begin{pmatrix} 3 & -1-i\\ 2-4i & -3-2i \\ 2i & 2-2i \end{pmatrix}$. Resolución en \href{https://youtu.be/On25s6Z1DM4}{este link}.
 
 		\item $(A-B)^T$
-		\answer $A^T-B^T=\left(\begin{matrix} 3 & -1-i\\ 2-4i & -3-2i \\ 2i & 2-2i \end{matrix}\right)$.
+		\answer $A^T-B^T=\begin{pmatrix} 3 & -1-i\\ 2-4i & -3-2i \\ 2i & 2-2i \end{pmatrix}$.
 
 		\item $5\overline{A}$
-		\answer $A5\overline{A}=\left(\begin{matrix} 5 & 10 & -10i\\ -5 & 10i & 10 \end{matrix}\right)$.
+		\answer $A5\overline{A}=\begin{pmatrix} 5 & 10 & -10i\\ -5 & 10i & 10 \end{pmatrix}$.
 
 		\item $A^T+B^{\dagger}$
-		\answer $A+B^{\dagger}=\left(\begin{matrix} -1 & -1-i\\ 2+4i & 3-2i \\ 2i & 2-2i \end{matrix}\right)$.
+		\answer $A+B^{\dagger}=\begin{pmatrix} -1 & -1-i\\ 2+4i & 3-2i \\ 2i & 2-2i \end{pmatrix}$.
 
 		\item $A+B^{\dagger}$
 		\answer No es posible, ya que A tiene tamaño 2x3 y $B^{\dagger}$ tiene tamaño 3x2. 
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
-	\exercise Dadas las matrices \vspace{2mm} \\ \vspace{2mm} $A=\left(\begin{matrix} 2 & 1\\ -2 & 1 \\ 1 & 3 \end{matrix}\right)$ ~~~~~~~~ $B=\left(\begin{matrix} 1 & -1\\ 0 & 2 \end{matrix}\right)$ ~~~~~~~~ $C=\left(\begin{matrix} 1 & 0 & 2 \end{matrix}\right)$ ~~~~~~~~ $D=\left(\begin{matrix} -2 \\ -1 \\ 0 \end{matrix}\right)$ ~~~~~~~~ $E=\left(\begin{matrix} 1 & 0 & -1 \\ 0 & 1 & -5 \\ 0 & 0 & 1 \end{matrix}\right)$ \\ Cuando sea posible, resolver las siguientes operaciones
-	\begin{multicols}{3}
-	\begin{enumerate} [label=(\alph*)]
+
+
+	\exercise Dadas las matrices \vspace{2mm} \\ \vspace{2mm} $A=\begin{pmatrix} 2 & 1\\ -2 & 1 \\ 1 & 3 \end{pmatrix}$ ~~~~~~~~ $B=\begin{pmatrix} 1 & -1\\ 0 & 2 \end{pmatrix}$ ~~~~~~~~ $C=\begin{pmatrix} 1 & 0 & 2 \end{pmatrix}$ ~~~~~~~~ $D=\begin{pmatrix} -2 \\ -1 \\ 0 \end{pmatrix}$ ~~~~~~~~ $E=\begin{pmatrix} 1 & 0 & -1 \\ 0 & 1 & -5 \\ 0 & 0 & 1 \end{pmatrix}$ \\ Cuando sea posible, resolver las siguientes operaciones
+	\begin{enumcols}[3]
 		\item $A.B$
 		\answer Resolución en \href{https://youtu.be/-55zVuwssEs}{este link}.
 
@@ -99,13 +131,13 @@
 		\answer Resolución en \href{https://youtu.be/-55zVuwssEs}{este link}.
 
 		\item $B^2$
-		\answer $B^2=\left(\begin{matrix} 1 & -3\\ 0 & 4 \end{matrix}\right)$
+		\answer $B^2=\begin{pmatrix} 1 & -3\\ 0 & 4 \end{pmatrix}$
 
 		\item $B^3$
-		\answer $B^3=\left(\begin{matrix} 1 & -7\\ 0 & 8 \end{matrix}\right)$
+		\answer $B^3=\begin{pmatrix} 1 & -7\\ 0 & 8 \end{pmatrix}$
 
 		\item $A.B^2$
-		\answer $A.B^2=\left(\begin{matrix} 2 & -2\\ -2 & 10 \\ 1 & 9 \end{matrix}\right)$
+		\answer $A.B^2=\begin{pmatrix} 2 & -2\\ -2 & 10 \\ 1 & 9 \end{pmatrix}$
 
 		\item $2A+B$
 		\answer No se puede, ya que $2A$ es 3x2 y $B$ es 2x2.
@@ -114,101 +146,81 @@
 		\answer No se puede calcular $B.A$ ya que $B$ es 2x2 y $A$ es 3x2.
 
 		\item $B^2-A^T.A$
-		\answer $B^2 - A^T.A=\left(\begin{matrix} -8 & -6\\ -3 & -7 \end{matrix}\right)$
+		\answer $B^2 - A^T.A=\begin{pmatrix} -8 & -6\\ -3 & -7 \end{pmatrix}$
 
 		\item $A^3-A.E$
 		\answer No se puede calcular $A^2$ ya que 3x2, por lo tanto tampoco $A^3$.
 
 		\item $E^T-2E^2$
-		\answer $E^T-2E^2=\left(\begin{matrix} 3 & 0 & -4 \\ 0 & 3 & -20 \\ -1 & -5 & 3 \end{matrix}\right)$ 
+		\answer $E^T-2E^2=\begin{pmatrix} 3 & 0 & -4 \\ 0 & 3 & -20 \\ -1 & -5 & 3 \end{pmatrix}$ 
 
 		\item $5A-E.(A^T)^T$
-		\answer $5A-E.(A^T)^T=\left(\begin{matrix} 9 & 7\\ -3 & 19 \\ 4 & 12 \end{matrix}\right)$
+		\answer $5A-E.(A^T)^T=\begin{pmatrix} 9 & 7\\ -3 & 19 \\ 4 & 12 \end{pmatrix}$
 
 		\item $A.D+C^T$
 		\answer No se puede calcular $A.D$ ya que $A$ es 3x2 y $D$ es 3x1.
 
 		\item $C.D$
-		\answer $C.D=\left(\begin{matrix} -2 \end{matrix}\right)$
+		\answer $C.D=\begin{pmatrix} -2 \end{pmatrix}$
 
 		\item $D.C$
-		\answer $D.C=\left(\begin{matrix} -2 & 0 & -4 \\ -1 & 0 & -2 \\ 0 & 0 & 0 \end{matrix}\right)$
+		\answer $D.C=\begin{pmatrix} -2 & 0 & -4 \\ -1 & 0 & -2 \\ 0 & 0 & 0 \end{pmatrix}$
 
 		\item $E.D-D$
-		\answer $E.D-D=\left(\begin{matrix} 0 \\ 0 \\ 0 \end{matrix}\right)$
+		\answer $E.D-D=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$
 
 		\item $C.E+C$
-		\answer $C.E+C=\left(\begin{matrix} 2 & 0 & 3 \end{matrix}\right)$
+		\answer $C.E+C=\begin{pmatrix} 2 & 0 & 3 \end{pmatrix}$
 
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
+
+
 
 	\exercise Hallar las incógnitas pedidas en las siguientes ecuaciones matriciales
-	%\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
-		\item Calcular $x$, $y$ y $z$ para que $\left(\begin{matrix} 8-y & 0 \\ x+2z & x+z \end{matrix}\right)=\left(\begin{matrix} -3y & 0 \\ -5 & -1 \end{matrix}\right)$
+	\begin{enumcols}
+
+		\item Calcular $x$, $y$ y $z$ para que $\begin{pmatrix} 8-y & 0 \\ x+2z & x+z \end{pmatrix}=\begin{pmatrix} -3y & 0 \\ -5 & -1 \end{pmatrix}$
 		\answer $(x,y,z)=(3,-4,-4)$. Resolución por \href{https://youtu.be/hIkRaA2IfQ8?t=328}{Aprende Matemáticas}.
 
-		\item Calcular $\alpha$, $\beta$, $\gamma$ y $\delta$ para que $\left(\begin{matrix} 2+\alpha & 3 \\ 3\delta & -4 \end{matrix}\right) + \left(\begin{matrix} 5-2\alpha & \beta \\ -8 & -1 \end{matrix}\right)=\left(\begin{matrix} 5 & 0 \\ w-1 & 5\gamma \end{matrix}\right)$
-		\answer $\left(\alpha,\beta,\gamma,\delta\right)=(2,-3,\frac{7}{2},-1)$. Resolución por \href{https://youtu.be/ENijHEsXKoc}{Mate Profesor Rosado}.
+		\item Calcular $\alpha$, $\beta$, $\gamma$ y $\delta$ para que $\begin{pmatrix} 2+\alpha & 3 \\ 3\delta & -4 \end{pmatrix} + \begin{pmatrix} 5-2\alpha & \beta \\ -8 & -1 \end{pmatrix}=\begin{pmatrix} 5 & 0 \\ w-1 & 5\gamma \end{pmatrix}$
+		\answer $\left(\alpha,\beta,\gamma,\delta\right)=(2,-3,\f{7}{2},-1)$. Resolución por \href{https://youtu.be/ENijHEsXKoc}{Mate Profesor Rosado}.
 
-		\item Calcular $x$, $y$ y $z$ para que $\left(\begin{matrix} x+2 & 0 \\ 3 & y^2+y \end{matrix}\right) =\left(\begin{matrix} -4 & 0 \\ z & 6 \end{matrix}\right)$
+		\item Calcular $x$, $y$ y $z$ para que $\begin{pmatrix} x+2 & 0 \\ 3 & y^2+y \end{pmatrix} =\begin{pmatrix} -4 & 0 \\ z & 6 \end{pmatrix}$
 		\answer Existen dos soluciones: $(x,y,z)=(-6,-3,3)$ y también $(x,y,z)=(-6,2,3)$. El conjunto solución es $S=\left\{(-6,-3,3),(-6,2,3)\right\}$. Resolución por \href{https://youtu.be/3WSRu7shF4s}{Matemática Serie 23}.
 
-		\item Calcular $a$, $b$ y $c$ para que $\left(\begin{matrix} 3-a & b & -2 \\ 4 & 1-c & 6 \end{matrix}\right) + \left(\begin{matrix} 2 & a+b & 4 \\ 1-c & 2 & 0 \end{matrix}\right)=\left(\begin{matrix} -1 & a & 2 \\ 2 & 0 & 6 \end{matrix}\right)$
+		\item Calcular $a$, $b$ y $c$ para que $\begin{pmatrix} 3-a & b & -2 \\ 4 & 1-c & 6 \end{pmatrix} + \begin{pmatrix} 2 & a+b & 4 \\ 1-c & 2 & 0 \end{pmatrix}=\begin{pmatrix} -1 & a & 2 \\ 2 & 0 & 6 \end{pmatrix}$
 		\answer $(a,b,c)=(6,0,3)$. Resolución por \href{https://youtu.be/L1cAscCfFmU}{Rolando Flores Aguilar}.
 
-		\item Dada $A=\left(\begin{matrix} x & 3 \\ -2 & y \end{matrix}\right)$, calcular $x$ e $y$ para que que la matriz sea idempotente, es decir, $A^2=A$. 
+		\item Dada $A=\begin{pmatrix} x & 3 \\ -2 & y \end{pmatrix}$, calcular $x$ e $y$ para que que la matriz sea idempotente, es decir, $A^2=A$. 
 		\answer Existen dos soluciones: $(x,y)=(3,-2)$ y también $(x,y)=(-2,3)$. El conjunto solución es $S=\left\{(-2,3),(3,-2)\right\}$. Resolución por \href{https://youtu.be/wj-r4isFDN4}{Mates con Andrés}.
 
-	\end{enumerate}
-	%\end{multicols}
+	\end{enumcols}
+
 
 	\exercise Demostrar las siguientes afirmaciones a partir de propiedades o mediante notación de índices, o si son falsas dar un contraejemplo.
-	%\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, $(A+B)^2 = A^2 + 2AB+B^2$
-		\answer ~
+	\begin{enumcols}
 
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, $A^2-B^2 = (A+B)(A-B)$
-		\answer ~
+		\item Dadas $A,B \in \Cmat{n}{n}$, $(A+B)^2 = A^2 + 2AB+B^2$
+		\item Dadas $A,B \in \Cmat{n}{n}$, $A^2-B^2 = (A+B)(A-B)$
+		\item Dada $A \in \Cmat{n}{n}$, la matriz $A+A^T$ es simétrica.
+		\item Dada $A \in \Cmat{n}{n}$, la matriz $A-A^T$ es antisimétrica.
+		\item Dada $A \in \Cmat{n}{n}$, la matriz $A.A^T$ es simétrica.
+		\item Dadas $A,B \in \Cmat{n}{n}$, la matriz $A.B+B^T.A^T$ es simétrica.
+		\item Dadas $A,B \in \Cmat{n}{n}$, la matriz $A.B+B^T.A^T$ es simétrica.
+		\item Dadas $A,B \in \Cmat{n}{n}$, si $A$ es simétrica la matriz entonces $B^T. A. B$ también es simétrica.
+		\item Dadas $A,B \in \Cmat{n}{n}$, si $A$ es idempotente entonces $(A-I)^2=I-A$
+		\item Dadas $A,B \in \Cmat{n}{n}$, si $A$ y $B$ no son singulares, entonces $(A.B)^{-1}=B^{-1}. A^{-1}$
 
-		\item Dada $A \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, la matriz $A+A^T$ es simétrica.
-		\answer ~
-
-		\item Dada $A \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, la matriz $A-A^T$ es antisimétrica.
-		\answer ~
-
-		\item Dada $A \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, la matriz $A.A^T$ es simétrica.
-		\answer ~
-
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, la matriz $A.B+B^T.A^T$ es simétrica.
-		\answer ~
-
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, la matriz $A.B+B^T.A^T$ es simétrica.
-		\answer ~
-
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, si $A$ es simétrica la matriz entonces $B^T. A. B$ también es simétrica.
-		\answer ~
-
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, si $A$ es idempotente entonces $(A-I)^2=I-A$
-		\answer ~
-
-		\item Dadas $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$, si $A$ y $B$ no son singulares, entonces $(A.B)^{-1}=B^{-1}. A^{-1}$
-		\answer ~
-
-	\end{enumerate}
-	%\end{multicols}
+	\end{enumcols}
 
 
 	\exercise Expresar X de manera simple en términos de otras matrices y calcularla en los casos donde se den los datos necesarios. 
-	%\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
 
-		\item $X=\left( A^T . B^T + 2. A^T . (B^T)^T .C^T - I \right)^T$ donde $A,B,C \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$.
+		\item $X=\left( A^T . B^T + 2. A^T . (B^T)^T .C^T - I \right)^T$ donde $A,B,C \in \Cmat{n}{n}$.
 		\answer $X=B.A + 2 C.B^T.A - I$. Resolución por \href{https://youtu.be/U8HIvdPMNCk}{Matías Hugo Cerrudo}.
 
-		\item $X=-D^T - E^T + 3 \left( D - \frac{1}{3} D\right)^T$ donde $D,E \in \mathbb{C}^{m \hspace{-0.2mm}\times \hspace{-0.2mm} n}$.
+		\item $X=-D^T - E^T + 3 \left( D - \f{1}{3} D\right)^T$ donde $D,E \in \Cmat{m}{n}$.
 		\answer $X=D^T - E^T$. Resolución por \href{https://youtu.be/6KheMCVO_r0}{Jordy Lanzas}.
 
 		\item $X.A-2B=C$ considerando las matrices: \\ $A=\left( \begin{matrix} 1 & -1 \\ 2 & 2\end{matrix} \right)$ ~~~~~~ $B=\left( \begin{matrix} 0 & 1 \\ 1 & 1\end{matrix} \right)$ ~~~~~~ $C=\left( \begin{matrix} -1 & 0 \\ 3 & -1 \end{matrix} \right)$
@@ -217,10 +229,10 @@
 		\item $A.X.B+B=A$ considerando las matrices: \\ $A=\left( \begin{matrix} 1 & 1 \\ -1 & 1\end{matrix} \right)$ ~~~~~~ $B=\left( \begin{matrix} 2 & 1 \\ 0 & 1\end{matrix} \right)$ 
 		\answer Resolución en \href{https://youtu.be/FJoaFy4OIRo}{este link}.
 
-		\item $A.(A.B)^T + \frac{1}{2} A^{-1} (B.X)^T = \mathbb{O}$ donde $\mathbb{O}$ es la matriz nula y $A,B \in \mathbb{C}^{n \hspace{-0.2mm}\times \hspace{-0.2mm} n}$. 
+		\item $A.(A.B)^T + \f{1}{2} A^{-1} (B.X)^T = \mathbb{O}$ donde $\mathbb{O}$ es la matriz nula y $A,B \in \Cmat{n}{n}$. 
 		\answer Resolución en \href{https://youtu.be/5AU3jEAnowU?t=334}{este link}.
 
-		\item $AX=B$ considerando las matrices: \\ $A=\left(\begin{matrix} 2 & -1 & 1\\ -1 & 2 & 0 \\ 1 & 2 & -1 \end{matrix}\right)$ ~~~~~~ $B=\left(\begin{matrix} 1 \\ 2 \\ 0 \end{matrix}\right)$
+		\item $AX=B$ considerando las matrices: \\ $A=\begin{pmatrix} 2 & -1 & 1\\ -1 & 2 & 0 \\ 1 & 2 & -1 \end{pmatrix}$ ~~~~~~ $B=\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$
 		\answer ~
 
 		\item $ (5X + AX)B = A $ considerando las matrices: \\ $A=\left( \begin{matrix} 1 & -1 \\ 2 & 2\end{matrix} \right)$ ~~~~~~ $B=\left( \begin{matrix} 0 & 1 \\ 1 & 1\end{matrix} \right)$. 
@@ -229,12 +241,13 @@
 		\item $ (5XB)^T - X^T = A$ considerando las matrices: \\ $A=\left( \begin{matrix} 1 & 0 & -1 \\ 2 & 2 & 2 \\ 0 & 2 & 3 \end{matrix} \right)$ ~~~~~~ $B=\left( \begin{matrix} 0 & 1 & 1 \\ 1 & 1 & 0 \\ -2 & 3 & 0\end{matrix} \right)$. 
 		\answer ~.
 
-	\end{enumerate}
-	%\end{multicols}
+	\end{enumcols}
+
+
 
 	\exercise Modelizar las siguientes situaciones utilizando matrices.
-	%\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}
+
 		\item Una empresa de motocicletas dispone de dos plantas de fabricación, una original que está en China y una nueva que está en Indonesia, en las que fabrica modelos de motos M1 y M2 en tres colores, rojo, verde y azul. La capacidad de producción en cada planta está representada por las tablas a continuación: \\ \vspace{-5mm} \begin{center}\begin{tabular}{l|cc|cc|} \cline{2-5}  & \multicolumn{2}{c|}{China} & \multicolumn{2}{c|}{Indonesia} \\ \cline{2-5} & \multicolumn{1}{c|}{M1}  & \multicolumn{1}{c|}{M2} & \multicolumn{1}{c|}{M1}  & \multicolumn{1}{c|}{M2} \\ \hline \multicolumn{1}{|l|}{Rojo}  & \multicolumn{1}{l|}{300} & 95 & \multicolumn{1}{l|}{190} & 90 \\ \hline  \multicolumn{1}{|l|}{Verde} & \multicolumn{1}{l|}{250} & 100 & \multicolumn{1}{l|}{200} & 100 \\ \hline \multicolumn{1}{|l|}{Azul}  & \multicolumn{1}{l|}{200} & 100 & \multicolumn{1}{l|}{150} & 80  \\ \hline \end{tabular} \end{center} \\ Elaborar matrices de producción para las plantas de China (C) e indonesia (I). Indicar cuál es la producción total entre ambas plantas. Analizar qué significan los elementos $(C+I)_{31}$ y $(C+I)_{12}$. Indicar con una matriz cuánto debe incrementar la producción en la planta de Indonesia para igualar a la de China. Analizar qué significan los elementos $(C-I)_{22}$ y $(C-I)_{11}$. 
 		\answer Resolución por \href{https://youtu.be/G-f-VBTi-4A}{Programa Matemática DuocUC}.
 
@@ -248,44 +261,24 @@
 		\answer La planta A tiene menor utilidad al generar \$7000 al mes. El modelo M1 tiene menor utilidad al generar \$3000 mensuales. La linea de producción de menor utilidad es el modelo M1 en la planta A, que genera \$1000 mensuales. Resolución por \href{https://youtu.be/aPGgIhqe96U}{TuCiencia 2}
 
 		\item Existen tres isótopos (tipos) de átomos de silicio con distintas masas y distintas abundancias, como indica la tabla \\ \begin{center} \begin{tabular}{|c|c|c|} \hline Símbolo & Masa (uma) & Abundancia (\%) \\ \hline $^{28}$Si & 27,976927  & 92,2297 \\ \hline $^{29}$Si  & 28,976495  & 4,6832 \\ \hline $^{30}$Si & 29,973770  & 3,0872 \\ \hline \end{tabular} \end{center} \\ Elaborar una matriz fila que contenga la masa de los isótopos. Elaborar una matriz columna que contenga las abundancias de los isótopos. Averiguar cómo se calcula la masa atómica promedio de un elemento (sugerencia: \href{https://youtu.be/yj95PMPsIFU}{link}). Identificar qué operación matricial se debe realizar para obtener la masa atómica promedio del silicio. \\ Bonus: ¿cómo se puede realizar este mismo cálculo con vectores? \textit{Fuente:} \href{http://sergioandresgarcia.com/pucmm/fis202/4.TI.Tabla%20de%20isotopos%20naturales%20y%20abundancia.pdf}{link}
-		\answer Masas: $M=\left(\begin{matrix} 27,976927 & 28,976495 & 29,973770 \end{matrix}\right)$. Abundancias: $A=\left(\begin{matrix} 92,2297 \\ 4,6832 \\ 3,0872 \end{matrix}\right)$. Mása atómica promedio: $M.\frac{1}{100}A=28.0854132826$.
+		\answer Masas: $M=\begin{pmatrix} 27,976927 & 28,976495 & 29,973770 \end{pmatrix}$. Abundancias: $A=\begin{pmatrix} 92,2297 \\ 4,6832 \\ 3,0872 \end{pmatrix}$. Mása atómica promedio: $M.\f{1}{100}A=28.0854132826$.
 
-	\end{enumerate}
-	%\end{multicols}
+	\end{enumcols}
 
 	\exercise Los puntos que conforman el siguiente polígono son transformados mediante la operación $P^{\prime}=T.P$. Indicar la matriz $T$ que debe utilizarse para obtener la figura indicada en cada inciso. \\ \vspace{-5mm} \begin{center}\includegraphics[width=0.35\linewidth]{images/original} \end{center}
-	\begin{multicols}{2}
-	\begin{enumerate} [label=(\alph*)]
+	\begin{enumcols}[2]
 
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/1}
-		\answer
+		\item \img{0.7\linewidth}{images/1}
+		\item \img{0.7\linewidth}{images/2}
+		\item \img{0.7\linewidth}{images/3}
+		\item \img{0.7\linewidth}{images/4}
+		\item \img{0.7\linewidth}{images/5}
+		\item \img{0.7\linewidth}{images/6}
+		\item \img{0.7\linewidth}{images/7}
+		\item \img{0.7\linewidth}{images/8}
+		\item \img{0.7\linewidth}{images/9}
 
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/2}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/3}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/4}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/5}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/6}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/7}
-		\answer
-
-		\item ~\vspace{-5mm}\\ \includegraphics[width=0.7\linewidth]{images/8}
-		\answer
-
-		\item ~\vspace{-5mm} \\ \includegraphics[width=0.7\linewidth]{images/9}
-		\answer
-
-	\end{enumerate}
-	\end{multicols}
+	\end{enumcols}
 
 	%\exercise En caso de que sea posible, resolver los siguientes sistemas de ecuaciones utilizando matrices.
 	%\begin{multicols}{2}
