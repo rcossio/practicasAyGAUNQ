@@ -1,83 +1,97 @@
-# Layout:
-# 1) Exercise
-#       a) Item
-#       b) Item
-# 2) Exercise
-#       a) Item
-
-# Run with:
-# python3 compile.py practica1.tex
-#
-# For font installation check:
-# https://tex.stackexchange.com/questions/88423/manual-font-installation
-
 import os
 import sys
-
-input_filename = sys.argv[1]
-compilation_style = sys.argv[2]
-
-if compilation_style == 'docente':
-    os.system("pdflatex -synctex=1 -interaction=nonstopmode %s" %input_filename)
-    exit()
+import re
 
 
-output_filename = input_filename.replace('.tex','_ready.tex')
-answers_dict = {} 
-output_string = ''
+def process_docente(input_lines, input_filename):
+    output_filename = input_filename.replace('.tex', '_docente.tex')
 
-input_lines = open(input_filename).readlines()
+    with open(output_filename, 'w') as file:
+        for line in input_lines:
+            line = re.sub(r'\\begin\{enumcols\}\[\d+\]', r'\\begin{enumcols}', line)
+            if '\\answer' in line:
+                line = line.replace('\\answer', '\\textcolor{darkblue}{ \\answer ') + "}"
+            file.write(line)
 
-exercise_id = 0
-for line in input_lines:
-    arr = line.split()
+    compile_tex(output_filename)
+    remove_temp_files(output_filename)
+    return output_filename
 
-    if len(arr) == 0:
-        continue
 
-    elif arr[0] == '\\exercise':
-        exercise_id += 1
-        item_id = 0
-        answers_dict[exercise_id] = {}
-        output_string += line
+def compile_tex(filename):
+    os.system(f"TEXINPUTS=../: pdflatex -synctex=1 -interaction=nonstopmode {filename}")
 
-    elif arr[0] in ['\\item', '\\Item']:
-        item_id += 1
-        answers_dict[exercise_id][item_id] = ''
-        output_string += line
 
-    elif arr[0] == '\\answer':
-        answers_dict[exercise_id][item_id] = line
+def remove_temp_files(base_filename):
+    os.remove(base_filename)
+    base_name = os.path.splitext(base_filename)[0]
+    for ext in [".aux", ".out", ".synctex.gz", ".log"]:
+        temp_file = f"{base_name}{ext}"
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
 
-    elif arr[0] == '\\end{document}':
-        continue
 
+def process_student(input_lines, input_filename):
+    output_filename = input_filename.replace('.tex', '_ready.tex')
+    output_string = ""
+    answers_dict = {}
+    exercise_id, item_id = 0, 0
+
+    for line in input_lines:
+        arr = line.split()
+        if not arr:
+            continue
+        elif arr[0] == '\\exercise':
+            exercise_id += 1
+            item_id = 0
+            answers_dict[exercise_id] = {}
+            output_string += line
+        elif arr[0] in ['\\item', '\\Item']:
+            item_id += 1
+            answers_dict[exercise_id][item_id] = ''
+            output_string += line
+        elif arr[0] == '\\answer':
+            answers_dict[exercise_id][item_id] = line
+        elif arr[0] != '\\end{document}':
+            output_string += line
+
+    output_string += process_answers(answers_dict)
+    with open(output_filename, 'w') as file:
+        file.write(output_string)
+
+    compile_tex(output_filename)
+    remove_temp_files(output_filename)
+    return output_filename
+
+
+def process_answers(answers_dict):
+    ans_str = '\\vspace{20pt} \n \\textbf{Respuestas}\\begin{enumerate}'
+    for exercise in answers_dict:
+        ans_str += '\\exercise'
+        items = answers_dict[exercise].values()
+        if not any(items):
+            ans_str += '---'
+        else:
+            ans_str += '\\begin{enumerate} [label=(\\alph*)]'
+            for answer in items:
+                ans_str += '\\item ---' if not answer else answer.replace('\\answer', '\\item')
+            ans_str += '\\end{enumerate}'
+    ans_str += '\\end{enumerate}\\end{document}'
+    return ans_str
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: python3 compile.py <filename.tex> <style>")
+        sys.exit(1)
+
+    input_filename = sys.argv[1]
+    compilation_style = sys.argv[2]
+
+    with open(input_filename, 'r') as file:
+        input_lines = file.readlines()
+
+    if compilation_style == 'docente':
+        process_docente(input_lines, input_filename)
     else:
-        output_string += line
-
-output_string += '\\vspace{20pt} \n \\textbf{Respuestas}'
-output_string += '\\begin{enumerate}'
-for exercise in answers_dict.keys():
-    output_string += '\\exercise'
-    if ''.join([answer for answer in answers_dict[exercise].values()]) == '': #no answers in all items
-        output_string += '---'
-    else:
-        output_string += '\\begin{enumerate} [label=(\\alph*)]'
-        for answer in answers_dict[exercise].values():
-            if answer == '':
-                output_string += '\\item ---'
-            else:
-                output_string += answer.replace('\\answer', '\\item')
-        output_string += '\\end{enumerate}'
-
-output_string += '\\end{enumerate}'
-output_string += '\\end{document}'
-
-
-print(answers_dict)
-file_output = open(output_filename,'w')
-file_output.write(output_string)
-file_output.close()
-
-os.system("pdflatex -synctex=1 -interaction=nonstopmode %s" %output_filename)
-#os.system("pdflatex -synctex=1 %s" %output_filename)
+        process_student(input_lines, input_filename)

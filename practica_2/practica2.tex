@@ -1,84 +1,8 @@
-\documentclass[a4paper]{article}
-\usepackage[margin=1.5cm]{geometry}
-
-%Links
-\usepackage[colorlinks = true,
-            linkcolor = blue,
-            urlcolor  = blue,
-            citecolor = blue,
-            anchorcolor = blue]{hyperref}
-
-%Simbolos matemáticos
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-%Enumeracion
-\usepackage{enumitem}
-
-%Multicolumna
-\usepackage{multicol}
-
-%Graficos
-\usepackage{graphicx}
-
-%Páginas sin numeración
-\pagestyle{empty}
-
-%Interlineado
-\renewcommand{\baselinestretch}{1.5}
-
-%Arreglar comillas
-\usepackage [autostyle]{csquotes}
-\MakeOuterQuote{"}
-
-% Formato de enumitem de incisos
-\setlist[enumerate,2]{label=(\alph*)}
-
-% Define a new environment that combines enumerate with multicols
-\NewDocumentEnvironment{enumcols}{O{1}}
-{
-  \ifnum#1>1 \begin{multicols}{#1} \fi
-  \begin{enumerate}
-}
-{
-  \end{enumerate}
-  \ifnum#1>1 \end{multicols} \fi
-}
-
-%Macros
-\newcommand{\Item}{\item[\stepcounter{enumii}$\blacktriangleright$\textbf{(\alph{enumii})}]} %Negrita en algunos items
-\newcommand{\answer}{\item[**]} % Respuesta
-\newcommand{\exercise}{\item} % Ejercicio
-\newcommand{\SEL}[1]{\left\{\begin{matrix} #1 \end{matrix}\right.} %Sistema de ecuaciones lineales
-\newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Matriz ampliada
-\newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
-\newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}}
-\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fracción grande
-\newcommand{\conj}[1]{\overline{#1}} % Conjugado de complejo
-\newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} %Forma trigonométrica de complejo
-\newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Imagen en inciso
-\newcommand{\vect}[1]{\overrightarrow{#1}} %Vector con flecha amplia
-\newcommand{\degs}{^{\circ}} % Grados
-\newcommand{\R}{\mathbb{R}} % Conjunto de los reales
-\newcommand{\C}{\mathbb{C}} % Conjunto de los complejos
-\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Matrices complejas
-\newcommand{\Z}{\mathbb{Z}} % Conjunto de los enteros
-\newcommand{\Q}{\mathbb{Q}} % Conjunto de los racionales
-\newcommand{\ivec}{\check{\imath}} % i vector
-\newcommand{\jvec}{\check{\jmath}} % j vector
-\newcommand{\kvec}{\check{k}} % k vector
+\documentclass{template_practica}
 
 \begin{document}
 
-\noindent \hrulefill 
-\vspace{-7pt}
-\begin{center} 
-	\textbf{ Práctica 2: Polinomios } \\
-	Comisión: Rodrigo Cossio-Pérez y Gabriel Romero
-\end{center}
-\vspace{-10pt}
-\hrulefill
-
+\practiceheader{Práctica 2: Polinomios}{Comisión: Rodrigo Cossio-Pérez y Gabriel Romero}
 
 \begin{enumerate}
 
