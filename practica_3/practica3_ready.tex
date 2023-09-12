@@ -65,6 +65,7 @@
 		\item $(2,0,0)+(0,3,0)+(0,0,1)$
 		\item $(2,2,0)+(0,-1,1)$
 		\item $(1,-1,0)-(-2,-1,3)$
+		\item $(0,4)+(2,0)+(1,-1)+(-1,-1)+(-2,0)+(2,-2)$
 	\end{enumerate}
 	\end{multicols}
 	\exercise Calcular el módulo y ángulo de los siguientes vectores de $\mathbb{R}^2$ y escribir sus coordenadas en forma polar.
@@ -132,18 +133,170 @@
 		\item Determinar $D$ para que $\vect{AB}$ sea equivalente a $\vect{CD}$ con $A(5,-1,3)$, $B(2,3,-2)$, $C(-5,8,-5)$. Interpretar gráficamente.
 		\item Encontrar las coordenadas del punto medio entre $A(7,5)$ y $B(1,2)$
 		\item Encontrar las coordenadas el punto medio entre $M(0,-1,1)$ y $N(2,2,-1)$
-		\item Sean $A(2,-3)$, $B(-3,5)$ y $C(-1,5)$ y $D$ los vertices de un paralelogramo, donde $D$ es el vertice opuesto a $A$, hallar $D$ e interpretar geométricamente.
+		\item Sean $A(2,-3)$, $B(-3,5)$ y $C(-1,5)$ y $D$ los vértices de un paralelogramo, donde $D$ es el vértice opuesto a $A$, hallar $D$ e interpretar geométricamente.
+		\item Dado el vector $\vec{v}=(k,k+1)$, calcular $k$ para que $|\vec{v}|=5$ y dar las coordenadas del vector $\vec{v}$.
+		\item Hallar el vector $\vec{v}_{\theta}$ de $\mathbb{R}^2$ que tiene módulo $1$ y ángulo $\theta$. Luego, calcular $\vec{v}_{30 \degs}$, $\vec{v}_{60 \degs}$, $\vec{v}_{90 \degs}$, $\vec{v}_{135 \degs}$ y $\vec{v}_{300 \degs}$.
 	\end{enumerate}
-	% Aca se harán ejercicios para introducir el concepto de paralelismo con vectories y la operacion k.v
-	% Aca se puede dar el concepto de combinación lineal
-	% Luego se introducirá el concepto de producto escalar para relacionarlo con angulo y perpendicularidad
-	% Luego se introducirá el producto vectorial y su significado geométrico
-	% Producto mixto con su interpretacion geométrica
-	% Aca se pueden hacer ejercicios con todas las operaciones para que vean cuales tienen sentido y cuales no
-	% Aca se pueden hacer ejercicios de proyección vectorial y componente ortogonal
+	\exercise Obtener los siguientes vectores definidos a partir del producto de vector con número escalar e interpretarlos gráficamente
+	\begin{enumerate} [label=(\alph*)]
+		\item $3 (3,2)$
+		\item $-2 \vec{v}$ ~con $\vec{v}=(4,5)$
+		\item $3 (1,1,4) - 2(0,0,5)$
+		\item $4 \vec{v} -2 \vec{u} + \vec{w}$ ~con $\vec{v}=(1,0,3)$, $\vec{u}=(-2,1,0)$ y $\vec{w}=(3,-3,3)$
+		\item $3 \vect{PQ} + 2 \vect{PR}$ ~con los puntos $P(1,2)$, $Q(2,3)$ y $R(1,4)$
+		\item $-2 \vec{r} + 3 \vec{s}$ ~donde $\vec{r}=\vec{v}+\vec{u}$ ~~y~~ $\vec{s}=2\vec{u}$, con $\vec{v}=(1,2)$ y $\vec{u}=(3,4)$
+		\item $4 \check{\imath} - 5 \check{\jmath}$
+		\item $-2 \check{\imath} +0 \check{\jmath} + 7 \check{k}$
+		\item $\df{1}{3} \vect{F} + 2\vect{T} - \df{5}{2}\vect{N}$ ~con $\vect{F}=(-3,2)$,~~ $\vect{T}=\SEL{ |\vect{T}| = 5 \\ \theta_T = 30\degs}$ ~~y~~~ $\vect{N}=3\check{\imath}$
+		\item $2(t,t+1,0) - 3(t,5,1)$ ~con $t\in\mathbb{R}$
+		\item $m(0,0,1)$ ~con $m\in\mathbb{R}$
+		\item $a(1,0,0) + b (0,1,0)$ ~con $a,b \in \mathbb{R}$
+		\item $\df{1}{|\vec{v}|}~ \vec{v}$ ~con $\vec{v}=(3,-4)$
+		\item $5\vec{v} +7 \vec{w}$ ~con $\vec{v}=\SEL{ \rho_v = 4 \\ \theta_v = 45\degs\\ v_z = 1 }$ ~~y~~ $\vec{w}=\SEL{ \rho_w = 10 \\ \theta_w = 210\degs\\ w_z = -1 }$
+	\end{enumerate}
+	\exercise Indicar si los siguientes pares de vectores son o no paralelos 
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(1,2)$ y $(7,14)$
+		\item $(5,-1)$ y $\left(-2,\df{2}{5}\right)$
+		\item $\left(2,-\df{3}{4},\df{1}{2}\right)$ y $\left(2,-\df{3}{4},\df{1}{2}\right)$
+		\item $\left(1,4,1\right)$ y $\left(2,8,0\right)$
+		\item $\left(1,2,3\right)$ y $\left(-2,-4,-6\right)$
+		\item $(1,1,2)$ con $\vec{w}=\SEL{ \rho_w = \sqrt{2} \\ \theta_w = 225\degs\\ w_z = -2 }$
+		\item $(4,-1)$ con $k\left(2,-\df{1}{2}\right)$ con $k\in\mathbb{R}-\{0\}$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Proponer un vector que cumpla con las siguientes condiciones
+	\begin{enumerate} [label=(\alph*)]
+		\item Tiene igual dirección que $\vec{v}=(-4,1,2)$
+		\item Es paralelo a $\vec{u}=(1,2,3)$ y módulo menor que el de $\vec{u}$
+		\item Tiene igual dirección que $\vec{s}=(1,2)$, módulo mayor que $\vec{s}$ y está en el 3er cuadrante
+		\item Es paralelo a $\vec{w}=(1,2)$ y tiene módulo $5$
+		\item Tiene igual dirección que $\vec{r}=(1,2,3)$ y mide $1$
+		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_L = 5 \\ \theta_L = 30\degs\\ L_z = 2 }$ pero módulo 1
+		\item Es unitario y paralelo a $\vect{PQ}$ con $P(1,7,5)$ y $Q(0,0,2)$
+		\item Es el vector unitario de $\vec{v}=(5,3)$
+		\item Es el versor asociado a $\vec{u}=(1,0,4)$
+		\item Es el vector unitario asociado a $\vec{v}=(m,0,-m)$ con $m\in\mathbb{R}$
+		\item Tiene la misma dirección que $\vec{r}=\SEL{ |\vec{r}| = 3 \\ \theta_r = 0\degs\\ \phi_r = 45\degs }$ pero módulo 1
+	\end{enumerate}
+	\exercise Indicar si los siguientes vectores son perpendiculares, si forman un ángulo agudo o si forman uno obtuso. 
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(5,-1)$ y $(2,3)$
+		\item $(3,-5)$ y $(10,6)$
+		\item $(-3,5,0)$ y $(4,5,-3)$
+		\item $(0,1)$ y $(3,-1)$ 
+		\item $(2,3,1)$ y $(5,3,-4)$
+		\item $(3,-4,1)$ y el versor de $(-2,6,0)$
+		\item $(1,2,3)$ y $(2,4,6)$
+		\item $(-1,5)$ y $\vec{v}=\SEL{|\vec{v}| = 3 \\ \theta_v = -60\degs }$ 
+		\item $(-2,7,1)$ con $k(1,0,2)$ con $k\in(0;+\infty)$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Indicar si los siguientes vectores son paralelos, perpendiculares o forman un ángulo agudo/obtuso. En caso de formar un ángulo agudo/obtuso, calcularlo. Y en caso de ser paralelos, indicar si tienen el mismo sentido o sentido contrario.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(-3,2)$ y $(1,4)$
+		\item $(1,2)$ y $\left(-\df{1}{2},-1\right)$
+		\item $(1,-5)$ y $\check{\imath}$
+		\item $(3,-4,1)$ y $\check{k}$
+		\item $5\check{\imath}$ y $-2\check{k}$
+		\item $(1,-7,3)$ y $(2,4,0)$
+		\item $\vec{v}=\SEL{|\vec{v}| = 10 \\ \theta_v = 135\degs }$ ~~y~~ $\vec{u}=\SEL{|\vec{u}| = 4 \\ \theta_u = -45\degs }$ 
+		\item $(1,4)$ y $\vec{p}=\SEL{|\vec{p}| = 6 \\ \theta_p = 270\degs }$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Si es posible, escribir el vector indicado como combinación lineal de los otros dados. En caso de que halla infinitas posibilidades, indicar la expresión analítica que cumplen.
+	\begin{enumerate} [label=(\alph*)]
+		\item $\vec{v}=(4,0,-2)$ como combinación lineal de los vectores $\check{\imath}$, $\check{\jmath}$ y $\check{k}$
+		\item $\vec{v} = (5,12)$ de la forma $\alpha \vec{u}+ \beta \vec{w}$ con $\vec{u}=(1,2)$, $\vec{w}=(-2,3)$ ~y~ $\alpha,\beta \in \mathbb{R}$
+		\item $(4,-12)$ a partir de $\{(1,1),(-1,1),(-2,-2)\}$
+		\item $\vec{0}$ como combinación lineal de $(1,0,-1)$, $(0,-1,-1)$ ~y~ $(1,1,1)$
+		\item $\vec{v}=3\check{\imath}+\check{\jmath}$ a partir de $\vec{v}=(4,-6)$ y $\vec{u}=\left(-1,\df{3}{2}\right)$
+		\item $\vec{r}=\SEL{ \rho_r = 8 \\ \theta_r = 120\degs\\ r_z = 7 }$ como combinación lineal de $\{\check{\imath}, \check{\jmath}, \check{k}\}$
+	\end{enumerate}
+	\exercise Calcular los siguientes productos vectoriales e interpretarlo gráficamente.
+	\begin{multicols}{2}
+	\begin{enumerate} [label=(\alph*)]
+		\item $(1,2,0) \times (0,1,3)$
+		\item $(3\check{\imath}) \times 4\check{k}$
+		\item $\left(\df{1}{4},1,-1\right) \times \left(1,5,-3\right)$
+		\item $(1,1,2) \times (7,7,14)$
+		\item $(10~\vec{r}) \times \vect{F}$ ~con $\vec{r}=(1,2,0)$ ~y~ $\vect{F}=(3,-1,0)$
+		\item $\vec{a} \times \vec{b}$ ~con $\vec{a}=5\check{\imath}$ ~y~ $\vec{b}=-2\check{\jmath}$
+		\item $\vec{r} \times \vec{p}$ ~con $\vec{r}=5\check{\jmath}$ ~y~ $\vec{p}=\check{\jmath}+7\check{k}$
+		\item $\vec{v} \times \vect{AB}$ ~con $\vec{v}=(-1,10,2)$, $A(4,1,3)$ ~y~ $B(4,-6,0)$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Considerando los vectores $\vec{v}, \vec{u} , \vec{w}$, indicar si esposible realizar las siguientes operaciones en $\mathbb{R}^2$, $\mathbb{R}^3$, en ambos o en ninguno, y qué resultado se espera (número escalar o vector). 
+	\begin{multicols}{3}
+	\begin{enumerate} [label=(\alph*)]
+		\item $2(\vec{v}+\check{\imath})$
+		\item $\df{1}{|\vec{v}|} (\vec{v} \cdot \vec{u})$
+		\item $\check{k}+\vec{v} \cdot \check{\imath}$
+		\item $\vec{v} \cdot (\vec{u} + \vec{w})$
+		\item $\vec{w} \cdot (\vec{v} \times \vec{u})$
+		\item $(\vec{v} \cdot \vec{u}) ~\vec{w}$
+		\item $\df{\vec{v} \cdot \vec{v}}{\vec{u} \cdot \vec{u}}$
+		\item $\df{\vec{v} \cdot \vec{v}}{\vec{u}}$
+		\item $\df{\vec{v}^{~2}}{|\vec{v}|}$
+		\item $\df{\vec{v} \cdot \vec{u}}{ |\vec{u}|^2} ~ \vec{u}$
+		\item $(\vec{v} \times \vec{u}) \times \vec{w}$
+		\item $(\check{\imath} \cdot \check{\jmath}) ~ (\check{k} \times \vec{v})$
+		\item $\check{\jmath}+\vec{u} \times \check{k}$
+	\end{enumerate}
+	\end{multicols}
+	\exercise Considerando el concepto de proyección vectorial, escalar y componente ortogonal, calcular e interpretar gráficamente:
+	\begin{enumerate} [label=(\alph*)]
+		\item La proyección vectorial y escalar de $\vec{v}=(5,4)$ sobre $\vec{u}=(2,1)$
+		\item La proyección vectorial y el componente ortogonal de $(-1,3)$ en la dirección de $(5,-1)$
+		\item La proyección vectorial y el componente ortogonal de $\vec{r}=(-1,3)$ sobre $\vec{s}=(3,1)$
+		\item La proyección vectorial y escalar de $\vec{v}=(1,5,1)$ en la dirección de $\vec{u}=(-1,2,3)$
+		\item La proyección escalar y el módulo del componente ortogonal $\vect{F}=(7,-13)$ sobre $\check{\imath}$
+		\item La proyección vectorial de $\vec{a} \in \mathbb{R}^2: \SEL{|\vec{a}|=9 \\ \theta=120\degs}$ sobre $\vec{b} \in \mathbb{R}^2: \SEL{|\vec{b}|=5 \\ \theta=0\degs}$
+		\item La proyección vectorial, escalar, el componente ortogonal y su módulo del vector $\vec{v}=(1,2,3)$ en la dirección del vector $\vect{AB}$, con $A(0,-1,4)$ y $B(2,2,3)$
+		\item La proyección vectorial y escalar de $\vec{v}=(6,2)$ en la dirección de la recta $y=\df{1}{3}x+5$
+		\item La proyección vectorial y su módulo del vector $\vect{AB}$ en la dirección de $\vect{AC}$ considerando $A(-1,3)$, $B(1,2)$ y $C(5,4)$.
+	\end{enumerate}
+	\exercise Considerando las propiedades geométricas del producto vectorial, determinar:
+	\begin{enumerate} [label=(\alph*)]
+		\item El área del paralelogramo de lados $\vec{u}=(3,-1,4)$ y $\vec{v}=(6,-2,8)$
+		\item El área del triángulo de lados $\vec{a}=(2,3,0)$ y $\vec{b}=(-1,2,-2)$
+		\item El área del el triángulo de vértices $A(2,6,-1)$, $B(1,1,1)$ y $C(4,6,2)$
+		\item Si los vectores $\vec{r}=(1,2,3)$ y $\vec{s}=(3,6,9)$ son paralelos 
+		\item Si los puntos $A(1,2,3)$, $B(2,3,4)$, $C(3,4,5)$ están alineados
+	\end{enumerate}
+	\exercise Considerando las propiedades geométricas del producto mixto, determinar:
+	\begin{enumerate} [label=(\alph*)]
+		\item El volumen del paralelepípedo  cuyos lados son los vectores $\vec{v}=(2,-6,2)$, $\vec{u}=(0,4,-2)$ y $\vec{w}=(2,2,-4)$
+		\item El volumen del parallelepípedo cuyos lados son los vectores $\vec{a}=(3,1,2)$, $\vec{b}=(4,5,1)$ y $\vec{c}=(1,2,4)$
+		\item Si los vectores $\vec{r}=(-1,-2,1)$, $\vec{s}=(3,0,-2)$ y $\vec{t}=(5,-4,0)$ son coplanares
+		\item Si los puntos $A(0,0,0)$, $B(5,-2,1)$, $C(4,-1,1)$ y $D(1,-1,0)$ son coplanares
+		\item Si alguno de los vectores $\vec{a}=(4,-8,1)$, $\vec{b}=(2,1,-2)$, $\vec{c}=(3,-4,12)$ es combinación lineal de los otros dos
+	\end{enumerate}
+	\exercise Resolver los siguientes problemas geométricos y analíticos:
+	\begin{enumerate} [label=(\alph*)]
+		\item Considerando el paralelepípedo cuyos lados son los vectores $\vec{u}=(1,2,0)$, $\vec{v}=(1,4,0)$ y $\vec{w}=(3,2,5)$, calcular el volumen, el área de la base y la altura. Interpretar geométricamente la situación.
+		\item Demostrar que el triángulo de vértices $A(3,0,2)$, $B(4,3,0)$ y $C(8,1,-1)$ es rectángulo e indicar en qué vértice está el ángulo recto.
+		\item Sean los vectores $\vec{a}=(6,-2,m)$ y $\vec{b}=\left(-9,3,-\df{3m}{2}\right)$, indagar si existe $m \in \mathbb{R}$ de modo que los vectores sean ortogonales, y si existen valores para que sean paralelos.
+		\item Sean los vectores $\vec{u}=(1,1,k)$ y $\vec{v}=(2,3,1)$, determinar $k$ para que los vectores formen un paralelogramo de área $\sqrt{3}$. Graficar.
+		\item Analizar si existen valores de $m \in \mathbb{R}$ tal que los vectores $\vec{v}=(1,2,3)$, $\vec{u}=(-1,4,m)$ y $\vec{w}=(1,3,2)$ sean coplanares.
+		\item Sean los vectores $\vec{u}=(2,t)$, $\vec{v}=(3,5)$, investidar si existe $k \in \mathbb{R}$ tal que el ángulo entre $\vec{u}$ y $k\vec{v}$ sea de $45\degs$.
+		\item Un vector forma ángulos iguales con los vectores $\check{\imath}$, $\check{\jmath}$ y $\check{k}$. Determinar las posibles componentes del vector.
+		\item Averiguar si existen vectores de $\mathbb{R}^2$ de módulo 5 cuya proyección vectorial sobre $(2,1)$ es el vector $\left(\df{8}{5},\df{4}{5}\right)$. Interpretar gráficamente.
+		\item Calcular los valores reales de $\alpha$ y $\beta$ para que los puntos $A(1,1,1)$, $B(\alpha,2,\beta)$ y $C(1,0,0)$ estén alineados.
+		\item Los vectores $\vec{v}$ y $\vec{u}$ forman unángulo de $45\degs$. Si el módulo de $\vec{v}$ es $3$, calcular cuánto debe ser la medida de $\vec{u}$ para que $\vec{v}-\vec{u}$ resulte perpendicular a $\vec{v}$.
+		\item Hallar $\vec{v} \cdot \vec{u}$ sabiendo que $\vec{v}=(1,-2)$, que $|\vec{u}|=4$ y que el ángulo entre ellos es $60\degs$.
+		\item Obtener $(2\vec{u}-3\vec{v})\cdot (3\vec{u}+\vec{v})$ sabiendo que $\vec{u}$ es unitario, $|\vec{v}|=2$ y que $\vec{v} \cdot \vec{u} = 2$.
+		\item Calcular el valor de $m$ para que el vector $(4,6,7)+m\check{\imath}$ sea perpendicular a $(2,0,-1)$.
+		\item Hallar los valores de $a,b \in\mathbb{R}$ para que el vector $(2,0,-1)+a\check{\imath}$ sea paralelo a $(1,-1,3)+b\check{\jmath}$.
+		\item Determinar los valores de $y,z \in\mathbb{R}$ para que el vector $(1,y,z)$ sea perpendicular a $(2,0,-1)$ y a $(1,-1,3)$.
+		\item Encontrar el valor de $t$ para que los vectores $(2,0,-1)$ y $(1,t-1,3)$ tengan el mísmo módulo.
+		\item Demostrar que, si $\vec{v}$ es perpendicular a $\vec{u}$ y a $\vec{w}$ entonces $\vec{v}$ es perpendicular a $a\vec{u}+b\vec{w}$ para $a\neq0$ y $b\neq0$.
+		\item Dado $\vec{v}\in \mathbb{R}^2$, demostrar que $|k\vec{v}|=|k|.|\vec{v}|$.
+	\end{enumerate}
 	% Finalmente ejercicios aplicador, recordar fuerza palicada sobre una pared en angulo, etc
-	% Ejercicios valiosos de la UTN: 5, 1, 6-7-8, 2, 9, 3, 10, 12, 13, 14, (15), 16, 17, 18  11, 19
-	% Ejercicios valiosos de Ernesto: 3, 4, 6b, 9 ,10, 11, 12, 13.
 \end{enumerate}
 \vspace{20pt} 
  \textbf{Respuestas}\begin{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $\vect{AB}= \vect{OB} - \vect{OA} = (3,4) - (1,2) = (2,2)$
@@ -161,6 +314,7 @@
 		\item $(2,0,0)+(0,3,0)+(0,0,1) = (2,3,1)$
 		\item $(2,2,0)+(0,-1,1) = (2,1,1)$
 		\item $(1,-1,0)-(-2,-1,3) = (3,0,-3)$
+		\item $(2,0)$
 \end{enumerate}\exercise\begin{enumerate} [label=(\alph*)]		\item $|(1,1)| = \sqrt{1^2+1^2} = \sqrt{2}$. $\theta=\arctan\left(\df{1}{1}\right) = \arctan(1) = 45\degs$. $\SEL{v_x=\sqrt{2} \cos{45\degs} \\ v_y=\sqrt{2} \sin{45\degs} }$
 		\item $|(2,3)| = \sqrt{2^2+3^2} = \sqrt{13}$. $\theta=\arctan\left(\df{3}{2}\right) \simeq 56.31\degs$.  $\SEL{v_x \simeq\sqrt{13} \cos{56\degs} \\ v_y\simeq\sqrt{13} \sin{56\degs} }$
 		\item $|(3,-4)| = \sqrt{3^2+(-4)^2} = \sqrt{25} = 5$. $\theta=\arctan\left(\df{-4}{3}\right) \simeq -53.13\degs$. $\SEL{v_x \simeq 5 \cos{-53\degs} \\ v_y\simeq5 \sin{-53\degs} }$
@@ -205,4 +359,6 @@
 		\item El punto medio es $\left(\df{7+1}{2}, \df{5+2}{2}\right) = \left(4,\df{7}{2}\right)$
 		\item El punto medio es $\left(\df{0+2}{2}, \df{-1+2}{2}, \df{1-1}{2}\right) = \left(1,\df{1}{2},0\right)$
 		\item El centro del paralelogramo es el punto medio entre $B$ y $C$, por lo que el centro es $E(-2,5)$. El vector $\vect{AE}=(-4,8)$ es equivalente a $\vect{ED}$, por lo que $\vect{OD} = \vect{OE} + \vect{ED} = (-2,5) + (-4,8) = (-6,13)$. El punto es $D(-6,13)$
-\end{enumerate}\end{enumerate}\end{document}
+		\item Directamente conviene plantear $|\vec{v}|^2$ en vez de $|\vec{v}|$. $|\vec{v}|^2=2k^2+2k+1=5^2$, es decir, $2k^2+2k-24=0$. Resolviendo la ecuación obtenemos $k_1=3$ o $k_2=-4$. El vector es $\vec{v}_1=(3,4)$ o $\vec{v}_2=(-4,3)$
+		\item Considerando las coordenadas polares se obtiene $\vec{v}=(\cos{\theta}, \sin{\theta})$. Por lo tanto $\vec{v}_{30 \degs}=\left(\df{\sqrt{3}}{2},\df{1}{2}\right)$, $\vec{v}_{60 \degs}=\left(\df{1}{2},\df{\sqrt{3}}{2}\right)$, $\vec{v}_{90 \degs}=\left(0,1\right)$, $\vec{v}_{135 \degs}=\left(\df{\sqrt{2}}{2},\df{\sqrt{2}}{2}\right)$ y $\vec{v}_{300 \degs}=\left(\df{1}{2},-\df{\sqrt{3}}{2}\right)$
+\end{enumerate}\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\exercise---\end{enumerate}\end{document}
