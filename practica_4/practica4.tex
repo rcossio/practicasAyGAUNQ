@@ -35,14 +35,8 @@
 \newcommand{\answer}{\item[**]}
 \newcommand{\exercise}{\item}
 \newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} }
-
-
 %Macro Gauss Jordan
-\newenvironment{amatrix}[1]{%
-  \left(\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right)
-}
+\newenvironment{amatrix}[1]{ \left(\begin{array}{@{}*{#1}{c}|c@{}} }{  \end{array}\right) }
 
 \begin{document}
 
