@@ -2,3 +2,5 @@
 *.synctex.gz
 *.log
 *.out
+*.pdf
+*_ready.tex
