@@ -76,7 +76,7 @@
 		\answer $|(2,3)| = \sqrt{2^2+3^2} = \sqrt{13}$. $\theta=\arctan\left(\f{3}{2}\right) \simeq 56.31\degs$.  $\SEL{v_x \simeq\sqrt{13} \cos{56\degs} \\ v_y\simeq\sqrt{13} \sin{56\degs} }$
 
 		\item $(3,-4)$
-		\answer $|(3,-4)| = \sqrt{3^2+(-4)^2} = \sqrt{25} = 5$. $\theta=\arctan\left(\f{-4}{3}\right) \simeq -53.13\degs$. $\SEL{v_x \simeq 5 \cos{-53\degs} \\ v_y\simeq5 \sin{-53\degs} }$
+		\answer $|(3,-4)| = \sqrt{3^2+(-4)^2} = \sqrt{25} = 5$. $\theta=\arctan\left(\f{-4}{3}\right) \simeq -53.13\degs$. $\SEL{v_x \simeq 5 \cos(-53\degs) \\ v_y\simeq5 \sin(-53\degs) }$
 
 		\item $(0,5)$
 		\answer $|(0,5)| = \sqrt{0^2+5^2} = \sqrt{25} = 5$. $\theta= 90\degs$. $\SEL{v_x=5 \cos{90\degs} \\ v_y=5 \sin{90\degs} }$
@@ -121,7 +121,7 @@
 		\answer $\vec{T}=(2 \cos{0\degs}, 2 \sin{0\degs})= (2,0)$
 		
 		\item $\left|\vec{L}\right|=6$ y $\theta=330\degs$
-		\answer $\vec{L}=(6 \cos{330\degs}, 6 \sin{330\degs})= \left(\f{3\sqrt{3}}{2}, -\f{3}{2}\right)$
+		\answer $\vec{L}=(6 \cos{330\degs}, 6 \sin{330\degs})= (3\sqrt{3}, -3)$
 
 		\item $\left|\vec{a}\right|=5$ y $\theta=-45\degs$
 		\answer $\vec{a}=(5 \cos{-45\degs}, 5 \sin{-45\degs})= \left(\f{5\sqrt{2}}{2}, -\f{5\sqrt{2}}{2}\right)$
@@ -142,7 +142,7 @@
 		\answer $|\vec{v}| = \sqrt{2^2+3^2+4^2} = \sqrt{29}$. $\rho = \sqrt{2^2+3^2} = \sqrt{13}$. $\phi = \arctan\left(\f{3}{2}\right) \simeq 56.31\degs$. $\theta = \arccos\left(\f{4}{\sqrt{29}}\right) \simeq 42.03\degs$. \\ Cilindricas: $\SEL{v_x \simeq \sqrt{13} \cos{56\degs} \\ v_y \simeq \sqrt{13} \sin{56\degs} \\ v_z=4 }$. Esféricas: $\SEL{v_x \simeq \sqrt{29} \sin{42\degs} \cos{56\degs} \\ v_y \simeq \sqrt{29} \sin{42\degs} \sin{56\degs} \\ v_z \simeq \sqrt{29} \cos{42\degs} }$
 
 		\item $(3,-4,0)$
-		\answer $|\vec{v}| = \sqrt{3^2+(-4)^2+0^2} = 5$. $\rho = \sqrt{3^2+(-4)^2} = 5$. $\phi = \arctan\left(\f{-4}{3}\right) \simeq -53.13\degs$. $\theta = \arccos\left(\f{0}{5}\right) = 90\degs$. \\ Cilindricas: $\SEL{v_x \simeq 5 \cos{-53\degs} \\ v_y \simeq 5 \sin{-53\degs} \\ v_z=0 }$. Esféricas: $\SEL{v_x \simeq 5 \sin{90\degs} \cos{-53\degs} \\ v_y \simeq 5 \sin{90\degs} \sin{-53\degs} \\ v_z \simeq 5 \cos{90\degs} }$
+		\answer $|\vec{v}| = \sqrt{3^2+(-4)^2+0^2} = 5$. $\rho = \sqrt{3^2+(-4)^2} = 5$. $\phi = \arctan\left(\f{-4}{3}\right) \simeq -53.13\degs$. $\theta = \arccos\left(\f{0}{5}\right) = 90\degs$. \\ Cilindricas: $\SEL{v_x \simeq 5 \cos(-53\degs) \\ v_y \simeq 5 \sin(-53\degs) \\ v_z=0 }$. Esféricas: $\SEL{v_x \simeq 5 \sin{90\degs} \cos(-53\degs) \\ v_y \simeq 5 \sin{90\degs} \sin(-53\degs) \\ v_z \simeq 5 \cos{90\degs} }$
 
 		\item $(0,5,0)$
 		\answer $|\vec{v}| = \sqrt{0^2+5^2+0^2} = 5$. $\rho = \sqrt{0^2+5^2} = 5$. $\phi = 90\degs$. $\theta = \arccos\left(\f{0}{5}\right) = 90\degs$. \\ Cilindricas: $\SEL{v_x=5 \cos{90\degs} \\ v_y=5 \sin{90\degs} \\ v_z=0 }$. Esféricas: $\SEL{v_x \simeq 5 \sin{90\degs} \cos{90\degs} \\ v_y \simeq 5 \sin{90\degs} \sin{90\degs} \\ v_z \simeq 5 \cos{90\degs} }$
@@ -190,37 +190,37 @@
 	\begin{enumcols}
 		
 		\item Calcular la distancia entre los puntos $P(-1,2,7)$ y $Q(3,0,1)$
-		\answer $d(P,Q) = \left| \vect{PQ} \right| = \left| (4,-2,-6) \right| \sqrt{4^2+(-2)^2+(-6)^2} = \sqrt{56} \simeq 7.4833$
+		\answer $d(P,Q) = \left| \vect{PQ} \right| = \left| (4,-2,-6) \right| = \sqrt{4^2+(-2)^2+(-6)^2} = \sqrt{56} \simeq 7.4833$
 
 		\item Dado $\vect{PQ}=(5,7)$ y $P(-1,-1)$, calcular $Q$.
-		\answer $\vect{PQ} = \vect{OQ} - \vect{0P}$, por lo que $\vect{OQ}=\vect{OP}+\vect{PQ}=(-1,-1)+(5,7)=(4,6)$. El punto es $Q(4,6)$
+		\answer $\vect{PQ} = \vect{OQ} - \vect{OP}$, por lo que $\vect{OQ}=\vect{OP}+\vect{PQ}=(-1,-1)+(5,7)=(4,6)$. El punto es $Q(4,6)$
 
 		\item Dado $\vect{AB}=(4,1)$ y $B(1,2)$, calcular $A$
 		\answer $\vect{AB} = \vect{OB} - \vect{OA}$, por lo que $\vect{OA}=\vect{OB}-\vect{AB}=(1,2)-(4,1)=(-3,1)$. El punto es $A(-3,1)$
 
 		\item Indicar si la distancia entre $R(1,-4,0)$ y $S(4,1,2)$ es menor a $10$ unidades
-		\answer $d(R,S) = \left| \vect{RS} \right| = \left| (3,5,2) \right| \sqrt{3^2+5^2+2^2} = \sqrt{38} \simeq 6.1644$. La distancia es menor a $10$ unidades.
+		\answer $d(R,S) = \left| \vect{RS} \right| = \left| (3,5,2) \right| = \sqrt{3^2+5^2+2^2} = \sqrt{38} \simeq 6.1644$. La distancia es menor a $10$ unidades.
 
-		\item El triangulo $ABC$ tiene vértices $A(1,2,3)$, $B(2,3,4)$ y $C(3,4,5)$. Calcular el perímetro del triángulo.
-		\answer El perímetro es la suma de los lados $\overline{AB}$, $\overline{BC}$ y $\overline{CA}$. Calculamos cada lado: \\ $\overline{AB} = \left| \vect{AB}\right| = \left| (1,1,1) \right| \sqrt{1^2+1^2+1^2} = \sqrt{3}$. \\ $\overline{BC} = \left| \vect{BC}\right| = \left| (1,1,1) \right| \sqrt{1^2+1^2+1^2} = \sqrt{3}$. $\overline{CA} = \left| \vect{CA}\right| = \left| (-2,-2,-2) \right| \sqrt{(-2)^2+(-2)^2+(-2)^2} = 2\sqrt{3}$. El perímetro es $\sqrt{3}+\sqrt{3}+2\sqrt{3} = 4\sqrt{3} \simeq 6.9282$
+		\item El triangulo $ABC$ tiene vértices $A(1,2,3)$, $B(3,3,2)$ y $C(1,0,5)$. Calcular el perímetro del triángulo.
+		\answer El perímetro es la suma de los lados $\overline{AB}$, $\overline{BC}$ y $\overline{CA}$. Calculamos cada lado: \\ $\overline{AB} = \left| \vect{AB}\right| = \left| (2,1,-1) \right| = \sqrt{2^2+1^2+(-1)^2} = \sqrt{6}$. \\ $\overline{BC} = \left| \vect{BC}\right| = \left| (-2,-3,3) \right| = \sqrt{(-2)^2+(-3)^2+3^2} = \sqrt{22}$. \\ $\overline{CA} = \left| \vect{CA}\right| = \left| (0,-2,2) \right| = \sqrt{0^2+(-2)^2+2^2} = \sqrt{8}$. \\El perímetro es $\sqrt{6}+\sqrt{22}+\sqrt{8} \simeq 9.9683$
 
-		\item La suma de los vectores $\vect{v_1}$ , $\vect{v_2}=(5,1)$ y $\vect{v_3} = (-5.1)$ es el vector nulo. Calcular $\vect{v_1}$ e interpretar gráficamente
-		\answer Como $\vect{v_1}+\vect{v_2}+\vect{v_3}=(0,0)$, despejamos $\vect{v_1} = (0,0) -\vect{v_2} - \vect{v_3} = (0,0) - (5,1) - (-5,1) = (0,-2)$.
+		\item La suma de los vectores $\vect{v_1}$ , $\vect{v_2}=(5,1)$ y $\vect{v_3} = (-5,1)$ es el vector nulo. Calcular $\vect{v_1}$ e interpretar gráficamente
+		\answer Como $\vect{v_1}+\vect{v_2}+\vect{v_3}=\vect{0}$, despejamos $\vect{v_1} = \vect{0} -\vect{v_2} - \vect{v_3} = (0,0) - (5,1) - (-5,1) = (0,-2)$.
 
 		\item Se sabe que $\vect{u_1} + \vect{u_2} = \vect{u_3}$ y que $\vect{u_1} = (1,1,0)$ y $\vect{u_3}=(0,2,0)$. Calcular $\vect{u_2}$ e interpretar gráficamente.
 		\answer Como $\vect{u_1} + \vect{u_2} = \vect{u_3}$, despejamos $\vect{u_2} = \vect{u_3} - \vect{u_1} = (0,2,0) - (1,1,0) = (-1,1,0)$
 
 		\item Dados $\vec{a},\vec{b}$ en $\R^2$, se sabe que $\vec{a}+\vec{b}=(5,4)$ y que $\vec{a}-\vec{b}=(1,-2)$. Calcular $\vec{a}$ y $\vec{b}$ y comprobar el resultado gráficamente.
-		\answer Como $\vec{a}+\vec{b}=(5,4)$ y $\vec{a}-\vec{b}=(1,-2)$, sumando ambas ecuaciones obtenemos $2\vec{a}=(6,2)$, por lo que $\vec{a}=(3,1)$. Restando ambas ecuaciones obtenemos $2\vec{b}=(4,6)$, por lo que $\vec{b}=(2,3)$.
+		\answer Como $\vec{a}+\vec{b}=(5,4)$ y $\vec{a}-\vec{b}=(1,-2)$, sumando ambas ecuaciones obtenemos $2\vec{a}=(6,2)$, por lo que $\vec{a}=(3,1)$. Restando la primera ecuación con la segunda obtenemos $2\vec{b}=(4,6)$, por lo que $\vec{b}=(2,3)$.
 
 		\item Determinar $D$ para que $\vect{AB}$ sea equivalente a $\vect{CD}$ con $A(5,-1,3)$, $B(2,3,-2)$, $C(-5,8,-5)$. Interpretar gráficamente.
 		\answer $\vect{AB} = \vect{OB} - \vect{OA} = (2,3,-2) - (5,-1,3) = (-3,4,-5)$. Por lo tanto $\vect{CD} = \vect{AB} = (-3,4,-5)$. Además $ \vect{CD}= \vect{OD} - \vect{OC}$ por lo que $\vect{OD} = \vect{OC} + \vect{CD} = (-5,8,-5) + (-3,4,-5) = (-8,12,-10)$. El punto es $D(-8,12,-10)$
 
 		\item Encontrar las coordenadas del punto medio entre $A(7,5)$ y $B(1,2)$
-		\answer El punto medio es $\left(\f{7+1}{2}, \f{5+2}{2}\right) = \left(4,\f{7}{2}\right)$
+		\answer Las coordenadas del punto medio son $\vect{OC}=\f{1}{2}\left(\vect{OA}+\vect{OB}\right) = \left(\f{7+1}{2}, \f{5+2}{2}\right) = \left(4,\f{7}{2}\right)$. El punto es $C\left(4,\f{7}{2}\right)$.
 
 		\item Encontrar las coordenadas el punto medio entre $M(0,-1,1)$ y $N(2,2,-1)$
-		\answer El punto medio es $\left(\f{0+2}{2}, \f{-1+2}{2}, \f{1-1}{2}\right) = \left(1,\f{1}{2},0\right)$
+		\answer El punto medio es $\vect{OL}=\f{1}{2}\left(\vect{OM}+\vect{ON}\right) = \left(\f{0+2}{2}, \f{-1+2}{2}, \f{1-1}{2}\right) = \left(1,\f{1}{2},0\right)$. El punto es $L\left(1,\f{1}{2},0\right)$.
 
 		\item Sean $A(2,-3)$, $B(-3,5)$ y $C(-1,5)$ y $D$ los vértices de un paralelogramo, donde $D$ es el vértice opuesto a $A$, hallar $D$ e interpretar geométricamente.
 		\answer El centro del paralelogramo es el punto medio entre $B$ y $C$, por lo que el centro es $E(-2,5)$. El vector $\vect{AE}=(-4,8)$ es equivalente a $\vect{ED}$, por lo que $\vect{OD} = \vect{OE} + \vect{ED} = (-2,5) + (-4,8) = (-6,13)$. El punto es $D(-6,13)$
@@ -237,47 +237,115 @@
 	\exercise Obtener los siguientes vectores definidos a partir del producto de vector con número escalar e interpretarlos gráficamente
 	\begin{enumcols}
 		\item $3 (3,2)$
+		\answer $3 (3,2) = (9,6)$
+
 		\item $-2 \vec{v}$ ~con $\vec{v}=(4,5)$
+		\answer $-2 \vec{v} = -2 (4,5) = (-8,-10)$
+
 		\item $3 (1,1,4) - 2(0,0,5)$
+		\answer $3 (1,1,4) - 2(0,0,5) = (3,3,12) - (0,0,10) = (3,3,2)$
+
 		\item $4 \vec{v} -2 \vec{u} + \vec{w}$ ~con $\vec{v}=(1,0,3)$, $\vec{u}=(-2,1,0)$ y $\vec{w}=(3,-3,3)$
+		\answer $4 \vec{v} -2 \vec{u} + \vec{w} = 4(1,0,3) -2(-2,1,0) + (3,-3,3) = (4,0,12) - (-4,2,0) + (3,-3,3) = (11,-5,15)$
+
 		\item $3 \vect{PQ} + 2 \vect{PR}$ ~con los puntos $P(1,2)$, $Q(2,3)$ y $R(1,4)$
+		\answer $3 \vect{PQ} + 2 \vect{PR} = 3(1,1) + 2(0,2) = (3,3) + (0,4) = (3,7)$
+
 		\item $-2 \vec{r} + 3 \vec{s}$ ~donde $\vec{r}=\vec{v}+\vec{u}$ ~~y~~ $\vec{s}=2\vec{u}$, con $\vec{v}=(1,2)$ y $\vec{u}=(3,4)$
+		\answer $-2\vec{r} +3 \vec{s} = -2 (\vec{v}+\vec{u}) +3 (2 \vec{u}) = -2 \vec{v}-2 \vec{u} + 6\vec{u} = = -2 \vec{v}+ 4\vec{u} = -2(1,2)+4(3,4)= (10,12)$
+
 		\item $4 \ivec - 5 \jvec$
+		\answer $4(1,0)-5(0,1)=(4,-5)$
+
 		\item $-2 \ivec +0 \jvec + 7 \kvec$
-		\item $\f{1}{3} \vect{F} + 2\vect{T} - \f{5}{2}\vect{N}$ ~con $\vect{F}=(-3,2)$,~~ $\vect{T}=\SEL{ |\vect{T}| = 5 \\ \theta_T = 30\degs}$ ~~y~~~ $\vect{N}=3\ivec$
+		\answer $-2(1,0)+0(0,1)+7(0,0)=(-2,0,7)$
+
+		\item $\f{1}{3} \vect{F} + 2\vect{T} - \f{5}{2}\vect{N}$ ~con $\vect{F}=(-3,2)$,~~ $\vect{T}=\SEL{ \left|\vect{T}\right| = 5 \\ \theta_{\vec{T}} = 30\degs}$ ~~y~~~ $\vect{N}=3\ivec$
+		\answer Calculamos $\vect{T}=\left(5\cos{30\degs},5\sin{30\degs}\right)=\left(\f{5\sqrt{3}}{2},\f{5}{2}\right)$. Luego hacemos las operaciones \\ $\f{1}{3} (-3,2) + 2\left(\f{5\sqrt{3}}{2},\f{5}{2}\right)- \f{5}{2}(1,0)=\left(-1,\f{2}{3}\right) + \left(5\sqrt{3},5\right)- \left(\f{5}{2},0\right) = \left(-\f{7}{2}+5\sqrt{3}, \f{17}{3}\right) \simeq \left(5.1603, 5.6667\right)$
+
 		\item $2(t,t+1,0) - 3(t,5,1)$ ~con $t\in\R$
+		\answer $2(t,t+1,0) - 3(t,5,1) = (2t,2t+2,0) - (3t,15,3) = (-t,2t-13,-3)$
+
 		\item $m(0,0,1)$ ~con $m\in\R$
+		\answer $m(0,0,1) = (0,0,m)$
+
 		\item $a(1,0,0) + b (0,1,0)$ ~con $a,b \in \R$
+		\answer $a(1,0,0) + b (0,1,0) = (a,0,0) + (0,b,0) = (a,b,0)$
+
 		\item $\f{1}{|\vec{v}|}~ \vec{v}$ ~con $\vec{v}=(3,-4)$
-		\item $5\vec{v} +7 \vec{w}$ ~con $\vec{v}=\SEL{ \rho_v = 4 \\ \theta_v = 45\degs\\ v_z = 1 }$ ~~y~~ $\vec{w}=\SEL{ \rho_w = 10 \\ \theta_w = 210\degs\\ w_z = -1 }$
+		\answer $\f{1}{|\vec{v}|}~ \vec{v} = \f{1}{\sqrt{3^2+(-4)^2}}~ (3,-4) = \f{1}{5}~ (3,-4) = \left(\f{3}{5},-\f{4}{5}\right)$
+
+		\item $5\vec{v} +7 \vec{w}$ ~con $\vec{v}=\SEL{ \rho_{\vec{v}} = 4 \\ \theta_{\vec{v}} = 45\degs\\ v_z = 1 }$ ~~y~~ $\vec{w}=\SEL{ \rho_{\vec{w}} = 10 \\ \theta_{\vec{w}} = 210\degs\\ w_z = -1 }$
+		\answer Convertimos a coordenadas cartesianas: $\vec{v}=(4\cos{45\degs},4\sin{45\degs},1)=(2\sqrt{2},2\sqrt{2},1)$ \\ y~ $\vec{w}=(10\cos{210\degs},10\sin{210\degs},-1)=(5\sqrt{3},5,-1)$. \\Por lo tanto, $5\vec{v} +7 \vec{w} = 5(2\sqrt{2},~2\sqrt{2},~1) +7 (5\sqrt{3},~5,~-1) = (10\sqrt{2}+35\sqrt{3}, ~~10\sqrt{2}+5, ~~0) \simeq (74.76, 19.14, 0)$
 	\end{enumcols}
 
 
 	\exercise Indicar si los siguientes pares de vectores son o no paralelos 
 	\begin{enumcols}[2]
 		\item $(1,2)$ y $(7,14)$
+		\answer Son paralelos, ya que $(7,14)=7(1,2)$
+
+		\item $(3,-1)$ y $(-6,-1)$
+		\answer No son paralelos ya que $\f{-6}{3}\neq\f{-1}{-1}$
+
 		\item $(5,-1)$ y $\left(-2,\f{2}{5}\right)$
+		\answer Son paralelos, ya que $\left(-2,\f{2}{5}\right)=-\f{2}{5}(5,-1)$
+
 		\item $\left(2,-\f{3}{4},\f{1}{2}\right)$ y $\left(2,-\f{3}{4},\f{1}{2}\right)$
+		\answer Son paralelos, ya que $\left(2,-\f{3}{4},\f{1}{2}\right)=1\left(2,-\f{3}{4},\f{1}{2}\right)$
+
 		\item $\left(1,4,1\right)$ y $\left(2,8,0\right)$
+		\answer No son paralelos, ya que $\f{2}{1}=\f{8}{2}$ pero $\f{8}{2}\neq\f{0}{1}$.
+
 		\item $\left(1,2,3\right)$ y $\left(-2,-4,-6\right)$
+		\answer Son paralelos, ya que $\left(-2,-4,-6\right)=-2\left(1,2,3\right)$
+
 		\item $(1,1,2)$ con $\vec{w}=\SEL{ \rho_w = \sqrt{2} \\ \theta_w = 225\degs\\ w_z = -2 }$
-		\item $(4,-1)$ con $k\left(2,-\f{1}{2}\right)$ con $k\in\R-\{0\}$
+		\answer Tenemos que $\vec{w}=(\sqrt{2}\cos{225\degs},\sqrt{2}\sin{225\degs},-2)=(-1,-1,-2)$. Por lo que son paralelos, ya que $(-1,-1,-2)=-1(1,1,2)$
+
+		\item $(4,-1)$ con $\left(2k,-\f{k}{2}\right)$ con $k\in\R-\{0\}$
+		\answer Son paralelos, ya que $\left(2k,-\f{k}{2}\right) = \f{k}{2} (4,-1)=$. No conocemos cuanto vale $\f{k}{2}$ pero sabemos que es un número real distinto de cero.
+
+		\item $(7,2,1)$ y su versor asociado 
+		\answer Son paralelos, todo vector es paralelo a su versor asociado ya que $\vec{v} = k \check{v}$ con $k=|\vec{v}|$.
 	\end{enumcols}
+
 
 
 	\exercise Proponer un vector que cumpla con las siguientes condiciones
 	\begin{enumcols}
 		\item Tiene igual dirección que $\vec{v}=(-4,1,2)$
+		\answer Una opcion es $\vec{u}=2\vec{v}=(-8,2,4)$.
+
 		\item Es paralelo a $\vec{u}=(1,2,3)$ y módulo menor que el de $\vec{u}$
+		\answer Una opción es $\vec{v}=\f{1}{2}\vec{u}=\left(\f{1}{2},1,\f{3}{2}\right)$. $\vec{u}$ tiene módulo $\sqrt{14}$ mientras que $\vec{v}$ tiene módulo $\f{\sqrt{14}}{2}$.
+
 		\item Tiene igual dirección que $\vec{s}=(1,2)$, módulo mayor que $\vec{s}$ y está en el 3er cuadrante
+		\answer Una opción es $\vec{v}=-10\vec{s}=(-10,-20)$ que está en el 3er cuadránte y tiene módulo $\sqrt{500}$, que es mayor que $|\vec{s}|=\sqrt{5}$
+
 		\item Es paralelo a $\vec{w}=(1,2)$ y tiene módulo $5$
+		\answer Planteamos $\vec{v}=k\vec{w}=(k,2k)$ que tiene módulo $|\vec{v}|=\sqrt{k^2+(2k)^2}=\sqrt{5k^2}=5$. Por lo que despejamos $k=\sqrt{5}$ y $k=-\sqrt{5}$. Elegimos uno cualquiera (porque pide proponer uno), por ejemplo $k=\sqrt{5}$ que da el $\vec{v}=(\sqrt{5},2\sqrt{5})$. 
+
 		\item Tiene igual dirección que $\vec{r}=(1,2,3)$ y mide $1$
-		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_L = 5 \\ \theta_L = 30\degs\\ L_z = 2 }$ pero módulo 1
+		\answer Una opción es el versor de $\vec{r}$ que cumple con esas características, $\check{r}=\f{1}{|\vec{r}|} \vec{r}= \f{1}{\sqrt{14}} (1,2,3) = \left( \f{1}{\sqrt{14}}, \f{2}{\sqrt{14}}, \f{3}{\sqrt{14}} \right)$
+
+		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_{\vec{L}} = 5 \\ \theta_{\vec{L}} = 60\degs\\ L_z = 2 }$ pero módulo 1
+		\answer Calculamos $\vec{L}$ en coordenadas rectangulares: $\vec{L}=(5\cos{60\degs},5\sin{60\degs},2)=\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)$. Calculamos $|\vec{L}|=\sqrt{\left(\f{5}{2}\right)^2+\left(\f{5\sqrt{3}}{2}\right)^2+2^2}=\sqrt{\f{25}{4}+\f{75}{4}+4}=\sqrt{29}$. Finalmente, obtenemos el versor, que cumple con las condiciones: $\check{L}=\f{1}{\sqrt{29}}\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)=\left(\f{5}{2\sqrt{29}}, \f{5}{2}\sqrt{\f{3}{29}}, \f{2}{\sqrt{29}} \right)$.
+
 		\item Es unitario y paralelo a $\vect{PQ}$ con $P(1,7,5)$ y $Q(0,0,2)$
+		\answer El versor asociado a $\vect{PQ}=(-1,-7,-3)$ cumple las condiciones y es $\f{1}{\left|\vect{PQ}\right|}\vect{PQ}=\f{1}{\sqrt{75}}(-1,-7,-3)=\left(\f{-1}{\sqrt{75}},\f{-7}{\sqrt{75}},\f{-3}{\sqrt{75}}\right)$.
+
 		\item Es el vector unitario de $\vec{v}=(5,3)$
+		\answer El versor asociado a $\vec{v}$ es $\f{1}{|\vec{v}|}\vec{v}=\f{1}{\sqrt{34}}(5,3)=\left(\f{5}{\sqrt{34}},\f{3}{\sqrt{34}}\right)$
+
 		\item Es el versor asociado a $\vec{u}=(1,0,4)$
+		\answer El versor asociado a $\vec{u}$ es $\check{u}=\f{1}{|\vec{u}|}\vec{u}=\f{1}{\sqrt{17}}(1,0,4)=\left(\f{1}{\sqrt{17}},0,\f{4}{\sqrt{17}}\right)$
+
 		\item Es el vector unitario asociado a $\vec{v}=(m,0,-m)$ con $m\in\R$
-		\item Tiene la misma dirección que $\vec{r}=\SEL{ |\vec{r}| = 3 \\ \theta_r = 0\degs\\ \phi_r = 45\degs }$ pero módulo 1
+		\answer El versor asociado a $\vec{v}$ es $\check{v}=\f{1}{|\vec{v}|}\vec{v}=\f{1}{\sqrt{m^2+(-m)^2}}(m,0,-m)=\left(\f{m}{\sqrt{2m^2}},0,\f{-m}{\sqrt{2m^2}}\right)$
+
+		\item Tiene la misma dirección que $\vec{r}=\SEL{ |\vec{r}| = 3 \\ \theta_{\vec{r}} = 0\degs\\ \phi_{\vec{r}} = 45\degs }$ pero módulo 1
+		\answer Obtenemos en coordenadas polares el versor $\check{r}=\SEL{ |\check{r}| = 1 \\ \theta_{\check{r}} = 0\degs\\ \phi_{\check{r}} = 45\degs }$
 	\end{enumcols}
 
 
