@@ -31,8 +31,8 @@ def remove_temp_files(base_filename):
             os.remove(temp_file)
 
 
-def process_student(input_lines, input_filename):
-    output_filename = input_filename.replace('.tex', '_ready.tex')
+def process_student(input_lines, input_filename, suffix="_ready"):
+    output_filename = input_filename.replace('.tex', f'{suffix}.tex')
     output_string = ""
     answers_dict = {}
     exercise_id, item_id = 0, 0
@@ -80,6 +80,17 @@ def process_answers(answers_dict):
     return ans_str
 
 
+def modify_for_celular_mode(lines):
+    modified_lines = []
+    for line in lines:
+        # Replace the document class
+        line = line.replace('\\documentclass{template_practica}',
+                            '\\documentclass{template_celular_practica}')
+
+        modified_lines.append(line)
+    return modified_lines
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python3 compile.py <filename.tex> <style>")
@@ -91,7 +102,14 @@ if __name__ == "__main__":
     with open(input_filename, 'r') as file:
         input_lines = file.readlines()
 
+    # Check for the 'celular' compilation style
+    output_suffix = "_ready"
+    if compilation_style == 'celular':
+        input_lines = modify_for_celular_mode(input_lines)
+        output_suffix = "_celular"
+        compilation_style = 'estudiante'
+
     if compilation_style == 'docente':
         process_docente(input_lines, input_filename)
     else:
-        process_student(input_lines, input_filename)
+        process_student(input_lines, input_filename, output_suffix)

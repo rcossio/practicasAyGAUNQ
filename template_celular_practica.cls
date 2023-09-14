@@ -1,10 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{algebra_exercises}[2023/09/12 Algebra Exercises Class]
 
-\LoadClass[a4paper]{article}
+\LoadClass{article}
+
 
 % Packages
-\RequirePackage[margin=1.5cm]{geometry}
+\RequirePackage[paperheight=100cm,paperwidth=7.2cm,left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm]{geometry}
 \RequirePackage[spanish]{babel}
 \decimalpoint
 
@@ -26,22 +27,23 @@
 % Settings
 \pagestyle{empty} 
 \renewcommand{\baselinestretch}{1.5} 
+
+\setlist[enumerate,1]{wide, labelwidth=!, labelindent=0pt} 
 \setlist[enumerate,2]{label=(\alph*)} % Second level of enumerate (a), (b), (c), ...
+
 \MakeOuterQuote{"} % Makes " work as expected
 \definecolor{darkblue}{RGB}{0,0,100}
-
+\sloppy
 
 % Command definitions
 
 % Defines enumcols, which combines enumerato with multicols
 \NewDocumentEnvironment{enumcols}{O{1}}
 {
-  \ifnum#1>1 \begin{multicols}{#1} \fi
   \begin{enumerate}
 }
 {
-  \end{enumerate}
-  \ifnum#1>1 \end{multicols} \fi
+  \end{enumerate} \vspace{24pt}
 }
 
 % Defines the header for the practice
@@ -63,7 +65,7 @@
 \newcommand{\AMat}[2]{\left(\begin{array}{@{}*{#1}{c}|c@{}} #2 \end{array}\right)} % Augmented matrix
 \newcommand{\Mat}[1]{\begin{pmatrix} #1 \end{pmatrix}} % Matrix
 \newcommand{\Det}[1]{\begin{vmatrix} #1 \end{vmatrix}} % Determinant
-\newcommand{\f}[2]{\displaystyle\frac{#1}{#2}} % Fraction
+\newcommand{\f}[2]{\frac{#1}{#2}} % Fraction
 \newcommand{\conj}[1]{\overline{#1}} % Conjugate
 \newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} % cis form of complex number
 \newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Include image in a minipage  
