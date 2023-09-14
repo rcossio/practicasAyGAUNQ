@@ -231,6 +231,9 @@
 		\item Hallar el vector $\vec{v}_{\theta}$ de $\R^2$ que tiene módulo $1$ y ángulo $\theta$. Luego, calcular $\vec{v}_{30 \degs}$, $\vec{v}_{60 \degs}$, $\vec{v}_{90 \degs}$, $\vec{v}_{135 \degs}$ y $\vec{v}_{300 \degs}$.
 		\answer Considerando las coordenadas polares se obtiene $\vec{v}=(\cos{\theta}, \sin{\theta})$. Por lo tanto $\vec{v}_{30 \degs}=\left(\f{\sqrt{3}}{2},\f{1}{2}\right)$, $\vec{v}_{60 \degs}=\left(\f{1}{2},\f{\sqrt{3}}{2}\right)$, $\vec{v}_{90 \degs}=\left(0,1\right)$, $\vec{v}_{135 \degs}=\left(\f{\sqrt{2}}{2},\f{\sqrt{2}}{2}\right)$ y $\vec{v}_{300 \degs}=\left(\f{1}{2},-\f{\sqrt{3}}{2}\right)$
 
+		\item Dar las coordenadas rectangulars del vector $\vec{v}$ sabiendo que tiene módulo $20$ y se cuenta con algunos ángulos que definen su dirección: \\ \img{4cm}{img/vec_r3_angles.png}
+		\answer Calculamos la coordenada radial $\rho = |\vec{v}| \sin{30 \degs} = 5$ y la coordenada $v_z = |\vec{v}| \cos{30 \degs} = 10\sqrt{3}$. Luego, oservamos que el ángulo azimutal debe ser $\phi=135\degs + 90 \degs=225\degs$. Con lo que calculamos $v_x=\rho . \cos{225\degs}=-5\sqrt{2}$ y $v_y=\rho .\sin{225\degs}=-5\sqrt{2}$. Finalmente, $\vec{v}=\left(-5\sqrt{2},-5\sqrt{2},10\sqrt{3}\right)$
+
 	\end{enumcols}
 
 
@@ -307,7 +310,7 @@
 		\answer Son paralelos, ya que $\left(2k,-\f{k}{2}\right) = \f{k}{2} (4,-1)=$. No conocemos cuanto vale $\f{k}{2}$ pero sabemos que es un número real distinto de cero.
 
 		\item $(7,2,1)$ y su versor asociado 
-		\answer Son paralelos, todo vector es paralelo a su versor asociado ya que $\vec{v} = k \check{v}$ con $k=|\vec{v}|$.
+		\answer Son paralelos, todo vector es paralelo a su versor asociado ya que $\vec{v} = k \vers{v}$ con $k=|\vec{v}|$.
 	\end{enumcols}
 
 
@@ -327,10 +330,10 @@
 		\answer Planteamos $\vec{v}=k\vec{w}=(k,2k)$ que tiene módulo $|\vec{v}|=\sqrt{k^2+(2k)^2}=\sqrt{5k^2}=5$. Por lo que despejamos $k=\sqrt{5}$ y $k=-\sqrt{5}$. Elegimos uno cualquiera (porque pide proponer uno), por ejemplo $k=\sqrt{5}$ que da el $\vec{v}=(\sqrt{5},2\sqrt{5})$. 
 
 		\item Tiene igual dirección que $\vec{r}=(1,2,3)$ y mide $1$
-		\answer Una opción es el versor de $\vec{r}$ que cumple con esas características, $\check{r}=\f{1}{|\vec{r}|} \vec{r}= \f{1}{\sqrt{14}} (1,2,3) = \left( \f{1}{\sqrt{14}}, \f{2}{\sqrt{14}}, \f{3}{\sqrt{14}} \right)$
+		\answer Una opción es el versor de $\vec{r}$ que cumple con esas características, $\vers{r}=\f{1}{|\vec{r}|} \vec{r}= \f{1}{\sqrt{14}} (1,2,3) = \left( \f{1}{\sqrt{14}}, \f{2}{\sqrt{14}}, \f{3}{\sqrt{14}} \right)$
 
 		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_{\vec{L}} = 5 \\ \theta_{\vec{L}} = 60\degs\\ L_z = 2 }$ pero módulo 1
-		\answer Calculamos $\vec{L}$ en coordenadas rectangulares: $\vec{L}=(5\cos{60\degs},5\sin{60\degs},2)=\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)$. Calculamos $|\vec{L}|=\sqrt{\left(\f{5}{2}\right)^2+\left(\f{5\sqrt{3}}{2}\right)^2+2^2}=\sqrt{\f{25}{4}+\f{75}{4}+4}=\sqrt{29}$. Finalmente, obtenemos el versor, que cumple con las condiciones: $\check{L}=\f{1}{\sqrt{29}}\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)=\left(\f{5}{2\sqrt{29}}, \f{5}{2}\sqrt{\f{3}{29}}, \f{2}{\sqrt{29}} \right)$.
+		\answer Calculamos $\vec{L}$ en coordenadas rectangulares: $\vec{L}=(5\cos{60\degs},5\sin{60\degs},2)=\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)$. Calculamos $|\vec{L}|=\sqrt{\left(\f{5}{2}\right)^2+\left(\f{5\sqrt{3}}{2}\right)^2+2^2}=\sqrt{\f{25}{4}+\f{75}{4}+4}=\sqrt{29}$. Finalmente, obtenemos el versor, que cumple con las condiciones: $\vers{L}=\f{1}{\sqrt{29}}\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)=\left(\f{5}{2\sqrt{29}}, \f{5}{2}\sqrt{\f{3}{29}}, \f{2}{\sqrt{29}} \right)$.
 
 		\item Es unitario y paralelo a $\vect{PQ}$ con $P(1,7,5)$ y $Q(0,0,2)$
 		\answer El versor asociado a $\vect{PQ}=(-1,-7,-3)$ cumple las condiciones y es $\f{1}{\left|\vect{PQ}\right|}\vect{PQ}=\f{1}{\sqrt{75}}(-1,-7,-3)=\left(\f{-1}{\sqrt{75}},\f{-7}{\sqrt{75}},\f{-3}{\sqrt{75}}\right)$.
@@ -339,82 +342,181 @@
 		\answer El versor asociado a $\vec{v}$ es $\f{1}{|\vec{v}|}\vec{v}=\f{1}{\sqrt{34}}(5,3)=\left(\f{5}{\sqrt{34}},\f{3}{\sqrt{34}}\right)$
 
 		\item Es el versor asociado a $\vec{u}=(1,0,4)$
-		\answer El versor asociado a $\vec{u}$ es $\check{u}=\f{1}{|\vec{u}|}\vec{u}=\f{1}{\sqrt{17}}(1,0,4)=\left(\f{1}{\sqrt{17}},0,\f{4}{\sqrt{17}}\right)$
+		\answer El versor asociado a $\vec{u}$ es $\vers{u}=\f{1}{|\vec{u}|}\vec{u}=\f{1}{\sqrt{17}}(1,0,4)=\left(\f{1}{\sqrt{17}},0,\f{4}{\sqrt{17}}\right)$
 
 		\item Es el vector unitario asociado a $\vec{v}=(m,0,-m)$ con $m\in\R$
-		\answer El versor asociado a $\vec{v}$ es $\check{v}=\f{1}{|\vec{v}|}\vec{v}=\f{1}{\sqrt{m^2+(-m)^2}}(m,0,-m)=\left(\f{m}{\sqrt{2m^2}},0,\f{-m}{\sqrt{2m^2}}\right)$
+		\answer El versor asociado a $\vec{v}$ es $\vers{v}=\f{1}{|\vec{v}|}\vec{v}=\f{1}{\sqrt{m^2+(-m)^2}}(m,0,-m)=\left(\f{m}{\sqrt{2m^2}},0,\f{-m}{\sqrt{2m^2}}\right)$
 
 		\item Tiene la misma dirección que $\vec{r}=\SEL{ |\vec{r}| = 3 \\ \theta_{\vec{r}} = 0\degs\\ \phi_{\vec{r}} = 45\degs }$ pero módulo 1
-		\answer Obtenemos en coordenadas polares el versor $\check{r}=\SEL{ |\check{r}| = 1 \\ \theta_{\check{r}} = 0\degs\\ \phi_{\check{r}} = 45\degs }$
+		\answer El versor $\vers{r}$ cumple las condiciones. En cordenadas esféricas, $\vers{r}=\SEL{ |\vers{r}| = 1 \\ \theta_{\vers{r}} = 0\degs\\ \phi_{\vers{r}} = 45\degs }$
 	\end{enumcols}
 
 
 	\exercise Indicar si los siguientes vectores son perpendiculares, si forman un ángulo agudo o si forman uno obtuso. 
 	\begin{enumcols}[2]
 		\item $(5,-1)$ y $(2,3)$
+		\answer Como $(5,-1) \cdot (2,3) = 10 - 3 = 7$, los vectores forman un ángulo agudo.
+
 		\item $(3,-5)$ y $(10,6)$
+		\answer Como $(3,-5) \cdot (10,6) = 30 - 30 = 0$, los vectores son perpendiculares.
+
 		\item $(-3,5,0)$ y $(4,5,-3)$
+		\answer Como $(-3,5,0) \cdot (4,5,-3) = -12 + 25 + 0 = 13$, los vectores forman un ángulo agudo.
+
 		\item $(0,1)$ y $(3,-1)$ 
+		\answer Como $(0,1) \cdot (3,-1) = 0 - 1 = -1$, los vectores forman un ángulo obtuso.
+
 		\item $(2,3,1)$ y $(5,3,-4)$
-		\item $(3,-4,1)$ y el versor de $(-2,6,0)$
+		\answer Como $(2,3,1) \cdot (5,3,-4) = 10 + 9 - 4 = 15$, los vectores forman un ángulo agudo.
+
+		\item $\vec{w}=(3,-4,1)$ y el versor de $\vec{u}=(-2,6,0)$
+		\answer Se puede utilizar $(-2,6,0)$ en vez de su versor, ya que tienen la misma dirección y sentido. \\ Como $(3,-4,1) \cdot (-2,6,0) = -6 - 24 + 0 = -30$, los vectores $\vec{w}$ y $\vers{u}$ forman un ángulo obtuso.
+
 		\item $(1,2,3)$ y $(2,4,6)$
+		\answer Como $(1,2,3) \cdot (2,4,6) = 2 + 8 + 18 = 28$, los vectores forman un ángulo agudo.
+
 		\item $(-1,5)$ y $\vec{v}=\SEL{|\vec{v}| = 3 \\ \theta_v = -60\degs }$ 
-		\item $(-2,7,1)$ con $k(1,0,2)$ con $k\in(0;+\infty)$
+		\answer Calculamos ls coordenadas rectangulares de $\vec{v} = \left(3\cos(-60\degs),3\sin(-60\degs)\right)= \left(\f{3}{2},-\f{3\sqrt{3}}{2}\right)$. El producto escalar es $(-1,5) \cdot \left(\f{3}{2},-\f{3\sqrt{3}}{2}\right) = -\f{3}{2}-\f{15\sqrt{3}}{2}=-\f{3+15\sqrt{3}}{2} < 0$, por lo que los vectores forman un ángulo obtuso.
+
+		\item $(-2,7,1)$ con $(k,0,2k)$ con $k\in(0;+\infty)$
+		\answer En lugar de $(k,0,2k)$, utilizamos el vector $(1,0,2)$ que tiene la misma dirección y sentido (ya que $k$ es positivo). Como $(-2,7,1) \cdot (1,0,2) = -2 + 0 + 2 = 0$, los vectores son perpendiculares.
+
 	\end{enumcols}
 
 
 	\exercise Indicar si los siguientes vectores son paralelos, perpendiculares o forman un ángulo agudo/obtuso. En caso de formar un ángulo agudo/obtuso, calcularlo. Y en caso de ser paralelos, indicar si tienen el mismo sentido o sentido contrario.
 	\begin{enumcols}[2]
 		\item $(-3,2)$ y $(1,4)$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(-3,2\right)\cdot\left(1,4\right)}{\left|\left(-3,2\right)\right|.\left|\left(1,4\right)\right|}\right)=\arccos\left(\f{5}{\sqrt{13}\sqrt{17}}\right)\simeq70.35\degs$
+
 		\item $(1,2)$ y $\left(-\f{1}{2},-1\right)$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(1,2\right)\cdot\left(-\f{1}{2},-1\right)}{\left|\left(1,2\right)\right|.\left|\left(-\f{1}{2},-1\right)\right|}\right)=\arccos\left(\f{-\frac{5}{2}}{\sqrt{5}\frac{\sqrt{5}}{2}}\right)=\arccos(-1)=180\degs$. Los vectores son paralelos de sentido opuesto.
+
+		\item $(5,-3)$ y $(3,5)$
+		\answer Al calcular el producto escalar vemos que $(5,-3)\cdot(3,5)=15-15=0$. Los vectores son perpendiculares.
+
 		\item $(1,-5)$ y $\ivec$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(1,-5\right)\cdot\ivec}{\left|\left(1,-5\right)\right|.\left|\ivec\right|}\right)=\arccos\left(\f{1}{\sqrt{26}.1}\right)\simeq78.69\degs$
+		
+		\item $(3,-1,0)$ y $(9,-3,0)$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(3,-1,0\right)\cdot\left(9,-3,0\right)}{\left|\left(3,-1,0\right)\right|.\left|\left(9,-3,0\right)\right|}\right)=\arccos\left(\f{30}{\sqrt{10}\sqrt{90}}\right)=\arccos(1)=0\degs$. Los vectores son paralelos con el mismo sentido.
+
 		\item $(3,-4,1)$ y $\kvec$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(3,-4,1\right)\cdot\kvec}{\left|\left(3,-4,1\right)\right|.\left|\kvec\right|}\right)=\arccos\left(\f{1}{\sqrt{26}.1}\right)\simeq78.69\degs$
+
 		\item $5\ivec$ y $-2\kvec$
+		\answer Al calcular el producto escalar vemos que $(5\ivec)\cdot(-2\kvec)=-10(\ivec \cdot \kvec)=-10.~0=0$ Los vectores son perpendiculares.
+
 		\item $(1,-7,3)$ y $(2,4,0)$
-		\item $\vec{v}=\SEL{|\vec{v}| = 10 \\ \theta_v = 135\degs }$ ~~y~~ $\vec{u}=\SEL{|\vec{u}| = 4 \\ \theta_u = -45\degs }$ 
-		\item $(1,4)$ y $\vec{p}=\SEL{|\vec{p}| = 6 \\ \theta_p = 270\degs }$
+		\answer El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(1,-7,3\right)\cdot\left(2,4,0\right)}{\left|\left(1,-7,3\right)\right|.\left|\left(2,4,0\right)\right|}\right)=\arccos\left(\f{-26}{\sqrt{59}\sqrt{20}}\right)\simeq139.2\degs$
+
+		\item Los vectores del plano $\vec{v}=\SEL{|\vec{v}| = 10 \\ \theta_{\vec{v}} = 135\degs }$ ~~y~~ $\vec{u}=\SEL{|\vec{u}| = 4 \\ \theta_{\vec{u}} = -45\degs }$ 
+		\answer El ángulo entre los vectores es $\alpha=\theta_{\vec{v}} - \theta_{\vec{u}}= 135\degs - (-45\degs) = 180\degs$. Los vectores son paralelos de sentido opuesto.
+
+		\item $(1,4)$ y $\vec{p}=\SEL{|\vec{p}| = 6 \\ \theta_{\vec{p}} = 270\degs }$
+		\answer Obtenemos $\vec{p}=(6\cos{270\degs, 6\sin{270 \degs}})=(0,-6)$. El ángulo entre los vectores es $\alpha=\arccos\left(\f{\left(1,4\right)\cdot\left(0,-6\right)}{\left|\left(1,4\right)\right|.\left|\left(0,-6\right)\right|}\right)=\arccos\left(\f{-24}{\sqrt{17}.6}\right)\simeq 166\degs$
+
 	\end{enumcols}
 
 
 	\exercise Si es posible, escribir el vector indicado como combinación lineal de los otros dados. En caso de que halla infinitas posibilidades, indicar la expresión analítica que cumplen.
 	\begin{enumcols}
 		\item $\vec{v}=(4,0,-2)$ como combinación lineal de los vectores $\ivec$, $\jvec$ y $\kvec$
+		\answer $\vec{v}=4\ivec + 0\jvec -2 \kvec$
+
 		\item $\vec{v} = (5,12)$ de la forma $\alpha \vec{u}+ \beta \vec{w}$ con $\vec{u}=(1,2)$, $\vec{w}=(-2,3)$ ~y~ $\alpha,\beta \in \R$
-		\item $(4,-12)$ a partir de $\{(1,1),(-1,1),(-2,-2)\}$
+		\answer Al plantear $(5,12)=\alpha(1,2) + \beta(-2,3)$ obtenemos el sistema $\SEL{\alpha-2\beta=5 \\ 2\alpha+3\beta=12}$. \\ Al resolverlo da $\alpha=\f{39}{7}$ y $\beta=\f{2}{7}$. Por lo tanto $\vec{v}=\f{39}{7}(1,2)+\f{2}{7}(-2,3)$
+
+		\item $\vec{t}=(4,0,-5)$ como combinación lineal de $(2,-5,0)$, $(1,1,0)$ y $(0,0,2)$
+		\answer Al plantear $(4,0,-5)=\alpha (2,-5,0) + \beta (0,1,0) + \gamma(0,0,2)$ obtenemos el sistema $\SEL{2\alpha=4\\ -5\alpha+\beta=0 \\ \gamma=-5}$. \\ Al resolverlo obtenemos $\alpha=2$, $\beta=10$ y $\gamma=-5$. Por lo tanto $\vec{t}=2(2,-5,0)+10(0,1,0)-5(0,0,2)$
+
+		\item $(4,-12)$ a partir de $\{(1,-3),(-3,9)\}$
+		\answer Planteamos $(4,-12)=a(1,-3)+b(-3,9)$ y obtenemos el sistema $\SEL{a-3b=4 \\ -3a+9b=-12}$. De la primera ecuación obtenemos $a=4+3b$ y sustituyendo en la segunda ecuación obtenemos que se comprueba. Es un sistema con infinitas soluciones donde $a$ depende de $b$ según la ecuación $a=4+3b$. Por lo tanto, $(4,-12)=(4+3b)(1,-3)+b(-3,9)$ donde $b\in\R$ es un parámetro. Por ejemplo si $b=1$, $(4,-12)=7(1,-3)+1(-3,9)$
+
 		\item $\vec{0}$ como combinación lineal de $(1,0,-1)$, $(0,-1,-1)$ ~y~ $(1,1,1)$
-		\item $\vec{v}=3\ivec+\jvec$ a partir de $\vec{v}=(4,-6)$ y $\vec{u}=\left(-1,\f{3}{2}\right)$
-		\item $\vec{r}=\SEL{ \rho_r = 8 \\ \theta_r = 120\degs\\ r_z = 7 }$ como combinación lineal de $\{\ivec, \jvec, \kvec\}$
+		\answer Al plantear $(0,0,0)=a (1,0,-1) + b (0,-1,-1) + c(1,1,1)$ obtenemos el sistema $\SEL{a+c=0 \\ -b+c=0 \\ -a-b+c=0}$. \\Sustituyendo $a=-c$ y $b=c$ en la tercer ecuación obtenemos $c=0$, y luego $a=0$ y $b=0$. Por lo tanto, $\vec{0}=0(1,0,-1)+0(0,-1,-1)+0(1,1,1)$
+
+		\item $\vec{v}=3\ivec+\jvec$ a partir de $\vec{w}=(4,-6)$ y $\vec{u}=\left(-1,\f{3}{2}\right)$
+		\answer Planteamos $(3,1)=a(4,-6)+b\left(-1,\f{3}{2}\right)$ y se forma el sistema $\SEL{4a-b=3 \\ -6a+\f{3}{2}b=1}$. \\Reemplazando la primera ecuación en la segunda vemos que da un absurdo: el sistema no tiene solución. Por lo tanto, no es posible escribir $\vec{v}$ como combinación lineal de $\vec{w}$ y $\vec{u}$.
+
+		\item $\vec{r}=\SEL{ \rho_{\vec{r}} = 8 \\ \theta_{\vec{r}} = 120\degs\\ r_z = 7 }$ como combinación lineal de $\{\ivec, \jvec, \kvec\}$
+		\answer En coordenadas cartesianas, $\vec{r}=(8\cos{120\degs},8\sin{120\degs},7)=(-4,4\sqrt{3},7)$. Por lo tanto, $\vec{r}=-4\ivec+4\sqrt{3}\jvec+7\kvec$.
 	\end{enumcols}
 
 
 	\exercise Calcular los siguientes productos vectoriales e interpretarlo gráficamente.
 	\begin{enumcols}[2]
 		\item $(1,2,0) \times (0,1,3)$
-		\item $(3\ivec) \times 4\kvec$
+		\answer $(6,-3,1)$
+
+		\item $(3\ivec) \times (4\kvec)$
+		\answer $(3\ivec) \times (4\kvec)=12 (\ivec \times \kvec)= -12 \jvec$
+
 		\item $\left(\f{1}{4},1,-1\right) \times \left(1,5,-3\right)$
+		\answer $\left(2,-\f{1}{4},\f{1}{4}\right)$
+
 		\item $(1,1,2) \times (7,7,14)$
+		\answer $(0,0,0)$. Por lo tanto, los vectores son paralelos.
+
 		\item $(10~\vec{r}) \times \vect{F}$ ~con $\vec{r}=(1,2,0)$ ~y~ $\vect{F}=(3,-1,0)$
+		\answer Como $\vec{r} \times \vect{F} = (0,0,-7)$, entonces $(10\vec{r}) \times \vect{F}=10 \left(\vec{r} \times \vect{F}\right) = 10 (0,0,-7) = (0,0,-70)$
+
 		\item $\vec{a} \times \vec{b}$ ~con $\vec{a}=5\ivec$ ~y~ $\vec{b}=-2\jvec$
+		\answer $(5\ivec)\times(-2\jvec)=-10(\ivec \times \jvec)=-10\kvec$
+
 		\item $\vec{r} \times \vec{p}$ ~con $\vec{r}=5\jvec$ ~y~ $\vec{p}=\jvec+7\kvec$
+		\answer $(5\jvec) \times (\jvec+7\kvec)= 5 (\jvec \times \jvec) + 35 (\jvec \times \kvec)= \vect{0}+ 35 \ivec=35 \ivec$
+
 		\item $\vec{v} \times \vect{AB}$ ~con $\vec{v}=(-1,10,2)$, $A(4,1,3)$ ~y~ $B(4,-6,0)$
+		\answer Calculamos $\vect{AB}=(0,-7,-3)$ y luego $\vec{v} \times \vect{AB}=(-16,-3,7)$
+
+		\item $\vec{v} \times \vec{w}$ y $\vec{w} \times \vec{v}$~con $\vec{v}=(1,2,3)$ y $\vec{w}=(4,5,6)$
+		\answer La primera operacion es $\vec{v} \times \vec{w}=(-3,6,-3)$, y la segunda es $\vec{w} \times \vec{v}=(3,-6,3)$. La segunda es el vector opuesto de la primera.
+
 	\end{enumcols}
 
 
 	\exercise Considerando los vectores $\vec{v}, \vec{u} , \vec{w}$, indicar si esposible realizar las siguientes operaciones en $\R^2$, $\R^3$, en ambos o en ninguno, y qué resultado se espera (número escalar o vector). 
 	\begin{enumcols}[3]
 		\item $2(\vec{v}+\ivec)$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$. El resultado es un vector.
+
 		\item $\f{1}{|\vec{v}|} (\vec{v} \cdot \vec{u})$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$ siempre y cuando $\vec{v}$ no sea el vector nulo. El resultado es un número escalar.
+
 		\item $\kvec+\vec{v} \cdot \ivec$
+		\answer No se puede realizar, sería la suma de un vector y un número escalar.
+
 		\item $\vec{v} \cdot (\vec{u} + \vec{w})$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$. El resultado es un número escalar.
+
 		\item $\vec{w} \cdot (\vec{v} \times \vec{u})$
+		\answer Se puede realizar en $\R^3$. El resultado es un número escalar.
+
 		\item $(\vec{v} \cdot \vec{u}) ~\vec{w}$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$. El resultado es un vector.
+
 		\item $\f{\vec{v} \cdot \vec{v}}{\vec{u} \cdot \vec{u}}$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$ siempre y cuando $\vec{u}$ no sea el vector nulo. El resultado es un número escalar.
+
 		\item $\f{\vec{v} \cdot \vec{v}}{\vec{u}}$
+		\answer No se puede realizar, sería la división de un número por un vector.
+
 		\item $\f{\vec{v}^{~2}}{|\vec{v}|}$
+		\answer No se puede realizar, no se define la potenciación en vectores, por lo tanto no existe el cuadrado de un vector.
+
 		\item $\f{\vec{v} \cdot \vec{u}}{ |\vec{u}|^2} ~ \vec{u}$
+		\answer Se puede realizar en $\R^2$ y en $\R^3$ siempre y cuando $\vec{u}$ no sea el vector nulo. El resultado es un vector.
+
 		\item $(\vec{v} \times \vec{u}) \times \vec{w}$
+		\answer Se puede realizar en $\R^3$. El resultado es un vector.
+
 		\item $(\ivec \cdot \jvec) ~ (\kvec \times \vec{v})$
+		\answer Se puede realizar en $\R^3$. El resultado es un vector.
+
 		\item $\jvec+\vec{u} \times \kvec$
+		\answer Se puede realizar en $\R^3$. El resultado es un vector.
+
 	\end{enumcols}
 
 
@@ -470,8 +572,10 @@
 		\item Hallar los valores de $a,b \in\R$ para que el vector $(2,0,-1)+a\ivec$ sea paralelo a $(1,-1,3)+b\jvec$.
 		\item Determinar los valores de $y,z \in\R$ para que el vector $(1,y,z)$ sea perpendicular a $(2,0,-1)$ y a $(1,-1,3)$.
 		\item Encontrar el valor de $t$ para que los vectores $(2,0,-1)$ y $(1,t-1,3)$ tengan el mísmo módulo.
+		\item Alicia y Beto salieron a caminar en un parque con brújulas. Alicia camina 2km en sentido noreste por un sendero recto que está a $60\degs$ del norte. Beto camina 3km al este y 1km al norte. ¿A qué distancia terminan? Beto quiere volver al sendero por el camino más corto (el perpendicular al sendero) ¿Qué dirección debe tomar? (responder indicando el ángulo respecto del norte).
 		\item Demostrar que, si $\vec{v}$ es perpendicular a $\vec{u}$ y a $\vec{w}$ entonces $\vec{v}$ es perpendicular a $a\vec{u}+b\vec{w}$ para $a\neq0$ y $b\neq0$.
 		\item Dado $\vec{v}\in \R^2$, demostrar que $|k\vec{v}|=|k|.|\vec{v}|$.
+		\item Dados $\vec{v}, \vec{u} \in \R^2$, demostrar que $\f{\vec{v} \cdot \vec{u}}{|\vec{u}|}=\vec{v} \cdot \vers{u}$.
 
 	\end{enumcols}
 

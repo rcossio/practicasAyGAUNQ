@@ -66,6 +66,7 @@
 \newcommand{\cis}[1]{\left[\cos\left({#1}\right)+i\sin\left({#1}\right)\right]} % cis form of complex number
 \newcommand{\img}[2]{ \begin{minipage}[t]{\linewidth} \raisebox{-\height}{\includegraphics[width=#1]{#2}} \end{minipage} } % Include image in a minipage  
 \newcommand{\vect}[1]{\overrightarrow{#1}} % Vector
+\newcommand{\vers}[1]{\check{#1}} % Versor
 \newcommand{\degs}{^{\circ}} % Degree symbol
 \newcommand{\R}{\mathbb{R}} % Real numbers
 \newcommand{\C}{\mathbb{C}} % Complex numbers
