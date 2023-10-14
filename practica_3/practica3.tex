@@ -278,7 +278,7 @@
 		\item $\f{1}{|\vec{v}|}~ \vec{v}$ ~con $\vec{v}=(3,-4)$
 		\answer $\f{1}{|\vec{v}|}~ \vec{v} = \f{1}{\sqrt{3^2+(-4)^2}}~ (3,-4) = \f{1}{5}~ (3,-4) = \left(\f{3}{5},-\f{4}{5}\right)$
 
-		\item $5\vec{v} +7 \vec{w}$ ~con $\vec{v}=\SEL{ \rho_{\vec{v}} = 4 \\ \theta_{\vec{v}} = 45\degs\\ v_z = 1 }$ ~~y~~ $\vec{w}=\SEL{ \rho_{\vec{w}} = 10 \\ \theta_{\vec{w}} = 210\degs\\ w_z = -1 }$
+		\item $5\vec{v} +7 \vec{w}$ ~con $\vec{v}=\SEL{ \rho_{\vec{v}} = 4 \\ \phi_{\vec{v}} = 45\degs\\ v_z = 1 }$ ~~y~~ $\vec{w}=\SEL{ \rho_{\vec{w}} = 10 \\ \phi_{\vec{w}} = 210\degs\\ w_z = -1 }$
 		\answer Convertimos a coordenadas cartesianas: $\vec{v}=(4\cos{45\degs},4\sin{45\degs},1)=(2\sqrt{2},2\sqrt{2},1)$ \\ y~ $\vec{w}=(10\cos{210\degs},10\sin{210\degs},-1)=(5\sqrt{3},5,-1)$. \\Por lo tanto, $5\vec{v} +7 \vec{w} = 5(2\sqrt{2},~2\sqrt{2},~1) +7 (5\sqrt{3},~5,~-1) = (10\sqrt{2}+35\sqrt{3}, ~~10\sqrt{2}+5, ~~0) \simeq (74.76, 19.14, 0)$
 	\end{enumcols}
 
@@ -303,7 +303,7 @@
 		\item $\left(1,2,3\right)$ y $\left(-2,-4,-6\right)$
 		\answer Son paralelos, ya que $\left(-2,-4,-6\right)=-2\left(1,2,3\right)$
 
-		\item $(1,1,2)$ con $\vec{w}=\SEL{ \rho_w = \sqrt{2} \\ \theta_w = 225\degs\\ w_z = -2 }$
+		\item $(1,1,2)$ con $\vec{w}=\SEL{ \rho_w = \sqrt{2} \\ \phi_{\vec{w}} = 225\degs\\ w_z = -2 }$
 		\answer Tenemos que $\vec{w}=(\sqrt{2}\cos{225\degs},\sqrt{2}\sin{225\degs},-2)=(-1,-1,-2)$. Por lo que son paralelos, ya que $(-1,-1,-2)=-1(1,1,2)$
 
 		\item $(4,-1)$ con $\left(2k,-\f{k}{2}\right)$ con $k\in\R-\{0\}$
@@ -332,7 +332,7 @@
 		\item Tiene igual dirección que $\vec{r}=(1,2,3)$ y mide $1$
 		\answer Una opción es el versor de $\vec{r}$ que cumple con esas características, $\vers{r}=\f{1}{|\vec{r}|} \vec{r}= \f{1}{\sqrt{14}} (1,2,3) = \left( \f{1}{\sqrt{14}}, \f{2}{\sqrt{14}}, \f{3}{\sqrt{14}} \right)$
 
-		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_{\vec{L}} = 5 \\ \theta_{\vec{L}} = 60\degs\\ L_z = 2 }$ pero módulo 1
+		\item Tiene la misma dirección que $\vec{L}=\SEL{ \rho_{\vec{L}} = 5 \\ \phi_{\vec{L}} = 60\degs\\ L_z = 2 }$ pero módulo 1
 		\answer Calculamos $\vec{L}$ en coordenadas rectangulares: $\vec{L}=(5\cos{60\degs},5\sin{60\degs},2)=\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)$. Calculamos $|\vec{L}|=\sqrt{\left(\f{5}{2}\right)^2+\left(\f{5\sqrt{3}}{2}\right)^2+2^2}=\sqrt{\f{25}{4}+\f{75}{4}+4}=\sqrt{29}$. Finalmente, obtenemos el versor, que cumple con las condiciones: $\vers{L}=\f{1}{\sqrt{29}}\left(\f{5}{2}, \f{5\sqrt{3}}{2}, 2 \right)=\left(\f{5}{2\sqrt{29}}, \f{5}{2}\sqrt{\f{3}{29}}, \f{2}{\sqrt{29}} \right)$.
 
 		\item Es unitario y paralelo a $\vect{PQ}$ con $P(1,7,5)$ y $Q(0,0,2)$
@@ -428,7 +428,7 @@
 		\answer Al plantear $(5,12)=\alpha(1,2) + \beta(-2,3)$ obtenemos el sistema $\SEL{\alpha-2\beta=5 \\ 2\alpha+3\beta=12}$. \\ Al resolverlo da $\alpha=\f{39}{7}$ y $\beta=\f{2}{7}$. Por lo tanto $\vec{v}=\f{39}{7}(1,2)+\f{2}{7}(-2,3)$
 
 		\item $\vec{t}=(4,0,-5)$ como combinación lineal de $(2,-5,0)$, $(1,1,0)$ y $(0,0,2)$
-		\answer Al plantear $(4,0,-5)=\alpha (2,-5,0) + \beta (0,1,0) + \gamma(0,0,2)$ obtenemos el sistema $\SEL{2\alpha=4\\ -5\alpha+\beta=0 \\ \gamma=-5}$. \\ Al resolverlo obtenemos $\alpha=2$, $\beta=10$ y $\gamma=-5$. Por lo tanto $\vec{t}=2(2,-5,0)+10(0,1,0)-5(0,0,2)$
+		\answer Al plantear $(4,0,-5)=\alpha (2,-5,0) + \beta (0,1,0) + \gamma(0,0,2)$ obtenemos el sistema $\SEL{2\alpha=4\\ -5\alpha+\beta=0 \\ 2\gamma=-5}$. \\ Al resolverlo obtenemos $\alpha=2$, $\beta=10$ y $\gamma=-\f{5}{2}$. Por lo tanto $\vec{t}=2(2,-5,0)+10(0,1,0)-\f{5}{2}(0,0,2)$
 
 		\item $(4,-12)$ a partir de $\{(1,-3),(-3,9)\}$
 		\answer Planteamos $(4,-12)=a(1,-3)+b(-3,9)$ y obtenemos el sistema $\SEL{a-3b=4 \\ -3a+9b=-12}$. De la primera ecuación obtenemos $a=4+3b$ y sustituyendo en la segunda ecuación obtenemos que se comprueba. Es un sistema con infinitas soluciones donde $a$ depende de $b$ según la ecuación $a=4+3b$. Por lo tanto, $(4,-12)=(4+3b)(1,-3)+b(-3,9)$ donde $b\in\R$ es un parámetro. Por ejemplo si $b=1$, $(4,-12)=7(1,-3)+1(-3,9)$
@@ -439,7 +439,7 @@
 		\item $\vec{v}=3\ivec+\jvec$ a partir de $\vec{w}=(4,-6)$ y $\vec{u}=\left(-1,\f{3}{2}\right)$
 		\answer Planteamos $(3,1)=a(4,-6)+b\left(-1,\f{3}{2}\right)$ y se forma el sistema $\SEL{4a-b=3 \\ -6a+\f{3}{2}b=1}$. \\Reemplazando la primera ecuación en la segunda vemos que da un absurdo: el sistema no tiene solución. Por lo tanto, no es posible escribir $\vec{v}$ como combinación lineal de $\vec{w}$ y $\vec{u}$.
 
-		\item $\vec{r}=\SEL{ \rho_{\vec{r}} = 8 \\ \theta_{\vec{r}} = 120\degs\\ r_z = 7 }$ como combinación lineal de $\{\ivec, \jvec, \kvec\}$
+		\item $\vec{r}=\SEL{ \rho_{\vec{r}} = 8 \\ \phi_{\vec{r}} = 120\degs\\ r_z = 7 }$ como combinación lineal de $\{\ivec, \jvec, \kvec\}$
 		\answer En coordenadas cartesianas, $\vec{r}=(8\cos{120\degs},8\sin{120\degs},7)=(-4,4\sqrt{3},7)$. Por lo tanto, $\vec{r}=-4\ivec+4\sqrt{3}\jvec+7\kvec$.
 	\end{enumcols}
 
