@@ -72,7 +72,8 @@
 \newcommand{\degs}{^{\circ}} % Degree symbol
 \newcommand{\R}{\mathbb{R}} % Real numbers
 \newcommand{\C}{\mathbb{C}} % Complex numbers
-\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \hspace{-0.2mm}\times \hspace{-0.2mm} {#2}}} % Complex matrix
+\newcommand{\x}{\hspace{-0.2mm}\times \hspace{-0.2mm}} % cartesian product
+\newcommand{\Cmat}[2]{\mathbb{C}^{{#1} \x {#2}}} % Complex matrix
 \newcommand{\Z}{\mathbb{Z}} % Integers
 \newcommand{\Q}{\mathbb{Q}} % Rational numbers
 \newcommand{\ivec}{\check{\imath}} % i versor
