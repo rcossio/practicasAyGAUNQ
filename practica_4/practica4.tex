@@ -81,7 +81,16 @@
 
 	\end{enumcols}
 
+	\exercise Resolver los siguientes sistemas mixtos
+	\begin{enumcols}[2]
+		
+			\item $\SEL{x+y+z=6 \\ 2x-y+5z=9 \\ x^2 + y^2 = 10}$
+			\answer Hay dos soluciones: $(x,y,z)=(1,3,2)$ y $(x,y,z)=\left(\f{9}{5},\f{13}{5},\f{8}{5}\right)$
 
+			\item $\SEL{x+2y-z=5 \\ 3x-y+4z=8 \\ x^3 - 3y = 24}$
+			\answer Hay tres soluciones: $(x,y,z)=(3,1,0)$, $(x,y,z)=\left(-\f{3}{2}+\f{i\sqrt{39}}{2},\f{11}{2}-\f{i\sqrt{39}}{2},\f{9}{2}-\f{i\sqrt{39}}{2}\right)$ y $(x,y,z)=\left(-\f{3}{2}-\f{i\sqrt{39}}{2},\f{11}{2}+\f{i\sqrt{39}}{2},\f{9}{2}+\f{i\sqrt{39}}{2}\right)$
+		
+	\end{enumcols}
 
 	\exercise Resolver los siguientes acetijos
 	\begin{enumcols}[2]
@@ -92,7 +101,7 @@
 			\item \img{\textwidth}{img/fruit_puzzle2.png}
 			\item \img{\textwidth}{img/weight_puzzle.png}
 		
-		\end{enumcols}
+	\end{enumcols}
 
 
 	\exercise Plantear ecuaciones o sistemas de ecuaciones que modelen las situaciones. Resolverlas/los y responder a lo pedido. \textit{Nota: Los problemas usan datos reales o verosímiles pero tienen cierto grado de simplificación para no complicar los problemas}
@@ -112,6 +121,9 @@
 		\item Un sistema de viandas ofrece 3 tipos de viandas: vianda vegetariana a \$900, vianda con carne a \$1200 y vianda con pollo a \$1100.  Las viandas se empacan en un contenedor de 42~L que soporta hasta 20~kg. El empaque de las viandas de carne y pollo es de 0,8~L mientras que el de la vianda vegetariana es de 1,1~L. Las viandas de pollo y vegetariana pesan 400g mientras que la de carne pesa 600g. Una empresa solicitó 45 viandas para sus empleados/as que ocuparon la capacidad máxima (en volumen y peso) del contenedor del envío. ¿Cuántas viandas de cada tipo se pidieron y cuanto costó el total?
 		\answer Llamamos $x$, $y$ y $z$ a las viandas vegetarianas, con carne y con pollo, respectivamente. Consideramos la cantidad de viandas, su volumen y peso (de momento, ignoramos los precios). Se obtiene el sistema: \\ \vspace{2mm} $\SEL{ x+y+z=45 \\ x+0,8y+0,8z=42 \\ 0,4x+0,6y+0,4z=20 }$ \\ La solución es $(x,y,z)=(30,10,5)$, es decir, se pidieron 30 viandas vegetarianas, 10 con carne y 5 con pollo. Con las viandas calculamos el precio total: $900x+1200y+1100z=900(30)+1200(10)+1100(5)=44500$ pesos.
 
+		\item Una persona invierte en una acción cierta cantidad de dinero, obteniendo un 5\% de beneficio. Por otra inversión en un bono, obtiene un beneficio del 3\%. Sabiendo que en total invirtió 10.000\$, y que la ganancia de las acciones supera en 300\$ a la de los bonos, ¿cuánto dinero invirtió en acciones y cuánto en bonos?
+		\answer Considerando $a$ el dinero invertido en acciones y $b$ el dinero invertido en bonos, la suma de las inversiones es: $a+b=10000$. La diferencia de ganancias es $\f{5}{100}a-\f{3}{100}b=300$. Solucionando el sistema obtenemos $(a,b)=(7500,2500)$, es decir, se invirtió 7500\$ en acciones y 2500\$ en bonos. 
+
 		\item La combustión del metano (CH$_4$) consume oxígeno (O$_2$) y produce dióxido de carbono (CO$_2$) y agua (H$_2$O) según la reacción: \\ \phantom{-------------------------------------------------}$ aCH_4 + bO_2 \to cCO_2 + d H_{2}O$ \\ donde $a$, $b$, $c$ y $d$ de denominan coeficientes estequiométricos. Si se queman $a$~moles de metano se consumen $b$ moles de oxigeno obtienen $c$ moles de CO$_2$ y $d$ moles de agua. Considerando la ley de conservación de masa, hallar coeficientes válidos para la reacción. ¿Cuántos moles de CO$_2$ y de H$_2$O se producen si se queman 5~moles de metano? 
 		\answer En la reacción tenemos tres átomos que se conservan (C,O,H), por que lo obtenemos una ecuación para cada uno: \\ \vspace{2mm} $\SEL { a-c = 0 \\ 2b -2c -d = 0 \\ 4a - 2d = 0 }$ \\ La solución del sistema es $(a,b,c,d) = (a,2a,a,2a)$, por lo que elegimos $a=1$, y la reacción queda $ CH_4 + 2O_2 \to CO_2 + 2 H_{2}O$. Si se consumen 5 moles de metano, $a=5$ y la solución será $(5,10,5,10)$, es decir, se formaran 5 moles de CO$_2$ y 10 moles de H$_2$O.
 
@@ -129,6 +141,14 @@
 		\item Fe + HBr $\to$ FeBr$_3$ + H$_2$
 		\answer Considerando $a$Fe + $b$HBr $\to$ $c$FeBr$_3$ + $d$H$_2$ la solución general es $(a,b,c,d)=\left(a,3a,a,\f{3a}{2}\right)$. Una solución particular es 2Fe + 6HBr $\to$ 2FeBr$_3$ + 3H$_2$
 
+		\item MgS + AlCl$_3$ $\to$ MgCl$_2$ + Al$_2$S$_3$
+		\answer Considerando $a$MgS + $b$AlCl$_3$ $\to$ $c$MgCl$_2$ + $d$Al$_2$S$_3$ la solución general es $(a,b,c,d)=\left(a,\f{2a}{3},c,\f{a}{3}\right)$. Una solución particular es 3MgS + 2AlCl$_3$ $\to$ 3MgCl$_2$ + Al$_2$S$_3$
+		
+		\item K$_2$Cr$_2$O$_7$ + H$_2$O + S $\to$ SO$_2$ + KOH + Cr$_2$O$_3$
+		\answer Considerando $a$K$_2$Cr$_2$O$_7$ + $b$H$_2$O + $c$S $\to$ $d$SO$_2$ + $e$KOH + $f$Cr$_2$O$_3$ la solución general es $(a,b,c,d,e,f)=\left(\f{e}{2},\f{e}{2},\f{3e}{4},\f{3e}{4},e,\f{e}{2}\right)$. Una solución particular es 2K$_2$Cr$_2$O$_7$ + 2H$_2$O + 3S $\to$ 3SO$_2$ + 4KOH + 2Cr$_2$O$_3$
+
+		\item K$_2$Cr$_2$O$_7$ + HI + HClO$_4$ $\to$ Cr(ClO$_4$)$_3$ + KClO$_4$ + I$_2$ + H$_2$O
+		\answer Considerando $a$K$_2$Cr$_2$O$_7$ + $b$HI + $c$HClO$_4$ $\to$ $d$Cr(ClO$_4$)$_3$ + $e$KClO$_4$ + $f$I$_2$ + $g$H$_2$O la solución general es $(a,b,c,d,e,f,g)=(a,6a,8a,2a,2a,3a,7a)$. Una solución particular es K$_2$Cr$_2$O$_7$ + 6HI + 8HClO$_4$ $\to$ 2Cr(ClO$_4$)$_3$ + 2KClO$_4$ + 3I$_2$ + 7H$_2$O
 
 	\end{enumcols}
 
