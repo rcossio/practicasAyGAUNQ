@@ -163,19 +163,19 @@
 		\answer $X=D^T - E^T$. Resolución por \href{https://youtu.be/6KheMCVO_r0}{Jordy Lanzas}.
 
 		\item $X.A-2B=C$ considerando las matrices: \\ $A=\Mat{ 1 & -1 \\ 2 & 2}$ ~~~~~~ $B=\Mat{ 0 & 1 \\ 1 & 1}$ ~~~~~~ $C=\Mat{ -1 & 0 \\ 3 & -1 }$
-		\answer Despejamos y calculamos $X=(C+2B).A^{-1}=\Mat{-\frac{1}{2} & \frac{1}{2} \\ -\frac{5}{2} & \frac{1}{4} }$
+		\answer Despejamos y calculamos $X=(C+2B).A^{-1}=\Mat{-\frac{3}{2} & \frac{1}{4} \\ 2 & \frac{3}{2} }$
 
 		\item $A.X.B+B=A$ considerando las matrices: \\ $A=\Mat{ 1 & 1 \\ -1 & 1}$ ~~~~~~ $B=\Mat{ 2 & 1 \\ 0 & 1}$ 
-		\answer Resolución en \href{https://youtu.be/FJoaFy4OIRo}{este link}.
+		\answer $X=\Mat{ 0 & 0 \\ -\frac{1}{2} & \frac{1}{2}}$. Resolución en \href{https://youtu.be/FJoaFy4OIRo}{este link}.
 
 		\item $A.(A.B)^T + \f{1}{2} A^{-1} (B.X)^T = \mathbb{O}$ donde $\mathbb{O}$ es la matriz nula y $A,B \in \Cmat{n}{n}$. 
 		\answer Resolución en \href{https://youtu.be/5AU3jEAnowU?t=334}{este link}.
 
 		\item $AX=B$ considerando las matrices: \\ $A=\Mat{ 2 & -1 & 1\\ -1 & 2 & 0 \\ 1 & 2 & -1 }$ ~~~~~~ $B=\Mat{ 1 \\ 2 \\ 0 }$
-		\answer Despejamos $X=A^{-1}.B$. (Calcular)
+		\answer Despejamos $X=A^{-1}.B=\Mat{0 \\ 1 \\ 2}$.
 
 		\item $ (5X + AX)B = A $ considerando las matrices: \\ $A=\Mat{ 1 & -1 \\ 2 & 2}$ ~~~~~~ $B=\Mat{ 0 & 1 \\ 1 & 1}$. 
-		\answer Despejamos: \\ $ (5X + AX)B = A $ \\ $ (5X + AX) = A.B^{-1} $ \\ $ (5I + A).X = A.B^{-1} $ \\ $ X = (5I + A)^{-1}.A.B^{-1}$.\\ (Calcular la operacion resultante) 
+		\answer Despejamos: \\ $ (5X + AX)B = A $ \\ $ (5X + AX) = A.B^{-1} $ \\ $ (5I + A).X = A.B^{-1} $ \\ $ X = (5I + A)^{-1}.A.B^{-1}=\Mat{\frac{7}{44} & \frac{1}{44} \\ -\frac{1}{22} & \frac{3}{22} }.\Mat{1 & -1 \\ 2 & 2}.\Mat{-1 & 1 \\ 1 & 0} =\Mat{-\frac{7}{22} & \frac{9}{44} \\ \frac{1}{11} & \frac{5}{22} }$ 
 
 		\item $ (5XB)^T - X^T = A$ considerando las matrices: \\ $A=\Mat{ 1 & 0 & -1 \\ 2 & 2 & 2 \\ 0 & 2 & 3 }$ ~~~~~~ $B=\Mat{ 0 & 1 & 1 \\ 1 & 1 & 0 \\ -2 & 3 & 0 }$. 
 		\answer Despejamos: \\ $ (5XB)^T - X^T = A$ \\$ 5B^T.X^T - X^T = A$ \\ $(5B^T - I) . X^T = A$ \\ $X^T = (5B^T - I)^{-1}.A$ \\ $X = \left[(5B^T - I)^{-1}.A\right]^T$ \\ (Calcular la operación resultante)
@@ -204,28 +204,53 @@
 
 	\end{enumcols}
 
-	\exercise Los puntos que conforman el siguiente polígono son transformados mediante la operación $P^{\prime}=T.P$. Indicar la matriz $T$ que debe utilizarse para obtener la figura indicada en cada inciso. \\ \vspace{-5mm} \begin{center}\includegraphics[width=0.35\linewidth]{images/original} \end{center}
+	\exercise Los puntos que conforman el siguiente polígono son transformados mediante la operación $P^{\prime}=T.P$. Indicar la matriz $T$ que debe utilizarse para obtener la figura indicada en cada inciso. \\ \vspace{-5mm} \begin{center}\includegraphics[width=6cm]{images/original} \end{center}
 	\begin{enumcols}[2]
 
-		\item \img{0.7\linewidth}{images/1}
-		\item \img{0.7\linewidth}{images/2}
-		\item \img{0.7\linewidth}{images/3}
-		\item \img{0.7\linewidth}{images/4}
-		\item \img{0.7\linewidth}{images/5}
-		\item \img{0.7\linewidth}{images/6}
-		\item \img{0.7\linewidth}{images/7}
-		\item \img{0.7\linewidth}{images/8}
-		\item \img{0.7\linewidth}{images/9}
+		\item \img{6cm}{images/1}
+		\answer Es una reflexión con respecto al eje $y$, por lo tanto $T=\Mat{-1 & 0 \\ 0 & 1}$
+
+		\item \img{6cm}{images/2}
+		\answer Es una rotación de $180\degs$, por lo tanto $T=\Mat{\cos(\pi) & -\sin(\pi) \\ \sin(\pi) & \cos(\pi)}=\Mat{-1 & 0 \\ 0 & -1}$.
+
+		\item \img{6cm}{images/3}
+		\answer Es un cisallamiento horizontal de factor $\f{1}{2}$. El factor se obtiene de ver que por cada unidad de $y$ se realiza un dezplazamiento en $x$ en media unidad. La matriz de transformación es $T=\Mat{1 & \frac{1}{2} \\ 0 & 1}$
+
+		\item \img{6cm}{images/4}
+		\answer Son dos transformación que generan la nueva figura, es decir $P\'=T_2.T_1.P$. La primera transformación es un cambio de escala en $x$ e $y$ de factor 3 (se puede observar viendo el cambio de la distancia $\overline{AE}$), por lo que $T_1=\Mat{3 & 0 \\ 0 & 3}$. La segunda transformación es un cisallamiento horizontal de factor $\f{1}{3}$ (por cada $3$ unidades de $y$ se dezplaza $1$ unidad en $x$), por lo que $T_2=\Mat{1 & \frac{1}{3} \\ 0 & 1}$. La matriz de transformación final $T=T_2.T_1=\Mat{3 & 0 \\ 0 & 3}.\Mat{1 & \frac{1}{3} \\ 0 & 1}=\Mat{3 & 1 \\ 0 & 3}$ 
+
+		\item \img{6cm}{images/5}
+		\answer Es una rotación de $30\degs$ (aprox.), por lo tanto $T=\Mat{\cos(30\degs) & -\sin(30\degs) \\ \sin(30\degs) & \cos(30\degs)}=\Mat{\frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2}}$.
+
+		\item \img{6cm}{images/6}
+		\answer Es un cambio de escala en el eje $x$ de factor 2, $T_1=\Mat{2 & 0 \\ 0 & 1}$, seguido de un cambio de escala en el eje $y$ de factor $\f{1}{2}$, $T_2=\Mat{1 & 0\\ 0 & \frac{1}{2}}$. Por lo que la transformación final es $T=T_2.T_1=\Mat{2 & 0 \\ 0 & \frac{1}{2}}$
+
+		\item \img{6cm}{images/7}
+		\answer Es un cambio de escala en los ejes $x$ e $y$ de factor 2, $T_1=\Mat{2 & 0\\0 & 2}$, seguido de un a rotación de $45\degs$, $T_2=\Mat{\cos(45\degs) & -\sin(45\degs) \\ \sin(45\degs) & \cos(45\degs)}=\Mat{\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}}$. La matriz de transformación final es $T=T_2.T_1=\Mat{\sqrt{2} & -\sqrt{2} \\ \sqrt{2} & \sqrt{2}}$
+
+		\item \img{6cm}{images/8}
+		\answer Es una reflexión con respecto al eje $y$, $T_1=\Mat{-1 & 0 \\ 0 & 1}$, seguida de un cambio de escala en $y$ de factor 2, $T_2=\Mat{1 & 0 \\ 0 & 2}$. La matriz de transformación final es $T=T_2.T_1=\Mat{1 & 0 \\ 0 & 2}.\Mat{-1 & 0 \\ 0 & 1}=\Mat{-1 & 0 \\ 0 & 2}$
+
+		\item \img{6cm}{images/9}
+		\answer Es un cisallamiento vertical de factor $1$ (cada unidad de $x$ genera un dezplazamiento de $1$ unidad de $y$), $T=\Mat{1 & 0 \\ 1 & 1}$
 
 	\end{enumcols}
 
-	%\exercise En caso de que sea posible, resolver los siguientes sistemas de ecuaciones utilizando matrices.
-	%\begin{multicols}{2}
-	%\begin{enumerate} [label=(\alph*)]
-	%	\item $\left\{ \begin{matrix} 3x+4y-2z=2 \\ x-z=-3 \\ 3x+5y-2z=1 \end{matrix} \right.$ 
-	%	\answer ~
-	%\end{enumerate}
-	%\end{multicols}
+	\exercise Resolver los siguientes ejercicios de desafío
+	\begin{enumcols}[1]
+
+		\item Dadas las matrices $M=\Mat{-1 & 1 \\ 0 & 1 \\1 &0}$ y $X=\Mat{2 \\ 1 \\ -1}$ averiguar todos los valores de $\lambda \in \R$ que hacen que se verifique la ecuación $M.M^T.X=\lambda.X$
+
+		\item Dadas $A=\Mat{1 & 0 & 1 \\0 & 2 &0}$ y $B=\Mat{2 & -4 & -8 \\ -1 & 2 & 4}$. Demostrar que la matriz $\f{1}{2}.A^T.B+I$ es idempotente y, en caso de que admita inversa, calcularla. 
+
+		\item Dadas las matrices $A$, $B$ y $C$, encontrar los valores de $\lambda \in \C$ que permitan despejar $X$ en la ecuación $AX+X+B=C$ y luego calcular $X$. Si hay más de un valor de $\lambda$ posible, elegir uno arbitrariamente. \\ $A=\Mat{\lambda & 0 & 0 & 0 \\ 0 & 0 & -1 & 2\lambda \\0 & 0 & 2 & 0\\ 0 & 3 & 0 & 0}$ ~~~~~ $B=\Mat{1 \\ 2 \\ 3 \\ \lambda}$ ~~~~~ $C=\Mat{-1 \\ 1 \\ 2 \\ 2}$ 
+
+		\item Se observa que la ecuación $\Mat{x & y & z & w}.\Mat{1 & 1 \\ -1 & 0 \\ 0 & 0 \\ 0 & 1 } = \Mat{3 & 2}$ genera un sistema de ecuaciones. Expresar el sistema, estudiar qué tipo de sistema y hallar el conjunto solución.
+
+		\item Hallar la matriz $X$ que cumple con la ecuación $A(X-C)=(X^T.B)^T$ dadas las matrices $A=\Mat{1 & 1 & 0 \\ 2 & 3 & 1 \\ 1 & -3 & 3}$, $B=\Mat{0 & 2 & 0 \\ 1 & 3 & 1 \\ 1 & 0 & -2}$ y $C=\Mat{0 & 1 \\ -1 & 2 \\ 1 & 1}$.
+
+
+	\end{enumcols}
 
 
 
