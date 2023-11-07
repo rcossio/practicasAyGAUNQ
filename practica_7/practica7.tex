@@ -6,7 +6,7 @@
 
 \begin{enumerate}
 
-	\exercise Hallar una recta del plano que cumpla con las siguientes condiciones. Dar una ecuación implícita o general, explícita, paramétrica vectorial, paramétrica cartesiana y simétrica. Indicar si la recta hallada es única.
+	\exercise Hallar una recta del plano ($\R^2$) que cumpla con las siguientes condiciones. Dar una ecuación implícita o general, explícita, paramétrica vectorial, paramétrica cartesiana y simétrica. Indicar si la recta hallada es única.
 	\begin{enumcols}
 		
 		\item Pasa por el punto $P(-3,1)$ y es paralela al vector $\vec{d}=(2,-1)$
@@ -115,20 +115,23 @@
 		\answer \img{55mm}{plots/plot11.png}
 
 		\item $\SEL{-x+y-5=0 \\ 2x+y-17=0 \\ x+2y-10=0 }$
-		
+
 		\item $\SEL{-x+y-5=0 \\ 2x+y-17=0 \\ x+2y-17=0 \\ 3x+3y-34=0 }$
 	
 	\end{enumcols}
 
 
-	\exercise Resolver los siguientes problemas integradores sobre la geometría en el plano.
+	\exercise Resolver los siguientes problemas integradores relacionados a la geometría en el plano.
 	\begin{enumcols}
 		
 		\item Calcular la distancia entre el origen de coordenadas y la recta $r: 3x+4y -24=0$.
+		\answer $d(O,r)=\f{|3.0+4.0-24|}{\sqrt{3^2+4^2}}=\f{24}{5}$.
 
 		\item Calcular la distancia entre el punto $(-1,7)$ y la recta $r: x-3y -10=0$.
+		\answer $d(P,r)=\f{|1(-1)-3(7)-10|}{\sqrt{(-1)^2+7^2}}=\f{32}{\sqrt{50}}$.
 
 		\item Encontrar un punto que equidiste de las rectas $r: x+2y-3=0$ y $s: -x-2y+4=0$ y otro que equidiste de las rectas $r$ y $t: 2x-y+1=0$.
+		\answer Si planteamos $d(P,r)=d(P,s)$ se obtiene $\f{|x+2y-3|}{\sqrt{1^2+2^2}}=\f{|-x-2y+4|}{\sqrt{(-1)^2+(-2)^2}}$, de lo que se despeja $(x+2y-3)=\pm(-x-2y+4)$. Una de las alternativas es absurda y la otra es la recta $2x+4y-7=0$, por lo que podemos elegir el punto $P\left(\frac{3}{2},1\right)$. Como $r$ y $s$ son paralelas, gráficamente los puntos buscados están a "la mitad" entre ellas. Con respecto a un punto que equidiste de las rectas $r$ y $t$ de la misma manera obtenemos las rectas $3x+y-2=0$ y $-x+3y-4=0$, por lo que elegimos un punto de alguna: $Q(1,-1)$. Como las rectas $r$ y $t$ son incidentes los puntos buscados son las bisectrices de ellas.
 
 		\item Calcular la distancia entre la recta que pasa por (1,-4) de pendiente -2 y la recta $r: 2x+y-6=0$.
 
@@ -143,7 +146,7 @@
 	\end{enumcols}
 
 
-	\exercise Hallar una recta del espacio que cumpla con las siguientes condiciones. Dar una ecuación paramétrica vectorial, paramétrica cartesiana y simétrica. Indicar si la recta hallada es única.
+	\exercise Hallar una recta del espacio ($\R^3$) que cumpla con las siguientes condiciones. Dar una ecuación paramétrica vectorial, paramétrica cartesiana y simétrica. Indicar si la recta hallada es única.
 	\begin{enumcols}
 
 		\item Pasa por los puntos $A(2,-3,1)$ y $B(-3,5,0)$.
@@ -221,67 +224,67 @@
 	\exercise Analizar la posición relativa entre los siguientes lugares geométricos. Según corresponda, calcular la distancia entre ellos o la intersección y el menor ángulo. 
 	\begin{enumcols}
 
-		\item $r_1: (x,y,z)=(13,-2,0)+t(-6,0,2)$ y $r_2: (x,y,z)=(-14,-8,16)+t(5,2,-4)$
+		\item $r_1: (x,y,z)=(13,-2,0)+t(-6,0,2)$ ~~y~~ $r_2: (x,y,z)=(-14,-8,16)+t(5,2,-4)$
 
-		\item $r_1: (x,y,z)=(1,1,1)+t(1,2,3)$ y $r_2: (x,y,z)=(2,1,0)+t(3,8,13)$
+		\item $r_1: (x,y,z)=(1,1,1)+t(1,2,3)$ ~~y~~ $r_2: (x,y,z)=(2,1,0)+t(3,8,13)$
 		\answer $r_1 \cap r_2 = \{(5,9,13)\}$. Resolución por \href{https://youtu.be/KebOzsUUmq4?t=2304}{Mate316}.
 
 		\item $L_1:\SEL{x=1-\lambda \\ y=-1 \\ z= -\lambda}$ ~~y~~ $L_2:x+2=-y=-(z-1)$
 		\answer $L_1$ y $L_2$ son alabeadas. $d(L_1,L_2)=\f{2}{\sqrt{6}}$. Resolución por Álgebra Para Todos: \href{https://youtu.be/Xc7NzupOj5k}{parte 1} y \href{https://youtu.be/PKH0ODI8RQA}{parte 2}.
 
-		\item $r_1: (x,y,z)=(5,4,-1)+t(-6,0,2)$ y $r_2: (x,y,z)=(2,2,-1)+t(-3,2,1)$
-		\item $r_1: (x,y,z)=(4,0,2)+t(2,4,6)$ y $r_2: (x,y,z)=(9,10,15)+t(3,6,9)$
-		\item $\pi_1: 2x-3y+5z=2$ y $\pi_2: -x+3y+2z=1$.
-		\item $\pi_1: 2x-4y+8z=3$ y $\pi_2: 3x-6y+12z=2$.
-		\item $\pi_1: 2x-4y+8z=3$ y $\pi_2: 6x-12y+24z=9$.
-		\item $r_1: (x,y,z)=(4,0,2)+t(2,4,6)$ y $\pi_2: 6x-12y+24z=9$
-		\item $\pi_1: 2x-4y+8z=3$ y $r_2: (x,y,z)=(2,2,-1)+t(-3,2,1)$
+		\item $r_1: (x,y,z)=(5,4,-1)+t(-6,0,2)$ ~~y~~ $r_2: (x,y,z)=(2,2,-1)+t(-3,2,1)$
+		\item $r_1: (x,y,z)=(4,0,2)+t(2,4,6)$ ~~y~~ $r_2: (x,y,z)=(9,10,15)+t(3,6,9)$
+		\item $\pi_1: 2x-3y+5z=2$ ~~y~~ $\pi_2: -x+3y+2z=1$.
+		\item $\pi_1: 2x-4y+8z=3$ ~~y~~ $\pi_2: 3x-6y+12z=2$.
+		\item $\pi_1: 2x-4y+8z=3$ ~~y~~ $\pi_2: 6x-12y+24z=9$.
+		\item $r_1: (x,y,z)=(4,0,2)+t(2,4,6)$ ~~y~~ $\pi_2: 6x-12y+24z=9$
+		\item $\pi_1: 2x-4y+8z=3$ ~~y~~ $r_2: (x,y,z)=(2,2,-1)+t(-3,2,1)$
 
 	\end{enumcols}
 
 
-	\exercise Resolver los siguientes problemas integradores sobre la geometría en el espacio.
+	\exercise Resolver los siguientes problemas integradores sobre la geometría en el espacio mediante la construcción de elementos auxiliares, el uso de propiedades y el análisis geométrico.
 	\begin{enumcols}
-		
-		\item Dados los puntos $A(3,1,1)$ y $B(3,-2,4)$, y la recta $L: (x,y,z)=(1,-1,1)+t(1,1,0)$. Hallar un punto $C\in L$ tal que el ángulo entre $\vect{AB}$ y $\vect{AC}$ sea $60\degs$.
 		
 		\item Hallar $k\in \R$ para que $L_1:\SEL{x+y+z=0 \\ 2x-ky=4}$ sea paralela a vector $\vec{v}=(1,1,0)$
 		\answer $\nexists k\in \R$ que cumpla la condición. Resolución por \href{https://youtu.be/qIQflgvSxc4}{Álgebra Para Todos}.
 
+		\item Identificar todos los valores de $k\in\R$ tales que la distancia de la recta $r:\SEL{x+y+z=1 \\ x-kz=0}$ al origen de coordenadas sea $1$.
+		\answer $k=-1$. Resolución por \href{https://youtu.be/UNMMktIFFAE}{Álgebra Para Todos}.
+
+		\item Dados los puntos $A(3,1,1)$ y $B(3,-2,4)$, y la recta $L: (x,y,z)=(1,-1,1)+t(1,1,0)$. Encontrar un punto $C\in L$ tal que el ángulo entre $\vect{AB}$ y $\vect{AC}$ sea $60\degs$.
+
 		\item Calcular la distancia de la recta $L_1: (x,y,z) = (2,1,0) + \lambda (1,1,1)$ al plano $\pi$ que contiene al eje $z$ y que es paralelo a la recta $L_1$. Esquematizar la situación.
 		\answer $\pi: x-y=0$ y $d(\pi,L_1)=\f{1}{\sqrt{2}}$. Resolución por Álgebra Para Todos: \href{https://youtu.be/PmysAG03Y-s}{parte 1} y \href{https://youtu.be/X81YN6615Yg}{parte 2}. 
 
-		\item Sean las rectas $r_1: x+1 = y+2 = \f{z}{3}$ ~~y ~~ $r_2:\SEL{x=1+2\lambda \\ y=\lambda \\ z=3-\lambda}$. Obtenga las ecuaciones de todos los planos $\pi$ tales que $\pi \perp r_1$ y $d(\pi, r_2)=\sqrt{11}$
-		\answer Hay dos planos posibles: $\pi_1: x+y+3z+1=0$ y $\pi_2: x+y+3z-21=0$. Resolución por \href{https://youtu.be/6aLjzBa_U6w}{Álgebra Para Todos}. 
+		\item Obtener la ecuación del plano que contiene a la recta $s:\SEL{x=3 \\ y=2}$ y forma un ángulo de $30\degs$ con la recta $r: (x,y,z) = (0,0,0) t(-1,0,1)$. Esquematizar la situación.
+		\answer Existen dos planos que cumples las condiciones: $\pi_1: x-y-1=0$ y $\pi_2: x+y-5=0$. Resolución por \href{https://youtu.be/Xw0cLEM9VK0}{Álgebra Para Todos}.
 
-		\item Sean $r: \SEL{-x+y-1=0 \\ x+tz+h=0}$ ~~y~~ $\pi: x+y+z+1=0$. Determinar los valores de $t$ y $h$ para los cuales $r\subseteq\pi$.
-		\answer $t=\frac{1}{2}$ y $h=1$. Resolución por \href{https://youtu.be/Yrs27CRvPIM}{Álgebra Para Todos}. 
+		\item Encontrar la proyección de $L: x-2=y-1=\f{-z-3}{2}$ sobre el plano $\pi: x+y+z=0$.
+		\answer La proyección de $L$ sobre $\pi$ es la propia $L$, ya que $L \subseteq \pi$. Resolución por \href{https://youtu.be/l2aUePfNSQQ}{Álgebra Para Todos}.
+
+		\item Dada la recta $L:\SEL{y=2x\\ z=1}$ y el plano $pl_{\alpha}: x+y+z=9$, determinar la ecuación del plano que contiene a la recta $L$ y es perpendicular a $pl_{\alpha}$. Luego, halle la proyección de la recta $L$ sobre $pl_{\alpha}$.
+		\answer El plano es $pl_{\beta}: 2x -y -z +1 = 0$ y la proyección de la recta es $L': (x,y,z)=\left(\frac{8}{3},0,\frac{19}{3}\right)+k(0,1,-1)$. Resolución por Álgebra Para Todos: \href{https://youtu.be/aricPfApQqM}{parte 1}, \href{https://youtu.be/PD2a3LBVwvg}{parte 2} y \href{https://youtu.be/QNaua8cv-3w}{parte 3}.
+
+		\item Calcular los valores de las constantes $a$ y $b$ para que la proyección de la recta $r:\SEL{x=-2t \\ y=1+at \\ z=bt}$ sobre el plano $\pi: x+2z=30$ resulte en un único punto y dar dicho punto.
+		\answer Las constantes son $a=0$ y $b=-4$ y el punto proyección es $P(6,1,12)$. Resolución por \href{https://youtu.be/Q672TL02qKY}{Álgebra Para Todos}.
 
 		\item Hallar la proyección del punto $A(1,1,0)$ sobre el plano que determinan las rectas $L_1: \f{x-1}{-1}=y-2=z$ y $L_2:\SEL{x=1-2\beta\\ 3+\beta\\ z=1+\beta}$. Esquematizar la situación.
 		\answer El plano formado por las rectas es $\pi: y-z-2=0$ y la proyección es $A'\left(1, \frac{3}{2}, -\frac{1}{2}\right)$. Resolución por Álgebra Para Todos: \href{https://youtu.be/zR3gJD7uBwg}{parte 1} y \href{https://youtu.be/9uSJGXEd-z0}{parte 2}.
 
-		\item Hallar todos los valores de $k\in\R$ tales que la distancia de la recta $r:\SEL{x+y+z=1 \\ x-kz=0}$ al origen de coordenadas sea $1$.
-		\answer $k=-1$. Resolución por \href{https://youtu.be/UNMMktIFFAE}{Álgebra Para Todos}.
-
-		\item Hallar el parámetro $a$ para que $L_1:\SEL{2x-4y+z+1=0 \\ x-2y+3z-2=0}$ ~~y~~ $L_2:\f{x-1}{a}=\f{y+2}{4}=z$ sean coplanares. Además encontrar todos los puntos $P$ pertenecientes al eje $y$ tal que la distancia al plano que contiene a $L_1$ y $L_2$ sea igual a $\sqrt{41}$
+		\item Averiguar el valor del parámetro $a$ para que $L_1:\SEL{2x-4y+z+1=0 \\ x-2y+3z-2=0}$ ~~y~~ $L_2:\f{x-1}{a}=\f{y+2}{4}=z$ sean coplanares. Además encontrar todos los puntos $P$ pertenecientes al eje $y$ tal que la distancia al plano que contiene a $L_1$ y $L_2$ sea igual a $\sqrt{41}$
 		\answer El parámetro es $a=2$ y los puntos son $P_1(0, -23, 0)$ y $P_2 (0,18,0)$. Resolución por Álgebra Para Todos: \href{https://youtu.be/P9trZC_oQSE}{parte 1}, \href{https://youtu.be/keQrj5XZTaw}{parte 2} y \href{https://youtu.be/0sS1fLfxRBU}{parte 3}.
 
-		\item Dada la recta $L:\SEL{y=2x\\ z=1}$ y el plano $pl_{\alpha}: x+y+z=9$, hallar la ecuación del plano que contiene a la recta $L$ y es perpendicular a $pl_{\alpha}$. Luego, halle la proyección de la recta $L$ sobre $pl_{\alpha}$.
-		\answer El plano es $pl_{\beta}: 2x -y -z +1 = 0$ y la proyección de la recta es $L': (x,y,z)=\left(\frac{8}{3},0,\frac{19}{3}\right)+k(0,1,-1)$. Resolución por Álgebra Para Todos: \href{https://youtu.be/aricPfApQqM}{parte 1}, \href{https://youtu.be/PD2a3LBVwvg}{parte 2} y \href{https://youtu.be/QNaua8cv-3w}{parte 3}.
+		\item Sean $r: \SEL{-x+y-1=0 \\ x+tz+h=0}$ ~~y~~ $\pi: x+y+z+1=0$. Determinar los valores de $t$ y $h$ para los cuales $r\subseteq\pi$.
+		\answer $t=\frac{1}{2}$ y $h=1$. Resolución por \href{https://youtu.be/Yrs27CRvPIM}{Álgebra Para Todos}. 
 
-		\item Hallar los valores de las constantes $a$ y $b$ para que la proyección de la recta $r:\SEL{x=-2t \\ y=1+at \\ z=bt}$ sobre el plano $\pi: x+2z=30$ resulte en un único punto y dar dicho punto.
-		\answer Las constantes son $a=0$ y $b=-4$ y el punto proyección es $P(6,1,12)$. Resolución por \href{https://youtu.be/Q672TL02qKY}{Álgebra Para Todos}.
+		\item Sean las rectas $r_1: x+1 = y+2 = \f{z}{3}$ ~~y ~~ $r_2:\SEL{x=1+2\lambda \\ y=\lambda \\ z=3-\lambda}$. Obtener las ecuaciones de todos los planos $\pi$ tales que $\pi \perp r_1$ y $d(\pi, r_2)=\sqrt{11}$
+		\answer Hay dos planos posibles: $\pi_1: x+y+3z+1=0$ y $\pi_2: x+y+3z-21=0$. Resolución por \href{https://youtu.be/6aLjzBa_U6w}{Álgebra Para Todos}. 
 
-		\item Determine la ecuación de la recta que contiene al origen de coordenadas, es perpendicular a la recta $r: (x,y,z) = (-5, 0, -3) + \lambda(1,1,2)$ y es incidente a la recta $s: (x,y,z)=(0,1,2) + t (1,2,1)$.
-		\answer $L: (x,y,z)=(0,0,0)+k(1,1,-1)$. Como la recta buscada $L$ para por el origen y es perpendicular a $r$, entonces $L$ está contenida en el plano $\pi_{aux}: x+y+2z=0$. La intersección $L \cap s$ se encuentra dentro de la intersección $\pi_{aux} \cap s$, que es el punto $A(-1,-1,1)$. Con los puntos $O$ y $A$ obtendo la ecuación de la recta $L: (x,y,z)=(0,0,0)+k \vect{AO}=(0,0,0)+k(1,1,-1)$. Resolución alternativa por \href{https://youtu.be/x4t4zb0T8Eg}{Álgebra Para Todos}.    
+		\item Determinar la ecuación de la recta que contiene al origen de coordenadas, es perpendicular a la recta $r: (x,y,z) = (-5, 0, -3) + \lambda(1,1,2)$ y es incidente a la recta $s: (x,y,z)=(0,1,2) + t (1,2,1)$.
+		\answer $L: (x,y,z)=(0,0,0)+k(1,1,-1)$. Como la recta buscada $L$ para por el origen y es perpendicular a $r$, entonces $L$ está contenida en el plano $\pi_{aux}: x+y+2z=0$. La intersección $L \cap s$ se encuentra dentro de la intersección $\pi_{aux} \cap s$, que es el punto $A(-1,-1,1)$. Con los puntos $O$ y $A$ obtendo la ecuación de la recta $L: (x,y,z)=(0,0,0)+k \vect{AO}=(0,0,0)+k(1,1,-1)$. Resolución alternativa por \href{https://youtu.be/x4t4zb0T8Eg}{Álgebra Para Todos}. 
 
-		\item Hallar la ecuación del plano que contiene a la recta $s:\SEL{x=3 \\ y=2}$ y forma un ángulo de $30\degs$ con la recta $r: (x,y,z) = (0,0,0) t(-1,0,1)$. Esquematizar la situación.
-		\answer Existen dos planos que cumples las condiciones: $\pi_1: x-y-1=0$ y $\pi_2: x+y-5=0$. Resolución por \href{https://youtu.be/Xw0cLEM9VK0}{Álgebra Para Todos}.
-
-		\item Hallar la proyección de $L: x-2=y-1=\f{-z-3}{2}$ sobre el plano $\pi: x+y+z=0$.
-		\answer La proyección de $L$ sobre $\pi$ es la propia $L$, ya que $L \subseteq \pi$. Resolución por \href{https://youtu.be/l2aUePfNSQQ}{Álgebra Para Todos}.
-
-		\item Hallar el punto de la recta $r:\SEL{x=1-t \\ y=3+t \\2+2t}$ cuya proyección sobre el plano $yz$ es $(0,1,-2)$.
+		\item Ubicar el punto de la recta $r:\SEL{x=1-t \\ y=3+t \\2+2t}$ cuya proyección sobre el plano $yz$ es $(0,1,-2)$.
 		\answer $P(3,1,-2)$. Resolución por \href{https://youtu.be/GhhsZmKsetU}{Álgebra Para Todos}.
 
 		\item Hallar todos los puntos $P$ del plano $xy$ tal que la distancia al plano $\alpha: 3x+4y-12=0$ es igual a $1$. Indicar que lugar geométrico representa	el conjunto de todos los puntos $P$ y esquematizar la situación.
