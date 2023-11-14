@@ -134,14 +134,18 @@
 		\answer Si planteamos $d(P,r)=d(P,s)$ se obtiene $\f{|x+2y-3|}{\sqrt{1^2+2^2}}=\f{|-x-2y+4|}{\sqrt{(-1)^2+(-2)^2}}$, de lo que se despeja $(x+2y-3)=\pm(-x-2y+4)$. Una de las alternativas es absurda y la otra es la recta $2x+4y-7=0$, por lo que podemos elegir el punto $P\left(\frac{3}{2},1\right)$. Como $r$ y $s$ son paralelas, gráficamente los puntos buscados están a "la mitad" entre ellas. Con respecto a un punto que equidiste de las rectas $r$ y $t$ de la misma manera obtenemos las rectas $3x+y-2=0$ y $-x+3y-4=0$, por lo que elegimos un punto de alguna: $Q(1,-1)$. Como las rectas $r$ y $t$ son incidentes los puntos buscados son las bisectrices de ellas.
 
 		\item Calcular la distancia entre la recta que pasa por (1,-4) de pendiente -2 y la recta $r: 2x+y-6=0$.
+		\answer Orientación: Primero verificar que las rectas son paralelas para asegurar que efectivamente hay una distancia entre ellas. Luego la distancia entre las rectas $r_1$ y $r_2$ será la misma que entre un punto de $r_1$ y $r_2$.
 
 		\item Calcular la distancia entre las rectas $r: (x,y)=t(4,4)+(2,-5)$ y $s: (x,y)=k(1,1)+(0,-9)$
 
 		\item Calcular la proyección ortogonal del punto $P(3,-1)$ sobre la recta $r: -x-y-12=0$.
+		\answer Guía: La proyección ortogonal de un punto $P$ sobre una recta es el punto de la recta más cercano al punto. Para encontrarlo se puede puede plantear una recta auxiliar perpendicular a la recta que pase por el punto $P$ y el punto proyectado estará en la intersección entre las rectas (hacer un grafico para comprender esta situación)
 
 		\item Calcular la proyección ortogonal del punto $P(-2,2)$ sobre la recta $r: -5x+y-1=0$ y el punto simétrico $P'$.
+		\answer Orientación: Una vez hallada la proyección ortogonal $Q$ se puede hallar $P'$ considerando que $\vect{PQ}=\vect{QP'}$
 
 		\item Hallar el valor de $a\in\R$ para que el ángulo entre $r_1: ax+3y=0$ ~y~ $r_2:\SEL{ x=4+\lambda \\ 1-2\lambda }$ sea de $30\degs$. 
+		\answer Guía: El ángulo entre dos rectas es el mismo que entre sus vectores directores. Por lo que se puede plantear dicha ecuación utilizando un $a$ genérico y un ángulo de $30\degs$, y luego calcular los valores de $a$.
 
 	\end{enumcols}
 
@@ -185,28 +189,37 @@
 	\begin{enumcols}
 
 		\item  Pasa por el punto $P(2,2,2)$ y es perpendicular al vector $(3,-1,-2)$.
+		\answer Orientación: Hay una ecuación general del plano $Ax+By+Cz+D=0$ contiene información directa sobre el vector normal $\vec{n}=(A,B,C)$. Sólo resta hallar $D$, utilizando el punto $P$. 
 
 		\item  Es paralelo a los vectores $(2,0,2)$ y $(0,3,0)$ y pasa por el punto $P(1,2,0)$.
+		\answer Pista: La ecuación paramétrica vectorial de un plano requiere de dos vectores paralelos al plano y un punto del mismo.
 
-		\item  Pasa por los puntos $A(-1,1,1)$, $B(1,0,2)$ y $C(0,2,-2)$.
+		\item  Pasa por los puntos $A(-1,1,1)$, $B(1,0,2)$ y $C(0,2,-2)$
+		\answer Orientación: La ecuación paramétrica vectorial de un plano utiliza dos vectores paralelos la plano (pero no paralelos entre si) y un punto del mismo. Se pueden crear dos vectores a partir de tres puntos, como $\vect{AB}$, $\vect{BC}$, $\vect{AC}$, etc. 
 
 		\item  Es perpendicular al vector $(-2,0,1)$.
+		\answer Guía: Plantear una ecuación del plano donde se pueda utilizar el vector normal. Pensar geométricamente el problema para entender qué condiciones cumple el plano hallado y si es único. En caso de que no sea unico, elegir arbitrariamente los datos que faltan para dar la ecuación de un plano (sin dejar de cumplir las condiciones previas pedidas)
 
 		\item  Es paralelo al vector $(2,-1,4)$ y pasa por el punto $P(3,3,1)$.
+		\answer Orientación: La ecuación paramétrica vectorial se plantea con un punto del plano y dos vectores paralelos al mismo. Con los datos dados, se pueden reemplazar los datos existentes y pensar si los faltantes pueden calcularse o deben ser elegidos arbitrariamente.
 
 		\item  Pasa por los puntos $P(4,0,5)$ y $Q(-1,-1,0)$.
+		\answer Guía: Dado que $P$ y $Q$ pertenecen al plano el vector $\vect{PQ}$ derá paralelo al plano. Plantear la ecuación paramétrica vectorial con los datos conocidos y pensar si los faltantes pueden calcularse o deben ser elegidos arbitrariamente.
 
 		\item  Pasa por los puntos $A(0,1,1)$, $B(1,3,2)$, $C(0,2,-4)$ y $D(1,7,5)$.
+		\answer Orientación: Utilizando los puntos $A$, $B$ y $C$ se puede plantear la ecuación paramétrica vectorial del plano. Luego, se puede verificar si el punto $D$ pertenece al plano hallado. Alternativa: reemplazar los puntos en la ecuación general $ax+by+cz+d=0$ y hallar los valores de $a$, $b$, $c$ y $d$ del sistema de cuatro ecuaciones formado.
 
 		\item  Pasa por los puntos $P(3,-2,0)$ y $Q(1,-1,1)$ y es paralelo al vector $(1,2,2)$.
-
-		\item  Pasa por los puntos $P(3,-2,0)$ y $Q(1,-1,1)$ y es paralelo al vector $(1,2,2)$.
+		\answer Guía: La ecuación paramétrica vectorial utiliza dos vectores del plano que no sean paralelos entre si y un punto. Utilizar alguno de los puntos dados y el vector $(1,2,2)$ en la ecuación. Luego, verificar si $\vect{PQ}$ es paralelo a $(1,2,2)$. En caso de no ser paralelo, se puede utilizar en la ecuación.
 
 		\item  Es paralelo al plano $\pi: 2x-3y+2z=6$ y pasa por el punto $P(2,1,0)$.
+		\answer Orientación: Verificar qué relación tienen las normales de planos paralelos y analizar si la información, junto con $P$, es suficiente para definir un plano único.
 
 		\item  Es paralelo a las rectas $r_1: (x,y,z)=(1,4,0)+t(5,5,-3)$ y $r_2: (x,y,z)=(-10,2,7)+t(4,0,3)$ y contiene al punto $P(2,2,2)$.
+		\answer Guía: Para definir un plano necesitamos un punto y una normal (ec. general) o un punto y dos vectores paralelos (ec. paramétrica vectorial). Analizar qué información de puede sacar del plano conociendo que hay dos rectas paralelas (y sus vectores directores).
 
 		\item  Es perpendicular a la recta $r: (x,y,z)=(2,-9,7)+t(1,-1,1)$ y pasa por el punto $P(3,1,-3)$.
+		\answer Guía: Para definir un plano necesitamos un puntoo y una normal (ec. general). Investigar que relación tiene la normal de un plano con el vector director de una recta perpendicular a él.
 
 		\item  Contiene a la recta $r: (x,y,z)=(5,1,0)+t(1,-3,1)$.
 
